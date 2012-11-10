@@ -1,0 +1,9 @@
+#popup
+  - total_min = (((Time.now - @current_user.current_sign_in_at).abs)/60).round
+  :javascript
+    var min = "#{total_min}";
+    $(document).ready(function() {
+    setTimeout( function()
+              { if (min == 30) { $("#popup_box").fadeIn("fast"); }}, 1000);
+    });
+

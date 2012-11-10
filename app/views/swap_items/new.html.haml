@@ -1,0 +1,19 @@
+.grid_10.prefix_7.suffix_7
+  #new_message_form
+    //Todo after finalization add this to translation.
+    %h2
+      Select your receipe below to swap with 
+      = @receiver.given_name_or_username
+    %p
+      If 
+      %b
+        = @receiver.given_name_or_username
+      accepts your swap offer then you will able to see the full details of 
+      %b
+        = @receiver_listing.title
+      , also 
+      %b
+        = @receiver.given_name_or_username 
+      would able to see details of your receipe. (Which you are going to select now)
+    = render 'form'
+    = link_to 'New recipe to swap', new_listing_path(:lid => @receiver_listing.id, :pid => @receiver.id)

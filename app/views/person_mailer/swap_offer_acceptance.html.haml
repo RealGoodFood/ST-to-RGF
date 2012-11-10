@@ -1,0 +1,17 @@
+- if @swap_item.acceptance == true
+  Congradulations, your swap offer is accepted by
+  = @recipient.username
+- else
+  Sorry, your swap offer is declined by
+  = @author.username
+%br
+- if @swap_item.acceptance == true
+  Now you can see the recipe details by after login and visiting
+  %a{:href => "#{@url}listings/#{@receiver_recipe.id}-#{@receiver_recipe.title}"}
+    click here
+
+
+%br/
+%br/
+
+= t("emails.new_message.do_not_reply_to_this_email")

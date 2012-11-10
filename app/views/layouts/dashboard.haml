@@ -1,0 +1,51 @@
+!!! 5
+!!! xml
+%html{html_attrs(I18n.locale)}
+  %head
+    = render :partial => "layouts/kissmetrics"
+    %title
+      = t(".title")
+
+    %meta{ :property => "og:type", :content =>"website"}
+    %meta{ :property => "og:url", :content =>"#{request.protocol}#{request.host}"} 
+    %meta{ :property => "og:image", :content => "http://#{request.host}/images/sharetribe_icon.png"}
+    %meta{ :property => "og:site_name", :content =>"#{service_name}"}
+    %meta{ :property => "fb:admins", :content =>"Gnomet,juhomakkonen"}
+    %meta{ :property => "og:description", :content => t("layouts.application.meta_description")}
+    %meta{ :"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8" } 
+    %meta{ :name => "description", :content => t("layouts.application.meta_description") }
+    %meta{ :name => "keywords", :content => t("layouts.application.keywords") }
+    = stylesheet_link_tag "themes/kassi/jquery-ui-1.8.16.custom.css"
+    = stylesheet_link_tag 'ui.selectmenu.css'
+    = stylesheet_link_tag 'compiled/style_dashboard.css'
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Droid+Serif'
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Droid+Sans'
+    = javascript_include_tag 'jquery-1.6.2.min', 'jquery-ui-1.8.16.custom.min.js', 'jquery.uniform.min', 'jquery.lightbox_me', 'jquery.ui.selectmenu.js', 'jquery.watermark.min', 'jquery.autosize-min', 'rails', 'jquery.validate.min', 'sharetribe_common', 'kassi_dashboard', 'googlemaps', 'google_analytics'
+    = yield(:extra_javascript)
+    :javascript
+      $(document).ready(function() { initialize_defaults(); #{yield :javascript} });
+      
+  %body
+    %noscript
+      .js_enabled
+        #no_javascript
+          = render :partial => "layouts/dashboard_no_javascript"
+    .js_wrapper
+      .wrapper
+        = yield    
+        - if APP_CONFIG.use_google_analytics
+          <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          = "_gaq.push(['_setAccount', '#{APP_CONFIG.google_analytics_key}']);"
+          = "_gaq.push(['_setDomainName', '#{APP_CONFIG.google_analytics_domain}']);"
+          _gaq.push(['_trackPageview']);
+          _gaq.push(['_trackPageLoadTime']);
+
+          (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+          </script>

@@ -1,0 +1,54 @@
+- if @current_user && @current_user.sign_in_count <= 3 && @current_user.profile_info_empty? && popover_displayed
+  //#refreshing partial in every minute so user is active or inactive he can see popup
+  :javascript
+    $(document).ready(function(){setInterval(function(){ $('#refreshable').load('/refreshable'); }, 1800000);})
+
+  #refreshable
+    = render :partial => "layouts/refreshable"
+
+- elsif @current_user && @current_user.profile_info_empty? && @current_user.sign_in_count != 10
+  //#just logged-in then show popup
+  - if just_login
+    :javascript
+      $(document).ready(function() {
+        $("#popup_box")
+          .fadeOut( function() 
+            {    
+              setTimeout( function()
+                {
+                  $("#popup_box").fadeIn("fast");
+                }, 1000);
+        });
+      });
+
+//- if !@current_user and (@current_action == "index" and @current_controller == "homepage" ) and ( request.location.city != "ann arbor" and request.location.city != "durham" )
+//  :javascript
+//    $(document).ready(function() {
+//      $("#popup_box")
+//        .fadeOut( function() 
+//          {    
+//            setTimeout( function()
+//              {
+//                $("#popup_box").fadeIn("fast");
+//              }, 1000);
+//      });
+//    });
+
+:javascript
+  $(document).ready(function() {
+    $('#popupBoxClose').click( function() {           
+      $('#popup_box').fadeOut('fast', function() {
+     });
+    });
+  });
+
+#popup_box
+  %a{:id => "popupBoxClose", :href => "#" } ×
+  - if @current_user
+    %p= link_to t(".find_food"), offers_path
+    %p= link_to t(".add_your_info_link"), person_settings_path(@current_user)
+    %p= link_to t(".engage_with_more"), new_person_invitation_path(@current_user)
+  - else
+    = t(".not_in_city")
+   
+

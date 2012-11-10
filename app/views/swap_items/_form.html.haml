@@ -1,0 +1,15 @@
+= form_for(@swap_item) do |f|
+  = f.hidden_field :receiver_id, :value => params[:recd]
+  = f.hidden_field :receiver_listing_id, :value => params[:id]
+  = f.hidden_field :offerer_id, :value => @current_user.id
+  = f.label("Select Listing below")
+  - unless @current_user.listings.empty?
+    - @current_user.listings.open.each do |listing|
+      %br
+      = f.radio_button :offerer_listing_id, listing.id
+      = f.label "#{listing.title}"
+  - else
+    %br/
+    &nbsp; You don't have recipe to share.
+  .actions
+    = f.submit "Swap", { :class => "send_button"}

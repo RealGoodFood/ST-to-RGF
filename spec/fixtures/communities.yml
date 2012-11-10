@@ -1,0 +1,24 @@
+test_community:
+  id: 1
+  name: "Test"
+  domain: test
+  consent: "test_consent0.1"
+  settings: <%= {
+     "locales" => ["en", "fi"]
+     }.to_yaml.inspect %>
+
+  real_name_required: 1
+  news_enabled: false
+  all_users_can_add_news: false
+
+test_community2:
+  id: 2
+  name: "Test2"
+  domain: "test2"
+  consent: "KASSI_FI1.0"
+  settings: <%= {
+     "locales" => ["en"]}.to_yaml.inspect %>
+  real_name_required: 1
+  allowed_emails: "@example.com"
+  
+

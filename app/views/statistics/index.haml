@@ -1,0 +1,16 @@
+#statistics
+  %h1
+    Statistics
+
+  - if @current_community
+    %h2
+      Community:
+      = @current_community.name
+    
+    = render :partial => "statistics",  :locals => { :stats => @community_stats }
+
+
+  %h2
+    Whole Sharetribe server
+  
+  = render :partial => "statistics",  :locals => { :stats => @server_stats }

@@ -1,0 +1,22 @@
+//= t("emails.swap_offer.you_have_swap_offer", :sender => @author.username)
+You have swap offer from
+= @author.username 
+%br/
+%br/
+
+//= t("emails.swap_offer.offer", :offerer_recipe => @offerer_recipe.title, :receiver_recipe =>  @receiver_recipe.title)
+
+He is offering recipe 
+%a{:href => "#{@url}listings/#{@offerer_recipe.id}-#{@offerer_recipe.title}"}
+  = @offerer_recipe.title
+for exchange of your recipe 
+%a{:href => "#{@url}listings/#{@receiver_recipe.id}-#{@receiver_recipe.title}"}
+  = @receiver_recipe.title
+
+//= t("emails.new_message.you_can_reply_to_message_in")
+//= link_to(@url, @url + "?ref=email")
+
+%br/
+%br/
+
+= t("emails.new_message.do_not_reply_to_this_email")

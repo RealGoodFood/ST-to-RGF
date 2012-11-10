@@ -1,0 +1,18 @@
+# config/rackspace.yml
+development:
+  container: rgf_development
+  username: foodswap
+  api_key: 29aa023c1c0e7369cfb15ec09623d288
+
+production:
+  container: rgf_production
+  username: foodswap
+  api_key: 29aa023c1c0e7369cfb15ec09623d288
+
+test:
+  container: test_development
+  username: foodswap
+  api_key: 29aa023c1c0e7369cfb15ec09623d288
+
+
+  

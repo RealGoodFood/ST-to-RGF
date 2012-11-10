@@ -1,0 +1,6 @@
+.new_listing_form_field_container
+  %label{:for => "diet_list", :class => "input"}
+    = t('.diet_restrictions')
+    %span{:class => "smaller"}
+      = t('.comma_separate') + ":"
+  = form.text_field(:diet_tag_names, :class => "text_field", :maxlength => "500")
