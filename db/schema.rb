@@ -152,7 +152,7 @@ ActiveRecord::Schema.define(:version => 20121023050946) do
   create_table "event_feed_events", :force => true do |t|
     t.string   "person1_id"
     t.string   "person2_id"
-    t.string   "community_id"
+    t.integer   "community_id"
     t.integer  "eventable_id"
     t.string   "eventable_type"
     t.string   "category"
