@@ -1134,3 +1134,2378 @@ DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (ca
   [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120907023525')
   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120908052908')[0m
   [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120909143322')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/ajeypotdar/workArea/ST-to-RGF/config/environment.rb:10)
+New Relic Agent not running.
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.2ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.2ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (53.4ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.1ms)[0m  SHOW TIME ZONE
+  [1m[36mPK and serial sequence (75.1ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (51.7ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <class:Person> at /Users/ajeypotdar/workArea/ST-to-RGF/app/models/person.rb:134)
+  [1m[36mSQL (18.2ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (1.6ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (16.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (3.7ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateItems (20080806070738)
+Migrating to CreateFavors (20080807071903)
+Migrating to CreatePeople (20080807080513)
+Migrating to CreateListings (20080808095031)
+Migrating to CreateMessages (20080815075550)
+Migrating to CreateListingComments (20080818091109)
+Migrating to CreatePersonComments (20080818092139)
+Migrating to CreateReadListings (20080821103835)
+Migrating to CreateInterestingListings (20080825064927)
+Migrating to CreateFilters (20080825114546)
+Migrating to ChangePaymentColumnToInteger (20080828104013)
+Migrating to AddColumnPaymentToItem (20080828104239)
+Migrating to AddCosCookieToPerson (20080919122825)
+Migrating to CreateConversations (20080925100643)
+Migrating to CreatePersonConversations (20080925100743)
+Migrating to RenameInterestingListingsToPersonInterestingListings (20080925103547)
+Migrating to RenameReadListingsToPersonReadListings (20080925103759)
+Migrating to RemoveReceiverIdAndListingIdFromMessage (20080925112423)
+Migrating to AddConversationIdToMessage (20080925114309)
+Migrating to RemoveCosCookieFromPerson (20080929102121)
+Migrating to AddReadToPersonConversation (20081008115110)
+Migrating to RemoveReadAndAddIsReadToPersonConversation (20081009160751)
+Migrating to CreateTransactions (20081010114150)
+Migrating to CreateFeedbacks (20081024154431)
+Migrating to ChangeFeedbackContentToText (20081024182346)
+Migrating to AddIsAdminToPerson (20081024183444)
+Migrating to RemoveCoinAmountFromPerson (20081103092143)
+Migrating to AddLastSentAtAndLastReceivedAtToPersonConversation (20081104070403)
+Migrating to CreateKassiEvents (20081118145857)
+Migrating to CreateKassiEventsPeople (20081121084337)
+Migrating to RemoveIdFromKassiEventsPeople (20081202140109)
+Migrating to AddKassiEventIdToPersonComment (20081205142238)
+Migrating to AddStatusToItem (20081215145238)
+Migrating to AddStatusToFavor (20081216060503)
+Migrating to AddIsReadToListingComment (20090119114525)
+Migrating to ChangeListingTimesViewedDefault (20090218112317)
+Migrating to AddDescriptionToItem (20090219094209)
+Migrating to AddColumnLastModifiedToListing (20090225073742)
+Migrating to InsertIsHandledToFeedbacks (20090323121824)
+Migrating to CreateSettings (20090330064443)
+Migrating to AddPersonIdToSettings (20090330070210)
+Migrating to AddSettingsToExistingPeople (20090330072036)
+Migrating to CreateVisibilities (20090401181848)
+Migrating to RemoveVisibilityModel (20090401184511)
+Migrating to AddVisibilityToListing (20090401185039)
+Migrating to AddVisibilityToItemAndFavor (20090402144456)
+Migrating to CreateSmerfs (20090403093157)
+Migrating to CreateGroups (20090406081353)
+Migrating to CreateTableGroupsItems (20090414142556)
+Migrating to CreateTableGroupsListings (20090415085812)
+Migrating to CreateTableGroupsFavors (20090415130553)
+Migrating to ChangeItemIdToIntegerInGroupsItems (20090415131023)
+Migrating to UpdateColumnInSmerf (20090424093506)
+Migrating to UpdateColumnInPeopleSmerfForm (20090424100145)
+Migrating to AddEmailWhenNewFriendRequestToSettings (20090618112730)
+Migrating to AddAmountToItems (20090629113838)
+Migrating to AddReservationFieldsToConversations (20090629131727)
+Migrating to CreateItemReservations (20090701065350)
+Migrating to RemoveReserverIdFromConversation (20090701110931)
+Migrating to PickUpTimeAndReturnTimeFromDateToDatetime (20090713130351)
+Migrating to EditPersonComment (20090729124418)
+Migrating to CreateKassiEventParticipations (20090730093917)
+Migrating to MoveDataFromKassiEventsPeopleToKassiEventParticipation (20090730094216)
+Migrating to AddDefaultGradeToExistingPersonComments (20090731134028)
+Migrating to AddNewMailNotificationOptionsToSettings (20090821075949)
+Migrating to CreateListingFollowersTable (20090904120242)
+Migrating to RemoveIdFromListingFollowers (20090907155717)
+Migrating to CreateCachedRessiEvents (20091006112446)
+Migrating to AddPendingToKassiEvent (20091028095545)
+Migrating to ChangeKassiEventsWithoutFeedbackToPending (20091028131201)
+Migrating to AddFavorIdToConversations (20091109161516)
+Migrating to AddLocaleToPerson (20100322132547)
+Migrating to AddCloseNotificationSentToListing (20100505110646)
+Migrating to CreateSessions (20100707105549)
+Migrating to AddTypeToListing (20100721120037)
+Migrating to RenameTypeToListingType (20100721123825)
+Migrating to RenameListingsTypeToListingType (20100721124444)
+Migrating to AddDescriptionToListing (20100726071811)
+Migrating to AddTransactionTypeToListing (20100727102551)
+Migrating to RenameTransactionTypeToShareType (20100727103659)
+Migrating to AddOriginAndDestinationToListing (20100729112458)
+Migrating to ActsAsTaggableOnMigration (20100729124210)
+Migrating to CreateListingImages (20100729141955)
+Migrating to AddAttachmentImageToListingImage (20100729142416)
+Migrating to AddValidUntilToListing (20100730120601)
+Migrating to ChangeValidUntilFromDateToDatetime (20100730132825)
+Migrating to CreateParticipations (20100809090550)
+Migrating to AddLastSentAtAndLastReceivedAtToParticipation (20100809120502)
+Migrating to AddDeltaToListing (20100813161213)
+Migrating to MakePendingDefaultValueOfConversationStatus (20100817115816)
+Migrating to CreateTestimonials (20100818102743)
+Migrating to AddFeedbackSkippedToParticipation (20100819114104)
+Migrating to CreateComments (20100820122449)
+Migrating to AddPreferencesToPerson (20100902135234)
+Migrating to AddDefaultPreferencesToPeople (20100902142325)
+Migrating to AddOpenToListing (20100908112841)
+Migrating to RemoveShareType (20100909105810)
+Migrating to CreateShareTypes (20100909114132)
+Migrating to MigrateListingsForKassi2 (20100920075651)
+Migrating to MigrateListingImagesToPaperClip (20100921155612)
+Migrating to CopyFavorsAndItemsAsListings (20100922081110)
+Migrating to AddEmailToFeedbacks (20100922102321)
+Migrating to ChangeSettingsToNewFormat (20100922122740)
+Migrating to MigrateConversationsToNewFormat (20100923074241)
+Migrating to MigrateListingCommentsForKassi2 (20100927150547)
+Migrating to AddTargetIdToTestimonial (20101007131610)
+Migrating to SetTargetIdsOfTestimonials (20101007131827)
+Migrating to CreateBadges (20101013115208)
+Migrating to CreateDelayedJobs (20101013124056)
+Migrating to AddTimestampsToBadges (20101026082126)
+Migrating to CreateNotifications (20101027103753)
+Migrating to AddEmailWhenNewBadgeToPreferences (20101028151541)
+Migrating to AddTestimonialIdToNotification (20101103154108)
+Migrating to RenameTargetIdToReceiverIdInTestimonial (20101103161641)
+Migrating to AddEmailAboutNewReceivedTestimonials (20101103163019)
+Migrating to AddActiveDaysCountAndLastPageLoadDateToPerson (20101109131431)
+Migrating to FixItemAndFavorRelatedTestimonials (20101116105410)
+Migrating to AddEmailAboutTestimonialRemindersToPreferences (20101124104905)
+Migrating to AddTestGroupNumberToPerson (20101125150638)
+Migrating to AssignBadgesToPeople (20101126093026)
+Migrating to ChangeSymbolsToStringsInPreferences (20101201105920)
+Migrating to AddTestGroupNumberToCachedRessiEvents (20101201133429)
+Migrating to CreateCommunities (20101203115308)
+Migrating to CreateCommunityMemberships (20101203115634)
+Migrating to CreateContactRequests (20101213152125)
+Migrating to CreateTableCommunitiesListings (20101216150725)
+Migrating to ChangeListingVisiblityKassiUsersToCommunities (20101216151447)
+Migrating to ChangeMemberIdToPersonIdInCommunityMemberships (20101216152952)
+Migrating to AddSettingsToCommunities (20110308172759)
+Migrating to CreateLocations (20110308192757)
+Migrating to FixLocationModelAssociations (20110321103604)
+Migrating to FixLocationAgain (20110322141439)
+Migrating to SwitchLocationIds (20110322151957)
+Migrating to FixPersonIdToString (20110325120932)
+Migrating to AddConsentToCommunities (20110412075940)
+Migrating to AddTypeToLocation (20110414105702)
+Migrating to FixReservedWordFromLocation (20110414124938)
+Migrating to AddConsentToCommunityMemberships (20110421075758)
+Migrating to AddEmailAdminsAboutNewMembersToCommunities (20110428134543)
+Migrating to AddUseFbLikeToCommunities (20110529110417)
+Migrating to AddRealNameRequiredToCommunities (20110629135331)
+Migrating to AddEmailAboutAcceptReminders (20110704123058)
+Migrating to AddFeedbackToAdminToCommunities (20110704144650)
+Migrating to ChangeFeedbackToAdminFromSymbolToString (20110707163036)
+Migrating to CopyAddressesFromAsiToKassi (20110728110124)
+Migrating to AddEmailAboutWeeklyEventsToPersonPreferences (20110808110217)
+Migrating to AddAutomaticNewslettersToCommunities (20110808161514)
+Migrating to AddActiveToPeople (20110817123457)
+Migrating to AddJoinWithInviteOnlyToCommunities (20110819111416)
+Migrating to CreateInvitations (20110819123636)
+Migrating to AddUseCaptchaToCommunities (20110909072646)
+Migrating to RemoveTimestampsFromListingFollowers (20110912061834)
+Migrating to MakeNotificationsPolymorphic (20110912064526)
+Migrating to ReformatNotificationDataToPolymorphic (20110912065222)
+Migrating to AddDescriptionToNotifications (20110913080622)
+Migrating to AddDeviseWithoutConfirmableToPeople (20110914080549)
+Migrating to AddProfileAttributesToPeople (20110914115824)
+Migrating to AddDeviseToPeople (20110915084232)
+Migrating to AddAllowedEmailsToCommunities (20110915101535)
+Migrating to AddInviterIdToInvitations (20111111140246)
+Migrating to AddMessageToInvitations (20111111154416)
+Migrating to AddEmailToInvitations (20111111162432)
+Migrating to AddLastPageLoadDateToCommunityMemberships (20111114122125)
+Migrating to MoveLastPageLoadDatesFromPersonToCommunityMemberships (20111114122315)
+Migrating to AddUsersCanInviteNewUsersToCommunities (20111116144337)
+Migrating to AddSelectWhetherNameIsShownToEverybodyToCommunities (20111116164728)
+Migrating to AddShowRealNameToOtherUsersToPerson (20111116182825)
+Migrating to CreateNewsItems (20111123071116)
+Migrating to AddNewsEnabledToCommunities (20111123071850)
+Migrating to ChangeContentFromStringToTextInNewsItems (20111124174508)
+Migrating to CreatePolls (20111210165312)
+Migrating to CreatePollOptions (20111210165854)
+Migrating to CreatePollAnswers (20111210170231)
+Migrating to ChangePollOptionPercentageDefaultTo0 (20111211175403)
+Migrating to AddIndexes (20111228153911)
+Migrating to AddPhoneNumberAndDescriptionToPeople (20120104224115)
+Migrating to AddAttachmentImageToPeople (20120105162140)
+Migrating to AddPrivateToCommunities (20120113091548)
+Migrating to AddLabelToCommunities (20120121091558)
+Migrating to AddAllUsersCanAddNewsToCommunities (20120206052931)
+Migrating to AddShowDateInListingsListsToCommunities (20120208145336)
+Migrating to AddCustomFrontpageSidebarToCommunities (20120210171827)
+Migrating to AddShareTypeToListings (20120303113202)
+Migrating to MoveShareTypesToListing (20120303125412)
+Migrating to AddEventFeedEnabledToCommunities (20120303152837)
+Migrating to CreateEventFeedEvents (20120303172713)
+Migrating to AddSloganAndDescriptionToCommunities (20120510094327)
+Migrating to AddCategoryToCommunity (20120510175152)
+Migrating to AddCommunityIdToLocations (20120514001557)
+Migrating to AddMembersCountToCommunities (20120514050302)
+Migrating to CreateEmails (20120516204538)
+Migrating to AddFacebookIdToPeople (20120518203511)
+Migrating to ConsentDefaultToNil (20120522162329)
+Migrating to AddPollsEnabledToCommunities (20120522183329)
+Migrating to AddPlanToCommunities (20120526021050)
+Migrating to AddPricingDataToCommunities (20120614052244)
+Migrating to AddAuthenticationTokenToPeople (20120625211426)
+Migrating to RemoveUnusedColumnsFromListings (20120628121713)
+Migrating to EditCommunityDefaults (20120704072606)
+Migrating to RemoveUnnecessaryFieldsFromConversations (20120705135703)
+Migrating to AddTransactionProposalToConversations (20120705140109)
+Migrating to RemoveTemporaryAccommodationShareTypeFromListings (20120710084323)
+Migrating to RemoveTransactionProposalFromConversations (20120711140918)
+Migrating to CreateStatistics (20120718031225)
+Migrating to CreateDevices (20120730024756)
+Migrating to AddMauAndWauToStatistics (20120907010347)
+Migrating to AddMoreFieldsToStatistics (20120907023525)
+Migrating to DeleteUnusedTables (20120908052908)
+Migrating to AddQueueToDelayedJobs (20120909143322)
+Migrating to AddCommunityIdToCachedRessiEvents (20121023050946)
+Migrating to CreateDiets (20121102060539)
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (69.2ms)[0m  CREATE TABLE "diets" ("id" serial primary key, "created_at" timestamp, "updated_at" timestamp) 
+PG::Error: ERROR:  relation "diets" already exists
+: CREATE TABLE "diets" ("id" serial primary key, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/ajeypotdar/workArea/ST-to-RGF/config/environment.rb:10)
+New Relic Agent not running.
+  [1m[36mSQL (36.4ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.3ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.2ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (62.7ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TIME ZONE
+  [1m[36mPK and serial sequence (486.1ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (95.7ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <class:Person> at /Users/ajeypotdar/workArea/ST-to-RGF/app/models/person.rb:134)
+  [1m[36mSQL (128.9ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (30.9ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (45.9ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (30.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/ajeypotdar/workArea/ST-to-RGF/config/environment.rb:10)
+New Relic Agent not running.
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.2ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.2ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.5ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.1ms)[0m  SHOW TIME ZONE
+  [1m[36mPK and serial sequence (10.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (2.4ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <class:Person> at /Users/ajeypotdar/workArea/ST-to-RGF/app/models/person.rb:134)
+  [1m[36mSQL (39.3ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (16.8ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (25.4ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (2.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateItems (20080806070738)
+Migrating to CreateFavors (20080807071903)
+Migrating to CreatePeople (20080807080513)
+Migrating to CreateListings (20080808095031)
+Migrating to CreateMessages (20080815075550)
+Migrating to CreateListingComments (20080818091109)
+Migrating to CreatePersonComments (20080818092139)
+Migrating to CreateReadListings (20080821103835)
+Migrating to CreateInterestingListings (20080825064927)
+Migrating to CreateFilters (20080825114546)
+Migrating to ChangePaymentColumnToInteger (20080828104013)
+Migrating to AddColumnPaymentToItem (20080828104239)
+Migrating to AddCosCookieToPerson (20080919122825)
+Migrating to CreateConversations (20080925100643)
+Migrating to CreatePersonConversations (20080925100743)
+Migrating to RenameInterestingListingsToPersonInterestingListings (20080925103547)
+Migrating to RenameReadListingsToPersonReadListings (20080925103759)
+Migrating to RemoveReceiverIdAndListingIdFromMessage (20080925112423)
+Migrating to AddConversationIdToMessage (20080925114309)
+Migrating to RemoveCosCookieFromPerson (20080929102121)
+Migrating to AddReadToPersonConversation (20081008115110)
+Migrating to RemoveReadAndAddIsReadToPersonConversation (20081009160751)
+Migrating to CreateTransactions (20081010114150)
+Migrating to CreateFeedbacks (20081024154431)
+Migrating to ChangeFeedbackContentToText (20081024182346)
+Migrating to AddIsAdminToPerson (20081024183444)
+Migrating to RemoveCoinAmountFromPerson (20081103092143)
+Migrating to AddLastSentAtAndLastReceivedAtToPersonConversation (20081104070403)
+Migrating to CreateKassiEvents (20081118145857)
+Migrating to CreateKassiEventsPeople (20081121084337)
+Migrating to RemoveIdFromKassiEventsPeople (20081202140109)
+Migrating to AddKassiEventIdToPersonComment (20081205142238)
+Migrating to AddStatusToItem (20081215145238)
+Migrating to AddStatusToFavor (20081216060503)
+Migrating to AddIsReadToListingComment (20090119114525)
+Migrating to ChangeListingTimesViewedDefault (20090218112317)
+Migrating to AddDescriptionToItem (20090219094209)
+Migrating to AddColumnLastModifiedToListing (20090225073742)
+Migrating to InsertIsHandledToFeedbacks (20090323121824)
+Migrating to CreateSettings (20090330064443)
+Migrating to AddPersonIdToSettings (20090330070210)
+Migrating to AddSettingsToExistingPeople (20090330072036)
+Migrating to CreateVisibilities (20090401181848)
+Migrating to RemoveVisibilityModel (20090401184511)
+Migrating to AddVisibilityToListing (20090401185039)
+Migrating to AddVisibilityToItemAndFavor (20090402144456)
+Migrating to CreateSmerfs (20090403093157)
+Migrating to CreateGroups (20090406081353)
+Migrating to CreateTableGroupsItems (20090414142556)
+Migrating to CreateTableGroupsListings (20090415085812)
+Migrating to CreateTableGroupsFavors (20090415130553)
+Migrating to ChangeItemIdToIntegerInGroupsItems (20090415131023)
+Migrating to UpdateColumnInSmerf (20090424093506)
+Migrating to UpdateColumnInPeopleSmerfForm (20090424100145)
+Migrating to AddEmailWhenNewFriendRequestToSettings (20090618112730)
+Migrating to AddAmountToItems (20090629113838)
+Migrating to AddReservationFieldsToConversations (20090629131727)
+Migrating to CreateItemReservations (20090701065350)
+Migrating to RemoveReserverIdFromConversation (20090701110931)
+Migrating to PickUpTimeAndReturnTimeFromDateToDatetime (20090713130351)
+Migrating to EditPersonComment (20090729124418)
+Migrating to CreateKassiEventParticipations (20090730093917)
+Migrating to MoveDataFromKassiEventsPeopleToKassiEventParticipation (20090730094216)
+Migrating to AddDefaultGradeToExistingPersonComments (20090731134028)
+Migrating to AddNewMailNotificationOptionsToSettings (20090821075949)
+Migrating to CreateListingFollowersTable (20090904120242)
+Migrating to RemoveIdFromListingFollowers (20090907155717)
+Migrating to CreateCachedRessiEvents (20091006112446)
+Migrating to AddPendingToKassiEvent (20091028095545)
+Migrating to ChangeKassiEventsWithoutFeedbackToPending (20091028131201)
+Migrating to AddFavorIdToConversations (20091109161516)
+Migrating to AddLocaleToPerson (20100322132547)
+Migrating to AddCloseNotificationSentToListing (20100505110646)
+Migrating to CreateSessions (20100707105549)
+Migrating to AddTypeToListing (20100721120037)
+Migrating to RenameTypeToListingType (20100721123825)
+Migrating to RenameListingsTypeToListingType (20100721124444)
+Migrating to AddDescriptionToListing (20100726071811)
+Migrating to AddTransactionTypeToListing (20100727102551)
+Migrating to RenameTransactionTypeToShareType (20100727103659)
+Migrating to AddOriginAndDestinationToListing (20100729112458)
+Migrating to ActsAsTaggableOnMigration (20100729124210)
+Migrating to CreateListingImages (20100729141955)
+Migrating to AddAttachmentImageToListingImage (20100729142416)
+Migrating to AddValidUntilToListing (20100730120601)
+Migrating to ChangeValidUntilFromDateToDatetime (20100730132825)
+Migrating to CreateParticipations (20100809090550)
+Migrating to AddLastSentAtAndLastReceivedAtToParticipation (20100809120502)
+Migrating to AddDeltaToListing (20100813161213)
+Migrating to MakePendingDefaultValueOfConversationStatus (20100817115816)
+Migrating to CreateTestimonials (20100818102743)
+Migrating to AddFeedbackSkippedToParticipation (20100819114104)
+Migrating to CreateComments (20100820122449)
+Migrating to AddPreferencesToPerson (20100902135234)
+Migrating to AddDefaultPreferencesToPeople (20100902142325)
+Migrating to AddOpenToListing (20100908112841)
+Migrating to RemoveShareType (20100909105810)
+Migrating to CreateShareTypes (20100909114132)
+Migrating to MigrateListingsForKassi2 (20100920075651)
+Migrating to MigrateListingImagesToPaperClip (20100921155612)
+Migrating to CopyFavorsAndItemsAsListings (20100922081110)
+Migrating to AddEmailToFeedbacks (20100922102321)
+Migrating to ChangeSettingsToNewFormat (20100922122740)
+Migrating to MigrateConversationsToNewFormat (20100923074241)
+Migrating to MigrateListingCommentsForKassi2 (20100927150547)
+Migrating to AddTargetIdToTestimonial (20101007131610)
+Migrating to SetTargetIdsOfTestimonials (20101007131827)
+Migrating to CreateBadges (20101013115208)
+Migrating to CreateDelayedJobs (20101013124056)
+Migrating to AddTimestampsToBadges (20101026082126)
+Migrating to CreateNotifications (20101027103753)
+Migrating to AddEmailWhenNewBadgeToPreferences (20101028151541)
+Migrating to AddTestimonialIdToNotification (20101103154108)
+Migrating to RenameTargetIdToReceiverIdInTestimonial (20101103161641)
+Migrating to AddEmailAboutNewReceivedTestimonials (20101103163019)
+Migrating to AddActiveDaysCountAndLastPageLoadDateToPerson (20101109131431)
+Migrating to FixItemAndFavorRelatedTestimonials (20101116105410)
+Migrating to AddEmailAboutTestimonialRemindersToPreferences (20101124104905)
+Migrating to AddTestGroupNumberToPerson (20101125150638)
+Migrating to AssignBadgesToPeople (20101126093026)
+Migrating to ChangeSymbolsToStringsInPreferences (20101201105920)
+Migrating to AddTestGroupNumberToCachedRessiEvents (20101201133429)
+Migrating to CreateCommunities (20101203115308)
+Migrating to CreateCommunityMemberships (20101203115634)
+Migrating to CreateContactRequests (20101213152125)
+Migrating to CreateTableCommunitiesListings (20101216150725)
+Migrating to ChangeListingVisiblityKassiUsersToCommunities (20101216151447)
+Migrating to ChangeMemberIdToPersonIdInCommunityMemberships (20101216152952)
+Migrating to AddSettingsToCommunities (20110308172759)
+Migrating to CreateLocations (20110308192757)
+Migrating to FixLocationModelAssociations (20110321103604)
+Migrating to FixLocationAgain (20110322141439)
+Migrating to SwitchLocationIds (20110322151957)
+Migrating to FixPersonIdToString (20110325120932)
+Migrating to AddConsentToCommunities (20110412075940)
+Migrating to AddTypeToLocation (20110414105702)
+Migrating to FixReservedWordFromLocation (20110414124938)
+Migrating to AddConsentToCommunityMemberships (20110421075758)
+Migrating to AddEmailAdminsAboutNewMembersToCommunities (20110428134543)
+Migrating to AddUseFbLikeToCommunities (20110529110417)
+Migrating to AddRealNameRequiredToCommunities (20110629135331)
+Migrating to AddEmailAboutAcceptReminders (20110704123058)
+Migrating to AddFeedbackToAdminToCommunities (20110704144650)
+Migrating to ChangeFeedbackToAdminFromSymbolToString (20110707163036)
+Migrating to CopyAddressesFromAsiToKassi (20110728110124)
+Migrating to AddEmailAboutWeeklyEventsToPersonPreferences (20110808110217)
+Migrating to AddAutomaticNewslettersToCommunities (20110808161514)
+Migrating to AddActiveToPeople (20110817123457)
+Migrating to AddJoinWithInviteOnlyToCommunities (20110819111416)
+Migrating to CreateInvitations (20110819123636)
+Migrating to AddUseCaptchaToCommunities (20110909072646)
+Migrating to RemoveTimestampsFromListingFollowers (20110912061834)
+Migrating to MakeNotificationsPolymorphic (20110912064526)
+Migrating to ReformatNotificationDataToPolymorphic (20110912065222)
+Migrating to AddDescriptionToNotifications (20110913080622)
+Migrating to AddDeviseWithoutConfirmableToPeople (20110914080549)
+Migrating to AddProfileAttributesToPeople (20110914115824)
+Migrating to AddDeviseToPeople (20110915084232)
+Migrating to AddAllowedEmailsToCommunities (20110915101535)
+Migrating to AddInviterIdToInvitations (20111111140246)
+Migrating to AddMessageToInvitations (20111111154416)
+Migrating to AddEmailToInvitations (20111111162432)
+Migrating to AddLastPageLoadDateToCommunityMemberships (20111114122125)
+Migrating to MoveLastPageLoadDatesFromPersonToCommunityMemberships (20111114122315)
+Migrating to AddUsersCanInviteNewUsersToCommunities (20111116144337)
+Migrating to AddSelectWhetherNameIsShownToEverybodyToCommunities (20111116164728)
+Migrating to AddShowRealNameToOtherUsersToPerson (20111116182825)
+Migrating to CreateNewsItems (20111123071116)
+Migrating to AddNewsEnabledToCommunities (20111123071850)
+Migrating to ChangeContentFromStringToTextInNewsItems (20111124174508)
+Migrating to CreatePolls (20111210165312)
+Migrating to CreatePollOptions (20111210165854)
+Migrating to CreatePollAnswers (20111210170231)
+Migrating to ChangePollOptionPercentageDefaultTo0 (20111211175403)
+Migrating to AddIndexes (20111228153911)
+Migrating to AddPhoneNumberAndDescriptionToPeople (20120104224115)
+Migrating to AddAttachmentImageToPeople (20120105162140)
+Migrating to AddPrivateToCommunities (20120113091548)
+Migrating to AddLabelToCommunities (20120121091558)
+Migrating to AddAllUsersCanAddNewsToCommunities (20120206052931)
+Migrating to AddShowDateInListingsListsToCommunities (20120208145336)
+Migrating to AddCustomFrontpageSidebarToCommunities (20120210171827)
+Migrating to AddShareTypeToListings (20120303113202)
+Migrating to MoveShareTypesToListing (20120303125412)
+Migrating to AddEventFeedEnabledToCommunities (20120303152837)
+Migrating to CreateEventFeedEvents (20120303172713)
+Migrating to AddSloganAndDescriptionToCommunities (20120510094327)
+Migrating to AddCategoryToCommunity (20120510175152)
+Migrating to AddCommunityIdToLocations (20120514001557)
+Migrating to AddMembersCountToCommunities (20120514050302)
+Migrating to CreateEmails (20120516204538)
+Migrating to AddFacebookIdToPeople (20120518203511)
+Migrating to ConsentDefaultToNil (20120522162329)
+Migrating to AddPollsEnabledToCommunities (20120522183329)
+Migrating to AddPlanToCommunities (20120526021050)
+Migrating to AddPricingDataToCommunities (20120614052244)
+Migrating to AddAuthenticationTokenToPeople (20120625211426)
+Migrating to RemoveUnusedColumnsFromListings (20120628121713)
+Migrating to EditCommunityDefaults (20120704072606)
+Migrating to RemoveUnnecessaryFieldsFromConversations (20120705135703)
+Migrating to AddTransactionProposalToConversations (20120705140109)
+Migrating to RemoveTemporaryAccommodationShareTypeFromListings (20120710084323)
+Migrating to RemoveTransactionProposalFromConversations (20120711140918)
+Migrating to CreateStatistics (20120718031225)
+Migrating to CreateDevices (20120730024756)
+Migrating to AddMauAndWauToStatistics (20120907010347)
+Migrating to AddMoreFieldsToStatistics (20120907023525)
+Migrating to DeleteUnusedTables (20120908052908)
+Migrating to AddQueueToDelayedJobs (20120909143322)
+Migrating to AddCommunityIdToCachedRessiEvents (20121023050946)
+Migrating to CreateDiets (20121102060539)
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (268.1ms)[0m  CREATE TABLE "diets" ("id" serial primary key, "created_at" timestamp, "updated_at" timestamp) 
+PG::Error: ERROR:  relation "diets" already exists
+: CREATE TABLE "diets" ("id" serial primary key, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/ajeypotdar/workArea/ST-to-RGF/config/environment.rb:10)
+New Relic Agent not running.
+  [1m[36mSQL (8.5ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.4ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.2ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (24.2ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.1ms)[0m  SHOW TIME ZONE
+  [1m[36mPK and serial sequence (61.2ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (16.0ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <class:Person> at /Users/ajeypotdar/workArea/ST-to-RGF/app/models/person.rb:134)
+  [1m[36mSQL (88.1ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (13.5ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (2.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/ajeypotdar/workArea/ST-to-RGF/config/environment.rb:10)
+New Relic Agent not running.
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.1ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (94.8ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TIME ZONE
+  [1m[36mPK and serial sequence (575.7ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (86.2ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <class:Person> at /Users/ajeypotdar/workArea/ST-to-RGF/app/models/person.rb:134)
+  [1m[36mSQL (114.8ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (29.2ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (36.6ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mPK and serial sequence (2.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"communities_listings"'::regclass
+[0m
+  [1m[35mPK and custom sequence (0.9ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"communities_listings"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (37.5ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (94.3ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" = 'annarbor') LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/ajeypotdar/workArea/ST-to-RGF/config/environment.rb:10)
+New Relic Agent not running.
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.2ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.2ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (53.2ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TIME ZONE
+  [1m[36mPK and serial sequence (204.8ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (106.2ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <class:Person> at /Users/ajeypotdar/workArea/ST-to-RGF/app/models/person.rb:134)
+  [1m[36mSQL (112.3ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (1.4ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (27.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (39.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mPK and serial sequence (1.8ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"communities_listings"'::regclass
+[0m
+  [1m[35mPK and custom sequence (0.9ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"communities_listings"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (35.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (54.8ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (13.7ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" = 'annarbor') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" = 'durham') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (55.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"people"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (56.2ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+WARNING: Can't mass-assign protected attributes: is_admin
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" = 'devin') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."email" = 'devin@realgoodfood.org') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "people" WHERE ("people"."email" = 'devin@realgoodfood.org') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"community_memberships"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"community_memberships"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mCommunityMembership Load (63.0ms)[0m  [1mSELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" IS NULL AND "community_memberships"."community_id" IS NULL LIMIT 1[0m
+  [1m[35mPK and serial sequence (12.7ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"community_memberships"'::regclass
+  [1m[36mSQL (72.8ms)[0m  [1mINSERT INTO "community_memberships" ("person_id", "community_id", "admin", "created_at", "updated_at", "consent", "invitation_id", "last_page_load_date") VALUES (NULL, NULL, 'f', '2012-11-13 14:09:59.104463', '2012-11-13 14:09:59.104463', NULL, NULL, '2012-11-13 14:09:59.000000') RETURNING "id"[0m
+  [1m[35mSQL (1.2ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCommunityMembership Load (3.2ms)[0m  SELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" = 'bCGGjElvur4Oaa3a6HdQnY' AND "community_memberships"."community_id" IS NULL LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "community_memberships" ("person_id", "community_id", "admin", "created_at", "updated_at", "consent", "invitation_id", "last_page_load_date") VALUES ('bCGGjElvur4Oaa3a6HdQnY', NULL, 'f', '2012-11-13 14:09:59.200083', '2012-11-13 14:09:59.200083', NULL, NULL, '2012-11-13 14:09:59.000000') RETURNING "id"[0m
+  [1m[35mSQL (1.0ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCommunityMembership Load (1.0ms)[0m  SELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" IS NULL AND "community_memberships"."community_id" = 1 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "community_memberships" ("person_id", "community_id", "admin", "created_at", "updated_at", "consent", "invitation_id", "last_page_load_date") VALUES (NULL, 1, 'f', '2012-11-13 14:09:59.205766', '2012-11-13 14:09:59.205766', NULL, NULL, '2012-11-13 14:09:59.000000') RETURNING "id"[0m
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mCommunity Load (0.9ms)[0m  [1mSELECT "communities".* FROM "communities" WHERE "communities"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+WARNING: Can't mass-assign protected attributes: admin
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCommunityMembership Load (0.3ms)[0m  SELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" IS NULL AND "community_memberships"."community_id" IS NULL LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCommunityMembership Load (0.2ms)[0m  [1mSELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" IS NULL AND "community_memberships"."community_id" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCommunityMembership Load (0.1ms)[0m  SELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" IS NULL AND "community_memberships"."community_id" IS NULL LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCommunityMembership Load (0.1ms)[0m  [1mSELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" = 'bCGGjElvur4Oaa3a6HdQnY' AND "community_memberships"."community_id" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  ROLLBACK
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCommunityMembership Load (0.1ms)[0m  SELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" IS NULL AND "community_memberships"."community_id" = 2 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "community_memberships" ("person_id", "community_id", "admin", "created_at", "updated_at", "consent", "invitation_id", "last_page_load_date") VALUES (NULL, 2, 'f', '2012-11-13 14:09:59.218800', '2012-11-13 14:09:59.218800', NULL, NULL, '2012-11-13 14:09:59.000000') RETURNING "id"[0m
+  [1m[35mCommunity Load (0.2ms)[0m  SELECT "communities".* FROM "communities" WHERE "communities"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+WARNING: Can't mass-assign protected attributes: admin
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mCommunityMembership Load (0.2ms)[0m  [1mSELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" IS NULL AND "community_memberships"."community_id" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  ROLLBACK
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCommunityMembership Load (0.1ms)[0m  SELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" IS NULL AND "community_memberships"."community_id" IS NULL LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (11.9ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"locations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"locations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (1.6ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"locations"'::regclass
+[0m
+  [1m[35mSQL (17.5ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, NULL, NULL, '2012-11-13 14:09:59.261176', '2012-11-13 14:09:59.261176', NULL, NULL, NULL, NULL) RETURNING "id"
+  [1m[36mSQL (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (8.0ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (42.2804, NULL, NULL, NULL, NULL, '2012-11-13 14:09:59.284604', '2012-11-13 14:09:59.284604', NULL, NULL, NULL, NULL) RETURNING "id"[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, -83.744, NULL, NULL, NULL, '2012-11-13 14:09:59.294753', '2012-11-13 14:09:59.294753', NULL, NULL, NULL, NULL) RETURNING "id"
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, 'Ann Arbor, MI 48104, USA', NULL, NULL, '2012-11-13 14:09:59.296965', '2012-11-13 14:09:59.296965', NULL, NULL, NULL, NULL) RETURNING "id"[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, '199 S Division St, Ann Arbor, MI 48104, USA', NULL, '2012-11-13 14:09:59.299049', '2012-11-13 14:09:59.299049', NULL, NULL, NULL, NULL) RETURNING "id"
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, NULL, NULL, '2012-11-13 14:09:59.300924', '2012-11-13 14:09:59.300924', NULL, NULL, 'community', NULL) RETURNING "id"[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, NULL, NULL, '2012-11-13 14:09:59.302735', '2012-11-13 14:09:59.302735', NULL, NULL, NULL, 1) RETURNING "id"
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, NULL, 'Ann Arbor', '2012-11-13 14:09:59.304547', '2012-11-13 14:09:59.304547', NULL, NULL, NULL, NULL) RETURNING "id"[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, NULL, NULL, '2012-11-13 14:09:59.306370', '2012-11-13 14:09:59.306370', NULL, NULL, NULL, NULL) RETURNING "id"
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (35.9981, NULL, NULL, NULL, NULL, '2012-11-13 14:09:59.308356', '2012-11-13 14:09:59.308356', NULL, NULL, NULL, NULL) RETURNING "id"[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, -78.892, NULL, NULL, NULL, '2012-11-13 14:09:59.310347', '2012-11-13 14:09:59.310347', NULL, NULL, NULL, NULL) RETURNING "id"
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, 'Durham, NC 27701, USA', NULL, NULL, '2012-11-13 14:09:59.312318', '2012-11-13 14:09:59.312318', NULL, NULL, NULL, NULL) RETURNING "id"[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, 'Durham, NC 27701, USA', NULL, '2012-11-13 14:09:59.314146', '2012-11-13 14:09:59.314146', NULL, NULL, NULL, NULL) RETURNING "id"
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, NULL, NULL, '2012-11-13 14:09:59.315992', '2012-11-13 14:09:59.315992', NULL, NULL, 'community', NULL) RETURNING "id"[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, NULL, NULL, '2012-11-13 14:09:59.317806', '2012-11-13 14:09:59.317806', NULL, NULL, NULL, 2) RETURNING "id"
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, NULL, 'Durham', '2012-11-13 14:09:59.319666', '2012-11-13 14:09:59.319666', NULL, NULL, NULL, NULL) RETURNING "id"[0m
+  [1m[35mSQL (20.0ms)[0m  COMMIT
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/ajeypotdar/workArea/ST-to-RGF/config/environment.rb:10)
+New Relic Agent not running.
+  [1m[36mSQL (8.4ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.1ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (59.2ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TIME ZONE
+  [1m[36mPK and serial sequence (202.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (75.0ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <class:Person> at /Users/ajeypotdar/workArea/ST-to-RGF/app/models/person.rb:134)
+  [1m[36mSQL (123.9ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (2.6ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (76.5ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (64.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mPK and serial sequence (2.3ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"communities_listings"'::regclass
+[0m
+  [1m[35mPK and custom sequence (0.9ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"communities_listings"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (7.1ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (66.8ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (26.7ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" = 'annarbor') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" = 'durham') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (130.2ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"people"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (22.1ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (1.9ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  ROLLBACK
+WARNING: Can't mass-assign protected attributes: is_admin
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" = 'devin') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."email" = 'devin@realgoodfood.org') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "people" WHERE ("people"."email" = 'devin@realgoodfood.org') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."username" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "people" WHERE ("people"."email" IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"community_memberships"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"community_memberships"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mCommunityMembership Load (19.9ms)[0m  [1mSELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" IS NULL AND "community_memberships"."community_id" IS NULL LIMIT 1[0m
+  [1m[35mPK and serial sequence (2.9ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"community_memberships"'::regclass
+  [1m[36mSQL (42.2ms)[0m  [1mINSERT INTO "community_memberships" ("person_id", "community_id", "admin", "created_at", "updated_at", "consent", "invitation_id", "last_page_load_date") VALUES (NULL, NULL, 'f', '2012-11-13 14:15:17.462836', '2012-11-13 14:15:17.462836', NULL, NULL, '2012-11-13 14:15:17.000000') RETURNING "id"[0m
+  [1m[35mSQL (12.3ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mCommunityMembership Load (0.4ms)[0m  SELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" = 'bCGGjElvur4Oaa3a6HdQnY' AND "community_memberships"."community_id" IS NULL LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "community_memberships" ("person_id", "community_id", "admin", "created_at", "updated_at", "consent", "invitation_id", "last_page_load_date") VALUES ('bCGGjElvur4Oaa3a6HdQnY', NULL, 'f', '2012-11-13 14:15:17.525693', '2012-11-13 14:15:17.525693', NULL, NULL, '2012-11-13 14:15:17.000000') RETURNING "id"[0m
+  [1m[35mSQL (1.1ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mCommunityMembership Load (0.4ms)[0m  SELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" IS NULL AND "community_memberships"."community_id" = 1 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "community_memberships" ("person_id", "community_id", "admin", "created_at", "updated_at", "consent", "invitation_id", "last_page_load_date") VALUES (NULL, 1, 'f', '2012-11-13 14:15:17.530720', '2012-11-13 14:15:17.530720', NULL, NULL, '2012-11-13 14:15:17.000000') RETURNING "id"[0m
+  [1m[35mSQL (0.9ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mCommunity Load (0.9ms)[0m  [1mSELECT "communities".* FROM "communities" WHERE "communities"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+WARNING: Can't mass-assign protected attributes: admin
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCommunityMembership Load (0.3ms)[0m  SELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" IS NULL AND "community_memberships"."community_id" IS NULL LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCommunityMembership Load (0.1ms)[0m  [1mSELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" IS NULL AND "community_memberships"."community_id" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mCommunityMembership Load (0.2ms)[0m  SELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" IS NULL AND "community_memberships"."community_id" IS NULL LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCommunityMembership Load (0.3ms)[0m  [1mSELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" = 'bCGGjElvur4Oaa3a6HdQnY' AND "community_memberships"."community_id" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCommunityMembership Load (0.2ms)[0m  SELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" IS NULL AND "community_memberships"."community_id" = 2 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "community_memberships" ("person_id", "community_id", "admin", "created_at", "updated_at", "consent", "invitation_id", "last_page_load_date") VALUES (NULL, 2, 'f', '2012-11-13 14:15:17.545728', '2012-11-13 14:15:17.545728', NULL, NULL, '2012-11-13 14:15:17.000000') RETURNING "id"[0m
+  [1m[35mCommunity Load (0.2ms)[0m  SELECT "communities".* FROM "communities" WHERE "communities"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+WARNING: Can't mass-assign protected attributes: admin
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCommunityMembership Load (0.2ms)[0m  [1mSELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" IS NULL AND "community_memberships"."community_id" IS NULL LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mCommunityMembership Load (0.2ms)[0m  SELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" IS NULL AND "community_memberships"."community_id" IS NULL LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (11.1ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"locations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"locations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (2.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"locations"'::regclass
+[0m
+  [1m[35mSQL (19.4ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, NULL, NULL, '2012-11-13 14:15:17.580659', '2012-11-13 14:15:17.580659', NULL, NULL, NULL, NULL) RETURNING "id"
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (42.2804, NULL, NULL, NULL, NULL, '2012-11-13 14:15:17.607277', '2012-11-13 14:15:17.607277', NULL, NULL, NULL, NULL) RETURNING "id"[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, -83.744, NULL, NULL, NULL, '2012-11-13 14:15:17.611914', '2012-11-13 14:15:17.611914', NULL, NULL, NULL, NULL) RETURNING "id"
+  [1m[36mSQL (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, 'Ann Arbor, MI 48104, USA', NULL, NULL, '2012-11-13 14:15:17.615843', '2012-11-13 14:15:17.615843', NULL, NULL, NULL, NULL) RETURNING "id"[0m
+  [1m[35mSQL (1.0ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, '199 S Division St, Ann Arbor, MI 48104, USA', NULL, '2012-11-13 14:15:17.619587', '2012-11-13 14:15:17.619587', NULL, NULL, NULL, NULL) RETURNING "id"
+  [1m[36mSQL (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, NULL, NULL, '2012-11-13 14:15:17.623113', '2012-11-13 14:15:17.623113', NULL, NULL, 'community', NULL) RETURNING "id"[0m
+  [1m[35mSQL (1.0ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, NULL, NULL, '2012-11-13 14:15:17.626315', '2012-11-13 14:15:17.626315', NULL, NULL, NULL, 1) RETURNING "id"
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, NULL, 'Ann Arbor', '2012-11-13 14:15:17.628631', '2012-11-13 14:15:17.628631', NULL, NULL, NULL, NULL) RETURNING "id"[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, NULL, NULL, '2012-11-13 14:15:17.630826', '2012-11-13 14:15:17.630826', NULL, NULL, NULL, NULL) RETURNING "id"
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (35.9981, NULL, NULL, NULL, NULL, '2012-11-13 14:15:17.632827', '2012-11-13 14:15:17.632827', NULL, NULL, NULL, NULL) RETURNING "id"[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, -78.892, NULL, NULL, NULL, '2012-11-13 14:15:17.634713', '2012-11-13 14:15:17.634713', NULL, NULL, NULL, NULL) RETURNING "id"
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, 'Durham, NC 27701, USA', NULL, NULL, '2012-11-13 14:15:17.637025', '2012-11-13 14:15:17.637025', NULL, NULL, NULL, NULL) RETURNING "id"[0m
+  [1m[35mSQL (18.5ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, 'Durham, NC 27701, USA', NULL, '2012-11-13 14:15:17.658523', '2012-11-13 14:15:17.658523', NULL, NULL, NULL, NULL) RETURNING "id"
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, NULL, NULL, '2012-11-13 14:15:17.662784', '2012-11-13 14:15:17.662784', NULL, NULL, 'community', NULL) RETURNING "id"[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, NULL, NULL, '2012-11-13 14:15:17.665689', '2012-11-13 14:15:17.665689', NULL, NULL, NULL, 2) RETURNING "id"
+  [1m[36mSQL (5.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (NULL, NULL, NULL, NULL, 'Durham', '2012-11-13 14:15:17.673397', '2012-11-13 14:15:17.673397', NULL, NULL, NULL, NULL) RETURNING "id"[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/ajeypotdar/workArea/ST-to-RGF/config/environment.rb:10)
+New Relic Agent not running.
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.2ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.1ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (45.4ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TIME ZONE
+  [1m[36mPK and serial sequence (158.5ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (42.5ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <class:Person> at /Users/ajeypotdar/workArea/ST-to-RGF/app/models/person.rb:134)
+  [1m[36mSQL (573.1ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (1.4ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (40.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (24.5ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mPK and serial sequence (2.7ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"communities_listings"'::regclass
+[0m
+  [1m[35mPK and custom sequence (1.3ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"communities_listings"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (1.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.4ms)[0m  BEGIN
+  [1m[36mSQL (33.7ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" = 'annarbor') LIMIT 1[0m
+  [1m[35mSQL (1.4ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/ajeypotdar/workArea/ST-to-RGF/config/environment.rb:10)
+New Relic Agent not running.
+  [1m[36mSQL (9.2ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.5ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.4ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.2ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (36.6ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TIME ZONE
+  [1m[36mPK and serial sequence (180.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (19.8ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <class:Person> at /Users/ajeypotdar/workArea/ST-to-RGF/app/models/person.rb:134)
+  [1m[36mPK and serial sequence (3.7ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"communities_listings"'::regclass
+[0m
+  [1m[35mPK and custom sequence (0.8ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"communities_listings"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (44.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.4ms)[0m  BEGIN
+  [1m[36mSQL (61.7ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" = 'annarbor') LIMIT 1[0m
+  [1m[35mSQL (113.3ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (1.5ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" = 'annarbor') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" = 'annarbor') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" = 'annarbor') LIMIT 1
+  [1m[36mPK and serial sequence (87.1ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"communities"'::regclass
+[0m
+  [1m[35mSQL (82.4ms)[0m  INSERT INTO "communities" ("name", "domain", "created_at", "updated_at", "settings", "consent", "email_admins_about_new_members", "use_fb_like", "real_name_required", "feedback_to_admin", "automatic_newsletters", "join_with_invite_only", "use_captcha", "email_confirmation", "allowed_emails", "users_can_invite_new_users", "select_whether_name_is_shown_to_everybody", "private", "label", "show_date_in_listings_list", "news_enabled", "all_users_can_add_news", "custom_frontpage_sidebar", "event_feed_enabled", "members_count", "slogan", "description", "category", "polls_enabled", "plan", "user_limit", "monthly_price_in_euros") VALUES ('Ann Arbor', 'annarbor', '2012-11-13 14:27:03.465199', '2012-11-13 14:27:03.465199', NULL, NULL, 'f', 'f', 't', 'f', 't', 'f', 't', 'f', NULL, 'f', 'f', 'f', NULL, 'f', 't', 't', 'f', 't', 0, NULL, NULL, 'other', 'f', NULL, NULL, NULL) RETURNING "id"
+  [1m[36mSQL (12.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mCommunity Load (1.3ms)[0m  SELECT "communities".* FROM "communities"
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" = 'annarbor') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" = 'annarbor') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "communities" WHERE ("communities"."domain" = 'annarbor') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" = 'annarbor') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "communities" ("name", "domain", "created_at", "updated_at", "settings", "consent", "email_admins_about_new_members", "use_fb_like", "real_name_required", "feedback_to_admin", "automatic_newsletters", "join_with_invite_only", "use_captcha", "email_confirmation", "allowed_emails", "users_can_invite_new_users", "select_whether_name_is_shown_to_everybody", "private", "label", "show_date_in_listings_list", "news_enabled", "all_users_can_add_news", "custom_frontpage_sidebar", "event_feed_enabled", "members_count", "slogan", "description", "category", "polls_enabled", "plan", "user_limit", "monthly_price_in_euros") VALUES ('Ann Arbor', 'annarbor', '2012-11-13 14:33:13.509852', '2012-11-13 14:33:13.509852', NULL, 'SHARETRIBE1.0', 'f', 'f', 't', 'f', 't', 'f', 'f', 't', NULL, 'f', 'f', 'f', NULL, 'f', 't', 't', 'f', 't', 1, 'Swap, Share', 'RealGoodFood is a place to swap recipes.', 'town', 'f', 'premium', NULL, NULL) RETURNING "id"
+  [1m[36mSQL (18.0ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/ajeypotdar/workArea/ST-to-RGF/config/environment.rb:10)
+New Relic Agent not running.
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.1ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (52.4ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TIME ZONE
+  [1m[36mPK and serial sequence (37.6ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (29.4ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <class:Person> at /Users/ajeypotdar/workArea/ST-to-RGF/app/models/person.rb:134)
+  [1m[36mSQL (62.3ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (1.5ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (47.1ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (12.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mPK and serial sequence (2.2ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"communities_listings"'::regclass
+[0m
+  [1m[35mPK and custom sequence (0.9ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"communities_listings"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (2.4ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" = 'annarbor') LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (1.7ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"communities"'::regclass
+[0m
+  [1m[35mSQL (46.4ms)[0m  INSERT INTO "communities" ("name", "domain", "created_at", "updated_at", "settings", "consent", "email_admins_about_new_members", "use_fb_like", "real_name_required", "feedback_to_admin", "automatic_newsletters", "join_with_invite_only", "use_captcha", "email_confirmation", "allowed_emails", "users_can_invite_new_users", "select_whether_name_is_shown_to_everybody", "private", "label", "show_date_in_listings_list", "news_enabled", "all_users_can_add_news", "custom_frontpage_sidebar", "event_feed_enabled", "members_count", "slogan", "description", "category", "polls_enabled", "plan", "user_limit", "monthly_price_in_euros") VALUES ('Ann Arbor', 'annarbor', '2012-11-13 14:35:18.490290', '2012-11-13 14:35:18.490290', NULL, 'SHARETRIBE1.0', 'f', 'f', 't', 'f', 't', 'f', 'f', 't', NULL, 'f', 'f', 'f', NULL, 'f', 't', 't', 'f', 't', 1, 'Swap, Share', 'RealGoodFood is a place to swap recipes.', 'town', 'f', 'premium', NULL, NULL) RETURNING "id"
+  [1m[36mSQL (14.2ms)[0m  [1mCOMMIT[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" = 'durham') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "communities" ("name", "domain", "created_at", "updated_at", "settings", "consent", "email_admins_about_new_members", "use_fb_like", "real_name_required", "feedback_to_admin", "automatic_newsletters", "join_with_invite_only", "use_captcha", "email_confirmation", "allowed_emails", "users_can_invite_new_users", "select_whether_name_is_shown_to_everybody", "private", "label", "show_date_in_listings_list", "news_enabled", "all_users_can_add_news", "custom_frontpage_sidebar", "event_feed_enabled", "members_count", "slogan", "description", "category", "polls_enabled", "plan", "user_limit", "monthly_price_in_euros") VALUES ('Durham city', 'durham', '2012-11-13 14:35:18.838891', '2012-11-13 14:35:18.838891', NULL, 'SHARETRIBE1.0', 'f', 'f', 't', 'f', 't', 'f', 'f', 't', NULL, 'f', 'f', 'f', NULL, 'f', 't', 't', 'f', 't', 1, 'Swap, Share', 'RealGoodFood is a place to swap recipes.', 'town', 'f', 'premium', NULL, NULL) RETURNING "id"
+  [1m[36mSQL (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (15.3ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"people"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+WARNING: Can't mass-assign protected attributes: id, is_admin
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (25.5ms)[0m  SELECT 1 FROM "people" WHERE ("people"."email" = 'devin@realgoodfood.org') LIMIT 1
+  [1m[36mSQL (61.3ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."username" = 'devin') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM "people" WHERE ("people"."email" = 'devin@realgoodfood.org') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"community_memberships"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+WARNING: Can't mass-assign protected attributes: id, admin
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"community_memberships"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mCommunityMembership Load (21.1ms)[0m  [1mSELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" = 'bCGGjElvur4Oaa3a6HdQnY' AND "community_memberships"."community_id" = 1 LIMIT 1[0m
+  [1m[35mPK and serial sequence (3.2ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"community_memberships"'::regclass
+  [1m[36mSQL (4.4ms)[0m  [1mINSERT INTO "community_memberships" ("person_id", "community_id", "admin", "created_at", "updated_at", "consent", "invitation_id", "last_page_load_date") VALUES ('bCGGjElvur4Oaa3a6HdQnY', 1, 'f', '2012-11-13 14:35:35.818252', '2012-11-13 14:35:35.818252', 'SHARETRIBE1.0', NULL, '2012-11-13 14:35:35.000000') RETURNING "id"[0m
+  [1m[35mCommunity Load (0.5ms)[0m  SELECT "communities".* FROM "communities" WHERE "communities"."id" = 1 LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mCOMMIT[0m
+WARNING: Can't mass-assign protected attributes: id, admin
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mCommunityMembership Load (0.3ms)[0m  [1mSELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" = 'bCGGjElvur4Oaa3a6HdQnY' AND "community_memberships"."community_id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "community_memberships" ("person_id", "community_id", "admin", "created_at", "updated_at", "consent", "invitation_id", "last_page_load_date") VALUES ('bCGGjElvur4Oaa3a6HdQnY', 2, 'f', '2012-11-13 14:35:35.835635', '2012-11-13 14:35:35.835635', 'SHARETRIBE1.0', NULL, '2012-11-13 14:35:35.000000') RETURNING "id"
+  [1m[36mCommunity Load (0.3ms)[0m  [1mSELECT "communities".* FROM "communities" WHERE "communities"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"locations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"locations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (1.7ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"locations"'::regclass
+  [1m[36mSQL (64.8ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (42.2804, -83.744, 'Ann Arbor, MI 48104, USA', '199 S Division St, Ann Arbor, MI 48104, USA', 'Ann Arbor', '2012-11-13 14:35:35.853976', '2012-11-13 14:35:35.853976', NULL, NULL, 'community', 1) RETURNING "id"[0m
+  [1m[35mSQL (1.0ms)[0m  COMMIT
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (35.9981, -78.892, 'Durham, NC 27701, USA', 'Durham, NC 27701, USA', 'Durham', '2012-11-13 14:35:35.925893', '2012-11-13 14:35:35.925893', NULL, NULL, 'community', 2) RETURNING "id"
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/ajeypotdar/workArea/ST-to-RGF/config/environment.rb:10)
+New Relic Agent not running.
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.1ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.0ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.3ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.1ms)[0m  SHOW TIME ZONE
+  [1m[36mPK and serial sequence (5.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (1.9ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <class:Person> at /Users/ajeypotdar/workArea/ST-to-RGF/app/models/person.rb:134)
+  [1m[36mSQL (1.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"people"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+WARNING: Can't mass-assign protected attributes: id, is_admin
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.3ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" = 'devin@realgoodfood.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" = 'devin') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" = 'devin@realgoodfood.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  ROLLBACK
+  [1m[36mPerson Load (0.9ms)[0m  [1mSELECT "people".* FROM "people"[0m
+WARNING: Can't mass-assign protected attributes: id, is_admin
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" = 'devin@realgoodfood.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" = 'devin') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" = 'devin@realgoodfood.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+WARNING: Can't mass-assign protected attributes: id, is_admin
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "people" WHERE ("people"."email" = 'devin@realgoodfood.org') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."username" = 'devin') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "people" WHERE ("people"."email" = 'devin@realgoodfood.org') LIMIT 1
+  [1m[36mSQL (2.4ms)[0m  [1m SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"people"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (0.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"people"'::regclass
+[0m
+  [1m[35mPK and custom sequence (0.8ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"people"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mPK and serial sequence (0.8ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"people"'::regclass
+[0m
+  [1m[35mPK and custom sequence (0.9ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"people"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mAREL (14.7ms)[0m  [1mINSERT INTO "people" ("created_at", "updated_at", "is_admin", "locale", "preferences", "active_days_count", "last_page_load_date", "test_group_number", "active", "show_real_name_to_other_users", "given_name", "family_name", "phone_number", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "username", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "password_salt", "confirmation_token", "confirmed_at", "confirmation_sent_at", "facebook_id", "authentication_token", "hobby_status", "id") VALUES ('2012-11-13 14:40:49.766610', '2012-11-13 14:40:49.766610', 0, 'en', NULL, 0, NULL, 1, 't', 't', 'Devin', 'Mcintire', NULL, NULL, NULL, NULL, NULL, NULL, 'devin', 'devin@realgoodfood.org', '$2a$10$qPzdMXzlaL79swjRQyeEc.6RI8dIytzYww6BcwLo0ohSjzbKbIori', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2012-11-13 03:46:17.000000', '2012-11-13 03:45:48.000000', NULL, NULL, 'Existing', 'aEgJkelAar4OapqgYpbViL')[0m
+  [1m[35mPK and serial sequence (1.8ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"people"'::regclass
+  [1m[36mPK and custom sequence (1.4ms)[0m  [1m SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"people"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (3.7ms)[0m  COMMIT
+  [1m[36mPerson Load (1.9ms)[0m  [1mSELECT "people".* FROM "people"[0m
