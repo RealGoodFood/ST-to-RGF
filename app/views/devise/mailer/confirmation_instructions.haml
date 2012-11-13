@@ -1,11 +1,15 @@
+//bHjC6UljSr4Oaa3a6HdQnY/people/confirmation?confirmation_token=rG1svxqCsB1wiJy5XQCC
 
 -if @confirmation_token
-  - link = confirmation_url(:confirmation_token => @confirmation_token, :host => @host)
+  yes confirmation token 
+  //- link = confirmation_url(:confirmation_token => @confirmation_token, :host => @host)
 - else
   - if $host
-    - link = confirmation_url(@resource, :confirmation_token => @resource.confirmation_token, :host => $host)
+    have $host
+    //- link = confirmation_url(@resource, :confirmation_token => @resource.confirmation_token, :host => $host)
   - else
-    - link = confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
+    - link = "http://lvh.me:3000/#{@resource.id}/people/confirmation?confirmation_token=#{@resource.confirmation_token}"
+    //- link = confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
 %p
   = t("emails.common.hey", :name => @resource.given_name_or_username)
 

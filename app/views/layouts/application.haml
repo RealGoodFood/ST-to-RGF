@@ -84,8 +84,11 @@
       #header.container_24
         .grid_6
           #logo
-            = render :file => community_file("logo", false)
-            - logo_text = render :file => community_file("logo_text", false)
+            %h2.white
+              REAL GOOD FOOD
+            //= render :file => community_file("logo", false)
+            //- logo_text = render :file => community_file("logo_text", false)
+            - logo_text = ""
             - if logo_text.present?
               = logo_text
             - elsif available_locales.count > 1
@@ -108,9 +111,11 @@
           .clear
           .tabs.grid_9.alpha
             .grid_3.alpha{:class => (controller_name.eql?("homepage") && action_name.eql?("index")) ? "tab_selected" : "tab_unselected"}
-              = link_to t('header.home'), root
+              - if @current_community
+                = link_to t('header.home'), community_home_path() 
             .grid_3.omega{:class => (params[:listing_type] && params[:listing_type].eql?("offer")) ? "tab_selected" : "tab_unselected"}
-              = link_to t('header.offers'), offers_path
+              - if @current_community
+                = link_to t('header.offers'), offers_path
             .clear
           .top_navi_link.align_right.grid_3.omega
             .navi_link_margin_right

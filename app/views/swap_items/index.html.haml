@@ -1,6 +1,5 @@
 %h2
   Received swap offers
-  = link_to "Inbox", swap_offers_inbox_path(@current_user)
 
 #conversations
   - unless @received_swap_offers.nil?
@@ -14,6 +13,7 @@
           %span= time_ago(swap_offer.created_at)
         .conversation_center
           %h7
+            //To do need to add to translation after finalization
             Have Swap offer for recipe
             = link_to get_listing(swap_offer.offerer_listing_id).title, listing_path(swap_offer.offerer_listing_id)
             %br/
@@ -24,7 +24,7 @@
             .accept.conversation_status_link
               = link_to(image_tag("/images/icons/accept_icon.png") + "Accept", swap_offers_update_path(@current_user,swap_offer, :accept => true), :method => :put ) 
             .reject.conversation_status_link
-              = link_to(image_tag("/images/icons/accept_icon.png") + "Reject", swap_offers_update_path(@current_user,swap_offer, :accept => 0), :method => :put ) 
+              = link_to(image_tag("/images/icons/accept_icon.png") + "Not interested", swap_offers_update_path(@current_user,swap_offer, :accept => 0), :method => :put ) 
           - elsif swap_offer.acceptance == true
             .conversation_status_label.accepted
               Request Accepted

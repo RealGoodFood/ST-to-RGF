@@ -1,0 +1,8 @@
+.homepage_sidebar_box_content
+  %h3
+    Your realted community
+  - @current_user.communities.each do |community|
+    %p
+      - if community.id != @current_community.id 
+        = link_to "#{community.name}", root_path(:cid => "#{community.domain}")
+  

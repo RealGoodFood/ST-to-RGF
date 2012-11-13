@@ -84,8 +84,8 @@ class Api::ApiController < ApplicationController
     # use the domain picked from the request by default, 
     # and it will be set again, if @current_community
     @url_root = "#{request.protocol}#{request.host_with_port}"
-    
-    if @current_community = Community.find_by_domain(request.subdomain)
+    if @current_community = Community.find_by_domain(session[:selected_community])    
+#    if @current_community = Community.find_by_domain(request.subdomain)
       #puts "#{params[:community_id]} ---  #{@current_community.id}"
       if params[:community_id] && (params[:community_id].to_s != @current_community.id.to_s)
         response.status = 400

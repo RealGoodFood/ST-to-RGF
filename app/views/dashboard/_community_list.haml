@@ -1,12 +1,13 @@
 #home_more_info
   .container_12
     - unless @communities.nil? || @communities.blank?
-      %h4= t("dashboard.index.communities_list") + "..."
+      %h4 
+        Communities
   .container_12
     - unless @communities.nil? || @communities.blank?
       - @communities.each do |community|
         %h2 
-          = link_to "#{community.name}", "?selected_community=#{community.domain}"
+          = link_to "#{community.name}", "?cid=#{community.domain}"
     - else
       %h2
         = link_to "Community is not registered yet.", "#"

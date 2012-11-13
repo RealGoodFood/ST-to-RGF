@@ -22,7 +22,6 @@ class PeopleController < Devise::RegistrationsController
   skip_filter :single_community_only, :only => [ :create, :update, :check_username_availability, :check_email_availability, :check_email_availability_and_validity, :check_email_availability_for_new_tribe]
   skip_filter :not_public_in_private_community, :only => [ :new, :create, :check_username_availability, :check_email_availability_and_validity, :check_email_availability, :check_email_availability_for_new_tribe, :check_invitation_code]
   skip_filter :cannot_access_without_joining, :only => [ :check_email_validity, :check_invitation_code ]
-  
   # Skip auth token check as current jQuery doesn't provide it automatically
   skip_before_filter :verify_authenticity_token, :only => [:activate, :deactivate]
   
@@ -50,7 +49,7 @@ class PeopleController < Devise::RegistrationsController
   end
 
   def create
-    @current_community ? domain = "http://#{with_subdomain(params[:community])}" : domain = "#{request.protocol}#{request.host_with_port}"
+    @current_community ? domain = "#{request.protocol}#{request.host_with_port}" : domain = "#{request.protocol}#{request.host_with_port}"
     error_redirect_path = domain + sign_up_path
     
     if params[:person][:email_confirmation].present? # Honey pot for spammerbots

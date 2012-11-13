@@ -7,12 +7,19 @@ class CommunityMembershipsController < ApplicationController
   skip_filter :dashboard_only
   skip_filter :single_community_only, :only => :create
   skip_filter :cannot_access_without_joining
+#  skip_filter :fetch_community, :only => :new
   
   def new
+    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>community membership new"
     if @current_user.communities.include?(@current_community)
       flash[:notice] = "you_are_already_member"
-      redirect_to root 
+      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>if"
+      redirect_to community_home_path 
+#    else
+#      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>else"
+#      redirect_to root
     end
+    
     @community_membership = CommunityMembership.new
   end
   

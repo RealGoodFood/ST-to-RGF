@@ -1,2 +1,20 @@
-.inbox
-  = link_to(image_tag("/images/swap_tab.jpeg", :height => "22px", :width => "22px", :alt => "Swap_tag"), person_swap_items_path(@current_user))
+//.logged_in_icon_notifications_notifications
+//  - if @current_user.swap_items.not_replied.count > 0
+//    .logged_in_icon_notification_text
+//      %a 
+//        = @current_user.swap_items.not_replied.count
+//    = link_to "", person_swap_items_path(@current_user)
+//  - else
+//    = link_to "", person_swap_items_path(@current_user)
+
+
+
+- if @current_user.swap_items.not_replied.count > 0
+  .logged_in_icon_notifications_notifications{:onclick => "location.href='/people/#{@current_user.id}/swap_items';"}
+    .logged_in_icon_notification_text
+      = link_to @current_user.swap_items.not_replied.count.to_s, person_swap_items_path(@current_user)
+- else
+  .logged_in_icon_notifications
+    %a{:href => person_swap_items_path(@current_user)}
+      %span{:class => "not_visible"}
+        a

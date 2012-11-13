@@ -4,13 +4,10 @@ class DashboardController < ApplicationController
   
   skip_filter :single_community_only
   skip_filter :dashboard_only, :only => :api
-  skip_filter :fetch_community, :only => :api
+  skip_filter :fetch_community, :only => [:api, :index ]
   
-  def index  
-    unless params[:selected_community].nil?
-      session[:selected_community] = params[:selected_community]
-#      redirect_to homepage_path
-    end
+  def index
+    logger.info "~~~~~~~~~~~~~~~dashboard#index~~~~~~~~~#{session[:selected_community]}"
     I18n.locale = "es" if request.domain =~ /\.cl$/ && params[:locale].blank?
     clear_session_variables
     @communities = Community.all

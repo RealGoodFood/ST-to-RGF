@@ -12,7 +12,6 @@
         = link_to t(".today_special"), "#",  :name => "categories_today"
         - if @current_user && !@current_user.restrictions.empty?
           = link_to t(".out_of_diet"), "#",  :name => "categories_dietout"
-        
       .left_panel_section
         .left_panel_title
         //  %h3= t(".#{params[:listing_type]}_type")

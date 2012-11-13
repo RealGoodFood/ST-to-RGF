@@ -46,7 +46,8 @@ class PersonMailer < ActionMailer::Base
 
   def new_message_notification(message, host=nil)
     @recipient = set_up_recipient(message.conversation.other_party(message.sender), host)
-    @url = host ? "http://#{host}/#{@recipient.locale}#{person_message_path(:person_id => @recipient.id, :id => message.conversation.id.to_s)}" : "test_url"
+    @url = host ? "http://#{host}/" : "test_url" 
+#"http://#{host}/#{@recipient.locale}#{person_message_path(:person_id => @recipient.id, :id => message.conversation.id.to_s)}" 
     @message = message
     alert_if_erroneus_host(host, @url)
     mail(:to => @recipient.email,
@@ -58,7 +59,8 @@ class PersonMailer < ActionMailer::Base
   
   def new_comment_to_own_listing_notification(comment, host=nil)
     @recipient = set_up_recipient(comment.listing.author, host)
-    @url = host ? "http://#{host}/#{@recipient.locale}#{listing_path(:id => comment.listing.id.to_s)}##{comment.id.to_s}" : "test_url"
+    @url = host ? "http://#{host}/" : "test_url"
+#"http://#{host}/#{@recipient.locale}#{listing_path(:id => comment.listing.id.to_s)}##{comment.id.to_s}"
     @comment = comment
     alert_if_erroneus_host(host, @url)
     mail(:to => @recipient.email,
@@ -67,7 +69,8 @@ class PersonMailer < ActionMailer::Base
   
   def new_comment_to_followed_listing_notification(comment, recipient, host=nil)
     @recipient = set_up_recipient(recipient, host)
-    @url = host ? "http://#{host}/#{@recipient.locale}#{listing_path(:id => comment.listing.id.to_s)}##{comment.id.to_s}" : "test_url"
+    @url = host ? "http://#{host}/" : "test_url"
+#"http://#{host}/#{@recipient.locale}#{listing_path(:id => comment.listing.id.to_s)}##{comment.id.to_s}"
     @comment = comment
     alert_if_erroneus_host(host, @url)
     mail(:to => @recipient.email,
@@ -76,7 +79,8 @@ class PersonMailer < ActionMailer::Base
   
   def new_update_to_followed_listing_notification(listing, recipient, host=nil)
     @recipient = set_up_recipient(recipient, host)
-    @url = host ? "http://#{host}/#{@recipient.locale}#{listing_path(:id => listing.id.to_s)}" : "test_url"
+    @url = host ? "http://#{host}/" : "test_url"
+#"http://#{host}/#{@recipient.locale}#{listing_path(:id => listing.id.to_s)}"
     @listing = listing
     alert_if_erroneus_host(host, @url)
     mail(:to => @recipient.email,
@@ -85,7 +89,8 @@ class PersonMailer < ActionMailer::Base
   
   def conversation_status_changed(conversation, host=nil)
     @recipient = set_up_recipient(conversation.other_party(conversation.listing.author), host)
-    @url = host ? "http://#{host}/#{@recipient.locale}#{person_message_path(:person_id => @recipient.id, :id => conversation.id.to_s)}" : "test_url"
+    @url = host ? "http://#{host}/" : "test_url"
+#"http://#{host}/#{@recipient.locale}#{person_message_path(:person_id => @recipient.id, :id => conversation.id.to_s)}"
     @conversation = conversation
     alert_if_erroneus_host(host, @url)
     mail(:to => @recipient.email,

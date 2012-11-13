@@ -147,7 +147,7 @@ module ApplicationHelper
   # If we are not in a single community defined by a subdomain,
   # we are on dashboard
   def on_dashboard?
-    ["", "www","dashboardtranslate"].include?(request.subdomain)
+    ["", "www","dashboardtranslate"].include?(session[:selected_community])
   end
   
   def facebook_like(recommend=false)
@@ -170,15 +170,7 @@ module ApplicationHelper
   end
   
   def service_name(form=nil)
-    if @current_community && @current_community.settings && @current_community.settings["service_name"].present?
-      service_name = @current_community.settings["service_name"]
-    else
-      service_name = APP_CONFIG.global_service_name || "RGF"
-    end
-    if form #check if special form of the name is required
-      service_name = ApplicationHelper.service_name_other_forms(service_name)[form.to_sym]
-    end
-    return service_name
+    return "RealGoodFood"
   end
   
   def service_name_illative

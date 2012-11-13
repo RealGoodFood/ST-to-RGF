@@ -271,6 +271,7 @@ ActiveRecord::Schema.define(:version => 20121023050946) do
     t.float    "longitude"
     t.string   "address"
     t.string   "google_address"
+    t.string   "city"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "listing_id"

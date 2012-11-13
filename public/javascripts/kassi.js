@@ -175,6 +175,7 @@ function initialize_new_listing_form(fileDefaultText, fileBtnText, locale, share
 		debug: false,
 		rules: {
 			"listing[title]": {required: true},
+			"listing[description]": {required: true},
 			"listing[number_of_portions]": {required: true},
 			"listing[origin]": {required: rs, address_validator: true},
 			"listing[destination]": {required: rs, address_validator: true},

@@ -5,6 +5,7 @@ class CommunitiesController < ApplicationController
   layout 'dashboard'
   
   skip_filter :single_community_only
+  skip_filter :fetch_community
   
   before_filter :only => [ :set_organization_email ] do |controller|
     controller.ensure_logged_in "you_must_log_in_to_view_this_content"

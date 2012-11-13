@@ -6,8 +6,9 @@ class ApplicationController < ActionController::Base
   layout 'application'
 
   before_filter :show_maintenance_page
-
-  before_filter :domain_redirect, :force_ssl, :fetch_logged_in_user, :dashboard_only, :single_community_only, :fetch_community, :not_public_in_private_community, :fetch_community_membership,  :cannot_access_without_joining, :set_locale, :generate_event_id, :set_default_url_for_mailer
+  before_filter :change_community, :domain_redirect, :force_ssl, :fetch_logged_in_user, :dashboard_only, :single_community_only, :fetch_community, 
+    :not_public_in_private_community, :fetch_community_membership,  :cannot_access_without_joining, :set_locale, 
+    :generate_event_id, :set_default_url_for_mailer#, :separate_city_from_address
   before_filter :check_email_confirmation, :except => [ :confirmation_pending, :check_email_availability_and_validity]
 
 
@@ -60,6 +61,14 @@ class ApplicationController < ActionController::Base
     return Listing.find_by_id(id)
   end
 
+  def change_community
+    unless params[:cid].nil?
+      session[:selected_community] = params[:cid]
+      redirect_to community_home_path()
+    end
+  end
+
+
   def not_already_requested(receiver_list, offerer)
     @swapitem = SwapItem.where(:receiver_listing_id => receiver_list, :offerer_id => offerer).first
     if @swapitem.nil?
@@ -106,7 +115,6 @@ class ApplicationController < ActionController::Base
     ! @current_user.nil?
   end
   
- 
   def current_user?(person)
     @current_user ? @current_user.id.eql?(person.id) : false
   end
@@ -119,26 +127,45 @@ class ApplicationController < ActionController::Base
   
   # Before filter for actions that are only allowed on dashboard
   def dashboard_only
-    return if controller_name.eql?("passwords")
-    redirect_to root and return unless on_dashboard?
+#    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>dashboard_only"
+#    return if controller_name.eql?("passwords")
+#    redirect_to root and return unless on_dashboard?
   end
   
   # Before filter for actions that are only allowed on a single community
   def single_community_only
-    return if controller_name.eql?("passwords")
-    redirect_to root and return if on_dashboard?
+#    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>single_community_only"
+#    return if controller_name.eql?("passwords")
+#    redirect_to root and return if on_dashboard?
   end
   
   # Before filter to get the current community
   def fetch_community
     unless on_dashboard?
+#puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>fetch_community>>>>>>found community>>>>>>>>>>>>>>>>>>>>#{session[:selected_community]}"
       # Otherwise pick the domain normally from the request subdomain
-      if @current_community = Community.find_by_domain(request.subdomain)
+#      if @current_community = Community.find_by_domain(request.subdomain)
+      if @current_community = Community.find_by_domain(session[:selected_community])
+#        logger.info "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
         # Store to thread the service_name used by current community, so that it can be included in all translations
         ApplicationHelper.store_community_service_name_to_thread(service_name)
       else
+#        logger.info "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
         # No community found with this domain, so redirecting to dashboard.
-        redirect_to root_url(:subdomain => "www")
+#        redirect_to root_url#(:subdomain => "www")
+      end
+    end
+  end
+
+  def separate_city_from_address
+    @locations = Location.where("community_id IS NOT NULL and city IS NULL")
+    unless @locations.nil?
+      @locations.each do |location|
+        location.address.split(",").reverse.each_with_index do |n, i|
+            if i == 2
+              location.update_attribute(:city, n)
+            end
+        end
       end
     end
   end
@@ -157,7 +184,7 @@ class ApplicationController < ActionController::Base
   # Before filter to check if current user is the member of this community
   # and if so, find the membership
   def fetch_community_membership
-    if @current_user
+    if @current_user and @current_community
       if @current_user.communities.include?(@current_community)
         @current_community_membership = CommunityMembership.find_by_person_id_and_community_id(@current_user.id, @current_community.id)
         unless @current_community_membership.last_page_load_date && @current_community_membership.last_page_load_date.to_date.eql?(Date.today)
@@ -274,23 +301,23 @@ class ApplicationController < ActionController::Base
   def domain_redirect
     # to speed up the check on every page load, only check first 
     # if different domain than specified in config
-    if request.domain != APP_CONFIG.domain
-      
-      # Redirect contry domain dashboards to .com with correct language
-      redirect_to "#{request.protocol}www.sharetribe.com/es" and return if request.host =~ /^(www\.)?sharetribe\.cl/
-      redirect_to "#{request.protocol}www.sharetribe.com/en" and return if request.host =~ /^(www\.)?sharetribe\.us/ || request.host =~ /^(www\.)?sharetri\.be/
-      redirect_to "#{request.protocol}www.sharetribe.com/el" and return if request.host =~ /^(www\.)?sharetribe\.gr/
-      redirect_to "#{request.protocol}www.sharetribe.com/fr" and return if request.host =~ /^(www\.)?sharetribe\.fr/
-      redirect_to "#{request.protocol}www.sharetribe.com/fi" and return if request.host =~ /^(www\.)?sharetribe\.fi/
-      
-      # Redirect to right commnunity (changing to .com)
-      redirect_to "#{request.protocol}#{request.subdomain}.sharetribe.com#{request.fullpath}" and return if request.host =~ /^.+\.?sharetribe\.(cl|gr|fr|fi|us|de)/ || request.host =~ /^.+\.?sharetri\.be/  || request.host =~ /^.+\.?kassi\.eu/
-      
-      redirect_to "#{request.protocol}samraksh.sharetribe.com#{request.fullpath}" and return if request.host =~ /^(www\.)?samraksh\.org/
-      
-      
-      
-    end 
+#    if request.domain != APP_CONFIG.domain
+#      
+#      # Redirect contry domain dashboards to .com with correct language
+#      redirect_to "#{request.protocol}www.sharetribe.com/es" and return if request.host =~ /^(www\.)?sharetribe\.cl/
+#      redirect_to "#{request.protocol}www.sharetribe.com/en" and return if request.host =~ /^(www\.)?sharetribe\.us/ || request.host =~ /^(www\.)?sharetri\.be/
+#      redirect_to "#{request.protocol}www.sharetribe.com/el" and return if request.host =~ /^(www\.)?sharetribe\.gr/
+#      redirect_to "#{request.protocol}www.sharetribe.com/fr" and return if request.host =~ /^(www\.)?sharetribe\.fr/
+#      redirect_to "#{request.protocol}www.sharetribe.com/fi" and return if request.host =~ /^(www\.)?sharetribe\.fi/
+#      
+#      # Redirect to right commnunity (changing to .com)
+#      redirect_to "#{request.protocol}#{request.subdomain}.sharetribe.com#{request.fullpath}" and return if request.host =~ /^.+\.?sharetribe\.(cl|gr|fr|fi|us|de)/ || request.host =~ /^.+\.?sharetri\.be/  || request.host =~ /^.+\.?kassi\.eu/
+#      
+#      redirect_to "#{request.protocol}samraksh.sharetribe.com#{request.fullpath}" and return if request.host =~ /^(www\.)?samraksh\.org/
+#      
+#      
+#      
+#    end 
   end
   
   def force_ssl

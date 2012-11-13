@@ -8,9 +8,11 @@
 
 
 #teaser
-  #teaser_left
+  #teaser_left  
     //%h1= render :file => community_file("teaser_welcome_text_title", true)
-    %h1= t(".welcome_note")
+    %h2
+      = t(".welcome_note")
+      = @current_community.name
     %p
       = t(".welcome_text")
     //%p
@@ -38,6 +40,12 @@
 = pageless((@requests.total_pages > @offers.total_pages ? @requests.total_pages : @offers.total_pages), '#recent_listings', root_path, t('.loading_more_content'), true) 
   
 .grid_6
+
+  - if @current_user && @current_user.communities.count > 1
+    .homepage_sidebar_box
+      = render :partial => "common/staples", :locals => { :temp_class => "staples_top" }
+      = render :partial => "user_communities"
+      = render :partial => "common/staples", :locals => { :temp_class => "staples_bottom" }
 
   - if @current_user && (@current_community.users_can_invite_new_users || @current_user.has_admin_rights_in?(@current_community))
     .homepage_sidebar_box

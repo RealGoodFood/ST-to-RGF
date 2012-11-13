@@ -1,4 +1,4 @@
-require 'routes/subdomain'
+#require 'routes/subdomain'
 require 'routes/api_request'
 
 Kassi::Application.routes.draw do
@@ -279,10 +279,10 @@ Kassi::Application.routes.draw do
   match '/:locale/:page_type' => 'dashboard#campaign'
   
   # Inside this constraits are the routes that are used when request has subdomain other than www
-  constraints(Subdomain) do
-    match '/:locale/' => 'homepage#index'
-    match '/' => 'homepage#index'
-  end  
+#  constraints(Subdomain) do
+    match '/:locale/homepage' => 'homepage#index', :as => :community_home
+#    match '/' => 'homepage#index'
+#  end  
   
   # Below are the routes that are matched if didn't match inside subdomain constraints
   match '/:locale' => 'dashboard#index'

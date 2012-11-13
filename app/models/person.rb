@@ -78,7 +78,7 @@ class Person < ActiveRecord::Base
   has_many :done_event_feed_events, :class_name => "EventFeedEvent", :foreign_key => "person1_id", :dependent => :destroy 
   # events where this person was the target of the action
   has_many :targeted_event_feed_events, :class_name => "EventFeedEvent", :foreign_key => "person2_id", :dependent => :destroy
-  
+  has_many :swap_items, :foreign_key => "receiver_id"
   has_and_belongs_to_many :followed_listings, :class_name => "Listing", :join_table => "listing_followers"
   
   EMAIL_NOTIFICATION_TYPES = [

@@ -49,7 +49,7 @@ en:
         edit_poll: "Edit poll"
   common:
     default_community_slogan: "Lend, help, share"
-    default_community_description: "%{service_name} is a place where the members of our community can share goods, services, rides, and spaces. You can let others know what you could offer to them and get help when needed."
+    default_community_description: "RealGoodFood is a place where the members of our community can share goods, services, rides, and spaces. You can let others know what you could offer to them and get help when needed."
     cancel: Cancel
     fields_that_are_mandatory: "Fields marked with star (*) are mandatory."
     or: or
@@ -227,7 +227,7 @@ en:
       language: Language
     signup_form:
       create_an_account: "Create an account for yourself"
-      to_create_a_tribe_you_must_first_create_sharetribe_account: "You can either create a new account to %{service_name} below or"
+      to_create_a_tribe_you_must_first_create_sharetribe_account: "You can either create a new account to RealGoodFood below or"
       log_in_with_your_existing_account: "log in with your existing account"
       your_email: "Your email address"
       your_university_email: "Your university email address"
@@ -238,7 +238,7 @@ en:
       your_family_name: "Your family name"
       your_password: "Pick a password"
       confirm_your_password: "Confirm your password"
-      email_in_use_message: "There is already an account in %{service_name} with this email address. If you already have an account, you can log in using the link above."
+      email_in_use_message: "There is already an account in RealGoodFood with this email address. If you already have an account, you can log in using the link above."
       invalid_email_ending_message: "This looks like a personal email. You need to sign up with your %{community_category} email."
       log_in_here: "log in here"
       existing_community_with_this_email: "There already exists a community for this %{community_category}. You can join the community %{link}."
@@ -254,7 +254,7 @@ en:
   community_memberships:
     new:
       join_community: "Join community '%{community}'"
-      you_are_not_a_member_of_this_community: "You have a user account in %{service_name}, but you are not yet a member of %{service_name} community '%{community}'."
+      you_are_not_a_member_of_this_community: "You have a user account in RealGoodFood, but you are not yet a member of RealGoodFood community '%{community}'."
       you_can_join: "You can join this community by accepting the terms of use and clicking 'Join community' below."
       you_can_join_email_confirmation: "To join this community you need to have a valid email address that ends with %{email_ending}. You can join by filling in your email address, accepting the terms of use of this community and clicking 'Join community' below, and confirming your email."
       you_can_join_email_confirmation_multiple_addresses: "To join this community you need to have a valid email address that ends with one of the following: %{email_endings}. You can join by filling in your email address, accepting the terms of use of this community and clicking 'Join this community' below."
@@ -273,28 +273,28 @@ en:
       sharing_website: "SHARING WEBSITE"
       main_description: "Set up a space where the members of your community can share goods, services, rides and spaces in a trusted local environment. It's free and only takes a minute to do!"
       kassi_for_your_company: "...FOR YOUR COMPANY"
-      kassi_for_your_company_description: "Want to help your employees connect with each other? Want to cut your emissions and become a greener enterprise? Want to save costs in travel, parking and furniture use? Sharetribe is the solution for you."
+      kassi_for_your_company_description: "Want to help your employees connect with each other? Want to cut your emissions and become a greener enterprise? Want to save costs in travel, parking and furniture use? RGF is the solution for you."
       kassi_for_your_city: "...FOR YOUR CITY"
-      kassi_for_your_city_description: "Want to transform the neighborhoods of your city to village communities where people share with each other? Want to empower your citizens to improve their lives? Sharetribe will help you achieve that."
+      kassi_for_your_city_description: "Want to transform the neighborhoods of your city to village communities where people share with each other? Want to empower your citizens to improve their lives? RGF will help you achieve that."
       kassi_for_your_university: "...FOR YOUR UNIVERSITY"
-      kassi_for_your_university_description: "Want to create a lively campus environment where people know and trust each other? Want to help your students and staff save their time, money, and the environment? Try out Sharetribe and perceive the change!"
-      want_kassi_for_your_community: "Want %{service_name} for your community?"
+      kassi_for_your_university_description: "Want to create a lively campus environment where people know and trust each other? Want to help your students and staff save their time, money, and the environment? Try out RGF and perceive the change!"
+      want_kassi_for_your_community: "Want RealGoodFood for your community?"
       email_default_text: "Your email address"
       send: Send!
       or_drop_us_a_line: "...or drop us a line:"
-      thanks_for_contacting_us: "Thanks for contacting us! We'll send you more info about how to create a %{service_name} community soon."
+      thanks_for_contacting_us: "Thanks for contacting us! We'll send you more info about how to create a RealGoodFood community soon."
       resources: RESOURCES
       connect: CONNECT
-      about: "ABOUT SHARETRIBE"
+      about: "ABOUT REAL GOOD FOOD"
       developers: "FOR DEVELOPERS"
       api: API
       blog: Blog
       code: "Source code"
       issue_tracker: "Issue tracker"
-      product_of: "Sharetribe is a product of"
+      product_of: "Real Good Food is a product of"
       language: "Language:"
       new: NEW!
-      new_text: "%{service_name} now available for <a href=\"http://www.sharetribe.com/en/wdc\">neighborhoods in Helsinki and Lahti</a> and for <a href=\"http://www.kassi.eu/en/okl\">members of Suomen Omakotiliitto</a>!"
+      new_text: "RealGoodFood now available for <a href=\"http://www.sharetribe.com/en/wdc\">neighborhoods in Helsinki and Lahti</a> and for <a href=\"http://www.kassi.eu/en/okl\">members of Suomen Omakotiliitto</a>!"
       want_to_know_more: "Want to know more? %{read_our_faq_link} or %{contact_us_link}."
       read_our_faq: "Read our FAQ"
       contact_us: "contact us directly"
@@ -311,7 +311,7 @@ en:
   emails:
     accept_reminder:
       offer_accusative: offer
-      remember_to_accept_listing: "Remember to accept %{listing_type}, even though the actual event has already taken place. Accepting makes it possible for the parties to give feedback to each other. The good feedback you have received will be shown to other %{service_name} users in your profile. It will make you more trustworthy in the eyes of other %{service_name} users and assures that everything will go smoothly for you also in the future. Good feedback also helps you get badges."
+      remember_to_accept_listing: "Remember to accept %{listing_type}, even though the actual event has already taken place. Accepting makes it possible for the parties to give feedback to each other. The good feedback you have received will be shown to other RealGoodFood users in your profile. It will make you more trustworthy in the eyes of other RealGoodFood users and assures that everything will go smoothly for you also in the future. Good feedback also helps you get badges."
       remember_to_accept_offer: "Remember to accept or reject an offer"
       remember_to_accept_request: "Remember to accept or reject a request"
       request_accusative: request
@@ -320,22 +320,22 @@ en:
       you_have_not_yet_accepted_or_rejected_offer: "You have not yet accepted or rejected the offer '%{title}' you received on %{date}."
       you_have_not_yet_accepted_or_rejected_request: "You have not yet accepted or rejected the request '%{title}' you received on %{date}."
     badge_migration_notification:
-      badge_description1: "You can earn several different badges in %{service_name} as a recognition of your actions in the service. You earn badges from actions like adding new offers and requests, commenting on others' content, from all types of resource exchange that takes place (selling and borrowing items, helping others, organizing car pooling and so on) and just generally being an active user of the service. Note that you only get badges from those exchanges where you have received positive feedback."
-      badge_description2: "A person with lots of badges is most likely active, reliable and liked by other users. So be active in %{service_name}: buy, sell, lend and borrow items, help others out, share rides and watch your badge arsenal grow!"
-      you_have_received_badges: "You have received badges in %{service_name}!"
-      you_have_received_badges_in_kassi: "You have earned new badges in %{service_name}. You can view your badges by logging in to %{service_name} and going to"
+      badge_description1: "You can earn several different badges in RealGoodFood as a recognition of your actions in the service. You earn badges from actions like adding new offers and requests, commenting on others' content, from all types of resource exchange that takes place (selling and borrowing items, helping others, organizing car pooling and so on) and just generally being an active user of the service. Note that you only get badges from those exchanges where you have received positive feedback."
+      badge_description2: "A person with lots of badges is most likely active, reliable and liked by other users. So be active in RealGoodFood: buy, sell, lend and borrow items, help others out, share rides and watch your badge arsenal grow!"
+      you_have_received_badges: "You have received badges in RealGoodFood!"
+      you_have_received_badges_in_kassi: "You have earned new badges in RealGoodFood. You can view your badges by logging in to RealGoodFood and going to"
     confirmation_instructions:
-      confirmation_instructions_signature: "Best regards,<br/>The %{service_name} Team"
-      welcome_to_kassi: "Welcome to %{service_name}!"
+      confirmation_instructions_signature: "Best regards,<br/>The RealGoodFood Team"
+      welcome_to_kassi: "Welcome to RealGoodFood!"
       need_to_confirm: "You need to confirm your email address by clicking the following link:"
       confirmation_link_text: "Confirm my account"
-      turning_on_confirmations_in_this_community: "We are starting to use email confirmations in this %{service_name} community."
+      turning_on_confirmations_in_this_community: "We are starting to use email confirmations in this RealGoodFood community."
     common:
       check_your_settings: "Check your settings"
       hey: "Hi %{name},"
-      kassi_team: "The %{service_name} Team"
+      kassi_team: "The RealGoodFood Team"
       thanks: "Thanks,"
-      want_to_control_emails: "Want to control which emails you receive from %{service_name}?"
+      want_to_control_emails: "Want to control which emails you receive from RealGoodFood?"
     conversation_status_changed:
       has_accepted_your_offer: "%{accepter} has accepted your offer considering request %{listing}"
       has_accepted_your_request: "%{accepter} has accepted your request considering offer %{listing}"
@@ -349,22 +349,22 @@ en:
       your_request_was_rejected: "Your request was rejected"
     invitation_to_kassi:
       hi: Hi!
-      you_have_been_invited_to_kassi: "%{inviter} has invited you to use the %{service_name} web service of the %{community} community."
-      info_about_kassi: "%{service_name} is a service where the members of the community can, for example, lend, swap and sell goods, share rides and help each other out in several ways."
+      you_have_been_invited_to_kassi: "%{inviter} has invited you to use the RealGoodFood web service of the %{community} community."
+      info_about_kassi: "RealGoodFood is a service where the members of the community can, for example, lend, swap and sell goods, share rides and help each other out in several ways."
       here_is_a_message_from: "Here is a personal message from %{inviter}:"
       you_can_join_kassi_using_invitation_code: "Here is an invitation code you need to join the service: %{code}"
-      join_kassi_in: "You can join %{service_name} at"
+      join_kassi_in: "You can join RealGoodFood at"
     new_badge:
       you_can_view_all_your_badges_in: "You can view all your badges in"
-      you_have_achieved_a_badge: "You have achieved a badge '%{badge_name}' in %{service_name}!"
+      you_have_achieved_a_badge: "You have achieved a badge '%{badge_name}' in RealGoodFood!"
     new_comment:
       has_commented_your_offer_in_kassi: "%{author} has commented on your offer %{listing}"
       has_commented_your_request_in_kassi: "%{author} has commented on your request %{listing}"
       you_can_reply_to_comment_in: "You can view all the comments and reply to them at"
-      you_have_a_new_comment: "%{author} has commented on your listing in %{service_name}"
-      listing_you_follow_has_a_new_comment: "%{author} has commented on a listing you follow in %{service_name}"
-      has_commented_offer_you_follow_in_kassi: "%{author} has commented on the request '%{listing}' you are following in %{service_name}"
-      has_commented_request_you_follow_in_kassi: "%{author} has commented on the offer '%{listing}' you are following in %{service_name}"
+      you_have_a_new_comment: "%{author} has commented on your listing in RealGoodFood"
+      listing_you_follow_has_a_new_comment: "%{author} has commented on a listing you follow in RealGoodFood"
+      has_commented_offer_you_follow_in_kassi: "%{author} has commented on the request '%{listing}' you are following in RealGoodFood"
+      has_commented_request_you_follow_in_kassi: "%{author} has commented on the offer '%{listing}' you are following in RealGoodFood"
 
     swap_offer:
       new_swap_offer: "Please accept the swap offer."
@@ -375,39 +375,39 @@ en:
     new_message:
       conversation_title: "Message thread title: %{title}"
       do_not_reply_to_this_email: "Note: do not reply directly to this email. Use the reply link above instead."
-      has_sent_you_a_message_in_kassi: "%{sender} has sent you a message in %{service_name}:"
+      has_sent_you_a_message_in_kassi: "%{sender} has sent you a message in RealGoodFood:"
       you_can_reply_to_message_in: "You can reply to the message in"
-      you_have_a_new_message: "You have a new message in %{service_name}"
+      you_have_a_new_message: "You have a new message in RealGoodFood"
 
     new_testimonial:
-      has_given_you_feedback_in_kassi: "%{name} has given you feedback in %{service_name}"
+      has_given_you_feedback_in_kassi: "%{name} has given you feedback in RealGoodFood"
       you_can_give_feedback_to: "You can give feedback to %{name} in"
       you_can_view_all_your_feedback_in: "You can view all the feedback you've received at"
     new_update_to_listing:
       listing_you_follow_has_been_updated: "Listing you follow has been updated"
-      has_updated_offer_you_follow_in_kassi: "%{author} has updated the request '%{listing}' you are following in %{service_name}"
-      has_updated_request_you_follow_in_kassi: "%{author} has updated the offer '%{listing}' you are following in %{service_name}"
+      has_updated_offer_you_follow_in_kassi: "%{author} has updated the request '%{listing}' you are following in RealGoodFood"
+      has_updated_request_you_follow_in_kassi: "%{author} has updated the offer '%{listing}' you are following in RealGoodFood"
       you_can_view_the_changes_in: "You can view the changes in"
     newsletter:
-      weekly_news_from_kassi: "Weekly news from %{community} %{service_name}"
+      weekly_news_from_kassi: "Weekly news from %{community} RealGoodFood"
       hi: "Hi %{name},"
-      update_on_what_is_happening: "Take a peek on what's happening in %{community} %{service_name} right now."
+      update_on_what_is_happening: "Take a peek on what's happening in %{community} RealGoodFood right now."
       newest_offers: "What people currently offer to others"
       newest_requests: "What people currently need"
       could_you_offer_something: "Could you share something that others might need? Or do you need something that others might have?"
       add: Add
       an_offer: "an offer"
       a_request: "a request"
-      to_kassi: "to %{service_name}"
+      to_kassi: "to RealGoodFood"
       check_everything_that_others_are: "check everything that the others are"
       offering: offering
       requesting: requesting
       text_version_text: "Could you share something that others might need? Or do you need something that others might have? Add an offer or a request or check everything that the others are offering or requesting at %{url}"
     reply_to_contact_request:
-      thank_you_for_your_interest: "Thank you for your interest in %{service_name}!"
+      thank_you_for_your_interest: "Thank you for your interest in RealGoodFood!"
     reset_password_instructions:
       change_my_password: "Change my password"
-      reset_password_instructions: "<p>You have indicated that you have forgotten either your password or username in the %{service_name} service.</p><p>Your username is: %{username}</p><p>If you need to reset your password, click the following link: %{password_reset_link}</p><br/><p>If you didn't request this, please ignore this email. Your password won't change until you access the link above and create a new one.</p>"
+      reset_password_instructions: "<p>You have indicated that you have forgotten either your password or username in the RealGoodFood service.</p><p>Your username is: %{username}</p><p>If you need to reset your password, click the following link: %{password_reset_link}</p><br/><p>If you didn't request this, please ignore this email. Your password won't change until you access the link above and create a new one.</p>"
     testimonial_reminder:
       feedback_is_public_and_is_shown: "Feedback is public and is shown to all the other users. Based on the feedback the other users can judge, whether %{name} is a trustworthy person and somebody they want to interact with. Thus, it's good to always remember to give feedback on events, and also remind the other party to give feedback to you. You also need positive feedback in order to achieve most of the badges."
       remember_to_give_feedback_to: "Reminder: remember to give feedback to %{name}"
@@ -421,7 +421,7 @@ en:
       you_must_explain_not_neutral_feedback: "If you want to give non-neutral feedback, you must explain why."
       you_must_select_a_grade: "Remember to grade the user by clicking one of the icons above (you can see the explanations of the icons by hovering mouse over them)"
   error_pages:
-    back_to_kassi_front_page: "Back to %{service_name} front page"
+    back_to_kassi_front_page: "Back to RealGoodFood front page"
     error_404:
       if_you_believe: "If you believe that the address is correct and it should be working, please help us locate the error by letting us know what address caused the error and what should be seen on the page with the form below."
       page_can_not_be_found: "Page can not be found!"
@@ -435,8 +435,8 @@ en:
     error_description: "Error description"
     no_javascript:
       javascript_is_disabled_in_your_browser: "Javascript is disabled in your browser"
-      kassi_does_not_currently_work_without_javascript: "Unfortunately %{service_name} does not currently work without javascript. Try to enable javascript from your browser's preferences and then reload this page again. If you'd like to use %{service_name} without javascript, please send us feedback using the form below."
-      kassi_does_not_currently_work_without_javascript_dashboard: "Unfortunately %{service_name} does not currently work without javascript. Try to enable javascript from your browser's preferences and then reload this page again. If you'd like to use %{service_name} without javascript, please %{contact_us}."
+      kassi_does_not_currently_work_without_javascript: "Unfortunately RealGoodFood does not currently work without javascript. Try to enable javascript from your browser's preferences and then reload this page again. If you'd like to use RealGoodFood without javascript, please send us feedback using the form below."
+      kassi_does_not_currently_work_without_javascript_dashboard: "Unfortunately RealGoodFood does not currently work without javascript. Try to enable javascript from your browser's preferences and then reload this page again. If you'd like to use RealGoodFood without javascript, please %{contact_us}."
       contact_us: "contact us"
       send_feedback: "Send feedback"
       your_feedback_to_admins: "Your feedback to admins"
@@ -460,9 +460,9 @@ en:
       has_accepted_favor: "%{offerer_name} agreed to offer %{listing_title} to %{requester_name} %{time_ago}."
       has_accepted_rideshare: "%{offerer_name} agreed on sharing a ride %{listing_title} with %{requester_name} %{time_ago}."
     join:
-      joined_kassi: "%{name} joined %{community_name} %{service_name} %{time_ago}."
+      joined_kassi: "%{name} joined %{community_name} RealGoodFood %{time_ago}."
     login:
-      logged_in_to_kassi: "%{name} logged in to %{service_name} %{time_ago}."
+      logged_in_to_kassi: "%{name} logged in to RealGoodFood %{time_ago}."
     comment:
       commented: "%{commenter_name} commented on %{listing_type} %{listing_title} %{time_ago}."
       offer_partitive: offer
@@ -474,7 +474,7 @@ en:
     mobile_version: "Mobile version"
     offers: "Filter Food"
     requests: Requests
-    search_kassi: "Search %{service_name}"
+    search_kassi: "Search RealGoodFood"
   homepage:
     additional_private_listings_slate:
       additionally_one_private_offer_exists: "Additionally  there is <b>one other offer</b>,"
@@ -510,7 +510,7 @@ en:
     event_feed:
       latest_events: "What's going on"
     index:
-      welcome_note: "Welcome to Real Good Food"
+      welcome_note: "Welcome to "
       welcome_text: "Welcome text..."
       are_offering: offer
       add_news_item: "Add an article"
@@ -532,9 +532,9 @@ en:
       request_something: "Tell what you need!"
       request_something_description: "Tell others when you need help, an item, a ride or a space"
       requesting: need
-      teaser_text: "%{service_name} is a service for the %{community} community. Here you can lend, rent, give away and sell stuff, give and get help or share rides. Could you lend something to others or help them?"
+      teaser_text: "RealGoodFood is a service for the %{community} community. Here you can lend, rent, give away and sell stuff, give and get help or share rides. Could you lend something to others or help them?"
       tell_it_here: "Tell it here!"
-      welcome_to_new_kassi: "Welcome to new %{service_name}!"
+      welcome_to_new_kassi: "Welcome to new RealGoodFood!"
     invitation_form:
       invite_your_friends: "Engage more people"
       email: "Your friend's email address:"
@@ -575,18 +575,18 @@ en:
       find_food: "Find more food"
       add_your_info_link: "Add your Information"
     admin:
-      admin: "%{service_name} admin panel"
-      back_to_kassi: "Back to %{service_name}"
+      admin: "RealGoodFood admin panel"
+      back_to_kassi: "Back to RealGoodFood"
       news_items: "News articles"
       polls: Polls
     application:
       default_feedback: "Suggest a new feature, report a bug, tell your opinion about the service, or just drop a note to say hello!"
-      feedback: "Feedback to %{service_name} staff"
+      feedback: "Feedback to RealGoodFood staff"
       feedback_forum: "feedback forum"
       feedback_handle: Feedback
-      give_feedback: "Give feedback on %{service_name}"
-      keywords: "%{service_name}, Kassi, share resources in a community, borrow items, service, favor, item, rideshare, space, car pooling, housing, accommodation, help, helping, offer, request, rent, swap, exchange, buying, selling, buy, sell, giving, give, ecological, community, online community, local"
-      meta_description: "%{service_name} is a service that helps members of associations and other communities to sell and lend items to each other, organize car pooling and help each other in many other ways."
+      give_feedback: "Give feedback on RealGoodFood"
+      keywords: "RealGoodFood, Kassi, share resources in a community, borrow items, service, favor, item, rideshare, space, car pooling, housing, accommodation, help, helping, offer, request, rent, swap, exchange, buying, selling, buy, sell, giving, give, ecological, community, online community, local"
+      meta_description: "RealGoodFood is a service that helps members of associations and other communities to sell and lend items to each other, organize car pooling and help each other in many other ways."
       or_check_our: "...or check our"
       send_feedback_to_admin: "Send feedback"
       to_see_what_others_have_suggested: "to see what other users have suggested."
@@ -598,11 +598,11 @@ en:
       received: Received
       sent: Sent
     dashboard:
-      title: "%{service_name} - share goods, services and rides in your local community!"
+      title: "RealGoodFood - share recipes in your local community!"
     infos:
       about: "What is it"
       how_to_use: "How to use"
-      info_about_kassi: "Information about %{service_name}"
+      info_about_kassi: "Information about RealGoodFood"
       news: News
       register_details: "Register details"
       terms: "Terms of use"
@@ -643,7 +643,7 @@ en:
       create_new_request: "Request something else"
       create_one_here: "create one here"
       email_confirmation_sent_to_new_address: "Email confirmation is now sent to the new address."
-      email_not_found: "The email you gave was not found from %{service_name} database."
+      email_not_found: "The email you gave was not found from RealGoodFood database."
       error_with_session: "Error with session."
       feedback_considered_spam: "Feedback not saved, due to its formatting. Try again or use the feedback forum."
       feedback_not_saved: "Feedback could not be sent."
@@ -652,11 +652,11 @@ en:
       feedback_skipped: "Feedback skipped"
       invitation_cannot_be_sent: "Invitation could not be sent"
       invitation_sent: "Invitation sent successfully"
-      inviting_new_users_is_not_allowed_in_this_community: "Inviting new users is not allowed in this %{service_name} community"
+      inviting_new_users_is_not_allowed_in_this_community: "Inviting new users is not allowed in this RealGoodFood community"
       login_again: "Please, log in again."
       login_failed: "Login failed. Please enter correct credentials."
-      login_successful: "Welcome to %{service_name}, "
-      logout_successful: "You have now been logged out of %{service_name}. Welcome again!"
+      login_successful: "Welcome to RealGoodFood, "
+      logout_successful: "You have now been logged out of RealGoodFood. Welcome again!"
       news_item_created: "Article created"
       news_item_creation_failed: "Article creation failed"
       news_item_update_failed: "Article update failed"
@@ -667,7 +667,7 @@ en:
       offer_created_successfully: "Offer created successfully."
       offer_rejected: "Offer rejected"
       offer_updated_successfully: "Offer updated successfully"
-      only_kassi_administrators_can_access_this_area: "Only %{service_name} administrators can access this area"
+      only_kassi_administrators_can_access_this_area: "Only RealGoodFood administrators can access this area"
       only_listing_author_can_close_a_listing: "Only listing author can close a listing"
       only_listing_author_can_edit_a_listing: "Only listing author can edit a listing"
       password_recovery_sent: "Instructions to change your password were sent to your email."
@@ -694,7 +694,7 @@ en:
       this_content_is_not_available_in_this_community: "This content is not available in this community."
       unknown_error: "Unknown error. Please use the feedback link to send details about what happened."
       update_error: "An error occurred when trying to update your information, please try again"
-      welcome_message: "Welcome to %{service_name}! %{service_name} is a service that helps the members of the %{community} community to sell and lend items to each other, organize car pooling and help each other in many other ways."
+      welcome_message: "Welcome to RealGoodFood! RealGoodFood is a service that helps the members of the %{community} community to sell and lend items to each other, organize car pooling and help each other in many other ways."
       you_are_not_allowed_to_give_feedback_on_this_transaction: "You are not authorized to give feedback on this event"
       you_are_not_authorized_to_do_this: "You are not authorized to do this"
       you_are_not_authorized_to_view_this_content: "You are not authorized to view this content"
@@ -705,19 +705,19 @@ en:
       you_followed_listing: "You are now following this listing"
       you_have_already_given_feedback_about_this_event: "You have already given feedback about this event"
       you_are_now_member: "You have successfully joined this community"
-      you_are_already_member: "You are already a member of this %{service_name} community. Welcome back!"
-      you_must_log_in_to_create_new_offer: "You must log in to %{service_name} to create a new offer. If you don't have an account you can"
+      you_are_already_member: "You are already a member of this RealGoodFood community. Welcome back!"
+      you_must_log_in_to_create_new_offer: "You must log in to RealGoodFood to create a new offer. If you don't have an account you can"
       additional_email_confirmed_dashboard: "Your email is now confirmed."
-      you_must_log_in_to_create_new_request: "You must log in to %{service_name} to create a new request. If you don't have an account you can"
+      you_must_log_in_to_create_new_request: "You must log in to RealGoodFood to create a new request. If you don't have an account you can"
       you_must_log_in_to_give_feedback: "You must log in to give feedback"
-      you_must_log_in_to_invite_new_users: "You must log in to invite new users to %{service_name}"
+      you_must_log_in_to_invite_new_users: "You must log in to invite new users to RealGoodFood"
       you_must_log_in_to_send_a_comment: "You must log in to send a new comment"
-      you_must_log_in_to_send_a_message: "You must log in to %{service_name} to send a message to another user."
+      you_must_log_in_to_send_a_message: "You must log in to RealGoodFood to send a message to another user."
       you_must_log_in_to_view_this_content: "You must log in to view this content"
       you_must_log_in_to_view_this_page: "You must log in to view this page"
-      you_must_log_in_to_view_your_inbox: "You must log in to %{service_name} to view your inbox."
-      you_must_log_in_to_view_your_settings: "You must log in to %{service_name} to view your settings."
-      you_must_log_in_to_add_news_item: "You must log in to %{service_name} to add a new article."
+      you_must_log_in_to_view_your_inbox: "You must log in to RealGoodFood to view your inbox."
+      you_must_log_in_to_view_your_settings: "You must log in to RealGoodFood to view your settings."
+      you_must_log_in_to_add_news_item: "You must log in to RealGoodFood to add a new article."
       you_need_to_confirm_your_account_first: "You need to confirm your email first."
       you_unfollowed_listing: "You are no longer following this listing"
       joining_community_failed: "Joining this community failed"
@@ -839,7 +839,7 @@ en:
         for_the_time_being: "Food is available at any time"
         available_between: "Food is available between"
       visibility:
-        communities: "All my %{service_name} communities"
+        communities: "All my RealGoodFood communities"
         everybody: "All internet users"
         this_community: "Only members of this community"
         visibility: Visibility
@@ -870,7 +870,7 @@ en:
       rideshare: Rideshare
       search_verb: Search
       you_have_something_others_do_not: "Have something to offer?"
-      feed_title: "%{listing_type} in %{community_name} %{service_name} %{optional_category}"
+      feed_title: "%{listing_type} in %{community_name} RealGoodFood %{optional_category}"
     left_panel_link:
       borrows: Borrowing
       buys: Buying
@@ -1003,7 +1003,7 @@ en:
       delete_news_item: "Remove article"
   okl:
     member_id: "Member id"
-    member_id_is_your_username: "You must give your Omakotiliitto member id (jäsennumero) in order to join %{service_name}. Your member id is also your username that you will need when logging in to %{service_name}. If you are not a member of Omakotiliitto yet, you can"
+    member_id_is_your_username: "You must give your Omakotiliitto member id (jäsennumero) in order to join RealGoodFood. Your member id is also your username that you will need when logging in to RealGoodFood. If you are not a member of Omakotiliitto yet, you can"
     join_here: "join here."
   people:
     badge_description:
@@ -1017,12 +1017,12 @@ en:
       feedback_description_title: Feedback
       help_captcha_title: "Are you human?"
       help_invitation_code_title: "You need an invite to join"
-      terms_title: "%{service_name} terms of use"
+      terms_title: "RealGoodFood terms of use"
       trustcloud_description_title: TrustCloud
-      trustcloud_description_text: "<p>TrustCloud is an online service that helps to measure person's trustworthiness accross different online services. It gives a TrustScore (1-1000) based on person's online activity. The score is increased for example by getting good feedback in eBay or having lot of conections Facebook. You can click each card for more details.</p><p>TrustCloud is used to bring more confidence that the person behind the profile is real and not hiding behind a made-up identity.</p><p>You can claim your own TrustCard if you want by <a href='https://trustcloud.com/claim'>registering to TrustCloud</a> and confirming the same email address there that you have registered in %{service_name}. This is optional, but we recommend claiming your TrustCard as that will increase your credibility and probably make it easier to deal with others in this community.</p><p>The activities in %{service_name} do not yet affect your TrustScore, but we are planning to make that possible in the future.</p>"
+      trustcloud_description_text: "<p>TrustCloud is an online service that helps to measure person's trustworthiness accross different online services. It gives a TrustScore (1-1000) based on person's online activity. The score is increased for example by getting good feedback in eBay or having lot of conections Facebook. You can click each card for more details.</p><p>TrustCloud is used to bring more confidence that the person behind the profile is real and not hiding behind a made-up identity.</p><p>You can claim your own TrustCard if you want by <a href='https://trustcloud.com/claim'>registering to TrustCloud</a> and confirming the same email address there that you have registered in RealGoodFood. This is optional, but we recommend claiming your TrustCard as that will increase your credibility and probably make it easier to deal with others in this community.</p><p>The activities in RealGoodFood do not yet affect your TrustScore, but we are planning to make that possible in the future.</p>"
     inactive_notification:
-      this_person_is_not_active_in_kassi: "This user is no longer active in %{service_name}"
-      inactive_description: "This user has stopped using %{service_name}. You cannot contact this user, give feedback to them or comment their listings."
+      this_person_is_not_active_in_kassi: "This user is no longer active in RealGoodFood"
+      inactive_description: "This user has stopped using RealGoodFood. You cannot contact this user, give feedback to them or comment their listings."
     new:
       about_you: "Tell us a little bit about you"
       address_validator: "The location was not found."
@@ -1040,30 +1040,30 @@ en:
       family_name: "Family name:"
       given_name: "Given name:"
       i_accept_the: "I accept the"
-      if_you_already_have_account_you_can: "If you already have an account in another %{service_name} community you can"
+      if_you_already_have_account_you_can: "If you already have an account in another RealGoodFood community you can"
       join_with_your_existing_account: "join this community with your existing account"
       invalid_invitation_code: "The invitation code is not valid."
       invitation_code: "Invitation code:"
       not_required: ", not required"
       password_again: "Confirm password:"
-      show_my_name_to_others: "Show my real name to other %{service_name} users"
-      sign_up: "Create a new account in %{service_name}"
+      show_my_name_to_others: "Show my real name to other RealGoodFood users"
+      sign_up: "Create a new account in RealGoodFood"
       terms: "terms of use"
       username_is_in_use: "This username is already in use."
       username_is_invalid: "Username is invalid. Allowed characters are letters, numbers and underscore."
       visible_only_to_you: "visible only to you and community admin"
       visible_to_everybody: "visible to everybody"
     not_member:
-      explanation_text: "You are currently in %{community} community. You tried to view the profile of a user that belongs to another community. %{service_name} does not currently support belonging to multiple communities, so you cannot access this profile through %{community} community. We are working on an option to belong to more than one community at the same time. This feature will be added to the service later."
-      read_more_about_kassi_communities: "Read more about %{service_name} communities"
+      explanation_text: "You are currently in %{community} community. You tried to view the profile of a user that belongs to another community. RealGoodFood does not currently support belonging to multiple communities, so you cannot access this profile through %{community} community. We are working on an option to belong to more than one community at the same time. This feature will be added to the service later."
+      read_more_about_kassi_communities: "Read more about RealGoodFood communities"
       this_user_does_not_belong_to_this_community: "This user does not belong to %{community} community"
     profile_badge:
       active_member_bronze: "Active member (bronze)"
-      active_member_bronze_description: "This was the third exchange you participated in %{service_name}! Awesome start, keep it going!"
+      active_member_bronze_description: "This was the third exchange you participated in RealGoodFood! Awesome start, keep it going!"
       active_member_gold: "Active member (gold)"
-      active_member_gold_description: "25th exchange in %{service_name}, awesome! You are a VIP in %{service_name}. It's people like you who keep the wheels rolling. Thanks a lot!"
+      active_member_gold_description: "25th exchange in RealGoodFood, awesome! You are a VIP in RealGoodFood. It's people like you who keep the wheels rolling. Thanks a lot!"
       active_member_silver: "Active member (silver)"
-      active_member_silver_description: "Congrats on your 10th exchange in %{service_name}! A lot is happening in the service thanks to you. Great!"
+      active_member_silver_description: "Congrats on your 10th exchange in RealGoodFood! A lot is happening in the service thanks to you. Great!"
       chauffer_bronze: "Chauffeur (bronze)"
       chauffer_bronze_description: "You have offered two rides to other users, good job!"
       chauffer_gold: "Chauffeur (gold)"
@@ -1071,19 +1071,19 @@ en:
       chauffer_silver: "Chauffeur (silver)"
       chauffer_silver_description: "6 offered rides, super! You enjoy having company while driving."
       commentator_bronze: "Commentator (bronze)"
-      commentator_bronze_description: "You like to discuss with other users. You have left three comments to listings in %{service_name}."
+      commentator_bronze_description: "You like to discuss with other users. You have left three comments to listings in RealGoodFood."
       commentator_gold: "Commentator (gold)"
-      commentator_gold_description: "30 comments! You feel at home in the %{service_name} community. You are eager to meet new people and discuss with them."
+      commentator_gold_description: "30 comments! You feel at home in the RealGoodFood community. You are eager to meet new people and discuss with them."
       commentator_silver: "Commentator (silver)"
-      commentator_silver_description: "10 comments! You participate actively to conversations with other %{service_name} users"
+      commentator_silver_description: "10 comments! You participate actively to conversations with other RealGoodFood users"
       enthusiast_bronze: "Enthusiast (bronze)"
-      enthusiast_bronze_description: "You've been in %{service_name} on five different days. It seems you are on your way to become a regular."
+      enthusiast_bronze_description: "You've been in RealGoodFood on five different days. It seems you are on your way to become a regular."
       enthusiast_gold: "Enthusiast (gold)"
-      enthusiast_gold_description: "You can't keep away from %{service_name}: you've visited the site on hundred different days!"
+      enthusiast_gold_description: "You can't keep away from RealGoodFood: you've visited the site on hundred different days!"
       enthusiast_silver: "Enthusiast (silver)"
-      enthusiast_silver_description: "%{service_name} is a part of your daily routine: you have already 30 visits in the service."
+      enthusiast_silver_description: "RealGoodFood is a part of your daily routine: you have already 30 visits in the service."
       first_transaction: "First event"
-      first_transaction_description: "Congrats on your first exchange in %{service_name}! One of your requests or offers has been accepted and confirmed as done."
+      first_transaction_description: "Congrats on your first exchange in RealGoodFood! One of your requests or offers has been accepted and confirmed as done."
       generous_bronze: "Generous (bronze)"
       generous_bronze_description: "You have lent or given away two of your items. Good for you!"
       generous_gold: "Generous (gold)"
@@ -1105,33 +1105,33 @@ en:
       lender_silver: "Lender (silver)"
       lender_silver_description: "There are lots of goods in your closet that you could share with others: 10 items offered for others to borrow!"
       listing_freak_bronze: "Listing freak (bronze)"
-      listing_freak_bronze_description: "You have five open offers/requests listed in %{service_name}. Great! Is there still something in your closet or your skillset that could benefit others?"
+      listing_freak_bronze_description: "You have five open offers/requests listed in RealGoodFood. Great! Is there still something in your closet or your skillset that could benefit others?"
       listing_freak_gold: "Listing freak (gold)"
-      listing_freak_gold_description: "40 open offers and/or requests, magnificent! You are one of the most active content producers in %{service_name}."
+      listing_freak_gold_description: "40 open offers and/or requests, magnificent! You are one of the most active content producers in RealGoodFood."
       listing_freak_silver: "Listing freak (silver)"
       listing_freak_silver_description: "20 open offers and/or requests, excellent! You really are an active cataloger."
       moneymaker_bronze: "Moneymaker (bronze)"
-      moneymaker_bronze_description: "You have realized that %{service_name} can also be used to make money! You have successfully sold or rented two items in %{service_name}."
+      moneymaker_bronze_description: "You have realized that RealGoodFood can also be used to make money! You have successfully sold or rented two items in RealGoodFood."
       moneymaker_gold: "Moneymaker (gold)"
-      moneymaker_gold_description: "15 sold or rented items with positive feedback! %{service_name} is an excellent business both for you and people buying or renting from you!"
+      moneymaker_gold_description: "15 sold or rented items with positive feedback! RealGoodFood is an excellent business both for you and people buying or renting from you!"
       moneymaker_silver: "Moneymaker (silver)"
-      moneymaker_silver_description: "%{service_name} gives a nice addition to your income. Six sold or rented items with positive feedback."
+      moneymaker_silver_description: "RealGoodFood gives a nice addition to your income. Six sold or rented items with positive feedback."
       rookie: Rookie
-      rookie_description: "You have added an offer or a request in %{service_name} for the first time. Here we go!"
+      rookie_description: "You have added an offer or a request in RealGoodFood for the first time. Here we go!"
       santa: Santa
       santa_description: "Ho ho ho and Merry Christmas! You have given away at least one item in December."
       taxi_stand_bronze: "Taxi stand (bronze)"
-      taxi_stand_bronze_description: "You have added three rideshare offers to %{service_name}."
+      taxi_stand_bronze_description: "You have added three rideshare offers to RealGoodFood."
       taxi_stand_gold: "Taxi stand (gold)"
       taxi_stand_gold_description: "You are always in service, ready to offer a ride to others. 25 offered rides, excellent!"
       taxi_stand_silver: "Taxi stand (silver)"
       taxi_stand_silver_description: "10 added rideshare offers, great! People know who to ask if they need a ride."
       volunteer_bronze: "Volunteer (bronze)"
-      volunteer_bronze_description: "You like to put your skills in use by helping others. You have three open service offers in %{service_name}."
+      volunteer_bronze_description: "You like to put your skills in use by helping others. You have three open service offers in RealGoodFood."
       volunteer_gold: "Volunteer (gold)"
       volunteer_gold_description: "You know nothing better than helping others. You have 25 open service offers in your profile, fabulous!"
       volunteer_silver: "Volunteer (silver)"
-      volunteer_silver_description: "You have a lot to give to the others: you have listed 10 services that you could do in %{service_name}!"
+      volunteer_silver_description: "You have a lot to give to the others: you have listed 10 services that you could do in RealGoodFood!"
     profile_feedback:
       as_expected: "As expected"
       exceeded_expectations: "Much better than expected"
@@ -1196,14 +1196,14 @@ en:
       search_verb: Search
   sessions:
     new:
-      create_new_account: "Create a new account to %{service_name}"
+      create_new_account: "Create a new account to RealGoodFood"
       i_forgot_my_password: "I forgot my username or password"
       login: "Log in"
-      login_to_kassi: "Log in to %{service_name}"
-      connect_your_facebook_to_kassi: "Connect your Facebook account to %{service_name}"
+      login_to_kassi: "Log in to RealGoodFood"
+      connect_your_facebook_to_kassi: "Connect your Facebook account to RealGoodFood"
       facebook_account: "Facebook account:"
-      log_in_to_link_account: "If you already have a %{service_name} account, log in to link it with your Facebook account."
-      you_can_also_create_new_account: "If you don't have an account in %{service_name}, %{accont_creation_link} to create one with your Facebook login."
+      log_in_to_link_account: "If you already have a RealGoodFood account, log in to link it with your Facebook account."
+      you_can_also_create_new_account: "If you don't have an account in RealGoodFood, %{accont_creation_link} to create one with your Facebook login."
       account_creation_link_text: "click here"
       cancle_facebook_connect: "If you don't want to link this account, you can %{cancel_link}."
       facebook_cancel_link_text: cancel
@@ -1215,17 +1215,17 @@ en:
       request_new_password: "Request new password"
       change_your_password: "Change your password"
     confirmation_pending:
-      welcome_to_kassi: "Welcome to %{service_name}!"
+      welcome_to_kassi: "Welcome to RealGoodFood!"
       check_your_email: "Check your inbox"
-      account_conrimation_instructions: "You will soon receive an email from %{service_name} with a link that you need to click to gain access to this %{service_name} community.</p><p>This email check is done to ensure that all the members really belong to this community (<b>%{community_name}</b>). This creates a safer environment for sharing.</p><p>If you have any trouble using %{service_name}, just click the <a href=\"#\" id=\"give_feedback_link\">feedback</a> on the left and let us know. Please also share your improvement ideas!"
-      account_confirmation_instructions_any_email: "You will soon receive an email from %{service_name} with a link that you need to click to gain access to this %{service_name} community.</p><p>This email check is done to create a more trusted environment for sharing.</p><p>If you have any trouble using %{service_name}, just click the <a href=\"#\" id=\"give_feedback_link\">feedback</a> on the left and let us know. Please also share your improvement ideas!"
-      get_started: "Get started with %{service_name}"
+      account_conrimation_instructions: "You will soon receive an email from RealGoodFood with a link that you need to click to gain access to this RealGoodFood community.</p><p>This email check is done to ensure that all the members really belong to this community (<b>%{community_name}</b>). This creates a safer environment for sharing.</p><p>If you have any trouble using RealGoodFood, just click the <a href=\"#\" id=\"give_feedback_link\">feedback</a> on the left and let us know. Please also share your improvement ideas!"
+      account_confirmation_instructions_any_email: "You will soon receive an email from RealGoodFood with a link that you need to click to gain access to this RealGoodFood community.</p><p>This email check is done to create a more trusted environment for sharing.</p><p>If you have any trouble using RealGoodFood, just click the <a href=\"#\" id=\"give_feedback_link\">feedback</a> on the left and let us know. Please also share your improvement ideas!"
+      get_started: "Get started with RealGoodFood"
       getting_started_instructions: "When you have confirmed your account, it's a good idea to add a picture to your profile and fill in other details. You can also continue straight in to action by adding an offer about something you could possibly lend, rent, sell or do for others. Or if you need a specific item or help with something, post a request."
       resend_confirmation_instructions: "Resend confirmation instructions"
       your_current_email_is: "Your email is %{email}."
       change_email: Change
       confirm_your_email: "Confirm your email"
-      account_confirmation_instructions: "You will soon receive an email with a link that you need to click to confirm the email address you entered. After confirming your email you can start using %{service_name}."
+      account_confirmation_instructions: "You will soon receive an email with a link that you need to click to confirm the email address you entered. After confirming your email you can start using RealGoodFood."
       account_confirmation_instructions_dashboard: "You will soon receive an email with a link that you need to click to confirm the email address you entered."
   settings:
     account:
@@ -1248,7 +1248,7 @@ en:
       email_about_new_messages: "...somebody sends me a message"
       email_about_new_received_testimonials: "...somebody gives me feedback"
       email_about_testimonial_reminders: "...I have forgotten to give feedback on an event"
-      email_about_weekly_events: "Send me an email every week on what is happening in %{service_name}"
+      email_about_weekly_events: "Send me an email every week on what is happening in RealGoodFood"
       email_when_conversation_accepted: "...somebody accepts my offer or request"
       email_when_conversation_rejected: "...somebody rejects my offer or request"
     profile:
@@ -1262,7 +1262,7 @@ en:
       profile_page: "in your profile page"
       profilemap: Mapview
       street_address: "Location:"
-      these_fields_are_shown_in_your: "This information is visible to all %{service_name} users"
+      these_fields_are_shown_in_your: "This information is visible to all RealGoodFood users"
       visible_to_everybody: "visible to everybody"
       visible_to_registered_users: "visible to users that have logged in"
       not_visible: "visible to you only"
@@ -1272,14 +1272,14 @@ en:
     parsing_error: "Could not understand the message contents. Please check the instructions and try again."
     pay: pay|payment
     payment_delivered: "Payment of %{amount} euros is delivered to %{receiver}. You'll be paying %{amount_plus_commission} euros in your phone bill."
-    potential_ride_share_offer: "%{author_name} offers a ride in %{service_name} from %{origin} to %{destination} %{start_time}."
+    potential_ride_share_offer: "%{author_name} offers a ride in RealGoodFood from %{origin} to %{destination} %{start_time}."
     request: ^request$|^r$
     rideshare: ride|rideshare
     you_can_call_him_at: "You can call the driver at %{phone_number}"
     you_can_pay_gas_money_to_driver: "To pay some gas money, reply 'kassi pay %{driver} Xe' where X is the amount. The amount + 5% commission is put in your phone bill."
     category_not_supported: "This category not yet supported by sms."
-    check_the_offer_in_kassi: "Check the offer in %{service_name}: %{listing_url}"
-    listing_created: "Thank you for the message, a listing is now added to %{service_name}."
+    check_the_offer_in_kassi: "Check the offer in RealGoodFood: %{listing_url}"
+    listing_created: "Thank you for the message, a listing is now added to RealGoodFood."
     offer: ^offer$|^o$
   tag_cloud:
     tag_used:
@@ -1287,15 +1287,15 @@ en:
       without_tag: "Without tag"
   terms:
     show:
-      accept_terms: "Accepting %{service_name} terms of use"
+      accept_terms: "Accepting RealGoodFood terms of use"
       here: here
       i_accept_new_terms: "I accept the new terms"
       i_accept_terms: "I accept the terms"
-      terms: "%{service_name} terms of use"
+      terms: "RealGoodFood terms of use"
       terms_have_changed: "Terms of use have changed"
       you_can_view_the_new_terms: "You can view the new terms"
-      you_need_to_accept: "Welcome to %{service_name}! This seems to be the first time you are using the service. Before starting you must first accept the"
-      you_need_to_accept_new_terms: "%{service_name} terms of use have changed. You have to accept the new terms in order to continue using %{service_name}. The new terms are intended to enable the upkeep of the service after the research project has ended."
+      you_need_to_accept: "Welcome to RealGoodFood! This seems to be the first time you are using the service. Before starting you must first accept the"
+      you_need_to_accept_new_terms: "RealGoodFood terms of use have changed. You have to accept the new terms in order to continue using RealGoodFood. The new terms are intended to enable the upkeep of the service after the research project has ended."
   testimonials:
     index:
       all_testimonials: "All feedback"

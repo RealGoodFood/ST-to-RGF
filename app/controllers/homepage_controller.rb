@@ -8,6 +8,8 @@ class HomepageController < ApplicationController
   skip_filter :not_public_in_private_community, :only => :sign_in
 
   def index
+    logger.info "~~~~~~~~~~~~~~~~~~#{session[:selected_community]}"
+puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
     if @current_user && @current_user.member_of?(@current_community)
       @event_feed_events = @current_community.event_feed_events.limit(5).order("id DESC")
     else
