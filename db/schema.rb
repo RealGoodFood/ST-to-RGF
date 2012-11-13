@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(:version => 20121023050946) do
     t.integer "listing_id"
   end
 
-  add_index "communities_listings", ["listing_id", "community_id"], :name => "communities_listings"
+  add_index "communities_listings", ["listing_id", "community_id"], :name => "index_communities_listings"
 
   create_table "community_memberships", :force => true do |t|
     t.string   "person_id"

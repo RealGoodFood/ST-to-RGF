@@ -1,0 +1,1136 @@
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/ajeypotdar/workArea/ST-to-RGF/config/environment.rb:10)
+New Relic Agent not running.
+  [1m[36mSQL (109.2ms)[0m  [1mdescribe `listing_followers`[0m
+Mysql2::Error: Table 'sharetribe_development.listing_followers' doesn't exist: describe `listing_followers`
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <class:Person> at /Users/ajeypotdar/workArea/ST-to-RGF/app/models/person.rb:134)
+  [1m[35mSQL (223.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (254.9ms)[0m  [1mCREATE TABLE `badges` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` varchar(255), `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (2.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (231.7ms)[0m  [1mCREATE TABLE `cached_ressi_events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` varchar(255), `application_id` varchar(255), `session_id` varchar(255), `ip_address` varchar(255), `action` varchar(255), `parameters` text, `return_value` varchar(255), `headers` text, `semantic_event_id` varchar(255), `created_at` datetime, `updated_at` datetime, `test_group_number` int(11), `community_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35mSQL (2.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (129.2ms)[0m  [1mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `author_id` varchar(255), `listing_id` int(11), `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (188.0ms)[0m  [1mCREATE INDEX `index_comments_on_listing_id` ON `comments` (`listing_id`)[0m
+  [1m[35mSQL (2.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (89.1ms)[0m  [1mCREATE TABLE `communities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `domain` varchar(255), `created_at` datetime, `updated_at` datetime, `settings` text, `consent` varchar(255), `email_admins_about_new_members` tinyint(1) DEFAULT 0, `use_fb_like` tinyint(1) DEFAULT 0, `real_name_required` tinyint(1) DEFAULT 1, `feedback_to_admin` tinyint(1) DEFAULT 0, `automatic_newsletters` tinyint(1) DEFAULT 1, `join_with_invite_only` tinyint(1) DEFAULT 0, `use_captcha` tinyint(1) DEFAULT 1, `email_confirmation` tinyint(1) DEFAULT 0, `allowed_emails` text, `users_can_invite_new_users` tinyint(1) DEFAULT 0, `select_whether_name_is_shown_to_everybody` tinyint(1) DEFAULT 0, `private` tinyint(1) DEFAULT 0, `label` varchar(255), `show_date_in_listings_list` tinyint(1) DEFAULT 0, `news_enabled` tinyint(1) DEFAULT 1, `all_users_can_add_news` tinyint(1) DEFAULT 1, `custom_frontpage_sidebar` tinyint(1) DEFAULT 0, `event_feed_enabled` tinyint(1) DEFAULT 1, `members_count` int(11) DEFAULT 0, `slogan` varchar(255), `description` text, `category` varchar(255) DEFAULT 'other', `polls_enabled` tinyint(1) DEFAULT 0, `plan` varchar(255), `user_limit` int(11), `monthly_price_in_euros` float) ENGINE=InnoDB[0m
+  [1m[35mSQL (3.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (168.9ms)[0m  [1mCREATE TABLE `communities_listings` (`community_id` int(11), `listing_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW KEYS FROM `communities_listings`
+  [1m[36mSQL (128.2ms)[0m  [1mCREATE INDEX `communities_listings` ON `communities_listings` (`listing_id`, `community_id`)[0m
+  [1m[35mSQL (2.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (102.9ms)[0m  [1mCREATE TABLE `community_memberships` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` varchar(255), `community_id` int(11), `admin` tinyint(1) DEFAULT 0, `created_at` datetime, `updated_at` datetime, `consent` varchar(255), `invitation_id` int(11), `last_page_load_date` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (3.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (137.0ms)[0m  [1mCREATE TABLE `contact_requests` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (2.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (56.7ms)[0m  [1mDROP TABLE `conversations`[0m
+  [1m[35mSQL (106.9ms)[0m  CREATE TABLE `conversations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `listing_id` int(11), `created_at` datetime, `updated_at` datetime, `status` varchar(255) DEFAULT 'pending') ENGINE=InnoDB
+  [1m[36mSQL (3.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (103.4ms)[0m  CREATE TABLE `delayed_jobs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `priority` int(11) DEFAULT 0, `attempts` int(11) DEFAULT 0, `handler` text, `last_error` text, `run_at` datetime, `locked_at` datetime, `failed_at` datetime, `locked_by` varchar(255), `created_at` datetime, `updated_at` datetime, `queue` varchar(255)) ENGINE=InnoDB
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `delayed_jobs`[0m
+  [1m[35mSQL (129.0ms)[0m  CREATE INDEX `delayed_jobs_priority` ON `delayed_jobs` (`priority`, `run_at`)
+  [1m[36mSQL (1.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (146.9ms)[0m  CREATE TABLE `devices` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` varchar(255), `device_type` varchar(255), `device_token` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (3.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (158.4ms)[0m  CREATE TABLE `emails` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` varchar(255), `address` varchar(255), `confirmed_at` datetime, `confirmation_sent_at` datetime, `confirmation_token` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `emails`[0m
+  [1m[35mSQL (131.3ms)[0m  CREATE UNIQUE INDEX `index_emails_on_address` ON `emails` (`address`)
+  [1m[36mSQL (2.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (112.8ms)[0m  CREATE TABLE `event_feed_events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person1_id` varchar(255), `person2_id` varchar(255), `community_id` varchar(255), `eventable_id` int(11), `eventable_type` varchar(255), `category` varchar(255), `members_only` tinyint(1) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (3.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (19.0ms)[0m  DROP TABLE `feedbacks`
+  [1m[36mSQL (128.8ms)[0m  [1mCREATE TABLE `feedbacks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `author_id` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime, `is_handled` int(11) DEFAULT 0, `email` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35mSQL (2.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (20.5ms)[0m  [1mDROP TABLE `groups`[0m
+  [1m[35mSQL (108.2ms)[0m  CREATE TABLE `groups` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (2.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (20.1ms)[0m  DROP TABLE `groups_favors`
+  [1m[36mSQL (145.7ms)[0m  [1mCREATE TABLE `groups_favors` (`group_id` varchar(255), `favor_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35mSQL (2.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (22.9ms)[0m  [1mDROP TABLE `groups_items`[0m
+  [1m[35mSQL (145.7ms)[0m  CREATE TABLE `groups_items` (`group_id` varchar(255), `item_id` int(11)) ENGINE=InnoDB
+  [1m[36mSQL (2.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (25.4ms)[0m  DROP TABLE `groups_listings`
+  [1m[36mSQL (119.6ms)[0m  [1mCREATE TABLE `groups_listings` (`group_id` varchar(255), `listing_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35mSQL (3.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (157.0ms)[0m  [1mCREATE TABLE `hobbies` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `official` tinyint(1) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (2.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (106.6ms)[0m  [1mCREATE TABLE `invitations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `code` varchar(255), `community_id` int(11), `usages_left` int(11), `valid_until` datetime, `information` varchar(255), `created_at` datetime, `updated_at` datetime, `inviter_id` varchar(255), `message` text, `email` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35mSQL (3.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (3.2ms)[0m  [1mDROP TABLE `item_reservations`[0m
+  [1m[35mSQL (125.8ms)[0m  CREATE TABLE `item_reservations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `item_id` int(11), `reservation_id` int(11), `amount` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (2.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (95.3ms)[0m  CREATE TABLE `listing_followers` (`person_id` varchar(255), `listing_id` int(11)) ENGINE=InnoDB
+  [1m[36mSQL (3.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (117.3ms)[0m  CREATE TABLE `listing_images` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `listing_id` int(11), `created_at` datetime, `updated_at` datetime, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int(11), `image_updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `listing_images`[0m
+  [1m[35mSQL (130.8ms)[0m  CREATE INDEX `index_listing_images_on_listing_id` ON `listing_images` (`listing_id`)
+  [1m[36mSQL (2.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (25.7ms)[0m  DROP TABLE `listings`
+  [1m[36mSQL (107.9ms)[0m  [1mCREATE TABLE `listings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `author_id` varchar(255), `category` varchar(255), `title` varchar(255), `times_viewed` int(11) DEFAULT 0, `language` varchar(255), `created_at` datetime, `updated_at` datetime, `last_modified` datetime, `visibility` varchar(255) DEFAULT 'everybody', `listing_type` varchar(255), `description` text, `origin` varchar(255), `destination` varchar(255), `valid_from` date, `valid_until` datetime, `delta` tinyint(1) DEFAULT 1 NOT NULL, `open` tinyint(1) DEFAULT 1, `share_type` varchar(255), `link_to_information` varchar(255), `number_of_portions` text, `story_behind` text, `ingredient_list` text, `trade_conditions` text) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW KEYS FROM `listings`
+  [1m[36mSQL (192.1ms)[0m  [1mCREATE INDEX `index_listings_on_listing_type` ON `listings` (`listing_type`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `listings`
+  [1m[36mSQL (133.5ms)[0m  [1mCREATE INDEX `index_listings_on_open` ON `listings` (`open`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `listings`
+  [1m[36mSQL (164.4ms)[0m  [1mCREATE INDEX `index_listings_on_visibility` ON `listings` (`visibility`)[0m
+  [1m[35mSQL (2.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (184.0ms)[0m  [1mCREATE TABLE `locations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `latitude` float, `longitude` float, `address` varchar(255), `google_address` varchar(255), `city` varchar(255), `created_at` datetime, `updated_at` datetime, `listing_id` int(11), `person_id` varchar(255), `location_type` varchar(255), `community_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35mSQL (3.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (19.7ms)[0m  [1mDROP TABLE `messages`[0m
+  [1m[35mSQL (176.3ms)[0m  CREATE TABLE `messages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sender_id` varchar(255), `content` text, `created_at` datetime, `updated_at` datetime, `conversation_id` int(11)) ENGINE=InnoDB
+  [1m[36mSQL (2.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (95.6ms)[0m  CREATE TABLE `news_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `content` text, `community_id` int(11), `author_id` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (3.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (115.8ms)[0m  CREATE TABLE `notifications` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `receiver_id` varchar(255), `type` varchar(255), `is_read` tinyint(1) DEFAULT 0, `badge_id` int(11), `created_at` datetime, `updated_at` datetime, `testimonial_id` int(11), `notifiable_id` int(11), `notifiable_type` varchar(255), `description` varchar(255)) ENGINE=InnoDB
+  [1m[36mSQL (3.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (128.7ms)[0m  CREATE TABLE `participations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` varchar(255), `conversation_id` int(11), `is_read` tinyint(1) DEFAULT 0, `created_at` datetime, `updated_at` datetime, `last_sent_at` datetime, `last_received_at` datetime, `feedback_skipped` tinyint(1) DEFAULT 0) ENGINE=InnoDB
+  [1m[36mSQL (3.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (23.6ms)[0m  DROP TABLE `people`
+  [1m[36mSQL (103.2ms)[0m  [1mCREATE TABLE `people` (`id` varchar(22) NOT NULL, `created_at` datetime, `updated_at` datetime, `is_admin` int(11) DEFAULT 0, `locale` varchar(255) DEFAULT 'fi', `preferences` text, `active_days_count` int(11) DEFAULT 0, `last_page_load_date` datetime, `test_group_number` int(11) DEFAULT 1, `active` tinyint(1) DEFAULT 1, `show_real_name_to_other_users` tinyint(1) DEFAULT 1, `given_name` varchar(255), `family_name` varchar(255), `phone_number` varchar(255), `description` text, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int(11), `image_updated_at` datetime, `username` varchar(255), `email` varchar(255), `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `password_salt` varchar(255), `confirmation_token` varchar(255), `confirmed_at` datetime, `confirmation_sent_at` datetime, `facebook_id` varchar(255), `authentication_token` varchar(255), `hobby_status` varchar(255) DEFAULT 'Existing') ENGINE=InnoDB[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `people`
+  [1m[36mSQL (130.0ms)[0m  [1mCREATE UNIQUE INDEX `index_people_on_confirmation_token` ON `people` (`confirmation_token`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `people`
+  [1m[36mSQL (136.5ms)[0m  [1mCREATE UNIQUE INDEX `index_people_on_email` ON `people` (`email`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `people`
+  [1m[36mSQL (184.3ms)[0m  [1mCREATE UNIQUE INDEX `index_people_on_facebook_id` ON `people` (`facebook_id`)[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `people`
+  [1m[36mSQL (162.1ms)[0m  [1mCREATE UNIQUE INDEX `index_people_on_reset_password_token` ON `people` (`reset_password_token`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `people`
+  [1m[36mSQL (186.9ms)[0m  [1mCREATE UNIQUE INDEX `index_people_on_username` ON `people` (`username`)[0m
+  [1m[35mSQL (2.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (164.8ms)[0m  [1mCREATE TABLE `person_hobbies` (`person_id` varchar(255), `hobby_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (3.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (135.3ms)[0m  [1mCREATE TABLE `poll_answers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `poll_id` int(11), `poll_option_id` int(11), `answerer_id` varchar(255), `comment` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (3.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (138.7ms)[0m  [1mCREATE TABLE `poll_options` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `label` varchar(255), `poll_id` int(11), `percentage` float DEFAULT 0.0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (3.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (106.0ms)[0m  [1mCREATE TABLE `polls` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `author_id` varchar(255), `active` tinyint(1) DEFAULT 1, `community_id` varchar(255), `closed_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (2.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (96.3ms)[0m  [1mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `session_id` varchar(255) NOT NULL, `data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `sessions`
+  [1m[36mSQL (106.4ms)[0m  [1mCREATE INDEX `index_sessions_on_session_id` ON `sessions` (`session_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `sessions`
+  [1m[36mSQL (134.3ms)[0m  [1mCREATE INDEX `index_sessions_on_updated_at` ON `sessions` (`updated_at`)[0m
+  [1m[35mSQL (2.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (122.5ms)[0m  [1mCREATE TABLE `share_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `listing_id` int(11), `name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `share_types`
+  [1m[36mSQL (149.1ms)[0m  [1mCREATE INDEX `index_share_types_on_listing_id` ON `share_types` (`listing_id`)[0m
+  [1m[35mSQL (3.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (121.9ms)[0m  [1mCREATE TABLE `statistics` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `community_id` int(11), `created_at` datetime, `updated_at` datetime, `users_count` int(11), `two_week_content_activation_percentage` float, `four_week_transaction_activation_percentage` float, `mau_g1` float, `wau_g1` float, `dau_g1` float, `mau_g2` float, `wau_g2` float, `dau_g2` float, `mau_g3` float, `wau_g3` float, `dau_g3` float, `invitations_sent_per_user` float, `invitations_accepted_per_user` float, `revenue_per_mau_g1` float, `extra_data` text, `mau_g1_count` int(11), `wau_g1_count` int(11), `listings_count` int(11), `new_listings_last_week` int(11), `new_listings_last_month` int(11), `conversations_count` int(11), `new_conversations_last_week` int(11), `new_conversations_last_month` int(11), `messages_count` int(11), `new_messages_last_week` int(11), `new_messages_last_month` int(11), `transactions_count` int(11), `new_transactions_last_week` int(11), `new_transactions_last_month` int(11), `new_users_last_week` int(11), `new_users_last_month` int(11)) ENGINE=InnoDB[0m
+  [1m[35mSQL (3.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (125.4ms)[0m  [1mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `taggable_type` varchar(255), `tagger_id` int(11), `tagger_type` varchar(255), `context` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `taggings`
+  [1m[36mSQL (93.5ms)[0m  [1mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `taggings`
+  [1m[36mSQL (125.4ms)[0m  [1mCREATE INDEX `index_taggings_on_taggable_id_and_taggable_type_and_context` ON `taggings` (`taggable_id`, `taggable_type`, `context`)[0m
+  [1m[35mSQL (3.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (109.1ms)[0m  [1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35mSQL (3.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (136.1ms)[0m  [1mCREATE TABLE `testimonials` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `grade` float, `text` text, `author_id` varchar(255), `participation_id` int(11), `created_at` datetime, `updated_at` datetime, `receiver_id` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35mSQL (2.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (96.1ms)[0m  [1mCREATE TABLE `diets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (98.7ms)[0m  CREATE TABLE `diet_listings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `listing_id` int(11), `diet_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (131.2ms)[0m  [1mCREATE TABLE `restrictions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` varchar(255), `diet_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (4.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (104.7ms)[0m  [1mCREATE TABLE `swap_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `offerer_id` varchar(255), `receiver_id` varchar(255), `offerer_listing_id` int(11), `receiver_listing_id` int(11), `acceptance` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (5.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (61.7ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35mSQL (3.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20121023050946')
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20090730094216')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20090731134028')
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20090821075949')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20090904120242')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20090907155717')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20091006112446')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20091028095545')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20091028131201')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20091109161516')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100322132547')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100505110646')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100707105549')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100721120037')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100721123825')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100721124444')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100726071811')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100727102551')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100727103659')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100729112458')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100729124210')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100729141955')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100729142416')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100730120601')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100730132825')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100809090550')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100809120502')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100813161213')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100817115816')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100818102743')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100819114104')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100820122449')[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100902135234')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100902142325')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100908112841')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100909105810')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100909114132')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100920075651')[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100921155612')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100922081110')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100922102321')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100922122740')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20100923074241')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20100927150547')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101007131610')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101007131827')[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101013115208')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101013124056')[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101026082126')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101027103753')[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101028151541')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101103154108')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101103161641')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101103163019')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101109131431')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101116105410')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101124104905')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101125150638')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101126093026')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101201105920')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101201133429')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101203115308')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101203115634')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101213152125')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101216150725')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101216151447')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101216152952')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110308172759')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110308192757')
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110321103604')[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110322141439')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110322151957')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110325120932')
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110412075940')[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110414105702')
+  [1m[36mSQL (2.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110414124938')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110421075758')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110428134543')[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110529110417')
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110629135331')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110704123058')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110704144650')[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110707163036')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110728110124')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110808110217')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110808161514')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110817123457')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110819111416')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110819123636')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110909072646')[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110912061834')
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110912064526')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110912065222')
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110913080622')[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110914080549')
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110914115824')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110915084232')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110915101535')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111111140246')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111111154416')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111111162432')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111114122125')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111114122315')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111116144337')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111116164728')
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111116182825')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111123071116')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111123071850')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111124174508')
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111210165312')[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111210165854')
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111210170231')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111211175403')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111228153911')[0m
+  [1m[35mSQL (32.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120104224115')
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120105162140')[0m
+  [1m[35mSQL (15.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120113091548')
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120121091558')[0m
+  [1m[35mSQL (109.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120206052931')
+  [1m[36mSQL (29.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120208145336')[0m
+  [1m[35mSQL (9.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120210171827')
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120303113202')[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120303125412')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120303152837')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120303172713')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120510094327')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120510175152')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120514001557')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120514050302')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120516204538')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120518203511')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120522162329')[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120522183329')
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120526021050')[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120614052244')
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120625211426')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120628121713')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120704072606')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120705135703')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120705140109')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120710084323')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120711140918')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120718031225')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120730024756')[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120907010347')
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120907023525')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120908052908')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120909143322')[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/ajeypotdar/workArea/ST-to-RGF/config/environment.rb:10)
+New Relic Agent not running.
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.2ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.2ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (54.0ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TIME ZONE
+  [1m[36mPK and serial sequence (11.7ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+PG::Error: ERROR:  relation "listing_followers" does not exist
+LINE 14:             AND dep.refobjid      = '"listing_followers"'::r...
+                                             ^
+:           SELECT attr.attname, seq.relname
+          FROM pg_class      seq,
+               pg_attribute  attr,
+               pg_depend     dep,
+               pg_namespace  name,
+               pg_constraint cons
+          WHERE seq.oid           = dep.objid
+            AND seq.relkind       = 'S'
+            AND attr.attrelid     = dep.refobjid
+            AND attr.attnum       = dep.refobjsubid
+            AND attr.attrelid     = cons.conrelid
+            AND attr.attnum       = cons.conkey[1]
+            AND cons.contype      = 'p'
+            AND dep.refobjid      = '"listing_followers"'::regclass
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <class:Person> at /Users/ajeypotdar/workArea/ST-to-RGF/app/models/person.rb:134)
+  [1m[35mSQL (92.1ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'badges'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (247.4ms)[0m  [1mCREATE TABLE "badges" ("id" serial primary key, "person_id" character varying(255), "name" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.8ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'cached_ressi_events'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (4.6ms)[0m  [1mCREATE TABLE "cached_ressi_events" ("id" serial primary key, "user_id" character varying(255), "application_id" character varying(255), "session_id" character varying(255), "ip_address" character varying(255), "action" character varying(255), "parameters" text, "return_value" character varying(255), "headers" text, "semantic_event_id" character varying(255), "created_at" timestamp, "updated_at" timestamp, "test_group_number" integer, "community_id" integer) [0m
+  [1m[35mSQL (0.8ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'comments'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (5.3ms)[0m  [1mCREATE TABLE "comments" ("id" serial primary key, "author_id" character varying(255), "listing_id" integer, "content" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  SHOW search_path
+  [1m[36mSQL (16.4ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'comments'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mSQL (1.5ms)[0m  CREATE INDEX "index_comments_on_listing_id" ON "comments" ("listing_id")
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'communities'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (42.2ms)[0m  CREATE TABLE "communities" ("id" serial primary key, "name" character varying(255), "domain" character varying(255), "created_at" timestamp, "updated_at" timestamp, "settings" text, "consent" character varying(255), "email_admins_about_new_members" boolean DEFAULT 'f', "use_fb_like" boolean DEFAULT 'f', "real_name_required" boolean DEFAULT 't', "feedback_to_admin" boolean DEFAULT 'f', "automatic_newsletters" boolean DEFAULT 't', "join_with_invite_only" boolean DEFAULT 'f', "use_captcha" boolean DEFAULT 't', "email_confirmation" boolean DEFAULT 'f', "allowed_emails" text, "users_can_invite_new_users" boolean DEFAULT 'f', "select_whether_name_is_shown_to_everybody" boolean DEFAULT 'f', "private" boolean DEFAULT 'f', "label" character varying(255), "show_date_in_listings_list" boolean DEFAULT 'f', "news_enabled" boolean DEFAULT 't', "all_users_can_add_news" boolean DEFAULT 't', "custom_frontpage_sidebar" boolean DEFAULT 'f', "event_feed_enabled" boolean DEFAULT 't', "members_count" integer DEFAULT 0, "slogan" character varying(255), "description" text, "category" character varying(255) DEFAULT 'other', "polls_enabled" boolean DEFAULT 'f', "plan" character varying(255), "user_limit" integer, "monthly_price_in_euros" float) 
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'communities_listings'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (1.3ms)[0m  CREATE TABLE "communities_listings" ("community_id" integer, "listing_id" integer) 
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'communities_listings'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mSQL (15.7ms)[0m  CREATE INDEX "communities_listings" ON "communities_listings" ("listing_id", "community_id")
+PG::Error: ERROR:  relation "communities_listings" already exists
+: CREATE  INDEX "communities_listings" ON "communities_listings" ("listing_id", "community_id")
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/ajeypotdar/workArea/ST-to-RGF/config/environment.rb:10)
+New Relic Agent not running.
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.2ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.2ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (25.3ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TIME ZONE
+  [1m[36mPK and serial sequence (1.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+PG::Error: ERROR:  relation "listing_followers" does not exist
+LINE 14:             AND dep.refobjid      = '"listing_followers"'::r...
+                                             ^
+:           SELECT attr.attname, seq.relname
+          FROM pg_class      seq,
+               pg_attribute  attr,
+               pg_depend     dep,
+               pg_namespace  name,
+               pg_constraint cons
+          WHERE seq.oid           = dep.objid
+            AND seq.relkind       = 'S'
+            AND attr.attrelid     = dep.refobjid
+            AND attr.attnum       = dep.refobjsubid
+            AND attr.attrelid     = cons.conrelid
+            AND attr.attnum       = cons.conkey[1]
+            AND cons.contype      = 'p'
+            AND dep.refobjid      = '"listing_followers"'::regclass
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <class:Person> at /Users/ajeypotdar/workArea/ST-to-RGF/app/models/person.rb:134)
+  [1m[35mSQL (103.7ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'badges'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (110.2ms)[0m  [1mDROP TABLE "badges"[0m
+  [1m[35mSQL (109.2ms)[0m  CREATE TABLE "badges" ("id" serial primary key, "person_id" character varying(255), "name" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'cached_ressi_events'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (3.3ms)[0m  DROP TABLE "cached_ressi_events"
+  [1m[36mSQL (5.4ms)[0m  [1mCREATE TABLE "cached_ressi_events" ("id" serial primary key, "user_id" character varying(255), "application_id" character varying(255), "session_id" character varying(255), "ip_address" character varying(255), "action" character varying(255), "parameters" text, "return_value" character varying(255), "headers" text, "semantic_event_id" character varying(255), "created_at" timestamp, "updated_at" timestamp, "test_group_number" integer, "community_id" integer) [0m
+  [1m[35mSQL (0.7ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'comments'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (3.0ms)[0m  [1mDROP TABLE "comments"[0m
+  [1m[35mSQL (5.1ms)[0m  CREATE TABLE "comments" ("id" serial primary key, "author_id" character varying(255), "listing_id" integer, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW search_path[0m
+  [1m[35mSQL (25.5ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'comments'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (2.2ms)[0m  [1mCREATE INDEX "index_comments_on_listing_id" ON "comments" ("listing_id")[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'communities'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (3.4ms)[0m  [1mDROP TABLE "communities"[0m
+  [1m[35mSQL (8.2ms)[0m  CREATE TABLE "communities" ("id" serial primary key, "name" character varying(255), "domain" character varying(255), "created_at" timestamp, "updated_at" timestamp, "settings" text, "consent" character varying(255), "email_admins_about_new_members" boolean DEFAULT 'f', "use_fb_like" boolean DEFAULT 'f', "real_name_required" boolean DEFAULT 't', "feedback_to_admin" boolean DEFAULT 'f', "automatic_newsletters" boolean DEFAULT 't', "join_with_invite_only" boolean DEFAULT 'f', "use_captcha" boolean DEFAULT 't', "email_confirmation" boolean DEFAULT 'f', "allowed_emails" text, "users_can_invite_new_users" boolean DEFAULT 'f', "select_whether_name_is_shown_to_everybody" boolean DEFAULT 'f', "private" boolean DEFAULT 'f', "label" character varying(255), "show_date_in_listings_list" boolean DEFAULT 'f', "news_enabled" boolean DEFAULT 't', "all_users_can_add_news" boolean DEFAULT 't', "custom_frontpage_sidebar" boolean DEFAULT 'f', "event_feed_enabled" boolean DEFAULT 't', "members_count" integer DEFAULT 0, "slogan" character varying(255), "description" text, "category" character varying(255) DEFAULT 'other', "polls_enabled" boolean DEFAULT 'f', "plan" character varying(255), "user_limit" integer, "monthly_price_in_euros" float) 
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'communities_listings'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (1.1ms)[0m  DROP TABLE "communities_listings"
+  [1m[36mSQL (41.9ms)[0m  [1mCREATE TABLE "communities_listings" ("community_id" integer, "listing_id" integer) [0m
+  [1m[35mSQL (1.0ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'communities_listings'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (24.0ms)[0m  [1mCREATE INDEX "index_communities_listings" ON "communities_listings" ("listing_id", "community_id")[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'community_memberships'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (114.3ms)[0m  [1mCREATE TABLE "community_memberships" ("id" serial primary key, "person_id" character varying(255), "community_id" integer, "admin" boolean DEFAULT 'f', "created_at" timestamp, "updated_at" timestamp, "consent" character varying(255), "invitation_id" integer, "last_page_load_date" timestamp) [0m
+  [1m[35mSQL (1.1ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'contact_requests'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (107.2ms)[0m  [1mCREATE TABLE "contact_requests" ("id" serial primary key, "email" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'conversations'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (106.2ms)[0m  [1mCREATE TABLE "conversations" ("id" serial primary key, "title" character varying(255), "listing_id" integer, "created_at" timestamp, "updated_at" timestamp, "status" character varying(255) DEFAULT 'pending') [0m
+  [1m[35mSQL (0.6ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'delayed_jobs'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (74.3ms)[0m  [1mCREATE TABLE "delayed_jobs" ("id" serial primary key, "priority" integer DEFAULT 0, "attempts" integer DEFAULT 0, "handler" text, "last_error" text, "run_at" timestamp, "locked_at" timestamp, "failed_at" timestamp, "locked_by" character varying(255), "created_at" timestamp, "updated_at" timestamp, "queue" character varying(255)) [0m
+  [1m[35mSQL (2.2ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'delayed_jobs'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (13.0ms)[0m  [1mCREATE INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'devices'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (5.8ms)[0m  [1mCREATE TABLE "devices" ("id" serial primary key, "person_id" character varying(255), "device_type" character varying(255), "device_token" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'emails'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (5.1ms)[0m  [1mCREATE TABLE "emails" ("id" serial primary key, "person_id" character varying(255), "address" character varying(255), "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "confirmation_token" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.9ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'emails'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (2.0ms)[0m  [1mCREATE UNIQUE INDEX "index_emails_on_address" ON "emails" ("address")[0m
+  [1m[35mSQL (0.9ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'event_feed_events'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (5.8ms)[0m  [1mCREATE TABLE "event_feed_events" ("id" serial primary key, "person1_id" character varying(255), "person2_id" character varying(255), "community_id" character varying(255), "eventable_id" integer, "eventable_type" character varying(255), "category" character varying(255), "members_only" boolean DEFAULT 'f', "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'feedbacks'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (5.6ms)[0m  [1mCREATE TABLE "feedbacks" ("id" serial primary key, "content" text, "author_id" character varying(255), "url" character varying(255), "created_at" timestamp, "updated_at" timestamp, "is_handled" integer DEFAULT 0, "email" character varying(255)) [0m
+  [1m[35mSQL (0.8ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'groups'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (3.2ms)[0m  [1mCREATE TABLE "groups" ("id" serial primary key, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.9ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'groups_favors'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (1.7ms)[0m  [1mCREATE TABLE "groups_favors" ("group_id" character varying(255), "favor_id" integer) [0m
+  [1m[35mSQL (0.9ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'groups_items'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (1.5ms)[0m  [1mCREATE TABLE "groups_items" ("group_id" character varying(255), "item_id" integer) [0m
+  [1m[35mSQL (0.8ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'groups_listings'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (1.4ms)[0m  [1mCREATE TABLE "groups_listings" ("group_id" character varying(255), "listing_id" integer) [0m
+  [1m[35mSQL (0.8ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'hobbies'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (3.8ms)[0m  [1mCREATE TABLE "hobbies" ("id" serial primary key, "name" character varying(255), "official" boolean DEFAULT 'f', "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.7ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'invitations'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (30.2ms)[0m  [1mCREATE TABLE "invitations" ("id" serial primary key, "code" character varying(255), "community_id" integer, "usages_left" integer, "valid_until" timestamp, "information" character varying(255), "created_at" timestamp, "updated_at" timestamp, "inviter_id" character varying(255), "message" text, "email" character varying(255)) [0m
+  [1m[35mSQL (0.6ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'item_reservations'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (3.2ms)[0m  [1mCREATE TABLE "item_reservations" ("id" serial primary key, "item_id" integer, "reservation_id" integer, "amount" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'listing_followers'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (1.1ms)[0m  [1mCREATE TABLE "listing_followers" ("person_id" character varying(255), "listing_id" integer) [0m
+  [1m[35mSQL (0.5ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'listing_images'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (5.3ms)[0m  [1mCREATE TABLE "listing_images" ("id" serial primary key, "listing_id" integer, "created_at" timestamp, "updated_at" timestamp, "image_file_name" character varying(255), "image_content_type" character varying(255), "image_file_size" integer, "image_updated_at" timestamp) [0m
+  [1m[35mSQL (1.2ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'listing_images'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (1.5ms)[0m  [1mCREATE INDEX "index_listing_images_on_listing_id" ON "listing_images" ("listing_id")[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'listings'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (17.5ms)[0m  [1mCREATE TABLE "listings" ("id" serial primary key, "author_id" character varying(255), "category" character varying(255), "title" character varying(255), "times_viewed" integer DEFAULT 0, "language" character varying(255), "created_at" timestamp, "updated_at" timestamp, "last_modified" timestamp, "visibility" character varying(255) DEFAULT 'everybody', "listing_type" character varying(255), "description" text, "origin" character varying(255), "destination" character varying(255), "valid_from" date, "valid_until" timestamp, "delta" boolean DEFAULT 't' NOT NULL, "open" boolean DEFAULT 't', "share_type" character varying(255), "link_to_information" character varying(255), "number_of_portions" text, "story_behind" text, "ingredient_list" text, "trade_conditions" text) [0m
+  [1m[35mSQL (1.5ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'listings'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (1.8ms)[0m  [1mCREATE INDEX "index_listings_on_listing_type" ON "listings" ("listing_type")[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'listings'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mColumns for index index_listings_on_listing_type on listings (24.0ms)[0m  [1m SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 22574
+ AND a.attnum IN (11)
+[0m
+  [1m[35mSQL (1.7ms)[0m  CREATE INDEX "index_listings_on_open" ON "listings" ("open")
+  [1m[36mSQL (17.8ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'listings'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index index_listings_on_listing_type on listings (0.4ms)[0m   SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 22574
+ AND a.attnum IN (11)
+  [1m[36mColumns for index index_listings_on_open on listings (0.2ms)[0m  [1m SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 22574
+ AND a.attnum IN (18)
+[0m
+  [1m[35mSQL (2.8ms)[0m  CREATE INDEX "index_listings_on_visibility" ON "listings" ("visibility")
+  [1m[36mSQL (2.7ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'locations'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (5.4ms)[0m  CREATE TABLE "locations" ("id" serial primary key, "latitude" float, "longitude" float, "address" character varying(255), "google_address" character varying(255), "city" character varying(255), "created_at" timestamp, "updated_at" timestamp, "listing_id" integer, "person_id" character varying(255), "location_type" character varying(255), "community_id" integer) 
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'messages'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (5.0ms)[0m  CREATE TABLE "messages" ("id" serial primary key, "sender_id" character varying(255), "content" text, "created_at" timestamp, "updated_at" timestamp, "conversation_id" integer) 
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'news_items'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (5.9ms)[0m  CREATE TABLE "news_items" ("id" serial primary key, "title" character varying(255), "content" text, "community_id" integer, "author_id" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'notifications'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (5.1ms)[0m  CREATE TABLE "notifications" ("id" serial primary key, "receiver_id" character varying(255), "type" character varying(255), "is_read" boolean DEFAULT 'f', "badge_id" integer, "created_at" timestamp, "updated_at" timestamp, "testimonial_id" integer, "notifiable_id" integer, "notifiable_type" character varying(255), "description" character varying(255)) 
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'participations'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (8.5ms)[0m  CREATE TABLE "participations" ("id" serial primary key, "person_id" character varying(255), "conversation_id" integer, "is_read" boolean DEFAULT 'f', "created_at" timestamp, "updated_at" timestamp, "last_sent_at" timestamp, "last_received_at" timestamp, "feedback_skipped" boolean DEFAULT 'f') 
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'people'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (6.7ms)[0m  CREATE TABLE "people" ("id" character varying(22) NOT NULL, "created_at" timestamp, "updated_at" timestamp, "is_admin" integer DEFAULT 0, "locale" character varying(255) DEFAULT 'fi', "preferences" text, "active_days_count" integer DEFAULT 0, "last_page_load_date" timestamp, "test_group_number" integer DEFAULT 1, "active" boolean DEFAULT 't', "show_real_name_to_other_users" boolean DEFAULT 't', "given_name" character varying(255), "family_name" character varying(255), "phone_number" character varying(255), "description" text, "image_file_name" character varying(255), "image_content_type" character varying(255), "image_file_size" integer, "image_updated_at" timestamp, "username" character varying(255), "email" character varying(255), "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "password_salt" character varying(255), "confirmation_token" character varying(255), "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "facebook_id" character varying(255), "authentication_token" character varying(255), "hobby_status" character varying(255) DEFAULT 'Existing') 
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'people'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mSQL (1.9ms)[0m  CREATE UNIQUE INDEX "index_people_on_confirmation_token" ON "people" ("confirmation_token")
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'people'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index index_people_on_confirmation_token on people (0.2ms)[0m   SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 22645
+ AND a.attnum IN (32)
+  [1m[36mSQL (1.8ms)[0m  [1mCREATE UNIQUE INDEX "index_people_on_email" ON "people" ("email")[0m
+  [1m[35mSQL (0.9ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'people'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mColumns for index index_people_on_confirmation_token on people (0.3ms)[0m  [1m SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 22645
+ AND a.attnum IN (32)
+[0m
+  [1m[35mColumns for index index_people_on_email on people (0.3ms)[0m   SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 22645
+ AND a.attnum IN (21)
+  [1m[36mSQL (2.6ms)[0m  [1mCREATE UNIQUE INDEX "index_people_on_facebook_id" ON "people" ("facebook_id")[0m
+  [1m[35mSQL (1.2ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'people'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mColumns for index index_people_on_confirmation_token on people (0.3ms)[0m  [1m SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 22645
+ AND a.attnum IN (32)
+[0m
+  [1m[35mColumns for index index_people_on_email on people (0.3ms)[0m   SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 22645
+ AND a.attnum IN (21)
+  [1m[36mColumns for index index_people_on_facebook_id on people (0.2ms)[0m  [1m SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 22645
+ AND a.attnum IN (35)
+[0m
+  [1m[35mSQL (1.6ms)[0m  CREATE UNIQUE INDEX "index_people_on_reset_password_token" ON "people" ("reset_password_token")
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'people'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index index_people_on_confirmation_token on people (0.3ms)[0m   SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 22645
+ AND a.attnum IN (32)
+  [1m[36mColumns for index index_people_on_email on people (0.2ms)[0m  [1m SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 22645
+ AND a.attnum IN (21)
+[0m
+  [1m[35mColumns for index index_people_on_facebook_id on people (0.2ms)[0m   SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 22645
+ AND a.attnum IN (35)
+  [1m[36mColumns for index index_people_on_reset_password_token on people (0.2ms)[0m  [1m SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 22645
+ AND a.attnum IN (23)
+[0m
+  [1m[35mSQL (2.0ms)[0m  CREATE UNIQUE INDEX "index_people_on_username" ON "people" ("username")
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'person_hobbies'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (1.8ms)[0m  CREATE TABLE "person_hobbies" ("person_id" character varying(255), "hobby_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (1.4ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'poll_answers'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (10.1ms)[0m  CREATE TABLE "poll_answers" ("id" serial primary key, "poll_id" integer, "poll_option_id" integer, "answerer_id" character varying(255), "comment" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'poll_options'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (41.3ms)[0m  CREATE TABLE "poll_options" ("id" serial primary key, "label" character varying(255), "poll_id" integer, "percentage" float DEFAULT 0.0, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'polls'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (4.7ms)[0m  CREATE TABLE "polls" ("id" serial primary key, "title" character varying(255), "author_id" character varying(255), "active" boolean DEFAULT 't', "community_id" character varying(255), "closed_at" timestamp, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'sessions'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (5.0ms)[0m  CREATE TABLE "sessions" ("id" serial primary key, "session_id" character varying(255) NOT NULL, "data" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'sessions'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mSQL (1.8ms)[0m  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'sessions'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index index_sessions_on_session_id on sessions (0.3ms)[0m   SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 22702
+ AND a.attnum IN (2)
+  [1m[36mSQL (1.6ms)[0m  [1mCREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'share_types'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (3.5ms)[0m  [1mCREATE TABLE "share_types" ("id" serial primary key, "listing_id" integer, "name" character varying(255)) [0m
+  [1m[35mSQL (1.2ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'share_types'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (1.6ms)[0m  [1mCREATE INDEX "index_share_types_on_listing_id" ON "share_types" ("listing_id")[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'statistics'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (7.0ms)[0m  [1mCREATE TABLE "statistics" ("id" serial primary key, "community_id" integer, "created_at" timestamp, "updated_at" timestamp, "users_count" integer, "two_week_content_activation_percentage" float, "four_week_transaction_activation_percentage" float, "mau_g1" float, "wau_g1" float, "dau_g1" float, "mau_g2" float, "wau_g2" float, "dau_g2" float, "mau_g3" float, "wau_g3" float, "dau_g3" float, "invitations_sent_per_user" float, "invitations_accepted_per_user" float, "revenue_per_mau_g1" float, "extra_data" text, "mau_g1_count" integer, "wau_g1_count" integer, "listings_count" integer, "new_listings_last_week" integer, "new_listings_last_month" integer, "conversations_count" integer, "new_conversations_last_week" integer, "new_conversations_last_month" integer, "messages_count" integer, "new_messages_last_week" integer, "new_messages_last_month" integer, "transactions_count" integer, "new_transactions_last_week" integer, "new_transactions_last_month" integer, "new_users_last_week" integer, "new_users_last_month" integer) [0m
+  [1m[35mSQL (1.0ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'taggings'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (7.5ms)[0m  [1mCREATE TABLE "taggings" ("id" serial primary key, "tag_id" integer, "taggable_id" integer, "taggable_type" character varying(255), "tagger_id" integer, "tagger_type" character varying(255), "context" character varying(255), "created_at" timestamp) [0m
+  [1m[35mSQL (1.4ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'taggings'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (2.0ms)[0m  [1mCREATE INDEX "index_taggings_on_tag_id" ON "taggings" ("tag_id")[0m
+  [1m[35mSQL (1.1ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'taggings'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mColumns for index index_taggings_on_tag_id on taggings (0.2ms)[0m  [1m SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 22735
+ AND a.attnum IN (2)
+[0m
+  [1m[35mSQL (3.6ms)[0m  CREATE INDEX "index_taggings_on_taggable_id_and_taggable_type_and_context" ON "taggings" ("taggable_id", "taggable_type", "context")
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'tags'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (4.9ms)[0m  CREATE TABLE "tags" ("id" serial primary key, "name" character varying(255)) 
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'testimonials'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (7.4ms)[0m  CREATE TABLE "testimonials" ("id" serial primary key, "grade" float, "text" text, "author_id" character varying(255), "participation_id" integer, "created_at" timestamp, "updated_at" timestamp, "receiver_id" character varying(255)) 
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'diets'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (3.9ms)[0m  CREATE TABLE "diets" ("id" serial primary key, "name" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (4.8ms)[0m  [1mCREATE TABLE "diet_listings" ("id" serial primary key, "listing_id" integer, "diet_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (6.2ms)[0m  CREATE TABLE "restrictions" ("id" serial primary key, "person_id" character varying(255), "diet_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'swap_items'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (7.3ms)[0m  CREATE TABLE "swap_items" ("id" serial primary key, "offerer_id" character varying(255), "receiver_id" character varying(255), "offerer_listing_id" integer, "receiver_listing_id" integer, "acceptance" boolean, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (1.1ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'schema_migrations'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mSQL (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_info'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (2.5ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (34.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20121023050946')[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20080806070738')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20080807071903')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20080807080513')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20080808095031')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20080815075550')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20080818091109')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20080818092139')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20080821103835')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20080825064927')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20080825114546')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20080828104013')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20080828104239')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20080919122825')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20080925100643')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20080925100743')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20080925103547')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20080925103759')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20080925112423')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20080925114309')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20080929102121')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20081008115110')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20081009160751')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20081010114150')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20081024154431')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20081024182346')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20081024183444')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20081103092143')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20081104070403')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20081118145857')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20081121084337')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20081202140109')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20081205142238')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20081215145238')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20081216060503')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090119114525')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20090218112317')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090219094209')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20090225073742')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090323121824')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20090330064443')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090330070210')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20090330072036')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090401181848')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20090401184511')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090401185039')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20090402144456')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090403093157')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20090406081353')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090414142556')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20090415085812')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090415130553')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20090415131023')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090424093506')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20090424100145')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090618112730')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20090629113838')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090629131727')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20090701065350')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090701110931')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20090713130351')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090729124418')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20090730093917')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090730094216')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20090731134028')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090821075949')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20090904120242')[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20090907155717')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20091006112446')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20091028095545')
+  [1m[36mSQL (4.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20091028131201')[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20091109161516')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100322132547')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100505110646')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100707105549')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100721120037')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100721123825')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100721124444')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100726071811')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100727102551')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100727103659')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100729112458')
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100729124210')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100729141955')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100729142416')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100730120601')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100730132825')[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100809090550')
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100809120502')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100813161213')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100817115816')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100818102743')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100819114104')[0m
+  [1m[35mSQL (2.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100820122449')
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100902135234')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100902142325')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100908112841')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100909105810')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100909114132')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100920075651')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100921155612')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100922081110')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100922102321')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100922122740')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100923074241')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100927150547')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20101007131610')[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20101007131827')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20101013115208')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20101013124056')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20101026082126')[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20101027103753')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20101028151541')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20101103154108')
+  [1m[36mSQL (39.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20101103161641')[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20101103163019')
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20101109131431')[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20101116105410')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20101124104905')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20101125150638')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20101126093026')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20101201105920')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20101201133429')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20101203115308')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20101203115634')[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20101213152125')
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20101216150725')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20101216151447')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20101216152952')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110308172759')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110308192757')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110321103604')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110322141439')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110322151957')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110325120932')[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110412075940')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110414105702')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110414124938')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110421075758')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110428134543')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110529110417')[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110629135331')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110704123058')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110704144650')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110707163036')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110728110124')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110808110217')[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110808161514')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110817123457')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110819111416')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110819123636')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110909072646')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110912061834')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110912064526')
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110912065222')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110913080622')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110914080549')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110914115824')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110915084232')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110915101535')
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111111140246')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111111154416')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111111162432')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111114122125')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111114122315')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111116144337')
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111116164728')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111116182825')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111123071116')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111123071850')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111124174508')[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111210165312')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111210165854')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111210170231')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111211175403')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111228153911')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120104224115')[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120105162140')
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120113091548')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120121091558')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120206052931')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120208145336')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120210171827')[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120303113202')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120303125412')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120303152837')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120303172713')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120510094327')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120510175152')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120514001557')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120514050302')[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120516204538')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120518203511')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120522162329')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120522183329')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120526021050')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120614052244')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120625211426')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120628121713')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120704072606')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120705135703')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120705140109')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120710084323')[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120711140918')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120718031225')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120730024756')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120907010347')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120907023525')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120908052908')[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120909143322')

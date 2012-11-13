@@ -24,6 +24,9 @@ gem 'capistrano'
 #gem 'thin'
 gem 'unicorn'
 
+#for migrating database on heroku
+gem 'taps'
+
 gem 'haml'
 gem 'sass'
 gem 'database_cleaner'
@@ -66,7 +69,8 @@ group :production do
 end
 
 group :development do
-  gem "mysql2", "~> 0.2.7" #this version for Rails < 3.1 compatibility
+  # gem "mysql2", "~> 0.2.7" #this version for Rails < 3.1 compatibility
+  gem 'pg'
 end
 
 group :test do
