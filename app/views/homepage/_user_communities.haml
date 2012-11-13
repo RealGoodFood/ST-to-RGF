@@ -1,6 +1,6 @@
 .homepage_sidebar_box_content
   %h3
-    Your realted community
+    Our other communities
   - @current_user.communities.each do |community|
     %p
       - if community.id != @current_community.id 

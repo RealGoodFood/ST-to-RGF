@@ -395,7 +395,7 @@ ActiveRecord::Schema.define(:version => 20121023050946) do
     t.string   "title"
     t.string   "author_id"
     t.boolean  "active",       :default => true
-    t.string   "community_id"
+    t.integer   "community_id"
     t.datetime "closed_at"
     t.datetime "created_at"
     t.datetime "updated_at"

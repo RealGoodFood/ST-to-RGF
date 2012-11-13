@@ -145,7 +145,7 @@ class ApplicationController < ActionController::Base
 #puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>fetch_community>>>>>>found community>>>>>>>>>>>>>>>>>>>>#{session[:selected_community]}"
       # Otherwise pick the domain normally from the request subdomain
 #      if @current_community = Community.find_by_domain(request.subdomain)
-      if @current_community = Community.find_by_domain(session[:selected_community])
+      if @current_community = Community.find_by_id(session[:selected_community])
 #        logger.info "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
         # Store to thread the service_name used by current community, so that it can be included in all translations
         ApplicationHelper.store_community_service_name_to_thread(service_name)
