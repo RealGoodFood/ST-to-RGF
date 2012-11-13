@@ -64,7 +64,7 @@ Kassi::Application.configure do
       :authentication       => 'plain',
       :enable_starttls_auto => true  
     }
-  end
+  # end
   
   # Sendmail is used for some mails (e.g. Newsletter) so configure it even when postmark is the main method
   # ActionMailer::Base.sendmail_settings = {
