@@ -489,14 +489,14 @@ ActiveRecord::Schema.define(:version => 20121023050946) do
     t.datetime "updated_at"
   end
 
-  create_table "diet_listings" do |t|
+  create_table "diet_listings", :force => true do |t|
     t.integer "listing_id"
     t.integer "diet_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "restrictions" do |t|
+  create_table "restrictions", :force => true do |t|
     t.string "person_id"
     t.integer "diet_id"
     t.datetime "created_at"
