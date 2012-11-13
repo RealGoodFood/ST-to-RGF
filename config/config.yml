@@ -79,17 +79,17 @@ default: &default_settings
   # For the domain part you can enter HELO domain, if needed. Google for more info. :)
   mail_delivery_method: smtp
 
-  smtp_email_address: "smtp.gmail.com"
+  smtp_email_address: "smtp.sendgrid.net"
   smtp_email_port: 587
-  smtp_email_user_name: "teststore5555"
-  smtp_email_password: "application"
-  smtp_email_domain: "localhost"
+  smtp_email_user_name: "app9194900@heroku.com"
+  smtp_email_password: ENV['SENDGRID_PASSWORD']
+  smtp_email_domain: "heroku.com"
 
   # postmark_api_key:
 
 
   # This will be the from field in the mails sent from Sharetribe
-  sharetribe_mail_from_address: "noreply-sharetribe@example.com"
+  sharetribe_mail_from_address: "no-reply@realgoodfood.com"
   # This address is added in the most mail signatures 
   # (it's good idea to set this if you use no-reply addres as the form
   # address above so that people can contact the admins if needed)
