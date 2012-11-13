@@ -4,5 +4,5 @@
   - @current_user.communities.each do |community|
     %p
       - if community.id != @current_community.id 
-        = link_to "#{community.name}", root_path(:cid => "#{community.domain}")
+        = link_to "#{community.name}", root_path(:cid => "#{community.id}")
   

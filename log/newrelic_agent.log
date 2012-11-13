@@ -34,3 +34,10 @@
 [11/14/12 00:54:34 +0530 Ajeys-MacBook.local (12789)] INFO : Agent Log at /Users/ajeypotdar/workArea/ST-to-RGF/log/newrelic_agent.log
 [11/14/12 00:54:34 +0530 Ajeys-MacBook.local (12789)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
 [11/14/12 00:54:34 +0530 Ajeys-MacBook.local (12789)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[11/14/12 01:15:45 +0530 Ajeys-MacBook.local (12992)] INFO : Dispatcher: webrick
+[11/14/12 01:15:45 +0530 Ajeys-MacBook.local (12992)] INFO : Application: Sharetribe
+[11/14/12 01:15:45 +0530 Ajeys-MacBook.local (12992)] WARN : Agent configured not to send data in this environment.
+[11/14/12 01:15:45 +0530 Ajeys-MacBook.local (12992)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 12992
+[11/14/12 01:15:45 +0530 Ajeys-MacBook.local (12992)] INFO : Agent Log at /Users/ajeypotdar/workArea/ST-to-RGF/log/newrelic_agent.log
+[11/14/12 01:15:45 +0530 Ajeys-MacBook.local (12992)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[11/14/12 01:15:45 +0530 Ajeys-MacBook.local (12992)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
