@@ -54,7 +54,8 @@ class CommunityMembershipsController < ApplicationController
         end
         
         # Send confirmation
-        PersonMailer.additional_email_confirmation(e, request.host_with_port).deliver
+        # stridepath: to-do
+        # PersonMailer.additional_email_confirmation(e, request.host_with_port).deliver
         e.confirmation_sent_at = Time.now
         e.save
         

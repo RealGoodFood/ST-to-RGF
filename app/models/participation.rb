@@ -19,7 +19,8 @@ class Participation < ActiveRecord::Base
     if feedback_can_be_given?
       update_attribute(:is_read, false)
       if person.should_receive?("email_about_testimonial_reminders")
-        PersonMailer.testimonial_reminder(self, host).deliver
+        # stridepath: to-do
+        # PersonMailer.testimonial_reminder(self, host).deliver
       end
     end
   end

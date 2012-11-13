@@ -92,7 +92,8 @@ class Community < ActiveRecord::Base
   
   def email_all_members(subject, mail_content, default_locale="en", verbose=false)
     puts "Sending mail to all #{members.count} members in community: #{self.name}" if verbose
-    PersonMailer.deliver_open_content_messages(members.all, subject, mail_content, default_locale, verbose)
+    # stridepath: to-do
+    # PersonMailer.deliver_open_content_messages(members.all, subject, mail_content, default_locale, verbose)
   end
 
   # Makes the creator of the community a member and an admin

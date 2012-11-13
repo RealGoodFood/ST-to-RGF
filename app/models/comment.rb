@@ -15,7 +15,8 @@ class Comment < ActiveRecord::Base
     if !listing.author.id.eql?(author.id)
       Notification.create(:notifiable_id => id, :notifiable_type => "Comment", :receiver_id => listing.author.id, :description => "to_own_listing")
       if listing.author.should_receive?("email_about_new_comments_to_own_listing")
-        PersonMailer.new_comment_to_own_listing_notification(self, host).deliver
+        # stridepath: to-do
+        # PersonMailer.new_comment_to_own_listing_notification(self, host).deliver
       end
     end
     listing.notify_followers(host, author, false)

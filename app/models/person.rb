@@ -635,7 +635,8 @@ class Person < ActiveRecord::Base
   
   def self.email_all_users(subject, mail_content, default_locale="en", verbose=false, emails_to_skip=[])
     puts "Sending mail to every #{Person.count} users in the service" if verbose
-    PersonMailer.deliver_open_content_messages(Person.all, subject, mail_content, default_locale, verbose, emails_to_skip)
+    # stridepath: to-do
+    # PersonMailer.deliver_open_content_messages(Person.all, subject, mail_content, default_locale, verbose, emails_to_skip)
   end
   
   def get_existing_value_or_ask(attribute, p1, p2)
