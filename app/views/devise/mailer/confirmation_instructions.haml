@@ -1,15 +1,14 @@
 //bHjC6UljSr4Oaa3a6HdQnY/people/confirmation?confirmation_token=rG1svxqCsB1wiJy5XQCC
-
--if @confirmation_token
-  yes confirmation token 
-  //- link = confirmation_url(:confirmation_token => @confirmation_token, :host => @host)
-- else
-  - if $host
-    have $host
-    //- link = confirmation_url(@resource, :confirmation_token => @resource.confirmation_token, :host => $host)
-  - else
-    - link = "http://foodswap.herokuapp.com/#{@resource.id}/people/confirmation?confirmation_token=#{@resource.confirmation_token}"
-    //- link = confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
+//-if @confirmation_token
+//  yes confirmation token 
+//  //- link = confirmation_url(:confirmation_token => @confirmation_token, :host => @host)
+//- else
+//  - if $host
+//    have $host
+//    //- link = confirmation_url(@resource, :confirmation_token => @resource.confirmation_token, :host => $host)
+//  - else
+- link = "http://foodswap.herokuapp.com/#{@resource.id}/people/confirmation?confirmation_token=#{@resource.confirmation_token}"
+//- link = confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
 %p
   = t("emails.common.hey", :name => @resource.given_name_or_username)
   

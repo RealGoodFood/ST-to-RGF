@@ -1,8 +1,16 @@
 .homepage_sidebar_box_content
   %h3
     Our other communities
-  - @current_user.communities.each do |community|
+  - unless @current_user.communities.nil?
+    - @current_user.communities.each do |community|
+      %p
+        - if community.id != @current_community.id 
+          = link_to "#{community.name}", root_path(:cid => "#{community.id}")
+    Other communities
+  - unless @all_communities.nil?
+    - @all_communities.each do |community|   
+      %p
+        = link_to "#{community.name}", root_path(:cid => "#{community.id}") if !user_belongs_to(community)
+  %h3
     %p
-      - if community.id != @current_community.id 
-        = link_to "#{community.name}", root_path(:cid => "#{community.id}")
-  
+      = link_to t("layouts.display_popup.engage_with_more"), new_person_invitation_path(@current_user)

@@ -6,7 +6,7 @@ class InvitationsController < ApplicationController
     controller.ensure_logged_in "you_must_log_in_to_invite_new_user"
   end
   
-  before_filter :users_can_invite_new_users, :only => :create
+#  before_filter :users_can_invite_new_users, :only => :create
 
   def new
     @invitation = Invitation.new(params[:invitation])

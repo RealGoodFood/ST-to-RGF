@@ -16,6 +16,8 @@ Kassi::Application.configure do
   config.action_mailer.default_url_options = { :host => "lvh.me:3000" }
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.delivery_method = :smtp
   
   # Enable sending mail from localhost
   ActionMailer::Base.smtp_settings = {
@@ -28,15 +30,6 @@ Kassi::Application.configure do
     :enable_starttls_auto => true  
   }
 
-
-# ActionMailer::Base.smtp_settings = {
-#    :address        => "smtp.gmail.com",
-#    :port           => 587,
-#    :domain         => "localhost",
-#    :authentication => :plain,
-#    :user_name => "teststore5555",
-#    :password => "application"
-#  }
   config.active_support.deprecation = :log
   
 end

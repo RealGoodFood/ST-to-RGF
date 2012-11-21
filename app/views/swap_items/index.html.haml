@@ -31,4 +31,38 @@
           - elsif swap_offer.acceptance == false
             .conversation_status_label.rejected
               Request Rejected
+
+%br/
+%br/
+%h2
+  Sent swap offers
+
+#conversations
+  - unless @sent_swap_offers.nil?
+    - @sent_swap_offers.each do |swap_offer|
+      .conversation
+        .person_image
+          = small_avatar_thumb(get_person(swap_offer.receiver_id))
+        .conversation_left
+          = link_to "#{get_person(swap_offer.offerer_id).username}", person_path(swap_offer.receiver_id)
+          %br/
+          %span= time_ago(swap_offer.created_at)
+        .conversation_center
+          %h7
+            //To do need to add to translation after finalization
+            Sent Swap offer for recipe
+            = link_to get_listing(swap_offer.receiver_listing_id).title, listing_path(swap_offer.receiver_listing_id)
+            %br/
+            for exchange your recipe
+            = link_to get_listing(swap_offer.offerer_listing_id).title, listing_path(swap_offer.offerer_listing_id)
+        .conversation_right
+          - if swap_offer.acceptance == true
+            .conversation_status_label.accepted
+              Request Accepted
+          - elsif swap_offer.acceptance == false
+            .conversation_status_label.rejected
+              Request Rejected
+          - else
+            .conversation_status_label
+              Request Pending
           

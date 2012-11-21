@@ -10,7 +10,7 @@ class SwapOfferJob < Struct.new(:swap_list_id, :host)
   
   def perform
     swap_item = SwapItem.find(swap_list_id)
-     PersonMailer.swap_offer(swap_item, host).deliver
+     PersonMailer.delay.swap_offer(swap_item, host)
 #    Delayed::Job.enqueue(AcceptReminderJob.new(conversation.id, last_message_id, host), :priority => 0, :run_at => 1.week.from_now) unless conversation.status.eql?("free")
   end
   

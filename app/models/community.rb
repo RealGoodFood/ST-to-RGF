@@ -10,7 +10,7 @@ class Community < ActiveRecord::Base
   
   has_and_belongs_to_many :listings
   
-  VALID_CATEGORIES = ["company", "university", "association", "neighborhood", "congregation", "town", "apartment_building", "other"]
+  VALID_CATEGORIES = ["association", "neighborhood", "congregation", "town", "apartment_building", "other"]
   
   validates_length_of :name, :in => 2..50
   validates_length_of :domain, :in => 2..50
@@ -26,7 +26,8 @@ class Community < ActiveRecord::Base
   serialize :settings, Hash
   
   attr_accessor :terms
-  
+
+
   def address
     location ? location.address : nil
   end
@@ -92,8 +93,7 @@ class Community < ActiveRecord::Base
   
   def email_all_members(subject, mail_content, default_locale="en", verbose=false)
     puts "Sending mail to all #{members.count} members in community: #{self.name}" if verbose
-    # stridepath: to-do
-    # PersonMailer.deliver_open_content_messages(members.all, subject, mail_content, default_locale, verbose)
+     PersonMailer.deliver_open_content_messages(members.all, subject, mail_content, default_locale, verbose)
   end
 
   # Makes the creator of the community a member and an admin

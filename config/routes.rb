@@ -253,11 +253,10 @@ Kassi::Application.routes.draw do
   match "/:locale/offers/tag/:tag" => "listings#offers", :as => :offers_with_tag
   match "/:locale/requests/tag/:tag" => "listings#requests", :as => :requests_with_tag
   match "/:locale/people/:person_id/messages/:conversation_type/:id" => "conversations#show", :as => :single_conversation
-  match "/:locale/people/:person_id/swap_items/inbox" => "swap_items#inbox", :as => :swap_offers_inbox
-#  match "/:locale/people/:person_id/swap_items/outbox" => "swap_items#outbox", :as => :swap_offers_outbox
+#  match "/:locale/people/:person_id/swap_items/inbox" => "swap_items#inbox", :as => :swap_offers_inbox
+#  match "/:locale/people/:person_id/swap_items_outbox" => "swap_items#outbox", :as => :swap_offers_outbox
   match "/:locale/people/:person_id/swap_items/:id/direct_update" => "swap_items#direct_update", :as => :swap_offers_update
 #  match "/:locale/people/:person_id/swap_offers_outbox" => "swap_items#outbox", :as => :swap_offers_outbox
-
   #match "/:locale/people/:person_id/messages" => "conversations#received", :as => :reply_to_listing
   match "/:locale/listings/:id/reply" => "conversations#new", :as => :reply_to_listing
   match "/:locale/listings/:id/swap" => "swap_items#new", :as => :swap_listing

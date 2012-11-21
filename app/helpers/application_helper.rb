@@ -114,6 +114,12 @@ module ApplicationHelper
     end
     Rails.logger.error "#{error_class}: #{message}"
   end
+
+  def user_belongs_to(community)
+    if CommunityMembership.where(:person_id => @current_user.id, :community_id => community.id ).first
+      return true
+    end
+  end
   
   # Checks if HTTP_REFERER or HTTP_ORIGIN exists and returns only the domain part with protocol
   # This was first used to return user to original community from login domain.
@@ -147,7 +153,8 @@ module ApplicationHelper
   # If we are not in a single community defined by a subdomain,
   # we are on dashboard
   def on_dashboard?
-    ["", "www","dashboardtranslate"].include?(session[:selected_community])
+#    ["", "www","dashboardtranslate"].include?(session[:selected_community])
+#    if @current_community
   end
   
   def facebook_like(recommend=false)

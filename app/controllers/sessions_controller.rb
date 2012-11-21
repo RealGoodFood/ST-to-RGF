@@ -65,8 +65,6 @@ class SessionsController < ApplicationController
     
     sign_in @current_user
 
-  
-
     session[:form_login] = nil
     
     if @current_user

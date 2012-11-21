@@ -7,17 +7,11 @@ class CommunityMembershipsController < ApplicationController
   skip_filter :dashboard_only
   skip_filter :single_community_only, :only => :create
   skip_filter :cannot_access_without_joining
-#  skip_filter :fetch_community, :only => :new
   
   def new
-    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>community membership new"
     if @current_user.communities.include?(@current_community)
       flash[:notice] = "you_are_already_member"
-      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>if"
       redirect_to community_home_path 
-#    else
-#      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>else"
-#      redirect_to root
     end
     
     @community_membership = CommunityMembership.new
@@ -54,17 +48,14 @@ class CommunityMembershipsController < ApplicationController
         end
         
         # Send confirmation
-        # stridepath: to-do
-        # PersonMailer.additional_email_confirmation(e, request.host_with_port).deliver
+        PersonMailer.additional_email_confirmation(e, request.host_with_port).deliver
         e.confirmation_sent_at = Time.now
         e.save
         
         flash[:notice] = "#{t("layouts.notifications.you_need_to_confirm_your_account_first")} #{t("sessions.confirmation_pending.check_your_email")}."
         render :action => :new and return
       end
-      
     end
-    
     
     @community_membership.invitation = invitation if invitation.present?
 

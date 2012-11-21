@@ -40,6 +40,7 @@ puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
         @news_item_count = @current_community.news_items.count
       end  
     end
+      @all_communities = Community.all
   end
   
   def sign_in

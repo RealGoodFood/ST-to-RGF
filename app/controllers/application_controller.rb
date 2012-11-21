@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from RestClient::Unauthorized, :with => :session_unauthorized
 
-  helper_method :root, :logged_in?, :current_user?, :get_person, :get_listing, :not_already_requested, :shared_with_other_user
+  helper_method :root, :logged_in?, :current_user?, :get_person, :get_listing, :get_community , :not_already_requested, :shared_with_other_user
 
   def set_locale    
     locale = (logged_in? && @current_community && @current_community.locales.include?(@current_user.locale)) ? @current_user.locale : params[:locale]
@@ -59,6 +59,10 @@ class ApplicationController < ActionController::Base
 
   def get_listing(id)
     return Listing.find_by_id(id)
+  end
+  
+  def get_community(id)
+    return Community.find_by_id(id)
   end
 
   def change_community
@@ -172,13 +176,13 @@ class ApplicationController < ActionController::Base
   
   # Before filter to make sure non logged in users cannot access private communities
   def not_public_in_private_community
-    return if controller_name.eql?("passwords")
-    if @current_community && @current_community.private? && !@current_user
-      @container_class = "container_12"
-      @private_layout = true
-      set_locale 
-      redirect_to :controller => :homepage, :action => :sign_in
-    end
+#    return if controller_name.eql?("passwords")
+#    if @current_community && @current_community.private? && !@current_user
+#      @container_class = "container_12"
+#      @private_layout = true
+#      set_locale 
+#      redirect_to :controller => :homepage, :action => :sign_in
+#    end
   end
   
   # Before filter to check if current user is the member of this community
@@ -196,8 +200,11 @@ class ApplicationController < ActionController::Base
   
   # Before filter to direct a logged-in non-member to join tribe form
   def cannot_access_without_joining
-    if @current_user
-      redirect_to new_tribe_membership_path unless on_dashboard? || @current_community_membership || @current_user.is_admin?
+#      redirect_to new_tribe_membership_path unless on_dashboard? || @current_community_membership || @current_user.is_admin?
+    if @current_user and @current_community
+      unless @current_user.communities.include?(@current_community)
+        redirect_to new_tribe_membership_path
+      end
     end
   end
 
@@ -290,7 +297,7 @@ class ApplicationController < ActionController::Base
   # This method is used to ensure that using the community subdomain and not the login subdomain
   def  community_url(request_url_with_port, community)
     unless community.blank?
-      return request_url_with_port.sub(/[^\/\.]+\./, "#{community.domain}.")
+      return request_url_with_port #request_url_with_port.sub(/[^\/\.]+\./, "#{community.domain}.")
     else
       return request_url_with_port
     end

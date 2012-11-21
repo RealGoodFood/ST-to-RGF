@@ -7,7 +7,7 @@
       #{service_name}
       - if @listing && action_name.eql?("show")
         = "- #{listed_listing_title(@listing)}"
-      - else
+      - elsif @current_community
         = "- #{@current_community.name}"
     - if @listing && action_name.eql?("show")
       - fb_image = @listing.listing_images.empty? ? "images/sharetribe_icon.png" : @listing.listing_images.first.image.url(:medium)
@@ -18,7 +18,7 @@
       %meta{ :property => "og:site_name", :content =>"#{service_name}: "}
       %meta{ :property => "fb:admins", :content =>"Gnomet,juhomakkonen"}
       %meta{ :property => "og:description", :content => @listing.description}
-    - else
+    - elsif @current_community
       %meta{ :property => "og:title", :content => render(:file => community_file("fb_graph_title", false))} 
       %meta{ :property => "og:type", :content =>"website"}
       %meta{ :property => "og:url", :content =>"#{request.protocol}#{@current_community.domain}.#{request.domain}"} 
@@ -46,8 +46,8 @@
         %style{:type => "text/css"}
           a.handle { background-position: -80px 0; }
           a.handle:hover { background-position: -120px 0; }  
-    
-    %link{:rel => "image_src", :href => "http://#{@current_community.domain}.#{request.domain}/images/dashboard/sharetribe_logo.png"}
+    - if @current_community
+      %link{:rel => "image_src", :href => "http://#{@current_community.domain}.#{request.domain}/images/dashboard/sharetribe_logo.png"}
     
     = auto_discovery_link_tag(:atom, atom_feed_url ) 
   %body

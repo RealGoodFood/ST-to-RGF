@@ -27,7 +27,7 @@
           = label_tag :invitation_code, t('people.new.invitation_code'), :class => "before_description"
           %span{:class => "small"}= link_to(t('common.what_is_this'), "#", :tabindex => "-1", :id => "help_invitation_code_link", :class => "form_small")
           = text_field_tag "invitation_code", nil, :class => :text_field, :maxlength => "20", :value => (params[:code] || "")
-      - if @current_community.allowed_emails? && ! @current_user.has_valid_email_for_community?(@current_community)
+      - if @current_community.allowed_emails? && !@current_user.has_valid_email_for_community?(@current_community)
         .form_field_container
           = form.label :email, t('people.new.email'), :class => "before_description"
           = form.text_field :email, :class => :text_field, :maxlenght => "255"

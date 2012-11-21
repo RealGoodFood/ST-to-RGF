@@ -6,7 +6,9 @@ class CommunitiesController < ApplicationController
   
   skip_filter :single_community_only
   skip_filter :fetch_community
-  
+  #stridepath
+#  skip_filter :fetch_community_membership, :only => [:new, :create]
+
   before_filter :only => [ :set_organization_email ] do |controller|
     controller.ensure_logged_in "you_must_log_in_to_view_this_content"
   end
@@ -107,8 +109,7 @@ class CommunitiesController < ApplicationController
         end
     
         # Send confirmation for additional email
-        # stridepath: to-do
-        # PersonMailer.additional_email_confirmation(e, request.host_with_port).deliver
+        PersonMailer.additional_email_confirmation(e, request.host_with_port).deliver
         e.confirmation_sent_at = Time.now
         e.save
       end

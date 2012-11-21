@@ -216,7 +216,7 @@ en:
       create_a_tribe_in_a_minute: "Create a new community in a minute"
       welcome_now_create_your_tribe: "Welcome %{name}! Go ahead and create your community."
       name_of_your_tribe: "Name of your community"
-      web_address_of_your_tribe: "Web address of your community"
+      web_address_of_your_tribe: "Unique name of your community"
       slogan_of_your_tribe: "Slogan of your community"
       describe_your_tribe: "Describe your community: what is the purpose of the community"
       create_your_tribe: "Create your community!"
@@ -800,7 +800,7 @@ en:
         location: Location
         origin: Origin
       additional_details:
-        story: "Share a story behind the the food you're posting"
+        story: "Share a story behind the food you're posting"
         ingredient: "Ingredient List"
         trade_request: "Trade Request"
       send_button:

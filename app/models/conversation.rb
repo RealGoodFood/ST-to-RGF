@@ -70,8 +70,7 @@ class Conversation < ActiveRecord::Base
   def send_email_to_participants(host)
     recipients(messages.last.sender).each do |recipient|
       if recipient.should_receive?("email_about_new_messages")
-        # stridepath: to-do
-        # PersonMailer.new_message_notification(messages.last, host).deliver
+         PersonMailer.new_message_notification(messages.last, host).deliver
       end  
     end
   end

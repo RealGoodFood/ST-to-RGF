@@ -10,7 +10,7 @@ class DashboardController < ApplicationController
     logger.info "~~~~~~~~~~~~~~~dashboard#index~~~~~~~~~#{session[:selected_community]}"
     I18n.locale = "es" if request.domain =~ /\.cl$/ && params[:locale].blank?
     clear_session_variables
-    @communities = Community.all
+    @communities = Community.order("name asc")
   end
   
   # A custom action for World Design Capital 

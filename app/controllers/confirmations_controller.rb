@@ -14,7 +14,7 @@ class ConfirmationsController < Devise::ConfirmationsController
 
     if successfully_sent?(resource)
       #respond_with({}, :location => after_resending_confirmation_instructions_path_for(resource_name))
-      if on_dashboard?
+      unless @current_community
         flash[:notice] = t("sessions.confirmation_pending.account_confirmation_instructions_dashboard")
         redirect_to new_tribe_path
       else
@@ -22,6 +22,7 @@ class ConfirmationsController < Devise::ConfirmationsController
         redirect_to :controller => "sessions", :action => "confirmation_pending" # This is changed from Devise's default
       end
     else
+#      redirect_to :back
       respond_with_navigational(resource){ render_with_scope :new }
     end
   end
@@ -33,11 +34,14 @@ class ConfirmationsController < Devise::ConfirmationsController
     if resource.errors.empty?
       set_flash_message(:notice, :confirmed) if is_navigational_format?
       sign_in(resource_name, resource)
-      if on_dashboard?
-        redirect_to new_tribe_path
-      else
-        respond_with_navigational(resource){ redirect_to after_confirmation_path_for(resource_name, resource) }
-      end
+      @person = Person.find_by_id(resource.id)
+       if @current_user and @current_community
+        redirect_to root_path(:cid => "#{@current_community.id}")
+       elsif @person and !@person.communities.empty?
+        redirect_to root_path(:cid => "#{@person.communities.first.id}" )
+       else
+         redirect_to new_tribe_path 
+       end
     else
       #check if this confirmation code matches to additional emails
       if e = Email.find_by_confirmation_token(params[:confirmation_token])

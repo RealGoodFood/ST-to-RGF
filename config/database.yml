@@ -12,9 +12,10 @@ development:
   adapter: postgresql
   encoding: unicode
   database: rgf_dev
+  host: localhost
   pool: 5
-  username: openflow
-  password: openflow
+  username: artium
+  password: artium
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -36,15 +37,14 @@ development:
 #    password: root
 #    host: localhost
 
-# production:
-#     adapter: mysql2
-#     database: sharetribe_production
-#     encoding: utf8
-#     username: root  
-#     password: root
-#     host: localhost
-#    socket: /var/run/mysqld/mysqld.sock
-
+production:  
+  adapter: postgresql
+  encoding: unicode
+  database: rgf_dev
+  host: localhost
+  pool: 5
+  username: artium
+  password: artium
 
 #cucumber:
 #  <<: *test

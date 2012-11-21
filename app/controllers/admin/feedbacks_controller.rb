@@ -22,8 +22,7 @@ class Admin::FeedbacksController < ApplicationController
       else  
         flash.now[:notice] = "feedback_saved"
       end
-      # stridepath: to-do
-      # PersonMailer.new_feedback(@feedback, @current_community).deliver
+      PersonMailer.new_feedback(@feedback, @current_community).deliver
     else
       if error_page
         flash[:error] = "feedback_not_saved"

@@ -61,10 +61,8 @@ class SwapItemsController < ApplicationController
       if @swap_item.save
         format.html { redirect_to(root, :notice => 'Swap offer has been sent.') }
         format.xml  { render :xml => @swap_item, :status => :created, :location => @swap_item }
-        # stridepath: to-do
-        # PersonMailer.swap_offer(@swap_item, request.host).deliver
-        #Todo add delayed job
-#        Delayed::Job.enqueue(SwapOfferJob.new(@swap_item.id, request.host))
+#        PersonMailer.swap_offer(@swap_item, request.host).deliver
+        Delayed::Job.enqueue(SwapOfferJob.new(@swap_item.id, request.host))
       else
         format.html { redirect_to(root, :notice => 'Swap offer has been not sent, Please try again') }
         format.xml  { render :xml => @swap_item.errors, :status => :unprocessable_entity }
@@ -103,8 +101,7 @@ class SwapItemsController < ApplicationController
   def direct_update
     @swap_item = SwapItem.find(params[:id])
     @swap_item.update_attribute(:acceptance,  params[:accept])
-    # stridepath: to-do
-    # PersonMailer.swap_offer_acceptance(@swap_item, request.host).deliver
+    Delayed::Job.enqueue(SwapOfferJob.new(@swap_item.id, request.host))
     redirect_to :back
   end
   

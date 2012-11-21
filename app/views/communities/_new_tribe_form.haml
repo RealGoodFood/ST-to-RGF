@@ -22,10 +22,7 @@
           = form.text_field :name, :maxlength => "50"
         .form_field_container_taller
           = form.label :domain, t(".web_address_of_your_tribe")
-          .domain_container
-            %span.domain= "http://"
-            = form.text_field :domain, :maxlength => "50", :class => "domain_field"
-            %span.domain= ".sharetribe.com"
+          = form.text_field :domain, :maxlength => "50", :class => "domain_field"
         .form_field_container_taller
           = form.label :slogan, t(".slogan_of_your_tribe")
           = form.text_field :slogan, :maxlength => "100", :value => (@community.slogan || t("common.default_community_slogan", :locale => (session[:community_locale] || "en")))
