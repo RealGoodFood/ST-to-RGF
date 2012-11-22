@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   before_filter :show_maintenance_page
   before_filter :change_community, :domain_redirect, :force_ssl, :fetch_logged_in_user, :dashboard_only, :single_community_only, :fetch_community, 
     :not_public_in_private_community, :fetch_community_membership,  :cannot_access_without_joining, :set_locale, 
-    :generate_event_id, :set_default_url_for_mailer#, :separate_city_from_address
+    :generate_event_id, :set_default_url_for_mailer, :separate_city_from_address
   before_filter :check_email_confirmation, :except => [ :confirmation_pending, :check_email_availability_and_validity]
 
 
@@ -165,7 +165,7 @@ class ApplicationController < ActionController::Base
     @locations = Location.where("community_id IS NOT NULL and city IS NULL")
     unless @locations.nil?
       @locations.each do |location|
-        location.address.split(",").reverse.each_with_index do |n, i|
+        location.google_address.split(",").reverse.each_with_index do |n, i|
             if i == 2
               location.update_attribute(:city, n)
             end

@@ -1,0 +1,6 @@
+.bundle
+log/*.log
+tmp/
+.rvmrc
+config/database.yml
+config/unicorn.rb

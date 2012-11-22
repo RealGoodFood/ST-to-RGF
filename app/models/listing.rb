@@ -139,7 +139,7 @@ class Listing < ActiveRecord::Base
   end
 
   def date_info_empty?
-    ((valid_from.nil? || valid_from.blank?) && (valid_until.nil? || valid_until.blank?))
+    ((valid_from.nil? || valid_from.blank?) or (valid_until.nil? || valid_until.blank?))
   end
   
   # Filter out listings that current user cannot see

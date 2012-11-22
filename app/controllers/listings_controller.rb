@@ -267,15 +267,19 @@ class ListingsController < ApplicationController
   def ensure_authorized_to_view
     @listing = Listing.find(params[:id])
     unless @listing.visible_to?(@current_user, @current_community)
+      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>unless"
       if @listing.visibility.eql?("everybody")
         # This situation occurs when the user tries to access a listing
         # via a different community url.
         flash[:error] = "this_content_is_not_available_in_this_community"
-        redirect_to root and return
+              puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>if"
+        redirect_to community_home_path and return
       elsif @current_user
+              puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>elsif"
         flash[:error] = "you_are_not_authorized_to_view_this_content"
-        redirect_to root and return
+        redirect_to community_home_path and return
       else
+              puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>else"
         session[:return_to] = request.fullpath
         flash[:warning] = "you_must_log_in_to_view_this_content"
         redirect_to login_path and return

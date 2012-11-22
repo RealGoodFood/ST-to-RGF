@@ -67,7 +67,7 @@ class CommunityMembershipsController < ApplicationController
       
       Delayed::Job.enqueue(CommunityJoinedJob.new(@current_user.id, @current_community.id, request.host))
       flash[:notice] = "you_are_now_member"
-      redirect_to root 
+      redirect_to community_home_path 
     else
       flash[:error] = "joining_community_failed"
       logger.info { "Joining a community failed, because: #{@community_membership.errors.full_messages}" }
