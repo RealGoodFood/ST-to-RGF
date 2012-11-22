@@ -423,3 +423,10 @@ LINE 1: ...mmunities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ...
 [11/22/12 16:22:42 +0530 chaitanya-laptop (9371)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
 [11/22/12 16:22:42 +0530 chaitanya-laptop (9371)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
 [11/22/12 16:22:42 +0530 chaitanya-laptop (9371)] INFO : Reporting performance data every 60 seconds.
+[11/22/12 17:55:16 +0530 chaitanya-laptop (13340)] INFO : Dispatcher: webrick
+[11/22/12 17:55:16 +0530 chaitanya-laptop (13340)] INFO : Application: Sharetribe
+[11/22/12 17:55:16 +0530 chaitanya-laptop (13340)] WARN : Agent configured not to send data in this environment.
+[11/22/12 17:55:16 +0530 chaitanya-laptop (13340)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 13340
+[11/22/12 17:55:16 +0530 chaitanya-laptop (13340)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
+[11/22/12 17:55:16 +0530 chaitanya-laptop (13340)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[11/22/12 17:55:16 +0530 chaitanya-laptop (13340)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present

@@ -4,3 +4,5 @@ tmp/
 .rvmrc
 config/database.yml
 config/unicorn.rb
+backups/*
+.rbenv-version
