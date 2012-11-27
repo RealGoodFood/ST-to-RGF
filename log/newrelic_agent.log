@@ -1,425 +1,54 @@
-[11/19/12 14:49:10 +0530 chaitanya-laptop (23619)] INFO : Dispatcher: webrick
-[11/19/12 14:49:10 +0530 chaitanya-laptop (23619)] INFO : Application: Sharetribe
-[11/19/12 14:49:10 +0530 chaitanya-laptop (23619)] WARN : Agent configured not to send data in this environment.
-[11/19/12 14:49:10 +0530 chaitanya-laptop (23619)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 23619
-[11/19/12 14:49:10 +0530 chaitanya-laptop (23619)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/19/12 14:49:11 +0530 chaitanya-laptop (23619)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/19/12 14:49:11 +0530 chaitanya-laptop (23619)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/19/12 14:52:14 +0530 chaitanya-laptop (23684)] INFO : Dispatcher: webrick
-[11/19/12 14:52:14 +0530 chaitanya-laptop (23684)] INFO : Application: Sharetribe
-[11/19/12 14:52:14 +0530 chaitanya-laptop (23684)] WARN : Agent configured not to send data in this environment.
-[11/19/12 14:52:14 +0530 chaitanya-laptop (23684)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 23684
-[11/19/12 14:52:14 +0530 chaitanya-laptop (23684)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/19/12 14:52:14 +0530 chaitanya-laptop (23684)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/19/12 14:52:14 +0530 chaitanya-laptop (23684)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/19/12 14:59:40 +0530 chaitanya-laptop (23826)] INFO : Dispatcher: delayed_job
-[11/19/12 14:59:40 +0530 chaitanya-laptop (23826)] INFO : Application: Sharetribe
-[11/19/12 14:59:40 +0530 chaitanya-laptop (23826)] WARN : Agent configured not to send data in this environment.
-[11/19/12 14:59:40 +0530 chaitanya-laptop (23826)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 23826
-[11/19/12 14:59:40 +0530 chaitanya-laptop (23826)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/19/12 14:59:40 +0530 chaitanya-laptop (23826)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/19/12 16:34:16 +0530 chaitanya-laptop (25521)] INFO : Dispatcher: webrick
-[11/19/12 16:34:16 +0530 chaitanya-laptop (25521)] INFO : Application: Sharetribe
-[11/19/12 16:34:16 +0530 chaitanya-laptop (25521)] WARN : Agent configured not to send data in this environment.
-[11/19/12 16:34:16 +0530 chaitanya-laptop (25521)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 25521
-[11/19/12 16:34:16 +0530 chaitanya-laptop (25521)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/19/12 16:34:16 +0530 chaitanya-laptop (25521)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/19/12 16:34:16 +0530 chaitanya-laptop (25521)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/19/12 17:04:40 +0530 chaitanya-laptop (28789)] INFO : Dispatcher: webrick
-[11/19/12 17:04:40 +0530 chaitanya-laptop (28789)] INFO : Application: Sharetribe
-[11/19/12 17:04:40 +0530 chaitanya-laptop (28789)] WARN : Agent configured not to send data in this environment.
-[11/19/12 17:04:40 +0530 chaitanya-laptop (28789)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 28789
-[11/19/12 17:04:40 +0530 chaitanya-laptop (28789)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/19/12 17:04:40 +0530 chaitanya-laptop (28789)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/19/12 17:04:40 +0530 chaitanya-laptop (28789)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/19/12 17:06:26 +0530 chaitanya-laptop (28831)] INFO : Dispatcher: webrick
-[11/19/12 17:06:26 +0530 chaitanya-laptop (28831)] INFO : Application: Sharetribe
-[11/19/12 17:06:26 +0530 chaitanya-laptop (28831)] WARN : Agent configured not to send data in this environment.
-[11/19/12 17:06:26 +0530 chaitanya-laptop (28831)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 28831
-[11/19/12 17:06:26 +0530 chaitanya-laptop (28831)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/19/12 17:06:26 +0530 chaitanya-laptop (28831)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/19/12 17:06:26 +0530 chaitanya-laptop (28831)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/19/12 23:00:55 +0530 chaitanya-laptop (3007)] INFO : Dispatcher: webrick
-[11/19/12 23:00:55 +0530 chaitanya-laptop (3007)] INFO : Application: Sharetribe
-[11/19/12 23:00:55 +0530 chaitanya-laptop (3007)] WARN : Agent configured not to send data in this environment.
-[11/19/12 23:00:55 +0530 chaitanya-laptop (3007)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 3007
-[11/19/12 23:00:55 +0530 chaitanya-laptop (3007)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/19/12 23:00:56 +0530 chaitanya-laptop (3007)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/19/12 23:00:56 +0530 chaitanya-laptop (3007)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/19/12 23:08:54 +0530 chaitanya-laptop (3495)] INFO : Dispatcher: delayed_job
-[11/19/12 23:08:54 +0530 chaitanya-laptop (3495)] INFO : Application: Sharetribe
-[11/19/12 23:08:54 +0530 chaitanya-laptop (3495)] WARN : Agent configured not to send data in this environment.
-[11/19/12 23:08:54 +0530 chaitanya-laptop (3495)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 3495
-[11/19/12 23:08:54 +0530 chaitanya-laptop (3495)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/19/12 23:08:55 +0530 chaitanya-laptop (3495)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/20/12 10:39:08 +0530 chaitanya-laptop (2210)] INFO : Dispatcher: webrick
-[11/20/12 10:39:08 +0530 chaitanya-laptop (2210)] INFO : Application: Sharetribe
-[11/20/12 10:39:08 +0530 chaitanya-laptop (2210)] WARN : Agent configured not to send data in this environment.
-[11/20/12 10:39:08 +0530 chaitanya-laptop (2210)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 2210
-[11/20/12 10:39:08 +0530 chaitanya-laptop (2210)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/20/12 10:39:08 +0530 chaitanya-laptop (2210)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/20/12 10:39:08 +0530 chaitanya-laptop (2210)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/20/12 10:45:51 +0530 chaitanya-laptop (5036)] INFO : Dispatcher: delayed_job
-[11/20/12 10:45:51 +0530 chaitanya-laptop (5036)] INFO : Application: Sharetribe
-[11/20/12 10:45:51 +0530 chaitanya-laptop (5036)] WARN : Agent configured not to send data in this environment.
-[11/20/12 10:45:51 +0530 chaitanya-laptop (5036)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 5036
-[11/20/12 10:45:51 +0530 chaitanya-laptop (5036)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/20/12 10:45:51 +0530 chaitanya-laptop (5036)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/20/12 10:55:18 +0530 chaitanya-laptop (5134)] INFO : Dispatcher: webrick
-[11/20/12 10:55:18 +0530 chaitanya-laptop (5134)] INFO : Application: Sharetribe
-[11/20/12 10:55:18 +0530 chaitanya-laptop (5134)] WARN : Agent configured not to send data in this environment.
-[11/20/12 10:55:18 +0530 chaitanya-laptop (5134)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 5134
-[11/20/12 10:55:18 +0530 chaitanya-laptop (5134)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/20/12 10:55:18 +0530 chaitanya-laptop (5134)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/20/12 10:55:18 +0530 chaitanya-laptop (5134)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/20/12 11:08:21 +0530 chaitanya-laptop (5606)] INFO : Dispatcher: thin
-[11/20/12 11:08:21 +0530 chaitanya-laptop (5606)] INFO : Application: Sharetribe
-[11/20/12 11:08:21 +0530 chaitanya-laptop (5606)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 5606
-[11/20/12 11:08:21 +0530 chaitanya-laptop (5606)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/20/12 11:08:21 +0530 chaitanya-laptop (5606)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/20/12 11:08:21 +0530 chaitanya-laptop (5606)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/20/12 11:11:51 +0530 chaitanya-laptop (6048)] INFO : Dispatcher: thin
-[11/20/12 11:11:51 +0530 chaitanya-laptop (6048)] INFO : Application: Sharetribe
-[11/20/12 11:11:51 +0530 chaitanya-laptop (6048)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 6048
-[11/20/12 11:11:51 +0530 chaitanya-laptop (6048)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/20/12 11:11:52 +0530 chaitanya-laptop (6048)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/20/12 11:11:52 +0530 chaitanya-laptop (6048)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/20/12 11:12:03 +0530 chaitanya-laptop (6048)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
-[11/20/12 11:12:03 +0530 chaitanya-laptop (6048)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
-[11/20/12 11:12:03 +0530 chaitanya-laptop (6048)] INFO : Reporting performance data every 60 seconds.
-[11/20/12 11:14:19 +0530 chaitanya-laptop (6109)] INFO : Dispatcher: delayed_job
-[11/20/12 11:14:19 +0530 chaitanya-laptop (6109)] INFO : Application: Sharetribe
-[11/20/12 11:14:19 +0530 chaitanya-laptop (6109)] WARN : Agent configured not to send data in this environment.
-[11/20/12 11:14:19 +0530 chaitanya-laptop (6109)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 6109
-[11/20/12 11:14:19 +0530 chaitanya-laptop (6109)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/20/12 11:14:19 +0530 chaitanya-laptop (6109)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/20/12 11:20:24 +0530 chaitanya-laptop (6480)] INFO : Dispatcher: thin
-[11/20/12 11:20:24 +0530 chaitanya-laptop (6480)] INFO : Application: Sharetribe
-[11/20/12 11:20:24 +0530 chaitanya-laptop (6480)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 6480
-[11/20/12 11:20:24 +0530 chaitanya-laptop (6480)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/20/12 11:20:24 +0530 chaitanya-laptop (6480)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/20/12 11:20:24 +0530 chaitanya-laptop (6480)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/20/12 11:20:35 +0530 chaitanya-laptop (6480)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
-[11/20/12 11:20:35 +0530 chaitanya-laptop (6480)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
-[11/20/12 11:20:35 +0530 chaitanya-laptop (6480)] INFO : Reporting performance data every 60 seconds.
-[11/20/12 11:29:59 +0530 chaitanya-laptop (6833)] INFO : Dispatcher: delayed_job
-[11/20/12 11:29:59 +0530 chaitanya-laptop (6833)] INFO : Application: Sharetribe
-[11/20/12 11:29:59 +0530 chaitanya-laptop (6833)] WARN : Agent configured not to send data in this environment.
-[11/20/12 11:29:59 +0530 chaitanya-laptop (6833)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 6833
-[11/20/12 11:29:59 +0530 chaitanya-laptop (6833)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/20/12 11:29:59 +0530 chaitanya-laptop (6833)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/20/12 11:42:25 +0530 chaitanya-laptop (9796)] INFO : Dispatcher: webrick
-[11/20/12 11:42:25 +0530 chaitanya-laptop (9796)] INFO : Application: Sharetribe
-[11/20/12 11:42:25 +0530 chaitanya-laptop (9796)] WARN : Agent configured not to send data in this environment.
-[11/20/12 11:42:25 +0530 chaitanya-laptop (9796)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 9796
-[11/20/12 11:42:25 +0530 chaitanya-laptop (9796)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/20/12 11:42:25 +0530 chaitanya-laptop (9796)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/20/12 11:42:25 +0530 chaitanya-laptop (9796)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/20/12 12:24:05 +0530 chaitanya-laptop (10305)] INFO : Dispatcher: webrick
-[11/20/12 12:24:05 +0530 chaitanya-laptop (10305)] INFO : Application: Sharetribe
-[11/20/12 12:24:05 +0530 chaitanya-laptop (10305)] WARN : Agent configured not to send data in this environment.
-[11/20/12 12:24:05 +0530 chaitanya-laptop (10305)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 10305
-[11/20/12 12:24:05 +0530 chaitanya-laptop (10305)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/20/12 12:24:05 +0530 chaitanya-laptop (10305)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/20/12 12:24:05 +0530 chaitanya-laptop (10305)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/20/12 12:27:09 +0530 chaitanya-laptop (10333)] INFO : Dispatcher: delayed_job
-[11/20/12 12:27:09 +0530 chaitanya-laptop (10333)] INFO : Application: Sharetribe
-[11/20/12 12:27:09 +0530 chaitanya-laptop (10333)] WARN : Agent configured not to send data in this environment.
-[11/20/12 12:27:09 +0530 chaitanya-laptop (10333)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 10333
-[11/20/12 12:27:09 +0530 chaitanya-laptop (10333)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/20/12 12:27:09 +0530 chaitanya-laptop (10333)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/20/12 15:00:30 +0530 chaitanya-laptop (23469)] INFO : Dispatcher: webrick
-[11/20/12 15:00:30 +0530 chaitanya-laptop (23469)] INFO : Application: Sharetribe
-[11/20/12 15:00:30 +0530 chaitanya-laptop (23469)] WARN : Agent configured not to send data in this environment.
-[11/20/12 15:00:30 +0530 chaitanya-laptop (23469)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 23469
-[11/20/12 15:00:30 +0530 chaitanya-laptop (23469)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/20/12 15:00:30 +0530 chaitanya-laptop (23469)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/20/12 15:00:30 +0530 chaitanya-laptop (23469)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/20/12 15:02:33 +0530 chaitanya-laptop (23819)] INFO : Dispatcher: webrick
-[11/20/12 15:02:33 +0530 chaitanya-laptop (23819)] INFO : Application: Sharetribe
-[11/20/12 15:02:33 +0530 chaitanya-laptop (23819)] WARN : Agent configured not to send data in this environment.
-[11/20/12 15:02:33 +0530 chaitanya-laptop (23819)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 23819
-[11/20/12 15:02:33 +0530 chaitanya-laptop (23819)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/20/12 15:02:33 +0530 chaitanya-laptop (23819)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/20/12 15:02:33 +0530 chaitanya-laptop (23819)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/20/12 17:16:00 +0530 chaitanya-laptop (27794)] INFO : Dispatcher: webrick
-[11/20/12 17:16:00 +0530 chaitanya-laptop (27794)] INFO : Application: Sharetribe
-[11/20/12 17:16:00 +0530 chaitanya-laptop (27794)] WARN : Agent configured not to send data in this environment.
-[11/20/12 17:16:00 +0530 chaitanya-laptop (27794)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 27794
-[11/20/12 17:16:00 +0530 chaitanya-laptop (27794)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/20/12 17:16:01 +0530 chaitanya-laptop (27794)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/20/12 17:16:01 +0530 chaitanya-laptop (27794)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/21/12 11:06:45 +0530 chaitanya-laptop (2630)] INFO : Dispatcher: webrick
-[11/21/12 11:06:45 +0530 chaitanya-laptop (2630)] INFO : Application: Sharetribe
-[11/21/12 11:06:45 +0530 chaitanya-laptop (2630)] WARN : Agent configured not to send data in this environment.
-[11/21/12 11:06:45 +0530 chaitanya-laptop (2630)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 2630
-[11/21/12 11:06:45 +0530 chaitanya-laptop (2630)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/21/12 11:06:45 +0530 chaitanya-laptop (2630)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/21/12 11:06:45 +0530 chaitanya-laptop (2630)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/21/12 12:25:10 +0530 chaitanya-laptop (7008)] INFO : Dispatcher: delayed_job
-[11/21/12 12:25:10 +0530 chaitanya-laptop (7008)] INFO : Application: Sharetribe
-[11/21/12 12:25:10 +0530 chaitanya-laptop (7008)] WARN : Agent configured not to send data in this environment.
-[11/21/12 12:25:10 +0530 chaitanya-laptop (7008)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 7008
-[11/21/12 12:25:10 +0530 chaitanya-laptop (7008)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/21/12 12:25:10 +0530 chaitanya-laptop (7008)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/21/12 12:47:31 +0530 chaitanya-laptop (7594)] INFO : Dispatcher: delayed_job
-[11/21/12 12:47:31 +0530 chaitanya-laptop (7594)] INFO : Application: Sharetribe
-[11/21/12 12:47:31 +0530 chaitanya-laptop (7594)] WARN : Agent configured not to send data in this environment.
-[11/21/12 12:47:31 +0530 chaitanya-laptop (7594)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 7594
-[11/21/12 12:47:31 +0530 chaitanya-laptop (7594)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/21/12 12:47:31 +0530 chaitanya-laptop (7594)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/21/12 20:33:01 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `empty?' for "#<Person:0x14cbc140>":Person
-[11/21/12 20:33:25 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `username' for nil:NilClass
-[11/21/12 20:33:25 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `username' for nil:NilClass
-[11/21/12 20:33:52 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `empty?' for #<EventFeedEvent:0x15070bd8>
-[11/21/12 20:33:52 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `empty?' for #<EventFeedEvent:0x15070bd8>
-[11/21/12 20:34:01 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `username' for nil:NilClass
-[11/21/12 20:34:01 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `username' for nil:NilClass
-[11/21/12 20:35:54 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `username' for nil:NilClass
-[11/21/12 20:35:54 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `username' for nil:NilClass
-[11/21/12 20:36:09 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /home/chaitanya/workArea/ST-to-RGF/app/views/event_feed_events/_join.haml:2: syntax error, unexpected keyword_ensure, expecting keyword_end
-...:Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer....
-...                               ^
-/home/chaitanya/workArea/ST-to-RGF/app/views/event_feed_events/_join.haml:5: syntax error, unexpected $end, expecting keyword_end
-[11/21/12 20:36:09 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /home/chaitanya/workArea/ST-to-RGF/app/views/event_feed_events/_join.haml:2: syntax error, unexpected keyword_ensure, expecting keyword_end
-...:Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer....
-...                               ^
-/home/chaitanya/workArea/ST-to-RGF/app/views/event_feed_events/_join.haml:5: syntax error, unexpected $end, expecting keyword_end
-[11/21/12 20:41:39 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `community' for #<Person:0x13f9b86c>
-[11/21/12 20:41:39 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `community' for #<Person:0x13f9b86c>
-[11/21/12 20:43:46 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: The line was indented 2 levels deeper than the previous line.
-[11/21/12 20:43:46 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: The line was indented 2 levels deeper than the previous line.
-[11/21/12 21:21:11 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: PG::Error: ERROR:  invalid input syntax for integer: "2,3,1"
-LINE 1: ...mmunities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ...
-                                                             ^
-: SELECT "communities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ORDER BY name asc
-[11/21/12 21:21:11 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: PG::Error: ERROR:  invalid input syntax for integer: "2,3,1"
-LINE 1: ...mmunities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ...
-                                                             ^
-: SELECT "communities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ORDER BY name asc
-[11/21/12 21:23:01 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: PG::Error: ERROR:  invalid input syntax for integer: "2,3,1"
-LINE 1: ...mmunities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ...
-                                                             ^
-: SELECT "communities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ORDER BY name asc
-[11/21/12 21:23:01 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: PG::Error: ERROR:  invalid input syntax for integer: "2,3,1"
-LINE 1: ...mmunities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ...
-                                                             ^
-: SELECT "communities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ORDER BY name asc
-[11/21/12 21:24:12 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: PG::Error: ERROR:  invalid input syntax for integer: "2,3,1"
-LINE 1: ...mmunities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ...
-                                                             ^
-: SELECT "communities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ORDER BY name asc
-[11/21/12 21:24:12 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: PG::Error: ERROR:  invalid input syntax for integer: "2,3,1"
-LINE 1: ...mmunities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ...
-                                                             ^
-: SELECT "communities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ORDER BY name asc
-[11/21/12 21:29:52 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: PG::Error: ERROR:  invalid input syntax for integer: "(2,3,1)"
-LINE 1: ...mmunities".* FROM "communities" WHERE (id NOT IN ('(2,3,1)')...
-                                                             ^
-: SELECT "communities".* FROM "communities" WHERE (id NOT IN ('(2,3,1)')) ORDER BY name asc
-[11/21/12 21:29:52 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: PG::Error: ERROR:  invalid input syntax for integer: "(2,3,1)"
-LINE 1: ...mmunities".* FROM "communities" WHERE (id NOT IN ('(2,3,1)')...
-                                                             ^
-: SELECT "communities".* FROM "communities" WHERE (id NOT IN ('(2,3,1)')) ORDER BY name asc
-[11/21/12 21:30:25 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: PG::Error: ERROR:  invalid input syntax for integer: "2,3,1"
-LINE 1: ...mmunities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ...
-                                                             ^
-: SELECT "communities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ORDER BY name asc
-[11/21/12 21:30:25 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: PG::Error: ERROR:  invalid input syntax for integer: "2,3,1"
-LINE 1: ...mmunities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ...
-                                                             ^
-: SELECT "communities".* FROM "communities" WHERE (id NOT IN ('2,3,1')) ORDER BY name asc
-[11/21/12 21:31:08 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: String can't be coerced into Fixnum
-[11/21/12 21:31:08 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: String can't be coerced into Fixnum
-[11/21/12 21:32:00 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /home/chaitanya/workArea/ST-to-RGF/app/controllers/homepage_controller.rb:53: syntax error, unexpected ')', expecting ']'
-...re(["id NOT IN (#{outofother}")]).order("name asc")
-...                               ^
-[11/21/12 21:38:30 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `user_belong_to' for #<#<Class:0x12065d58>:0x120b1f78>
-[11/21/12 21:38:30 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `user_belong_to' for #<#<Class:0x12065d58>:0x120b1f78>
-[11/21/12 21:39:12 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: uninitialized constant ApplicationHelper::CommunityMemberships
-[11/21/12 21:39:12 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: uninitialized constant ApplicationHelper::CommunityMemberships
-[11/21/12 21:39:55 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: uninitialized constant ApplicationHelper::CommunityMemberships
-[11/21/12 21:39:55 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: uninitialized constant ApplicationHelper::CommunityMemberships
-[11/21/12 21:44:32 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `username' for nil:NilClass
-[11/21/12 21:44:32 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `username' for nil:NilClass
-[11/21/12 21:44:46 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `given_name_or_username' for nil:NilClass
-[11/21/12 21:44:46 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `given_name_or_username' for nil:NilClass
-[11/21/12 21:48:27 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `username' for nil:NilClass
-[11/21/12 21:48:27 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `username' for nil:NilClass
-[11/21/12 21:50:08 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `person' for #<EventFeedEvent:0xbb634a0>
-[11/21/12 21:50:08 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `person' for #<EventFeedEvent:0xbb634a0>
-[11/21/12 21:50:43 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `given_name_or_username' for nil:NilClass
-[11/21/12 21:50:43 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `given_name_or_username' for nil:NilClass
-[11/21/12 21:51:40 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /home/chaitanya/workArea/ST-to-RGF/app/views/event_feed_events/_join.haml:1: syntax error, unexpected tIDENTIFIER, expecting ')'
-..._feed_event.person1_id)username, event_feed_event.person1), ...
-...                               ^
-/home/chaitanya/workArea/ST-to-RGF/app/views/event_feed_events/_join.haml:1: syntax error, unexpected ')', expecting '='
-...name, event_feed_event.person1), :community_name => event_fe...
-...                               ^
-/home/chaitanya/workArea/ST-to-RGF/app/views/event_feed_events/_join.haml:1: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
-...nt.community.name, :time_ago => time_ago(event_feed_event.cr...
-...                               ^
-/home/chaitanya/workArea/ST-to-RGF/app/views/event_feed_events/_join.haml:2: syntax error, unexpected ';', expecting ')'
-));}\n", 0, false);::Haml::Util....
-   ^
-/home/chaitanya/workArea/ST-to-RGF/app/views/event_feed_events/_join.haml:2: unterminated string meets end of file
-/home/chaitanya/workArea/ST-to-RGF/app/views/event_feed_events/_join.haml:2: syntax error, unexpected $end, expecting '}'
-[11/21/12 21:51:40 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /home/chaitanya/workArea/ST-to-RGF/app/views/event_feed_events/_join.haml:1: syntax error, unexpected tIDENTIFIER, expecting ')'
-..._feed_event.person1_id)username, event_feed_event.person1), ...
-...                               ^
-/home/chaitanya/workArea/ST-to-RGF/app/views/event_feed_events/_join.haml:1: syntax error, unexpected ')', expecting '='
-...name, event_feed_event.person1), :community_name => event_fe...
-...                               ^
-/home/chaitanya/workArea/ST-to-RGF/app/views/event_feed_events/_join.haml:1: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
-...nt.community.name, :time_ago => time_ago(event_feed_event.cr...
-...                               ^
-/home/chaitanya/workArea/ST-to-RGF/app/views/event_feed_events/_join.haml:2: syntax error, unexpected ';', expecting ')'
-));}\n", 0, false);::Haml::Util....
-   ^
-/home/chaitanya/workArea/ST-to-RGF/app/views/event_feed_events/_join.haml:2: unterminated string meets end of file
-/home/chaitanya/workArea/ST-to-RGF/app/views/event_feed_events/_join.haml:2: syntax error, unexpected $end, expecting '}'
-[11/21/12 21:51:52 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `username' for nil:NilClass
-[11/21/12 21:51:52 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `username' for nil:NilClass
-[11/21/12 21:54:25 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `empty?' for "#<Person:0xb75ef44>":Person
-[11/21/12 21:54:25 +0530 chaitanya-laptop (2630)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `empty?' for "#<Person:0xb75ef44>":Person
-[11/22/12 13:15:25 +0530 chaitanya-laptop (6402)] INFO : Dispatcher: thin
-[11/22/12 13:15:25 +0530 chaitanya-laptop (6402)] INFO : Application: Sharetribe
-[11/22/12 13:15:25 +0530 chaitanya-laptop (6402)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 6402
-[11/22/12 13:15:25 +0530 chaitanya-laptop (6402)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 13:15:26 +0530 chaitanya-laptop (6402)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 13:15:26 +0530 chaitanya-laptop (6402)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/22/12 13:15:43 +0530 chaitanya-laptop (6402)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
-[11/22/12 13:15:43 +0530 chaitanya-laptop (6402)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
-[11/22/12 13:15:43 +0530 chaitanya-laptop (6402)] INFO : Reporting performance data every 60 seconds.
-[11/22/12 13:20:25 +0530 chaitanya-laptop (6756)] INFO : Dispatcher: delayed_job
-[11/22/12 13:20:25 +0530 chaitanya-laptop (6756)] INFO : Application: Sharetribe
-[11/22/12 13:20:25 +0530 chaitanya-laptop (6756)] WARN : Agent configured not to send data in this environment.
-[11/22/12 13:20:25 +0530 chaitanya-laptop (6756)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 6756
-[11/22/12 13:20:25 +0530 chaitanya-laptop (6756)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 13:20:25 +0530 chaitanya-laptop (6756)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 13:23:49 +0530 chaitanya-laptop (6818)] INFO : Dispatcher: thin
-[11/22/12 13:23:49 +0530 chaitanya-laptop (6818)] INFO : Application: Sharetribe
-[11/22/12 13:23:49 +0530 chaitanya-laptop (6818)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 6818
-[11/22/12 13:23:49 +0530 chaitanya-laptop (6818)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 13:23:49 +0530 chaitanya-laptop (6818)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 13:23:49 +0530 chaitanya-laptop (6818)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/22/12 13:24:01 +0530 chaitanya-laptop (6818)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
-[11/22/12 13:24:01 +0530 chaitanya-laptop (6818)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
-[11/22/12 13:24:01 +0530 chaitanya-laptop (6818)] INFO : Reporting performance data every 60 seconds.
-[11/22/12 13:31:44 +0530 chaitanya-laptop (6907)] INFO : Dispatcher: thin
-[11/22/12 13:31:44 +0530 chaitanya-laptop (6907)] INFO : Application: Sharetribe
-[11/22/12 13:31:44 +0530 chaitanya-laptop (6907)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 6907
-[11/22/12 13:31:44 +0530 chaitanya-laptop (6907)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 13:31:44 +0530 chaitanya-laptop (6907)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 13:31:44 +0530 chaitanya-laptop (6907)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/22/12 13:31:56 +0530 chaitanya-laptop (6907)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
-[11/22/12 13:31:56 +0530 chaitanya-laptop (6907)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
-[11/22/12 13:31:56 +0530 chaitanya-laptop (6907)] INFO : Reporting performance data every 60 seconds.
-[11/22/12 13:38:38 +0530 chaitanya-laptop (7013)] INFO : Dispatcher: thin
-[11/22/12 13:38:38 +0530 chaitanya-laptop (7013)] INFO : Application: Sharetribe
-[11/22/12 13:38:38 +0530 chaitanya-laptop (7013)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 7013
-[11/22/12 13:38:38 +0530 chaitanya-laptop (7013)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 13:38:38 +0530 chaitanya-laptop (7013)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 13:38:38 +0530 chaitanya-laptop (7013)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/22/12 13:38:50 +0530 chaitanya-laptop (7013)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
-[11/22/12 13:38:50 +0530 chaitanya-laptop (7013)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
-[11/22/12 13:38:50 +0530 chaitanya-laptop (7013)] INFO : Reporting performance data every 60 seconds.
-[11/22/12 13:53:22 +0530 chaitanya-laptop (7233)] INFO : Dispatcher: thin
-[11/22/12 13:53:22 +0530 chaitanya-laptop (7233)] INFO : Application: Sharetribe
-[11/22/12 13:53:22 +0530 chaitanya-laptop (7233)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 7233
-[11/22/12 13:53:22 +0530 chaitanya-laptop (7233)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 13:53:22 +0530 chaitanya-laptop (7233)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 13:53:22 +0530 chaitanya-laptop (7233)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/22/12 13:53:35 +0530 chaitanya-laptop (7233)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
-[11/22/12 13:53:35 +0530 chaitanya-laptop (7233)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
-[11/22/12 13:53:35 +0530 chaitanya-laptop (7233)] INFO : Reporting performance data every 60 seconds.
-[11/22/12 14:10:19 +0530 chaitanya-laptop (7485)] INFO : Dispatcher: thin
-[11/22/12 14:10:19 +0530 chaitanya-laptop (7485)] INFO : Application: Sharetribe
-[11/22/12 14:10:19 +0530 chaitanya-laptop (7485)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 7485
-[11/22/12 14:10:19 +0530 chaitanya-laptop (7485)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 14:10:20 +0530 chaitanya-laptop (7485)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 14:10:20 +0530 chaitanya-laptop (7485)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/22/12 14:10:40 +0530 chaitanya-laptop (7485)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
-[11/22/12 14:10:40 +0530 chaitanya-laptop (7485)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
-[11/22/12 14:10:40 +0530 chaitanya-laptop (7485)] INFO : Reporting performance data every 60 seconds.
-[11/22/12 14:54:49 +0530 chaitanya-laptop (7827)] INFO : Dispatcher: thin
-[11/22/12 14:54:49 +0530 chaitanya-laptop (7827)] INFO : Application: Sharetribe
-[11/22/12 14:54:49 +0530 chaitanya-laptop (7827)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 7827
-[11/22/12 14:54:49 +0530 chaitanya-laptop (7827)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 14:54:49 +0530 chaitanya-laptop (7827)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 14:54:49 +0530 chaitanya-laptop (7827)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/22/12 14:55:00 +0530 chaitanya-laptop (7827)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
-[11/22/12 14:55:00 +0530 chaitanya-laptop (7827)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
-[11/22/12 14:55:00 +0530 chaitanya-laptop (7827)] INFO : Reporting performance data every 60 seconds.
-[11/22/12 15:05:44 +0530 chaitanya-laptop (7947)] INFO : Dispatcher: thin
-[11/22/12 15:05:44 +0530 chaitanya-laptop (7947)] INFO : Application: Sharetribe
-[11/22/12 15:05:44 +0530 chaitanya-laptop (7947)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 7947
-[11/22/12 15:05:44 +0530 chaitanya-laptop (7947)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 15:05:44 +0530 chaitanya-laptop (7947)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 15:05:44 +0530 chaitanya-laptop (7947)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/22/12 15:05:56 +0530 chaitanya-laptop (7947)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
-[11/22/12 15:05:56 +0530 chaitanya-laptop (7947)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
-[11/22/12 15:05:56 +0530 chaitanya-laptop (7947)] INFO : Reporting performance data every 60 seconds.
-[11/22/12 15:06:03 +0530 chaitanya-laptop (7957)] INFO : Dispatcher: delayed_job
-[11/22/12 15:06:03 +0530 chaitanya-laptop (7957)] INFO : Application: Sharetribe
-[11/22/12 15:06:03 +0530 chaitanya-laptop (7957)] WARN : Agent configured not to send data in this environment.
-[11/22/12 15:06:03 +0530 chaitanya-laptop (7957)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 7957
-[11/22/12 15:06:03 +0530 chaitanya-laptop (7957)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 15:06:03 +0530 chaitanya-laptop (7957)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 15:47:41 +0530 chaitanya-laptop (8894)] INFO : Dispatcher: delayed_job
-[11/22/12 15:47:41 +0530 chaitanya-laptop (8894)] INFO : Application: Sharetribe
-[11/22/12 15:47:41 +0530 chaitanya-laptop (8894)] WARN : Agent configured not to send data in this environment.
-[11/22/12 15:47:41 +0530 chaitanya-laptop (8894)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 8894
-[11/22/12 15:47:41 +0530 chaitanya-laptop (8894)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 15:47:41 +0530 chaitanya-laptop (8894)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 16:03:08 +0530 chaitanya-laptop (9075)] INFO : Dispatcher: thin
-[11/22/12 16:03:08 +0530 chaitanya-laptop (9075)] INFO : Application: Sharetribe
-[11/22/12 16:03:08 +0530 chaitanya-laptop (9075)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 9075
-[11/22/12 16:03:08 +0530 chaitanya-laptop (9075)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 16:03:08 +0530 chaitanya-laptop (9075)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 16:03:08 +0530 chaitanya-laptop (9075)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/22/12 16:03:21 +0530 chaitanya-laptop (9075)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
-[11/22/12 16:03:21 +0530 chaitanya-laptop (9075)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
-[11/22/12 16:03:21 +0530 chaitanya-laptop (9075)] INFO : Reporting performance data every 60 seconds.
-[11/22/12 16:06:35 +0530 chaitanya-laptop (9139)] INFO : Dispatcher: thin
-[11/22/12 16:06:35 +0530 chaitanya-laptop (9139)] INFO : Application: Sharetribe
-[11/22/12 16:06:35 +0530 chaitanya-laptop (9139)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 9139
-[11/22/12 16:06:35 +0530 chaitanya-laptop (9139)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 16:06:35 +0530 chaitanya-laptop (9139)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 16:06:35 +0530 chaitanya-laptop (9139)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/22/12 16:06:47 +0530 chaitanya-laptop (9139)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
-[11/22/12 16:06:47 +0530 chaitanya-laptop (9139)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
-[11/22/12 16:06:47 +0530 chaitanya-laptop (9139)] INFO : Reporting performance data every 60 seconds.
-[11/22/12 16:12:12 +0530 chaitanya-laptop (9221)] INFO : Dispatcher: thin
-[11/22/12 16:12:12 +0530 chaitanya-laptop (9221)] INFO : Application: Sharetribe
-[11/22/12 16:12:12 +0530 chaitanya-laptop (9221)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 9221
-[11/22/12 16:12:12 +0530 chaitanya-laptop (9221)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 16:12:12 +0530 chaitanya-laptop (9221)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 16:12:12 +0530 chaitanya-laptop (9221)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/22/12 16:12:25 +0530 chaitanya-laptop (9221)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
-[11/22/12 16:12:25 +0530 chaitanya-laptop (9221)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
-[11/22/12 16:12:25 +0530 chaitanya-laptop (9221)] INFO : Reporting performance data every 60 seconds.
-[11/22/12 16:13:42 +0530 chaitanya-laptop (9253)] INFO : Dispatcher: thin
-[11/22/12 16:13:42 +0530 chaitanya-laptop (9253)] INFO : Application: Sharetribe
-[11/22/12 16:13:42 +0530 chaitanya-laptop (9253)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 9253
-[11/22/12 16:13:42 +0530 chaitanya-laptop (9253)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 16:13:42 +0530 chaitanya-laptop (9253)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 16:13:42 +0530 chaitanya-laptop (9253)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/22/12 16:13:54 +0530 chaitanya-laptop (9253)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
-[11/22/12 16:13:54 +0530 chaitanya-laptop (9253)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
-[11/22/12 16:13:54 +0530 chaitanya-laptop (9253)] INFO : Reporting performance data every 60 seconds.
-[11/22/12 16:22:20 +0530 chaitanya-laptop (9356)] INFO : Dispatcher: delayed_job
-[11/22/12 16:22:20 +0530 chaitanya-laptop (9356)] INFO : Application: Sharetribe
-[11/22/12 16:22:20 +0530 chaitanya-laptop (9356)] WARN : Agent configured not to send data in this environment.
-[11/22/12 16:22:20 +0530 chaitanya-laptop (9356)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 9356
-[11/22/12 16:22:20 +0530 chaitanya-laptop (9356)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 16:22:20 +0530 chaitanya-laptop (9356)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 16:22:30 +0530 chaitanya-laptop (9371)] INFO : Dispatcher: thin
-[11/22/12 16:22:30 +0530 chaitanya-laptop (9371)] INFO : Application: Sharetribe
-[11/22/12 16:22:30 +0530 chaitanya-laptop (9371)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 9371
-[11/22/12 16:22:30 +0530 chaitanya-laptop (9371)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
-[11/22/12 16:22:30 +0530 chaitanya-laptop (9371)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
-[11/22/12 16:22:30 +0530 chaitanya-laptop (9371)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
-[11/22/12 16:22:42 +0530 chaitanya-laptop (9371)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
-[11/22/12 16:22:42 +0530 chaitanya-laptop (9371)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
-[11/22/12 16:22:42 +0530 chaitanya-laptop (9371)] INFO : Reporting performance data every 60 seconds.
+[11/27/12 14:13:53 +0530 chaitanya-laptop (7693)] INFO : Dispatcher: thin
+[11/27/12 14:13:53 +0530 chaitanya-laptop (7693)] INFO : Application: Sharetribe
+[11/27/12 14:13:53 +0530 chaitanya-laptop (7693)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 7693
+[11/27/12 14:13:53 +0530 chaitanya-laptop (7693)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
+[11/27/12 14:13:54 +0530 chaitanya-laptop (7693)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[11/27/12 14:13:54 +0530 chaitanya-laptop (7693)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[11/27/12 14:14:06 +0530 chaitanya-laptop (7693)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
+[11/27/12 14:14:06 +0530 chaitanya-laptop (7693)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
+[11/27/12 14:14:06 +0530 chaitanya-laptop (7693)] INFO : Reporting performance data every 60 seconds.
+[11/27/12 15:49:18 +0530 chaitanya-laptop (8511)] INFO : Dispatcher: thin
+[11/27/12 15:49:18 +0530 chaitanya-laptop (8511)] INFO : Application: Sharetribe
+[11/27/12 15:49:18 +0530 chaitanya-laptop (8511)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 8511
+[11/27/12 15:49:18 +0530 chaitanya-laptop (8511)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
+[11/27/12 15:49:18 +0530 chaitanya-laptop (8511)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[11/27/12 15:49:18 +0530 chaitanya-laptop (8511)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[11/27/12 15:49:29 +0530 chaitanya-laptop (8511)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
+[11/27/12 15:49:29 +0530 chaitanya-laptop (8511)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
+[11/27/12 15:49:29 +0530 chaitanya-laptop (8511)] INFO : Reporting performance data every 60 seconds.
+[11/27/12 15:54:29 +0530 chaitanya-laptop (8511)] WARN : Timed out trying to post data to New Relic (timeout = 120 seconds)
+[11/27/12 16:22:44 +0530 chaitanya-laptop (8941)] INFO : Dispatcher: thin
+[11/27/12 16:22:44 +0530 chaitanya-laptop (8941)] INFO : Application: Sharetribe
+[11/27/12 16:22:44 +0530 chaitanya-laptop (8941)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 8941
+[11/27/12 16:22:44 +0530 chaitanya-laptop (8941)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
+[11/27/12 16:22:44 +0530 chaitanya-laptop (8941)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[11/27/12 16:22:44 +0530 chaitanya-laptop (8941)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[11/27/12 16:22:56 +0530 chaitanya-laptop (8941)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
+[11/27/12 16:22:56 +0530 chaitanya-laptop (8941)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
+[11/27/12 16:22:56 +0530 chaitanya-laptop (8941)] INFO : Reporting performance data every 60 seconds.
+[11/27/12 16:25:56 +0530 chaitanya-laptop (8941)] WARN : Timed out trying to post data to New Relic (timeout = 120 seconds)
+[11/27/12 16:26:44 +0530 chaitanya-laptop (8976)] INFO : Dispatcher: thin
+[11/27/12 16:26:44 +0530 chaitanya-laptop (8976)] INFO : Application: Sharetribe
+[11/27/12 16:26:44 +0530 chaitanya-laptop (8976)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 8976
+[11/27/12 16:26:44 +0530 chaitanya-laptop (8976)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
+[11/27/12 16:26:44 +0530 chaitanya-laptop (8976)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[11/27/12 16:26:44 +0530 chaitanya-laptop (8976)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[11/27/12 16:31:17 +0530 chaitanya-laptop (9014)] INFO : Dispatcher: thin
+[11/27/12 16:31:17 +0530 chaitanya-laptop (9014)] INFO : Application: Sharetribe
+[11/27/12 16:31:17 +0530 chaitanya-laptop (9014)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 9014
+[11/27/12 16:31:17 +0530 chaitanya-laptop (9014)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
+[11/27/12 16:31:18 +0530 chaitanya-laptop (9014)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[11/27/12 16:31:18 +0530 chaitanya-laptop (9014)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[11/27/12 16:31:30 +0530 chaitanya-laptop (9014)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
+[11/27/12 16:31:30 +0530 chaitanya-laptop (9014)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
+[11/27/12 16:31:30 +0530 chaitanya-laptop (9014)] INFO : Reporting performance data every 60 seconds.
+[11/27/12 16:40:30 +0530 chaitanya-laptop (9014)] WARN : Timed out trying to post data to New Relic (timeout = 120 seconds)
+[11/27/12 16:43:04 +0530 chaitanya-laptop (9201)] INFO : Dispatcher: thin
+[11/27/12 16:43:04 +0530 chaitanya-laptop (9201)] INFO : Application: Sharetribe
+[11/27/12 16:43:04 +0530 chaitanya-laptop (9201)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 9201
+[11/27/12 16:43:04 +0530 chaitanya-laptop (9201)] INFO : Agent Log at /home/chaitanya/workArea/ST-to-RGF/log/newrelic_agent.log
+[11/27/12 16:43:04 +0530 chaitanya-laptop (9201)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[11/27/12 16:43:04 +0530 chaitanya-laptop (9201)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[11/27/12 16:43:16 +0530 chaitanya-laptop (9201)] INFO : Connected to NewRelic Service at collector-6.newrelic.com
+[11/27/12 16:43:16 +0530 chaitanya-laptop (9201)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
+[11/27/12 16:43:16 +0530 chaitanya-laptop (9201)] INFO : Reporting performance data every 60 seconds.
