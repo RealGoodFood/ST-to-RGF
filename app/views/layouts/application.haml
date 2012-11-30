@@ -86,6 +86,9 @@
           #logo
             %h2.white
               REAL GOOD FOOD
+            - if @current_community
+              %h4.white
+                = @current_community.name
             //= render :file => community_file("logo", false)
             //- logo_text = render :file => community_file("logo_text", false)
             - logo_text = ""

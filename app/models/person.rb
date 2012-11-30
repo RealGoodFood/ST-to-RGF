@@ -168,7 +168,6 @@ class Person < ActiveRecord::Base
   end
 
 
-
   # Override Devise's authentication finder method to allow log in with username OR email
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup

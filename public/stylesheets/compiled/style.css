@@ -174,7 +174,7 @@ form, input {
   overflow: hidden; }
 
 #logo {
-  margin-top: 12px; }
+  margin-top: 0px; }
 
 #logo_link {
   line-height: 14px;
@@ -3958,4 +3958,4 @@ input.resend_email_confirmation_button {
 .show_food { margin:0 !important; }
 .justify_text { text-align:justify; }
 .strong { font-weight:bold; }
-.white{ color: white; }
+.white{ color: white; margin:0px; }
