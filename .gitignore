@@ -2,7 +2,7 @@
 log/development.log
 log/production.log
 log/newrelic_agent.log
-log/test.log
+log/searchd.log
 tmp/
 .rvmrc
 config/database.yml
