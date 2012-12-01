@@ -20,7 +20,8 @@ class ApplicationController < ActionController::Base
 
   rescue_from RestClient::Unauthorized, :with => :session_unauthorized
 
-  helper_method :root, :logged_in?, :current_user?, :get_person, :get_listing, :get_community , :not_already_requested, :shared_with_other_user
+  helper_method :root, :logged_in?, :current_user?, :get_person, :get_listing, :get_community , :not_already_requested, 
+                :shared_with_other_user, :in_between_swap
 
   def set_locale    
     locale = (logged_in? && @current_community && @current_community.locales.include?(@current_user.locale)) ? @current_user.locale : params[:locale]
@@ -72,6 +73,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def in_between_swap(listing)
+    @swap_item = SwapItem.where(["(receiver_listing_id = ? or receiver_listing_id = ?) and acceptance is NULL", listing, listing]).first
+    if @swap_item.nil?
+      return false
+    else
+      return true
+    end
+  end
 
   def not_already_requested(receiver_list, offerer)
     @swapitem = SwapItem.where(:receiver_listing_id => receiver_list, :offerer_id => offerer).first
@@ -321,8 +330,6 @@ class ApplicationController < ActionController::Base
 #      redirect_to "#{request.protocol}#{request.subdomain}.sharetribe.com#{request.fullpath}" and return if request.host =~ /^.+\.?sharetribe\.(cl|gr|fr|fi|us|de)/ || request.host =~ /^.+\.?sharetri\.be/  || request.host =~ /^.+\.?kassi\.eu/
 #      
 #      redirect_to "#{request.protocol}samraksh.sharetribe.com#{request.fullpath}" and return if request.host =~ /^(www\.)?samraksh\.org/
-#      
-#      
 #      
 #    end 
   end

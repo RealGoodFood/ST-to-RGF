@@ -12,9 +12,10 @@ class PersonMailer < ActionMailer::Base
   layout 'email'
 
 
-  def swap_offer(swap_item, host=nil)
+  def swap_offer(swap_item, host=nil, community_id)
     @recipient = set_up_recipient(get_person(swap_item.receiver_id), host)
-    @url = host ? "http://#{host}/" : "test_url"
+    @community_id = community_id
+    @url = host ? "http://#{host}" : "test_url"
     @swap_item = swap_item
     @author = get_person(swap_item.offerer_id)
     @receiver_recipe = get_listing(@swap_item.receiver_listing_id)
@@ -28,9 +29,9 @@ class PersonMailer < ActionMailer::Base
          # and hopefully read the actual message and answer with the link 
   end
 
- def swap_offer_acceptance(swap_item, host=nil)
+ def swap_offer_acceptance(swap_item, host=nil, community_id )
     @recipient = set_up_recipient(get_person(swap_item.offerer_id), host)
-    @url = host ? "http://#{host}/" : "test_url"
+    @url = host ? "http://#{host}/people/#{@recipient.id}/swap_items?c_id=#{community_id}" : "test_url"
     @swap_item = swap_item
     @author = get_person(swap_item.receiver_id)
     @receiver_recipe = get_listing(@swap_item.receiver_listing_id)

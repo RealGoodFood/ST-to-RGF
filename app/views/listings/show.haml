@@ -150,6 +150,11 @@
       - else
         %p
           Anytime Available
+
+  #listing_right_panel.grid_6.omega
+    #listing_share_links
+      - if current_user?(@listing.author) && in_between_swap(@listing.id)
+        = link_to "Check Swap Offers", person_swap_items_path(@current_user)
         
   .clear
   

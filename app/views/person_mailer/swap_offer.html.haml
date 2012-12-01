@@ -12,10 +12,12 @@ He is offering recipe
 for exchange of your recipe 
 %a{:href => "#{@url}listings/#{@receiver_recipe.id}-#{@receiver_recipe.title}"}
   = @receiver_recipe.title
-
+%br
+Click on below url to check the swap offer
+%br
 //= t("emails.new_message.you_can_reply_to_message_in")
-//= link_to(@url, @url + "?ref=email")
-
+%a{:href => "#{@url}/people/#{@recipient.id}/swap_items?c_id=#{@community_id}"}
+  Swap offer
 %br/
 %br/
 

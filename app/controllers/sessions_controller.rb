@@ -88,7 +88,7 @@ class SessionsController < ApplicationController
     
     
     if not @current_community
-      redirect_to domain + new_tribe_path
+      redirect_to new_tribe_path
     elsif @current_user.communities.include?(@current_community) || @current_user.is_admin?
       flash[:notice] = [:login_successful, (@current_user.given_name_or_username + "!").to_s, person_path(@current_user)]
       EventFeedEvent.create(:person1_id => @current_user.id, :community_id => current_community.id, :category => "login") unless (@current_user.is_admin? && !@current_user.communities.include?(@current_community))
@@ -99,10 +99,10 @@ class SessionsController < ApplicationController
         redirect_to session[:return_to_content]
         session[:return_to_content] = nil
       else
-        redirect_to domain + root_path
+        redirect_to community_home_path
       end
     else
-      redirect_to domain + new_tribe_membership_path
+      redirect_to new_tribe_membership_path
     end
   end
 

@@ -59,12 +59,12 @@ class SwapItemsController < ApplicationController
 
     respond_to do |format|
       if @swap_item.save
-        format.html { redirect_to(root, :notice => 'Swap offer has been sent.') }
+        format.html { redirect_to(community_home_path, :notice => 'Swap offer has been sent.') }
         format.xml  { render :xml => @swap_item, :status => :created, :location => @swap_item }
 #        PersonMailer.swap_offer(@swap_item, request.host).deliver
-        Delayed::Job.enqueue(SwapOfferJob.new(@swap_item.id, request.host))
+        Delayed::Job.enqueue(SwapOfferJob.new(@swap_item.id, request.host, @current_community.id))
       else
-        format.html { redirect_to(root, :notice => 'Swap offer has been not sent, Please try again') }
+        format.html { redirect_to(community_home_path, :notice => 'Swap offer has been not sent, Please try again') }
         format.xml  { render :xml => @swap_item.errors, :status => :unprocessable_entity }
       end
     end
@@ -101,7 +101,7 @@ class SwapItemsController < ApplicationController
   def direct_update
     @swap_item = SwapItem.find(params[:id])
     @swap_item.update_attribute(:acceptance,  params[:accept])
-    Delayed::Job.enqueue(SwapOfferJob.new(@swap_item.id, request.host))
+    Delayed::Job.enqueue(SwapOfferAcceptanceJob.new(@swap_item.id, request.host, @current_community.id))
     redirect_to :back
   end
   

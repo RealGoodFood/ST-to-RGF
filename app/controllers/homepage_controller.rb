@@ -8,12 +8,12 @@ class HomepageController < ApplicationController
   skip_filter :not_public_in_private_community, :only => :sign_in
 
   def index
-    logger.info "~~~~~~~~~~~~~~~~~~#{session[:selected_community]}"
-puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    if @current_user && @current_user.member_of?(@current_community)
+    if @current_user && @current_community && @current_user.member_of?(@current_community)
       @event_feed_events = @current_community.event_feed_events.limit(5).order("id DESC")
-    else
+    elsif @current_community
       @event_feed_events = @current_community.event_feed_events.non_members_only.limit(5).order("id DESC")
+    else 
+      redirect_to root_path
     end
     listings_per_page = 15
     
@@ -21,9 +21,10 @@ puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
     # and show the normal front page starting from newest listing
     params[:page] = 1 unless request.xhr? 
     
-    @requests = Listing.requests.visible_to(@current_user, @current_community).open.paginate(:per_page => listings_per_page, :page => params[:page])
-    @offers = Listing.offers.visible_to(@current_user, @current_community).open.paginate(:per_page => listings_per_page, :page => params[:page])
-        
+    if @current_user && @current_community
+      @requests = Listing.requests.visible_to(@current_user, @current_community).open.paginate(:per_page => listings_per_page, :page => params[:page])
+      @offers = Listing.offers.visible_to(@current_user, @current_community).open.paginate(:per_page => listings_per_page, :page => params[:page])
+    end
     # TODO This below should only be done if the count is actually shown, otherwise unnecessary.
     #If browsing Sharetribe unlogged, count also the number of private listings available 
     unless @current_user
@@ -35,7 +36,7 @@ puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
     if request.xhr? # checks if AJAX request
       render :partial => "additional_listings", :locals => {:type => :request, :requests => @requests, :offers => @offers}   
     else
-      if @current_community.news_enabled?
+      if @current_community && @current_community.news_enabled?
         @news_items = @current_community.news_items.order("created_at DESC").limit(2)
         @news_item_count = @current_community.news_items.count
       end  
