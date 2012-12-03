@@ -4,10 +4,10 @@ class ListingImage < ActiveRecord::Base
   
   paperclip_options = {
       :styles => { :medium => "300x640>", :thumb => "85x85#", :original => "640x640>" },
-      :storage => :cloud_files,
-      :cloudfiles_credentials =>  "#{RAILS_ROOT}/config/rackspace.yml"
-#        :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
-#        :url => "/system/:attachment/:id/:style/:filename"
+#      :storage => :cloud_files,
+#      :cloudfiles_credentials =>  "#{RAILS_ROOT}/config/rackspace.yml"
+        :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+        :url => "/system/:attachment/:id/:style/:filename"
         }
 #  if APP_CONFIG.s3_bucket_name && APP_CONFIG.aws_access_key_id && APP_CONFIG.aws_secret_access_key
 #    paperclip_options.merge!({

@@ -10,6 +10,10 @@
       %div{:id => "listing_category_big_icon_#{@listing.category}"}
     - @listing.listing_images.each do |listing_image|
       = image_tag listing_image.image.url(:medium), :class => "listing_main_image", :alt => @listing.title
+    //- if @listing.image.nil?
+    //  %div{:id => "listing_category_big_icon_#{@listing.category}"}
+    //- else
+    //  = image_tag @listing.image.url(:medium), :class => "listing_main_image", :alt => @listing.title
   - if current_user?(@listing.author) 
     //|| (@current_user && @current_user.has_admin_rights_in?(@current_community))
     #edit_links

@@ -10,4 +10,8 @@
           = link_to t(".remove_image"), listing_image_path(@listing, @listing.listing_images.first), :method => :delete, :remote => true
       %div{:id => "listing_image_#{@listing.listing_images.first.id.to_s}_file_field", :style => "display: none;"}
         = builder.file_field(:image, :class => "file_field", :disabled => true)
-        
+
+
+//.new_listing_form_field_container
+//  = form.label :image, t('.image') + ":", :class => "input"
+//  = form.file_field(:image, :class => "file_field")
