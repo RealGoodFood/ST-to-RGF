@@ -9,4 +9,3 @@ config/database.yml
 config/unicorn.rb
 backups/*
 .rbenv-version
-.trial
