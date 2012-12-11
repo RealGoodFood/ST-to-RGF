@@ -144,16 +144,9 @@
         - if @listing.location != nil 
           #single_listing_location
             = @listing.location.address
-
-      - unless @listing.date_info_empty?
-        %p 
-          = t(".from")
-          = l(@listing.valid_from, :format => :long)
-          = t(".to")   
-          = l(@listing.valid_until, :format => :long)
-      - else
-        %p
-          Anytime Available
+      
+      #listing_availability_status
+        = render :partial => "availability"
 
   #listing_right_panel.grid_6.omega
     #listing_share_links

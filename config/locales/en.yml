@@ -848,12 +848,13 @@ en:
       help_tags_title: Tags
       help_valid_until_title: "Expiration date"
     index:
-      today_special: "Today Special"
+      today_special: "Food available now"
       out_of_diet: "Food out of my diet" 
       all_categories: "All categories"
+      now_available: "Food that can be made at any time"
       all_offer_types: "All offer types"
       all_request_types: "All request types"
-      category: Category
+      category: Categories
       did_not_found_what_you_were_looking_for: "Didn't find what you need?"
       favors: Services
       housing: Spaces

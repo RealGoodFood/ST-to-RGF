@@ -117,6 +117,7 @@ Kassi::Application.routes.draw do
         resources :listings do
           member do
             put :close
+            put :reopen
           end  
         end  
 

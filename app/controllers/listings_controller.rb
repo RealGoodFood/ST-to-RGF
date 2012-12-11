@@ -1,9 +1,9 @@
 class ListingsController < ApplicationController
   
   # Skip auth token check as current jQuery doesn't provide it automatically
-  skip_before_filter :verify_authenticity_token, :only => [:close, :update, :follow, :unfollow]
+  skip_before_filter :verify_authenticity_token, :only => [:close, :reopen, :update, :follow, :unfollow]
 
-  before_filter :only => [ :show, :edit, :update, :close, :follow, :unfollow ] do |controller|
+  before_filter :only => [ :show, :edit, :update, :close, :reopen, :follow, :unfollow ] do |controller|
     controller.ensure_logged_in "you_must_log_in_to_view_this_content"
   end
 
@@ -14,7 +14,7 @@ class ListingsController < ApplicationController
   before_filter :save_current_path, :only => :show
   before_filter :ensure_authorized_to_view, :only => [ :show, :follow, :unfollow ]
   
-  before_filter :only => [ :close ] do |controller|
+  before_filter :only => [ :close, :reopen ] do |controller|
     controller.ensure_current_user_is_listing_author "only_listing_author_can_close_a_listing"
   end
   
@@ -232,6 +232,22 @@ class ListingsController < ApplicationController
       }
     end
   end
+
+  def reopen
+    @listing.update_attributes(:open => true, :valid_from => nil, :valid_until => nil )
+    notice = "Reopend !!"
+    respond_to do |format|
+      format.html { 
+        flash[:notice] = notice
+        redirect_to @listing 
+      }
+      format.js {
+        flash.now[:notice] = notice
+        render :layout => false 
+      }
+    end
+  end
+
   
   #shows a random listing from current community
   def random
