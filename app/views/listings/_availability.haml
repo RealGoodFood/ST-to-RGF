@@ -1,0 +1,10 @@
+- unless @listing.date_info_empty?
+  %p 
+    = t(".from")
+    = l(@listing.valid_from, :format => :long)
+    = t(".to")   
+    = l(@listing.valid_until, :format => :long)
+- else
+  %p
+    Anytime Available
+

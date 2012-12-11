@@ -283,7 +283,7 @@ class Listing < ActiveRecord::Base
 #      conditions[0] += " AND category IN (?)"
 #      conditions << params[:category]
       if params[:category] == ["today"]
-        listings = listings.where(['(valid_from IS NOT NULL and valid_until IS NOT NULL) and  (valid_from < ? and valid_until > ?)', DateTime.now, DateTime.now ])
+        listings = listings.where(['(valid_from IS NOT NULL and valid_until IS NOT NULL) and  (valid_from <= ? and valid_until >= ?)', DateTime.now, DateTime.now ])
       elsif params[:category] == ["dietout"]
         listings = listings.joins(:diet_listings).where(["diet_id NOT IN (?)", "#{outofdiet}" ])
       end

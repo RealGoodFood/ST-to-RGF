@@ -3,15 +3,17 @@
 
 #browse_page.grid_24
   .grid_6.alpha
-    %h1= t(".#{@title}s")
+    //%h1= t(".#{@title}s")
     #left_link_panel_browse
       .left_panel_section
         .left_panel_title
           %h3= t(".category")
-        = link_to t(".all_categories"), "#", :class => "selected", :name => "categories_all"
+        = link_to t(".now_available"), "#", :class => "selected", :name => "categories_all"
         = link_to t(".today_special"), "#",  :name => "categories_today"
         - if @current_user && !@current_user.restrictions.empty?
           = link_to t(".out_of_diet"), "#",  :name => "categories_dietout"
+        - else
+          Don't have any diet restrictions
       .left_panel_section
         .left_panel_title
         //  %h3= t(".#{params[:listing_type]}_type")

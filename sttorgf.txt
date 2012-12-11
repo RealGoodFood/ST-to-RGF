@@ -1,0 +1,367 @@
+(in /home/chaitanya/workArea/ST-to-RGF)
+                                       tokens POST   /tokens(.:format)                                                              {:action=>"create", :controller=>"api/tokens"}
+                             listing_comments GET    /listings/:listing_id/comments(.:format)                                       {:action=>"index", :controller=>"api/comments"}
+                                              POST   /listings/:listing_id/comments(.:format)                                       {:action=>"create", :controller=>"api/comments"}
+                          new_listing_comment GET    /listings/:listing_id/comments/new(.:format)                                   {:action=>"new", :controller=>"api/comments"}
+                         edit_listing_comment GET    /listings/:listing_id/comments/:id/edit(.:format)                              {:action=>"edit", :controller=>"api/comments"}
+                              listing_comment GET    /listings/:listing_id/comments/:id(.:format)                                   {:action=>"show", :controller=>"api/comments"}
+                                              PUT    /listings/:listing_id/comments/:id(.:format)                                   {:action=>"update", :controller=>"api/comments"}
+                                              DELETE /listings/:listing_id/comments/:id(.:format)                                   {:action=>"destroy", :controller=>"api/comments"}
+                                     listings GET    /listings(.:format)                                                            {:action=>"index", :controller=>"api/listings"}
+                                              POST   /listings(.:format)                                                            {:action=>"create", :controller=>"api/listings"}
+                                  new_listing GET    /listings/new(.:format)                                                        {:action=>"new", :controller=>"api/listings"}
+                                 edit_listing GET    /listings/:id/edit(.:format)                                                   {:action=>"edit", :controller=>"api/listings"}
+                                      listing GET    /listings/:id(.:format)                                                        {:action=>"show", :controller=>"api/listings"}
+                                              PUT    /listings/:id(.:format)                                                        {:action=>"update", :controller=>"api/listings"}
+                                              DELETE /listings/:id(.:format)                                                        {:action=>"destroy", :controller=>"api/listings"}
+                 messages_person_conversation POST   /people/:person_id/conversations/:id/messages(.:format)                        {:controller=>"api/conversations", :action=>"new_message"}
+                         person_conversations GET    /people/:person_id/conversations(.:format)                                     {:action=>"index", :controller=>"api/conversations"}
+                                              POST   /people/:person_id/conversations(.:format)                                     {:action=>"create", :controller=>"api/conversations"}
+                      new_person_conversation GET    /people/:person_id/conversations/new(.:format)                                 {:action=>"new", :controller=>"api/conversations"}
+                     edit_person_conversation GET    /people/:person_id/conversations/:id/edit(.:format)                            {:action=>"edit", :controller=>"api/conversations"}
+                          person_conversation GET    /people/:person_id/conversations/:id(.:format)                                 {:action=>"show", :controller=>"api/conversations"}
+                                              PUT    /people/:person_id/conversations/:id(.:format)                                 {:action=>"update", :controller=>"api/conversations"}
+                                              DELETE /people/:person_id/conversations/:id(.:format)                                 {:action=>"destroy", :controller=>"api/conversations"}
+                               person_devices GET    /people/:person_id/devices(.:format)                                           {:action=>"index", :controller=>"api/devices"}
+                                              POST   /people/:person_id/devices(.:format)                                           {:action=>"create", :controller=>"api/devices"}
+                            new_person_device GET    /people/:person_id/devices/new(.:format)                                       {:action=>"new", :controller=>"api/devices"}
+                           edit_person_device GET    /people/:person_id/devices/:id/edit(.:format)                                  {:action=>"edit", :controller=>"api/devices"}
+                                person_device GET    /people/:person_id/devices/:id(.:format)                                       {:action=>"show", :controller=>"api/devices"}
+                                              PUT    /people/:person_id/devices/:id(.:format)                                       {:action=>"update", :controller=>"api/devices"}
+                                              DELETE /people/:person_id/devices/:id(.:format)                                       {:action=>"destroy", :controller=>"api/devices"}
+                              person_listings GET    /people/:person_id/listings(.:format)                                          {:action=>"index", :controller=>"api/listings"}
+                                              POST   /people/:person_id/listings(.:format)                                          {:action=>"create", :controller=>"api/listings"}
+                           new_person_listing GET    /people/:person_id/listings/new(.:format)                                      {:action=>"new", :controller=>"api/listings"}
+                          edit_person_listing GET    /people/:person_id/listings/:id/edit(.:format)                                 {:action=>"edit", :controller=>"api/listings"}
+                               person_listing GET    /people/:person_id/listings/:id(.:format)                                      {:action=>"show", :controller=>"api/listings"}
+                                              PUT    /people/:person_id/listings/:id(.:format)                                      {:action=>"update", :controller=>"api/listings"}
+                                              DELETE /people/:person_id/listings/:id(.:format)                                      {:action=>"destroy", :controller=>"api/listings"}
+                             person_feedbacks GET    /people/:person_id/feedbacks(.:format)                                         {:action=>"index", :controller=>"api/testimonials"}
+                                              POST   /people/:person_id/feedbacks(.:format)                                         {:action=>"create", :controller=>"api/testimonials"}
+                          new_person_feedback GET    /people/:person_id/feedbacks/new(.:format)                                     {:action=>"new", :controller=>"api/testimonials"}
+                         edit_person_feedback GET    /people/:person_id/feedbacks/:id/edit(.:format)                                {:action=>"edit", :controller=>"api/testimonials"}
+                              person_feedback GET    /people/:person_id/feedbacks/:id(.:format)                                     {:action=>"show", :controller=>"api/testimonials"}
+                                              PUT    /people/:person_id/feedbacks/:id(.:format)                                     {:action=>"update", :controller=>"api/testimonials"}
+                                              DELETE /people/:person_id/feedbacks/:id(.:format)                                     {:action=>"destroy", :controller=>"api/testimonials"}
+                                person_badges GET    /people/:person_id/badges(.:format)                                            {:action=>"index", :controller=>"api/badges"}
+                                              POST   /people/:person_id/badges(.:format)                                            {:action=>"create", :controller=>"api/badges"}
+                             new_person_badge GET    /people/:person_id/badges/new(.:format)                                        {:action=>"new", :controller=>"api/badges"}
+                            edit_person_badge GET    /people/:person_id/badges/:id/edit(.:format)                                   {:action=>"edit", :controller=>"api/badges"}
+                                 person_badge GET    /people/:person_id/badges/:id(.:format)                                        {:action=>"show", :controller=>"api/badges"}
+                                              PUT    /people/:person_id/badges/:id(.:format)                                        {:action=>"update", :controller=>"api/badges"}
+                                              DELETE /people/:person_id/badges/:id(.:format)                                        {:action=>"destroy", :controller=>"api/badges"}
+                                       people GET    /people(.:format)                                                              {:action=>"index", :controller=>"api/people"}
+                                              POST   /people(.:format)                                                              {:action=>"create", :controller=>"api/people"}
+                                   new_person GET    /people/new(.:format)                                                          {:action=>"new", :controller=>"api/people"}
+                                  edit_person GET    /people/:id/edit(.:format)                                                     {:action=>"edit", :controller=>"api/people"}
+                                       person GET    /people/:id(.:format)                                                          {:action=>"show", :controller=>"api/people"}
+                                              PUT    /people/:id(.:format)                                                          {:action=>"update", :controller=>"api/people"}
+                                              DELETE /people/:id(.:format)                                                          {:action=>"destroy", :controller=>"api/people"}
+                                                     /(.:format)                                                                    {:controller=>"api/dashboard", :action=>"api"}
+                                 confirmation GET    (/:locale)/people/confirmation(.:format)                                       {:controller=>"confirmations", :action=>"show"}
+                                 people_login        (/:locale)/people/login(.:format)                                              {:controller=>"sessions", :action=>"new"}
+                         people_password_edit        (/:locale)/people/password/edit(.:format)                                      {:controller=>"devise/passwords", :action=>"edit"}
+                              people_password POST   (/:locale)/people/password(.:format)                                           {:controller=>"devise/passwords", :action=>"create"}
+                                              PUT    (/:locale)/people/password(.:format)                                           {:controller=>"devise/passwords", :action=>"update"}
+                               people_sign_up        (/:locale)/people/sign_up(.:format)                                            
+           check_username_availability_people GET    (/:locale)/people/check_username_availability(.:format)                        {:action=>"check_username_availability", :controller=>"people"}
+              check_email_availability_people GET    (/:locale)/people/check_email_availability(.:format)                           {:action=>"check_email_availability", :controller=>"people"}
+check_email_availability_for_new_tribe_people GET    (/:locale)/people/check_email_availability_for_new_tribe(.:format)             {:action=>"check_email_availability_for_new_tribe", :controller=>"people"}
+ check_email_availability_and_validity_people GET    (/:locale)/people/check_email_availability_and_validity(.:format)              {:action=>"check_email_availability_and_validity", :controller=>"people"}
+                  check_email_validity_people GET    (/:locale)/people/check_email_validity(.:format)                               {:action=>"check_email_validity", :controller=>"people"}
+                 check_invitation_code_people GET    (/:locale)/people/check_invitation_code(.:format)                              {:action=>"check_invitation_code", :controller=>"people"}
+                            not_member_people GET    (/:locale)/people/not_member(.:format)                                         {:action=>"not_member", :controller=>"people"}
+                                cancel_people GET    (/:locale)/people/cancel(.:format)                                             {:action=>"cancel", :controller=>"people"}
+                 create_facebook_based_people POST   (/:locale)/people/create_facebook_based(.:format)                              {:action=>"create_facebook_based", :controller=>"people"}
+                         update_avatar_person PUT    (/:locale)/people/:id/update_avatar(.:format)                                  {:action=>"update_avatar", :controller=>"people"}
+                              activate_person PUT    (/:locale)/people/:id/activate(.:format)                                       {:action=>"activate", :controller=>"people"}
+                            deactivate_person PUT    (/:locale)/people/:id/deactivate(.:format)                                     {:action=>"deactivate", :controller=>"people"}
+                         close_person_listing PUT    (/:locale)/people/:person_id/listings/:id/close(.:format)                      {:action=>"close", :controller=>"listings"}
+                          open_person_listing PUT    (/:locale)/people/:person_id/listings/:id/open(.:format)                       {:action=>"open", :controller=>"listings"}
+                                              GET    (/:locale)/people/:person_id/listings(.:format)                                {:action=>"index", :controller=>"listings"}
+                                              POST   (/:locale)/people/:person_id/listings(.:format)                                {:action=>"create", :controller=>"listings"}
+                                              GET    (/:locale)/people/:person_id/listings/new(.:format)                            {:action=>"new", :controller=>"listings"}
+                                              GET    (/:locale)/people/:person_id/listings/:id/edit(.:format)                       {:action=>"edit", :controller=>"listings"}
+                                              GET    (/:locale)/people/:person_id/listings/:id(.:format)                            {:action=>"show", :controller=>"listings"}
+                                              PUT    (/:locale)/people/:person_id/listings/:id(.:format)                            {:action=>"update", :controller=>"listings"}
+                                              DELETE (/:locale)/people/:person_id/listings/:id(.:format)                            {:action=>"destroy", :controller=>"listings"}
+                     received_person_messages GET    (/:locale)/people/:person_id/messages/received(.:format)                       {:action=>"received", :controller=>"conversations"}
+                         sent_person_messages GET    (/:locale)/people/:person_id/messages/sent(.:format)                           {:action=>"sent", :controller=>"conversations"}
+                notifications_person_messages GET    (/:locale)/people/:person_id/messages/notifications(.:format)                  {:action=>"notifications", :controller=>"conversations"}
+                        accept_person_message PUT    (/:locale)/people/:person_id/messages/:id/accept(.:format)                     {:action=>"accept", :controller=>"conversations"}
+                        reject_person_message PUT    (/:locale)/people/:person_id/messages/:id/reject(.:format)                     {:action=>"reject", :controller=>"conversations"}
+                        cancel_person_message PUT    (/:locale)/people/:person_id/messages/:id/cancel(.:format)                     {:action=>"cancel", :controller=>"conversations"}
+                      person_message_messages GET    (/:locale)/people/:person_id/messages/:message_id/messages(.:format)           {:action=>"index", :controller=>"messages"}
+                                              POST   (/:locale)/people/:person_id/messages/:message_id/messages(.:format)           {:action=>"create", :controller=>"messages"}
+                   new_person_message_message GET    (/:locale)/people/:person_id/messages/:message_id/messages/new(.:format)       {:action=>"new", :controller=>"messages"}
+                  edit_person_message_message GET    (/:locale)/people/:person_id/messages/:message_id/messages/:id/edit(.:format)  {:action=>"edit", :controller=>"messages"}
+                       person_message_message GET    (/:locale)/people/:person_id/messages/:message_id/messages/:id(.:format)       {:action=>"show", :controller=>"messages"}
+                                              PUT    (/:locale)/people/:person_id/messages/:message_id/messages/:id(.:format)       {:action=>"update", :controller=>"messages"}
+                                              DELETE (/:locale)/people/:person_id/messages/:message_id/messages/:id(.:format)       {:action=>"destroy", :controller=>"messages"}
+                skip_person_message_feedbacks PUT    (/:locale)/people/:person_id/messages/:message_id/feedbacks/skip(.:format)     {:action=>"skip", :controller=>"testimonials"}
+                     person_message_feedbacks GET    (/:locale)/people/:person_id/messages/:message_id/feedbacks(.:format)          {:action=>"index", :controller=>"testimonials"}
+                                              POST   (/:locale)/people/:person_id/messages/:message_id/feedbacks(.:format)          {:action=>"create", :controller=>"testimonials"}
+                  new_person_message_feedback GET    (/:locale)/people/:person_id/messages/:message_id/feedbacks/new(.:format)      {:action=>"new", :controller=>"testimonials"}
+                 edit_person_message_feedback GET    (/:locale)/people/:person_id/messages/:message_id/feedbacks/:id/edit(.:format) {:action=>"edit", :controller=>"testimonials"}
+                      person_message_feedback GET    (/:locale)/people/:person_id/messages/:message_id/feedbacks/:id(.:format)      {:action=>"show", :controller=>"testimonials"}
+                                              PUT    (/:locale)/people/:person_id/messages/:message_id/feedbacks/:id(.:format)      {:action=>"update", :controller=>"testimonials"}
+                                              DELETE (/:locale)/people/:person_id/messages/:message_id/feedbacks/:id(.:format)      {:action=>"destroy", :controller=>"testimonials"}
+                              person_messages GET    (/:locale)/people/:person_id/messages(.:format)                                {:action=>"index", :controller=>"conversations"}
+                                              POST   (/:locale)/people/:person_id/messages(.:format)                                {:action=>"create", :controller=>"conversations"}
+                           new_person_message GET    (/:locale)/people/:person_id/messages/new(.:format)                            {:action=>"new", :controller=>"conversations"}
+                          edit_person_message GET    (/:locale)/people/:person_id/messages/:id/edit(.:format)                       {:action=>"edit", :controller=>"conversations"}
+                               person_message GET    (/:locale)/people/:person_id/messages/:id(.:format)                            {:action=>"show", :controller=>"conversations"}
+                                              PUT    (/:locale)/people/:person_id/messages/:id(.:format)                            {:action=>"update", :controller=>"conversations"}
+                                              DELETE (/:locale)/people/:person_id/messages/:id(.:format)                            {:action=>"destroy", :controller=>"conversations"}
+                      profile_person_settings GET    (/:locale)/people/:person_id/settings/profile(.:format)                        {:action=>"profile", :controller=>"settings"}
+                       avatar_person_settings GET    (/:locale)/people/:person_id/settings/avatar(.:format)                         {:action=>"avatar", :controller=>"settings"}
+                      account_person_settings GET    (/:locale)/people/:person_id/settings/account(.:format)                        {:action=>"account", :controller=>"settings"}
+                notifications_person_settings GET    (/:locale)/people/:person_id/settings/notifications(.:format)                  {:action=>"notifications", :controller=>"settings"}
+                              person_settings POST   (/:locale)/people/:person_id/settings(.:format)                                {:action=>"create", :controller=>"settings"}
+                          new_person_settings GET    (/:locale)/people/:person_id/settings/new(.:format)                            {:action=>"new", :controller=>"settings"}
+                         edit_person_settings GET    (/:locale)/people/:person_id/settings/edit(.:format)                           {:action=>"edit", :controller=>"settings"}
+                                              GET    (/:locale)/people/:person_id/settings(.:format)                                {:action=>"show", :controller=>"settings"}
+                                              PUT    (/:locale)/people/:person_id/settings(.:format)                                {:action=>"update", :controller=>"settings"}
+                                              DELETE (/:locale)/people/:person_id/settings(.:format)                                {:action=>"destroy", :controller=>"settings"}
+                           person_invitations GET    (/:locale)/people/:person_id/invitations(.:format)                             {:action=>"index", :controller=>"invitations"}
+                                              POST   (/:locale)/people/:person_id/invitations(.:format)                             {:action=>"create", :controller=>"invitations"}
+                        new_person_invitation GET    (/:locale)/people/:person_id/invitations/new(.:format)                         {:action=>"new", :controller=>"invitations"}
+                       edit_person_invitation GET    (/:locale)/people/:person_id/invitations/:id/edit(.:format)                    {:action=>"edit", :controller=>"invitations"}
+                            person_invitation GET    (/:locale)/people/:person_id/invitations/:id(.:format)                         {:action=>"show", :controller=>"invitations"}
+                                              PUT    (/:locale)/people/:person_id/invitations/:id(.:format)                         {:action=>"update", :controller=>"invitations"}
+                                              DELETE (/:locale)/people/:person_id/invitations/:id(.:format)                         {:action=>"destroy", :controller=>"invitations"}
+                                              GET    (/:locale)/people/:person_id/badges(.:format)                                  {:action=>"index", :controller=>"badges"}
+                                              POST   (/:locale)/people/:person_id/badges(.:format)                                  {:action=>"create", :controller=>"badges"}
+                                              GET    (/:locale)/people/:person_id/badges/new(.:format)                              {:action=>"new", :controller=>"badges"}
+                                              GET    (/:locale)/people/:person_id/badges/:id/edit(.:format)                         {:action=>"edit", :controller=>"badges"}
+                                              GET    (/:locale)/people/:person_id/badges/:id(.:format)                              {:action=>"show", :controller=>"badges"}
+                                              PUT    (/:locale)/people/:person_id/badges/:id(.:format)                              {:action=>"update", :controller=>"badges"}
+                                              DELETE (/:locale)/people/:person_id/badges/:id(.:format)                              {:action=>"destroy", :controller=>"badges"}
+                          person_testimonials GET    (/:locale)/people/:person_id/testimonials(.:format)                            {:action=>"index", :controller=>"testimonials"}
+                                              POST   (/:locale)/people/:person_id/testimonials(.:format)                            {:action=>"create", :controller=>"testimonials"}
+                       new_person_testimonial GET    (/:locale)/people/:person_id/testimonials/new(.:format)                        {:action=>"new", :controller=>"testimonials"}
+                      edit_person_testimonial GET    (/:locale)/people/:person_id/testimonials/:id/edit(.:format)                   {:action=>"edit", :controller=>"testimonials"}
+                           person_testimonial GET    (/:locale)/people/:person_id/testimonials/:id(.:format)                        {:action=>"show", :controller=>"testimonials"}
+                                              PUT    (/:locale)/people/:person_id/testimonials/:id(.:format)                        {:action=>"update", :controller=>"testimonials"}
+                                              DELETE (/:locale)/people/:person_id/testimonials/:id(.:format)                        {:action=>"destroy", :controller=>"testimonials"}
+                          person_poll_answers GET    (/:locale)/people/:person_id/poll_answers(.:format)                            {:action=>"index", :controller=>"poll_answers"}
+                                              POST   (/:locale)/people/:person_id/poll_answers(.:format)                            {:action=>"create", :controller=>"poll_answers"}
+                       new_person_poll_answer GET    (/:locale)/people/:person_id/poll_answers/new(.:format)                        {:action=>"new", :controller=>"poll_answers"}
+                      edit_person_poll_answer GET    (/:locale)/people/:person_id/poll_answers/:id/edit(.:format)                   {:action=>"edit", :controller=>"poll_answers"}
+                           person_poll_answer GET    (/:locale)/people/:person_id/poll_answers/:id(.:format)                        {:action=>"show", :controller=>"poll_answers"}
+                                              PUT    (/:locale)/people/:person_id/poll_answers/:id(.:format)                        {:action=>"update", :controller=>"poll_answers"}
+                                              DELETE (/:locale)/people/:person_id/poll_answers/:id(.:format)                        {:action=>"destroy", :controller=>"poll_answers"}
+                            person_swap_items GET    (/:locale)/people/:person_id/swap_items(.:format)                              {:action=>"index", :controller=>"swap_items"}
+                                              POST   (/:locale)/people/:person_id/swap_items(.:format)                              {:action=>"create", :controller=>"swap_items"}
+                         new_person_swap_item GET    (/:locale)/people/:person_id/swap_items/new(.:format)                          {:action=>"new", :controller=>"swap_items"}
+                        edit_person_swap_item GET    (/:locale)/people/:person_id/swap_items/:id/edit(.:format)                     {:action=>"edit", :controller=>"swap_items"}
+                             person_swap_item GET    (/:locale)/people/:person_id/swap_items/:id(.:format)                          {:action=>"show", :controller=>"swap_items"}
+                                              PUT    (/:locale)/people/:person_id/swap_items/:id(.:format)                          {:action=>"update", :controller=>"swap_items"}
+                                              DELETE (/:locale)/people/:person_id/swap_items/:id(.:format)                          {:action=>"destroy", :controller=>"swap_items"}
+                                              GET    (/:locale)/people(.:format)                                                    {:action=>"index", :controller=>"people"}
+                                              POST   (/:locale)/people(.:format)                                                    {:action=>"create", :controller=>"people"}
+                                              GET    (/:locale)/people/new(.:format)                                                {:action=>"new", :controller=>"people"}
+                                              GET    (/:locale)/people/:id/edit(.:format)                                           {:action=>"edit", :controller=>"people"}
+                                              GET    (/:locale)/people/:id(.:format)                                                {:action=>"show", :controller=>"people"}
+                                              PUT    (/:locale)/people/:id(.:format)                                                {:action=>"update", :controller=>"people"}
+                                              DELETE (/:locale)/people/:id(.:format)                                                {:action=>"destroy", :controller=>"people"}
+                                      sign_up        (/:locale)/signup(.:format)                                                    {:controller=>"people", :action=>"new"}
+                              person_listings        (/:locale)/people/:id/:type(.:format)                                          {:controller=>"people", :action=>"show"}
+                           new_person_session GET    (/:locale)/people/login(.:format)                                              {:action=>"new", :controller=>"devise/sessions"}
+                               person_session POST   (/:locale)/people/login(.:format)                                              {:action=>"create", :controller=>"devise/sessions"}
+                       destroy_person_session DELETE (/:locale)/people/sign_out(.:format)                                           {:action=>"destroy", :controller=>"devise/sessions"}
+                     person_omniauth_callback        /people/auth/:action/callback(.:format)                                        {:action=>/facebook/, :controller=>"sessions"}
+                              person_password POST   (/:locale)/people/password(.:format)                                           {:action=>"create", :controller=>"devise/passwords"}
+                          new_person_password GET    (/:locale)/people/password/new(.:format)                                       {:action=>"new", :controller=>"devise/passwords"}
+                         edit_person_password GET    (/:locale)/people/password/edit(.:format)                                      {:action=>"edit", :controller=>"devise/passwords"}
+                                              PUT    (/:locale)/people/password(.:format)                                           {:action=>"update", :controller=>"devise/passwords"}
+                   cancel_person_registration GET    (/:locale)/people/cancel(.:format)                                             {:action=>"cancel", :controller=>"people"}
+                          person_registration POST   (/:locale)/people(.:format)                                                    {:action=>"create", :controller=>"people"}
+                      new_person_registration GET    (/:locale)/people/sign_up(.:format)                                            {:action=>"new", :controller=>"people"}
+                     edit_person_registration GET    (/:locale)/people/edit(.:format)                                               {:action=>"edit", :controller=>"people"}
+                                              PUT    (/:locale)/people(.:format)                                                    {:action=>"update", :controller=>"people"}
+                                              DELETE (/:locale)/people(.:format)                                                    {:action=>"destroy", :controller=>"people"}
+                          person_confirmation POST   (/:locale)/people/confirmation(.:format)                                       {:action=>"create", :controller=>"confirmations"}
+                      new_person_confirmation GET    (/:locale)/people/confirmation/new(.:format)                                   {:action=>"new", :controller=>"confirmations"}
+                                              GET    (/:locale)/people/confirmation(.:format)                                       {:action=>"show", :controller=>"confirmations"}
+                              admin_feedbacks GET    (/:locale)/admin/feedbacks(.:format)                                           {:action=>"index", :controller=>"admin/feedbacks"}
+                                              POST   (/:locale)/admin/feedbacks(.:format)                                           {:action=>"create", :controller=>"admin/feedbacks"}
+                           new_admin_feedback GET    (/:locale)/admin/feedbacks/new(.:format)                                       {:action=>"new", :controller=>"admin/feedbacks"}
+                          edit_admin_feedback GET    (/:locale)/admin/feedbacks/:id/edit(.:format)                                  {:action=>"edit", :controller=>"admin/feedbacks"}
+                               admin_feedback GET    (/:locale)/admin/feedbacks/:id(.:format)                                       {:action=>"show", :controller=>"admin/feedbacks"}
+                                              PUT    (/:locale)/admin/feedbacks/:id(.:format)                                       {:action=>"update", :controller=>"admin/feedbacks"}
+                                              DELETE (/:locale)/admin/feedbacks/:id(.:format)                                       {:action=>"destroy", :controller=>"admin/feedbacks"}
+                             admin_news_items GET    (/:locale)/admin/news_items(.:format)                                          {:action=>"index", :controller=>"admin/news_items"}
+                                              POST   (/:locale)/admin/news_items(.:format)                                          {:action=>"create", :controller=>"admin/news_items"}
+                          new_admin_news_item GET    (/:locale)/admin/news_items/new(.:format)                                      {:action=>"new", :controller=>"admin/news_items"}
+                         edit_admin_news_item GET    (/:locale)/admin/news_items/:id/edit(.:format)                                 {:action=>"edit", :controller=>"admin/news_items"}
+                              admin_news_item GET    (/:locale)/admin/news_items/:id(.:format)                                      {:action=>"show", :controller=>"admin/news_items"}
+                                              PUT    (/:locale)/admin/news_items/:id(.:format)                                      {:action=>"update", :controller=>"admin/news_items"}
+                                              DELETE (/:locale)/admin/news_items/:id(.:format)                                      {:action=>"destroy", :controller=>"admin/news_items"}
+                       add_option_admin_polls GET    (/:locale)/admin/polls/add_option(.:format)                                    {:action=>"add_option", :controller=>"admin/polls"}
+                    remove_option_admin_polls GET    (/:locale)/admin/polls/remove_option(.:format)                                 {:action=>"remove_option", :controller=>"admin/polls"}
+                              open_admin_poll PUT    (/:locale)/admin/polls/:id/open(.:format)                                      {:action=>"open", :controller=>"admin/polls"}
+                             close_admin_poll PUT    (/:locale)/admin/polls/:id/close(.:format)                                     {:action=>"close", :controller=>"admin/polls"}
+                                  admin_polls GET    (/:locale)/admin/polls(.:format)                                               {:action=>"index", :controller=>"admin/polls"}
+                                              POST   (/:locale)/admin/polls(.:format)                                               {:action=>"create", :controller=>"admin/polls"}
+                               new_admin_poll GET    (/:locale)/admin/polls/new(.:format)                                           {:action=>"new", :controller=>"admin/polls"}
+                              edit_admin_poll GET    (/:locale)/admin/polls/:id/edit(.:format)                                      {:action=>"edit", :controller=>"admin/polls"}
+                                   admin_poll GET    (/:locale)/admin/polls/:id(.:format)                                           {:action=>"show", :controller=>"admin/polls"}
+                                              PUT    (/:locale)/admin/polls/:id(.:format)                                           {:action=>"update", :controller=>"admin/polls"}
+                                              DELETE (/:locale)/admin/polls/:id(.:format)                                           {:action=>"destroy", :controller=>"admin/polls"}
+                       sign_in_homepage_index GET    (/:locale)/homepage/sign_in(.:format)                                          {:action=>"sign_in", :controller=>"homepage"}
+                    not_member_homepage_index GET    (/:locale)/homepage/not_member(.:format)                                       {:action=>"not_member", :controller=>"homepage"}
+                          join_homepage_index POST   (/:locale)/homepage/join(.:format)                                             {:action=>"join", :controller=>"homepage"}
+                               homepage_index GET    (/:locale)/homepage(.:format)                                                  {:action=>"index", :controller=>"homepage"}
+                                              POST   (/:locale)/homepage(.:format)                                                  {:action=>"create", :controller=>"homepage"}
+                                 new_homepage GET    (/:locale)/homepage/new(.:format)                                              {:action=>"new", :controller=>"homepage"}
+                                edit_homepage GET    (/:locale)/homepage/:id/edit(.:format)                                         {:action=>"edit", :controller=>"homepage"}
+                                     homepage GET    (/:locale)/homepage/:id(.:format)                                              {:action=>"show", :controller=>"homepage"}
+                                              PUT    (/:locale)/homepage/:id(.:format)                                              {:action=>"update", :controller=>"homepage"}
+                                              DELETE (/:locale)/homepage/:id(.:format)                                              {:action=>"destroy", :controller=>"homepage"}
+             check_domain_availability_tribes GET    (/:locale)/tribes/check_domain_availability(.:format)                          {:action=>"check_domain_availability", :controller=>"communities"}
+                  change_form_language_tribes GET    (/:locale)/tribes/change_form_language(.:format)                               {:action=>"change_form_language", :controller=>"communities"}
+                set_organization_email_tribes POST   (/:locale)/tribes/set_organization_email(.:format)                             {:action=>"set_organization_email", :controller=>"communities"}
+            confirm_organization_email_tribes POST   (/:locale)/tribes/confirm_organization_email(.:format)                         {:action=>"confirm_organization_email", :controller=>"communities"}
+                                       tribes GET    (/:locale)/tribes(.:format)                                                    {:action=>"index", :controller=>"communities"}
+                                              POST   (/:locale)/tribes(.:format)                                                    {:action=>"create", :controller=>"communities"}
+                                    new_tribe GET    (/:locale)/tribes/new(.:format)                                                {:action=>"new", :controller=>"communities"}
+                                   edit_tribe GET    (/:locale)/tribes/:id/edit(.:format)                                           {:action=>"edit", :controller=>"communities"}
+                                        tribe GET    (/:locale)/tribes/:id(.:format)                                                {:action=>"show", :controller=>"communities"}
+                                              PUT    (/:locale)/tribes/:id(.:format)                                                {:action=>"update", :controller=>"communities"}
+                                              DELETE (/:locale)/tribes/:id(.:format)                                                {:action=>"destroy", :controller=>"communities"}
+                            tribe_memberships GET    (/:locale)/community_memberships(.:format)                                     {:action=>"index", :controller=>"community_memberships"}
+                                              POST   (/:locale)/community_memberships(.:format)                                     {:action=>"create", :controller=>"community_memberships"}
+                         new_tribe_membership GET    (/:locale)/community_memberships/new(.:format)                                 {:action=>"new", :controller=>"community_memberships"}
+                        edit_tribe_membership GET    (/:locale)/community_memberships/:id/edit(.:format)                            {:action=>"edit", :controller=>"community_memberships"}
+                             tribe_membership GET    (/:locale)/community_memberships/:id(.:format)                                 {:action=>"show", :controller=>"community_memberships"}
+                                              PUT    (/:locale)/community_memberships/:id(.:format)                                 {:action=>"update", :controller=>"community_memberships"}
+                                              DELETE (/:locale)/community_memberships/:id(.:format)                                 {:action=>"destroy", :controller=>"community_memberships"}
+                               follow_listing POST   (/:locale)/listings/:id/follow(.:format)                                       {:action=>"follow", :controller=>"listings"}
+                             unfollow_listing DELETE (/:locale)/listings/:id/unfollow(.:format)                                     {:action=>"unfollow", :controller=>"listings"}
+                       more_listings_listings GET    (/:locale)/listings/more_listings(.:format)                                    {:action=>"more_listings", :controller=>"listings"}
+                              browse_listings GET    (/:locale)/listings/browse(.:format)                                           {:action=>"browse", :controller=>"listings"}
+                              random_listings GET    (/:locale)/listings/random(.:format)                                           {:action=>"random", :controller=>"listings"}
+                               listing_images GET    (/:locale)/listings/:listing_id/images(.:format)                               {:action=>"index", :controller=>"listing_images"}
+                                              POST   (/:locale)/listings/:listing_id/images(.:format)                               {:action=>"create", :controller=>"listing_images"}
+                            new_listing_image GET    (/:locale)/listings/:listing_id/images/new(.:format)                           {:action=>"new", :controller=>"listing_images"}
+                           edit_listing_image GET    (/:locale)/listings/:listing_id/images/:id/edit(.:format)                      {:action=>"edit", :controller=>"listing_images"}
+                                listing_image GET    (/:locale)/listings/:listing_id/images/:id(.:format)                           {:action=>"show", :controller=>"listing_images"}
+                                              PUT    (/:locale)/listings/:listing_id/images/:id(.:format)                           {:action=>"update", :controller=>"listing_images"}
+                                              DELETE (/:locale)/listings/:listing_id/images/:id(.:format)                           {:action=>"destroy", :controller=>"listing_images"}
+                                              GET    (/:locale)/listings/:listing_id/comments(.:format)                             {:action=>"index", :controller=>"comments"}
+                                              POST   (/:locale)/listings/:listing_id/comments(.:format)                             {:action=>"create", :controller=>"comments"}
+                                              GET    (/:locale)/listings/:listing_id/comments/new(.:format)                         {:action=>"new", :controller=>"comments"}
+                                              GET    (/:locale)/listings/:listing_id/comments/:id/edit(.:format)                    {:action=>"edit", :controller=>"comments"}
+                                              GET    (/:locale)/listings/:listing_id/comments/:id(.:format)                         {:action=>"show", :controller=>"comments"}
+                                              PUT    (/:locale)/listings/:listing_id/comments/:id(.:format)                         {:action=>"update", :controller=>"comments"}
+                                              DELETE (/:locale)/listings/:listing_id/comments/:id(.:format)                         {:action=>"destroy", :controller=>"comments"}
+                                              GET    (/:locale)/listings(.:format)                                                  {:action=>"index", :controller=>"listings"}
+                                              POST   (/:locale)/listings(.:format)                                                  {:action=>"create", :controller=>"listings"}
+                                              GET    (/:locale)/listings/new(.:format)                                              {:action=>"new", :controller=>"listings"}
+                                              GET    (/:locale)/listings/:id/edit(.:format)                                         {:action=>"edit", :controller=>"listings"}
+                                              GET    (/:locale)/listings/:id(.:format)                                              {:action=>"show", :controller=>"listings"}
+                                              PUT    (/:locale)/listings/:id(.:format)                                              {:action=>"update", :controller=>"listings"}
+                                              DELETE (/:locale)/listings/:id(.:format)                                              {:action=>"destroy", :controller=>"listings"}
+                                  about_infos GET    (/:locale)/infos/about(.:format)                                               {:action=>"about", :controller=>"infos"}
+                             how_to_use_infos GET    (/:locale)/infos/how_to_use(.:format)                                          {:action=>"how_to_use", :controller=>"infos"}
+                                  terms_infos GET    (/:locale)/infos/terms(.:format)                                               {:action=>"terms", :controller=>"infos"}
+                       register_details_infos GET    (/:locale)/infos/register_details(.:format)                                    {:action=>"register_details", :controller=>"infos"}
+                                   news_infos GET    (/:locale)/infos/news(.:format)                                                {:action=>"news", :controller=>"infos"}
+                                        infos GET    (/:locale)/infos(.:format)                                                     {:action=>"index", :controller=>"infos"}
+                                              POST   (/:locale)/infos(.:format)                                                     {:action=>"create", :controller=>"infos"}
+                                     new_info GET    (/:locale)/infos/new(.:format)                                                 {:action=>"new", :controller=>"infos"}
+                                    edit_info GET    (/:locale)/infos/:id/edit(.:format)                                            {:action=>"edit", :controller=>"infos"}
+                                         info GET    (/:locale)/infos/:id(.:format)                                                 {:action=>"show", :controller=>"infos"}
+                                              PUT    (/:locale)/infos/:id(.:format)                                                 {:action=>"update", :controller=>"infos"}
+                                              DELETE (/:locale)/infos/:id(.:format)                                                 {:action=>"destroy", :controller=>"infos"}
+                                 accept_terms POST   (/:locale)/terms/accept(.:format)                                              {:action=>"accept", :controller=>"terms"}
+                                        terms POST   (/:locale)/terms(.:format)                                                     {:action=>"create", :controller=>"terms"}
+                                    new_terms GET    (/:locale)/terms/new(.:format)                                                 {:action=>"new", :controller=>"terms"}
+                                   edit_terms GET    (/:locale)/terms/edit(.:format)                                                {:action=>"edit", :controller=>"terms"}
+                                              GET    (/:locale)/terms(.:format)                                                     {:action=>"show", :controller=>"terms"}
+                                              PUT    (/:locale)/terms(.:format)                                                     {:action=>"update", :controller=>"terms"}
+                                              DELETE (/:locale)/terms(.:format)                                                     {:action=>"destroy", :controller=>"terms"}
+                request_new_password_sessions POST   (/:locale)/sessions/request_new_password(.:format)                             {:action=>"request_new_password", :controller=>"sessions"}
+               change_mistyped_email_sessions POST   (/:locale)/sessions/change_mistyped_email(.:format)                            {:action=>"change_mistyped_email", :controller=>"sessions"}
+                                     sessions GET    (/:locale)/sessions(.:format)                                                  {:action=>"index", :controller=>"sessions"}
+                                              POST   (/:locale)/sessions(.:format)                                                  {:action=>"create", :controller=>"sessions"}
+                                  new_session GET    (/:locale)/sessions/new(.:format)                                              {:action=>"new", :controller=>"sessions"}
+                                 edit_session GET    (/:locale)/sessions/:id/edit(.:format)                                         {:action=>"edit", :controller=>"sessions"}
+                                      session GET    (/:locale)/sessions/:id(.:format)                                              {:action=>"show", :controller=>"sessions"}
+                                              PUT    (/:locale)/sessions/:id(.:format)                                              {:action=>"update", :controller=>"sessions"}
+                                              DELETE (/:locale)/sessions/:id(.:format)                                              {:action=>"destroy", :controller=>"sessions"}
+                                consent_index GET    (/:locale)/consent(.:format)                                                   {:action=>"index", :controller=>"consent"}
+                                              POST   (/:locale)/consent(.:format)                                                   {:action=>"create", :controller=>"consent"}
+                                  new_consent GET    (/:locale)/consent/new(.:format)                                               {:action=>"new", :controller=>"consent"}
+                                 edit_consent GET    (/:locale)/consent/:id/edit(.:format)                                          {:action=>"edit", :controller=>"consent"}
+                                      consent GET    (/:locale)/consent/:id(.:format)                                               {:action=>"show", :controller=>"consent"}
+                                              PUT    (/:locale)/consent/:id(.:format)                                               {:action=>"update", :controller=>"consent"}
+                                              DELETE (/:locale)/consent/:id(.:format)                                               {:action=>"destroy", :controller=>"consent"}
+                          message_arrived_sms GET    (/:locale)/sms/message_arrived(.:format)                                       {:action=>"message_arrived", :controller=>"sms"}
+                                          sms POST   (/:locale)/sms(.:format)                                                       {:action=>"create", :controller=>"sms"}
+                                      new_sms GET    (/:locale)/sms/new(.:format)                                                   {:action=>"new", :controller=>"sms"}
+                                     edit_sms GET    (/:locale)/sms/edit(.:format)                                                  {:action=>"edit", :controller=>"sms"}
+                                              GET    (/:locale)/sms(.:format)                                                       {:action=>"show", :controller=>"sms"}
+                                              PUT    (/:locale)/sms(.:format)                                                       {:action=>"update", :controller=>"sms"}
+                                              DELETE (/:locale)/sms(.:format)                                                       {:action=>"destroy", :controller=>"sms"}
+                                   news_items GET    (/:locale)/news_items(.:format)                                                {:action=>"index", :controller=>"news_items"}
+                                              POST   (/:locale)/news_items(.:format)                                                {:action=>"create", :controller=>"news_items"}
+                                new_news_item GET    (/:locale)/news_items/new(.:format)                                            {:action=>"new", :controller=>"news_items"}
+                               edit_news_item GET    (/:locale)/news_items/:id/edit(.:format)                                       {:action=>"edit", :controller=>"news_items"}
+                                    news_item GET    (/:locale)/news_items/:id(.:format)                                            {:action=>"show", :controller=>"news_items"}
+                                              PUT    (/:locale)/news_items/:id(.:format)                                            {:action=>"update", :controller=>"news_items"}
+                                              DELETE (/:locale)/news_items/:id(.:format)                                            {:action=>"destroy", :controller=>"news_items"}
+                                   statistics GET    (/:locale)/statistics(.:format)                                                {:action=>"index", :controller=>"statistics"}
+                                              POST   (/:locale)/statistics(.:format)                                                {:action=>"create", :controller=>"statistics"}
+                                new_statistic GET    (/:locale)/statistics/new(.:format)                                            {:action=>"new", :controller=>"statistics"}
+                               edit_statistic GET    (/:locale)/statistics/:id/edit(.:format)                                       {:action=>"edit", :controller=>"statistics"}
+                                    statistic GET    (/:locale)/statistics/:id(.:format)                                            {:action=>"show", :controller=>"statistics"}
+                                              PUT    (/:locale)/statistics/:id(.:format)                                            {:action=>"update", :controller=>"statistics"}
+                                              DELETE (/:locale)/statistics/:id(.:format)                                            {:action=>"destroy", :controller=>"statistics"}
+                                   swap_items GET    (/:locale)/swap_items(.:format)                                                {:action=>"index", :controller=>"swap_items"}
+                                              POST   (/:locale)/swap_items(.:format)                                                {:action=>"create", :controller=>"swap_items"}
+                                new_swap_item GET    (/:locale)/swap_items/new(.:format)                                            {:action=>"new", :controller=>"swap_items"}
+                               edit_swap_item GET    (/:locale)/swap_items/:id/edit(.:format)                                       {:action=>"edit", :controller=>"swap_items"}
+                                    swap_item GET    (/:locale)/swap_items/:id(.:format)                                            {:action=>"show", :controller=>"swap_items"}
+                                              PUT    (/:locale)/swap_items/:id(.:format)                                            {:action=>"update", :controller=>"swap_items"}
+                                              DELETE (/:locale)/swap_items/:id(.:format)                                            {:action=>"destroy", :controller=>"swap_items"}
+                                          api        /:locale/api(.:format)                                                         {:controller=>"dashboard", :action=>"api"}
+                                          faq        /:locale/faq(.:format)                                                         {:controller=>"dashboard", :action=>"faq"}
+                                      pricing        /:locale/pricing(.:format)                                                     {:controller=>"dashboard", :action=>"pricing"}
+                              dashboard_login        /:locale/dashboard_login(.:format)                                             {:controller=>"dashboard", :action=>"login"}
+                                          wdc        /wdc(.:format)                                                                 {:controller=>"dashboard", :action=>"wdc"}
+                                          okl        /okl(.:format)                                                                 {:controller=>"dashboard", :action=>"okl"}
+                                omakotiliitto        /omakotiliitto(.:format)                                                       {:controller=>"dashboard", :action=>"okl"}
+                                        admin        /:locale/admin(.:format)                                                       {:controller=>"admin/news_items", :action=>"index"}
+                                                     /badges/:style/:id.:format                                                     {:controller=>"badges", :action=>"image"}
+                                                     /people/:person_id/inbox/:id(.:format)                                         {:to=>#<Proc:0xabd2bbc@/home/chaitanya/.rvm/gems/ruby-1.9.3-p194@sharetribe/gems/actionpack-3.0.17/lib/action_dispatch/routing/mapper.rb:366 (lambda)>}
+                                         load        /:locale/load(.:format)                                                        {:controller=>"listings", :action=>"load"}
+                                      loadmap        /:locale/loadmap(.:format)                                                     {:controller=>"listings", :action=>"loadmap"}
+                                       offers        /:locale/offers(.:format)                                                      {:controller=>"listings", :action=>"offers"}
+                                     requests        /:locale/requests(.:format)                                                    {:controller=>"listings", :action=>"requests"}
+                              offers_with_tag        /:locale/offers/tag/:tag(.:format)                                             {:controller=>"listings", :action=>"offers"}
+                            requests_with_tag        /:locale/requests/tag/:tag(.:format)                                           {:controller=>"listings", :action=>"requests"}
+                          single_conversation        /:locale/people/:person_id/messages/:conversation_type/:id(.:format)           {:controller=>"conversations", :action=>"show"}
+                           swap_offers_update        /:locale/people/:person_id/swap_items/:id/direct_update(.:format)              {:controller=>"swap_items", :action=>"direct_update"}
+                             reply_to_listing        /:locale/listings/:id/reply(.:format)                                          {:controller=>"conversations", :action=>"new"}
+                                 swap_listing        /:locale/listings/:id/swap(.:format)                                           {:controller=>"swap_items", :action=>"new"}
+                         new_request_category        /:locale/listings/new/:type/:category(.:format)                                {:controller=>"listings", :action=>"new"}
+                                  new_request        /:locale/listings/new/:type(.:format)                                          {:controller=>"listings", :action=>"new"}
+                                       search        /:locale/search(.:format)                                                      {:controller=>"search", :action=>"show"}
+                                       logout        /:locale/logout(.:format)                                                      {:method=>:delete, :controller=>"sessions", :action=>"destroy"}
+                                      sign_up        /:locale/signup(.:format)                                                      {:controller=>"people", :action=>"new"}
+                                check_captcha        /:locale/signup/check_captcha(.:format)                                        {:controller=>"people", :action=>"check_captcha"}
+                         confirmation_pending        /:locale/confirmation_pending(.:format)                                        {:controller=>"sessions", :action=>"confirmation_pending"}
+                                        login        /:locale/login(.:format)                                                       {:controller=>"sessions", :action=>"new"}
+                                change_locale        /change_locale(.:format)                                                       {:controller=>"i18n", :action=>"change_locale"}
+                                    tag_cloud        /:locale/tag_cloud(.:format)                                                   {:controller=>"tag_cloud", :action=>"index"}
+                                offers_on_map        /:locale/offers/map(.:format)                                                  {:controller=>"listings", :action=>"offers_on_map"}
+                              requests_on_map        /:locale/requests/map(.:format)                                                {:controller=>"listings", :action=>"requests_on_map"}
+                                listings_data        /api/query(.:format)                                                           {:controller=>"listings", :action=>"serve_listing_data"}
+                               listing_bubble        /:locale/listing_bubble/:id(.:format)                                          {:controller=>"listings", :action=>"listing_bubble"}
+                      listing_bubble_multiple        /:locale/listing_bubble_multiple/:ids(.:format)                                {:controller=>"listings", :action=>"listing_bubble_multiple"}
+                                                     /:locale/:page_type(.:format)                                                  {:controller=>"dashboard", :action=>"campaign"}
+                               community_home        /:locale/homepage(.:format)                                                    {:controller=>"homepage", :action=>"index"}
+                                                     /:locale(.:format)                                                             {:controller=>"dashboard", :action=>"index"}
+                                         root        /(.:format)                                                                    {:controller=>"dashboard", :action=>"index"}

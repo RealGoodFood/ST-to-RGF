@@ -95,7 +95,7 @@ default: &default_settings
 
 
   # This will be the from field in the mails sent from Sharetribe
-  sharetribe_mail_from_address: "no-reply@realgoodfood.com"
+  sharetribe_mail_from_address: "no-reply@realgoodfood.org"
   # This address is added in the most mail signatures 
   # (it's good idea to set this if you use no-reply addres as the form
   # address above so that people can contact the admins if needed)
@@ -169,7 +169,7 @@ default: &default_settings
   
   # The default consent (terms of use) all the communities will use.
   # It's just a string that tells the version of the consent.
-  consent: "SHARETRIBE1.0"
+  consent: "RGF1.0"
   
   # If you need to turn off the service for a while (so that people can't modify data)
   # you can show the maintenance page on every pageload by turning on the following
