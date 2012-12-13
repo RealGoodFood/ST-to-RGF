@@ -61,10 +61,21 @@ class CommunityMembershipsController < ApplicationController
 
     # This is reached only if requirements are fulfilled
     if @community_membership.save
-      
       # If invite was used, reduce usages left
       invitation.use_once! if invitation.present?
+
+      # While joining a community, users previous added listing should be seen into the other communities
       
+      @previous_listings = Listing.where(:author_id => @current_user.id )
+      if @previous_listings and @previous_listings.count > 0
+        @previous_listings.each do |pre_listing|
+          community_id  = ActiveRecord::Base.connection.quote("#{@current_community.id}")
+          listing_id = ActiveRecord::Base.connection.quote("#{pre_listing.id}")
+  
+          query = "INSERT INTO communities_listings (community_id, listing_id) VALUES (#{community_id}, #{pre_listing.id})"
+          ActiveRecord::Base.connection.execute(query);
+        end
+      end
       Delayed::Job.enqueue(CommunityJoinedJob.new(@current_user.id, @current_community.id, request.host))
       flash[:notice] = "you_are_now_member"
       redirect_to community_home_path 
