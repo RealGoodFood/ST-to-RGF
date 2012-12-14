@@ -3,21 +3,22 @@ class SearchController < ApplicationController
   skip_filter :dashboard_only
   
   def show
+    logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>@ search controller index"
     @query = params[:q]
     if @query
       #query = (params[:q].length > 0) ? "*#{params[:q]}*" : ""
       #person_query = (params[:q].length > 0) ? params[:q] : ""
       
       with = {:open => true}
-#      if params[:type]
-#        with[:is_request] = true if params[:type].eql?("request")
-#        with[:is_offer] = true if params[:type].eql?("offer")
-#      end
-      unless @current_user && @current_user.communities.include?(@current_community)
-        with[:visible_to_everybody] = true
+      if params[:type]
+        with[:is_request] = true if params[:type].eql?("request")
+        with[:is_offer] = true if params[:type].eql?("offer")
       end
+#      unless @current_user && @current_user.communities.include?(@current_community)
+        with[:visible_to_everybody] = true
+#      end
       with[:community_ids] = @current_community.id
-    
+      
       @listings = Listing.search(@query, 
                                 :include => :listing_images, 
                                 :page => params[:page],
