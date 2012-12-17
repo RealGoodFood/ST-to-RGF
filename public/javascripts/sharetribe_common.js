@@ -93,5 +93,9 @@ $(document).ready(function() {
     { alert("RGF is now available only in Ann Arbor and Durham cities"); }
   });
 
+  $("#status").live('change', function () {
+    $(this).parents('form:first').submit();
+  });
+
 });
 
