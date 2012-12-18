@@ -732,6 +732,8 @@ en:
       profile: "Profile info"
       settings: Settings
   listings:
+    follow_checkbox:       
+      subscribe_to_comments: "Notify me of new comments and updates"
     bubble_listing_not_visible:
       listing_not_visible: "You do not have permission to view this listing."
     comment:

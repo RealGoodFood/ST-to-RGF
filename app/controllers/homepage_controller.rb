@@ -21,7 +21,7 @@ class HomepageController < ApplicationController
     # and show the normal front page starting from newest listing
     params[:page] = 1 unless request.xhr? 
     
-    if @current_user && @current_community
+    if @current_community
       @requests = Listing.requests.visible_to(@current_user, @current_community).open.paginate(:per_page => listings_per_page, :page => params[:page])
       @offers = Listing.offers.visible_to(@current_user, @current_community).open.paginate(:per_page => listings_per_page, :page => params[:page])
     end

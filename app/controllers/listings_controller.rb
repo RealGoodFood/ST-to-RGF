@@ -276,6 +276,31 @@ class ListingsController < ApplicationController
   def unfollow
     change_follow_status("unfollow")
   end
+
+
+  def toggle_follow_status
+    if params[:status] and params[:status] == "true"
+      status = "follow"
+    else
+      status = "unfollow"
+    end
+    if params[:listing]
+      @listing = Listing.find_by_id(params[:listing])
+    end
+    status.eql?("follow") ? @current_user.follow(@listing) : @current_user.unfollow(@listing)
+    notice = "you_#{status}ed_listing"
+    respond_to do |format|
+      format.html { 
+        flash[:notice] = notice
+        redirect_to @listing 
+      }
+      format.js {
+        flash.now[:notice] = notice
+        render :follow, :layout => false 
+      }
+    end
+  end
+
   
   private
   

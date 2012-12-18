@@ -1,0 +1,13 @@
+- unless current_user?(@listing.author)
+  .message_form_field_container
+    = form_tag toggle_follow_status_path, :method => :get, :id => "checkbox_follow_update", :remote => true  do
+      - if @current_user.is_following?(@listing || @comment.listing)
+        .comment_checkbox
+          = check_box_tag "status", "false", true
+          = label_tag "comment_author_follow_status", t(".subscribe_to_comments"), :class => "comment_checkbox_label"
+          = hidden_field_tag "listing",  "#{@listing.id}"
+      - else
+        .comment_checkbox
+          = check_box_tag "status", "true", false
+          = label_tag "comment_author_follow_status", t(".subscribe_to_comments"), :class => "comment_checkbox_label"
+          = hidden_field_tag "listing",  "#{@listing.id}"
