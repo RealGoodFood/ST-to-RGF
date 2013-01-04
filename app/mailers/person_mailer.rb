@@ -31,7 +31,7 @@ class PersonMailer < ActionMailer::Base
 
  def swap_offer_acceptance(swap_item, host=nil, community_id )
     @recipient = set_up_recipient(get_person(swap_item.offerer_id), host)
-    @url = host ? "http://#{host}/people/#{@recipient.id}/swap_items?c_id=#{community_id}" : "test_url"
+    @url = host ? "http://#{host}/people/#{@recipient.id}/swap_items?cid=#{community_id}" : "test_url"
     @swap_item = swap_item
     @author = get_person(swap_item.receiver_id)
     @receiver_recipe = get_listing(@swap_item.receiver_listing_id)

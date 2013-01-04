@@ -7,16 +7,16 @@ You have swap offer from
 //= t("emails.swap_offer.offer", :offerer_recipe => @offerer_recipe.title, :receiver_recipe =>  @receiver_recipe.title)
 
 He is offering recipe 
-%a{:href => "#{@url}listings/#{@offerer_recipe.id}-#{@offerer_recipe.title}"}
+%a{:href => "#{@url}listings/#{@offerer_recipe.id}-#{@offerer_recipe.title}?cid=#{@community_id}"}
   = @offerer_recipe.title
 for exchange of your recipe 
-%a{:href => "#{@url}listings/#{@receiver_recipe.id}-#{@receiver_recipe.title}"}
+%a{:href => "#{@url}listings/#{@receiver_recipe.id}-#{@receiver_recipe.title}?cid=#{@community_id}"}
   = @receiver_recipe.title
 %br
 Click on below url to check the swap offer
 %br
 //= t("emails.new_message.you_can_reply_to_message_in")
-%a{:href => "#{@url}/people/#{@recipient.id}/swap_items?c_id=#{@community_id}"}
+%a{:href => "#{@url}/people/#{@recipient.id}/swap_items?cid=#{@community_id}"}
   Swap offer
 %br/
 %br/
