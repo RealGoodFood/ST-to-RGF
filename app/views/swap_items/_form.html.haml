@@ -2,6 +2,7 @@
   = f.hidden_field :receiver_id, :value => params[:recd]
   = f.hidden_field :receiver_listing_id, :value => params[:id]
   = f.hidden_field :offerer_id, :value => @current_user.id
+  = f.hidden_field :community_id, :value => @current_community.id
   = f.label("Select Listing below")
   - unless @current_user.listings.empty?
     - @current_user.listings.open.each do |listing|

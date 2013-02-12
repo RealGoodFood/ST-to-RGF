@@ -509,6 +509,8 @@ ActiveRecord::Schema.define(:version => 20121023050946) do
     t.integer  "offerer_listing_id"
     t.integer "receiver_listing_id"
     t.boolean "acceptance"
+    t.integer "community_id"
+    t.string "receiver_communication_mode"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

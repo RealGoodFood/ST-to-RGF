@@ -1966,6 +1966,9 @@ div.listing_author_feedback_percentage {
   .conversation_left span {
     font-size: 11px; }
 
+.conversation_field { width:300px; float:left; }
+.conversation_button { width:50px; float:right; }
+
 .conversation_center {
   margin-left: 10px;
   width: 350px;

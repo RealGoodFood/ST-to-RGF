@@ -185,7 +185,7 @@ class ListingsController < ApplicationController
       flash[:notice] = ["#{@listing.listing_type}_created_successfully", "create_new_#{@listing.listing_type}".to_sym, path]
       Delayed::Job.enqueue(ListingCreatedJob.new(@listing.id, request.host))
       unless session[:swap_usr].nil? and session[:swap_food].nil?
-        @swap_item_create = SwapItem.create!(:offerer_id => @current_user.id, :receiver_id => session[:swap_usr], :receiver_listing_id => session[:swap_food], :offerer_listing_id => @listing.id )
+        @swap_item_create = SwapItem.create!(:offerer_id => @current_user.id, :receiver_id => session[:swap_usr], :receiver_listing_id => session[:swap_food], :offerer_listing_id => @listing.id, :community_id => @current_community.id )
         PersonMailer.swap_offer(@swap_item_create, request.host).deliver
         session[:swap_usr] = nil
         session[:swap_food] = nil

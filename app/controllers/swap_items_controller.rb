@@ -56,7 +56,6 @@ class SwapItemsController < ApplicationController
   # POST /swap_items.xml
   def create
     @swap_item = SwapItem.new(params[:swap_item])
-
     respond_to do |format|
       if @swap_item.save
         format.html { redirect_to(community_home_path, :notice => 'Swap offer has been sent.') }
@@ -77,10 +76,10 @@ class SwapItemsController < ApplicationController
 
     respond_to do |format|
       if @swap_item.update_attributes(params[:swap_item])
-        format.html { redirect_to(@swap_item, :notice => 'Swap item was successfully updated.') }
+        format.html { redirect_to :back }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { redirect_to :back }
         format.xml  { render :xml => @swap_item.errors, :status => :unprocessable_entity }
       end
     end

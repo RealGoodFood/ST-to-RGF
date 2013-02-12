@@ -29,6 +29,10 @@ every 1.day, :at => '11:57pm' do
   rake "kassi:calculate_statistics"
 end
 
+every 1.day, :at => '11:57pm' do
+  rake "reminder:swap_approval"
+end
+
 # Upload cached Ressi events.
 # If Ressi (Research data collection) is not in use, this doesn't do anything.
 every 1.day, :at => '1am' do

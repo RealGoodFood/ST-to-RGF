@@ -8,6 +8,7 @@
         .person_image
           = small_avatar_thumb(get_person(swap_offer.offerer_id))
         .conversation_left
+          //= link_to "#{get_person(swap_offer.offerer_id).username}", "#"
           = link_to "#{get_person(swap_offer.offerer_id).username}", person_path(swap_offer.offerer_id)
           %br/
           %span= time_ago(swap_offer.created_at)
@@ -28,6 +29,15 @@
           - elsif swap_offer.acceptance == true
             .conversation_status_label.accepted
               Request Accepted
+            - if swap_offer.receiver_communication_mode.nil?
+              = form_for swap_offer do |f|
+                = f.label "please mention your preferred way of communication. Eg. Phone / Email / RGF messeaging."
+                = f.text_field :receiver_communication_mode, :class => "conversation_field"
+                = f.submit "Save", :class => "conversation_button"
+            - else
+              Preferred way of communication is
+              %b
+                = swap_offer.receiver_communication_mode             
           - elsif swap_offer.acceptance == false
             .conversation_status_label.rejected
               Request Rejected
@@ -59,6 +69,10 @@
           - if swap_offer.acceptance == true
             .conversation_status_label.accepted
               Request Accepted
+            - unless swap_offer.receiver_communication_mode.nil?
+              Preferred way of communication is
+              %b 
+                = swap_offer.receiver_communication_mode             
           - elsif swap_offer.acceptance == false
             .conversation_status_label.rejected
               Request Rejected

@@ -26,19 +26,20 @@
       
   
 #recent_listings.grid_18
-  %h3
-    = t('.recent_offers')
-    = link_to image_tag("/images/icons/feed-icon.png"), atom_feed_url(:listing_type => "offer")
-  - if @offers and @offers.total_entries > 0
-    = render :partial => "recent_listing", :collection => @offers, :as => :listing, :spacer_template => "offer_spacer"
-    = will_paginate(@offers)
-    - if @offers.total_pages < 2 && @private_listings && @private_listings["offer"].present? && @private_listings["offer"] > 0
-      .offer_spacer
-      = render :partial => "additional_private_listings_slate",  :locals => {:listing_type => "offer", :private_listings_count =>  @private_listings["offer"]}       
-  - else
-    = render :partial => "blank_slate", :locals => { :slate_type => "offer" }
-- if @offers
-  = pageless((@requests.total_pages > @offers.total_pages ? @requests.total_pages : @offers.total_pages), '#recent_listings', root_path, t('.loading_more_content'), true) 
+  #recent_offers
+    %h3
+      = t('.recent_offers')
+      = link_to image_tag("/images/icons/feed-icon.png"), atom_feed_url(:listing_type => "offer")
+    - if @offers and @offers.total_entries > 0
+      = render :partial => "recent_listing", :collection => @offers, :as => :listing, :spacer_template => "offer_spacer"
+      = will_paginate(@offers)
+      - if @offers.total_pages < 2 && @private_listings && @private_listings["offer"].present? && @private_listings["offer"] > 0
+        .offer_spacer
+        = render :partial => "additional_private_listings_slate",  :locals => {:listing_type => "offer", :private_listings_count =>  @private_listings["offer"]}       
+    - else
+      = render :partial => "blank_slate", :locals => { :slate_type => "offer" }
+      //  - if @offers
+  = pageless(@offers.total_pages, '#recent_listings', root_path, t('.loading_more_content'), true) 
   
 .grid_6
 
@@ -87,25 +88,25 @@
 
 - if not @current_user
   // Track event of unidentified user seeing front page to Kissmetrics
-  <script type="text/javascript">
-    
-  // from http://www.w3schools.com/js/js_cookies.asp
-  function getCookie(c_name)
-  {
-  var i,x,y,ARRcookies=document.cookie.split(";");
-  for (i=0;i<ARRcookies.length;i++)
-  {
-  x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-  y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-  x=x.replace(/^\s+|\s+$/g,"");
-  if (x==c_name)
-  {
-  return unescape(y);
-  }
-  }
-  }
-  
-  if (typeof(getCookie("km_ni")) == "undefined") {
-  _kmq.push(['record', 'Viewed tribe homepage as unidentified']);
-  }
-  </script>
+  //  <script type="text/javascript">
+  //    
+  //  // from http://www.w3schools.com/js/js_cookies.asp
+  //  function getCookie(c_name)
+  //  {
+  //  var i,x,y,ARRcookies=document.cookie.split(";");
+  //  for (i=0;i<ARRcookies.length;i++)
+  //  {
+  //  x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+  //  y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+  //  x=x.replace(/^\s+|\s+$/g,"");
+  //  if (x==c_name)
+  //  {
+  //  return unescape(y);
+  //  }
+  //  }
+  //  }
+  //  
+  //  if (typeof(getCookie("km_ni")) == "undefined") {
+  //  _kmq.push(['record', 'Viewed tribe homepage as unidentified']);
+  //  }
+  //  </script>

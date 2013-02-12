@@ -63,6 +63,7 @@ gem 'geocoder'
 gem "cloudfiles", :git => "git://github.com/rackspace/ruby-cloudfiles.git"
 gem 'paperclip-cloudfiles', '2.3.8.3', :require => 'paperclip'
 gem 'geocoder'  
+gem "whenever", :require => false
 
 group :production do
   gem 'pg'

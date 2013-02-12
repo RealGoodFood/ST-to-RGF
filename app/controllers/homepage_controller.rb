@@ -15,7 +15,7 @@ class HomepageController < ApplicationController
     else 
       redirect_to root_path
     end
-    listings_per_page = 10
+    listings_per_page = 3
     
     # If requesting a specific page on non-ajax request, we'll ignore that
     # and show the normal front page starting from newest listing
@@ -34,9 +34,10 @@ class HomepageController < ApplicationController
     end
     
     if request.xhr? # checks if AJAX request
-      logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>request.xhr?"
+      logger.info ">>>>>>>>>>>>>>>AJAX REQUEST>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>request.xhr?"
       render :partial => "additional_listings", :locals => {:type => :request, :requests => @requests, :offers => @offers}   
     else
+    logger.info "~~~~~~~~~~~~~~~not request.xhr~~~~~~~~~"
       if @current_community && @current_community.news_enabled?
         @news_items = @current_community.news_items.order("created_at DESC").limit(2)
         @news_item_count = @current_community.news_items.count

@@ -49,9 +49,9 @@
     pagination:   '.pagination',
     url:          location.href,
     params:       {}, // params of the query you can pass auth_token here
-    distance:     600, // page distance in px to the end when the ajax function is launch
+    distance:     400, // page distance in px to the end when the ajax function is launch
     loaderImage:  "/images/load.gif",
-
+    
 		scrape: function(data) { 
 		  if (typeof($.pageless.div2) != 'undefined') { // means that we have 2 div update
   		  arr = data.split($.pageless.settings.split_string);
