@@ -8,10 +8,17 @@
     .form_field_container
       = f.label :email, t(".email"), :class => "input"
       = f.text_field :email, :class => "text_field", :maxlength => "200"
-    .form_field_container
-      = f.label :message, t(".message"), :class => "input"
-      = f.text_area :message, :maxlength => "5000", :class => "new_news_item_text_area"
+    - unless params[:complement].nil?  
+      .form_field_container
+        = f.label :name, t(".name"), :class => "input"
+        = f.text_field :name, :class => "text_field", :maxlength => "50"
+    - if params[:complement].nil?  
+      .form_field_container
+        = f.label :message, t(".message"), :class => "input"
+        = f.text_area :message, :maxlength => "5000", :class => "new_news_item_text_area"
     .new_listing_form_field_container
       = f.hidden_field :community_id, :value => @current_community.id
       = f.hidden_field :inviter_id, :value => @current_user.id
+      - unless params[:complement].nil? 
+        = f.hidden_field :complement, :value => true
       = f.submit t(".send_invitation"), :class => "send_button"

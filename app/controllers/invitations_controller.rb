@@ -16,7 +16,11 @@ class InvitationsController < ApplicationController
     @invitation = Invitation.new(params[:invitation])
     if @invitation.save
       notice = [:notice, "invitation_sent"]
-      Delayed::Job.enqueue(InvitationCreatedJob.new(@invitation.id, request.host))
+      if params[:invitation][:complement].nil?
+        Delayed::Job.enqueue(InvitationCreatedJob.new(@invitation.id, request.host))
+      else  
+        Delayed::Job.enqueue(ComplementToCookJob.new(@invitation.id, request.host))
+      end
     else
       notice = [:error, "invitation_could_not_be_sent"]
     end

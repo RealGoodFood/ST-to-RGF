@@ -3,7 +3,10 @@
 class Invitation < ActiveRecord::Base
   
   #include ApplicationHelper
-  
+
+  attr_accessible :code, :community_id, :usage_left, :inviter_id, :message, :email, :name
+  attr_accessor :complement
+
   has_many :community_memberships #One invitation can result many users joining.
   belongs_to :community
   belongs_to :inviter, :class_name => "Person", :foreign_key => "inviter_id"

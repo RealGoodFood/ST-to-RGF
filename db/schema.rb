@@ -209,6 +209,7 @@ ActiveRecord::Schema.define(:version => 20121023050946) do
     t.string   "inviter_id"
     t.text     "message"
     t.string   "email"
+    t.string   "name"
   end
 
   create_table "item_reservations", :force => true do |t|

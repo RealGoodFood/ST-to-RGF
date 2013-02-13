@@ -1,0 +1,26 @@
+= "Hi"
+- unless @invitation.name.nil?
+  = @invitation.name
+  ,
+- else
+  ,
+
+%br/
+%br/
+
+=  "I know you're a great cook who loves real good food. I thought you might like the chance to share some of your delicious food with members of your community... like me! Of course you'll also get to discover and enjoy the best and most authentic food around while connecting with great folks." 
+
+%br/
+%br/
+
+
+
+= t("emails.invitation_to_kassi.join_kassi_in")
+= link_to(@url, @url)
+
+%br/
+%br/
+
+= t("emails.common.thanks")
+%br/
+= t("emails.common.kassi_team")
