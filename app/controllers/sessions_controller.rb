@@ -68,7 +68,7 @@ class SessionsController < ApplicationController
     session[:form_login] = nil
     
     if @current_user
-      @current_user.update_attribute(:active, true) unless @current_user.active?
+#      @current_user.update_attribute(:active, true) unless @current_user.active?
     end
      
     unless @current_user && (!@current_user.communities.include?(@current_community) || current_community.consent.eql?(@current_user.consent(current_community)) || @current_user.is_admin?)

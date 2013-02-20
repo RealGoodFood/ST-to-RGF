@@ -97,5 +97,21 @@ $(document).ready(function() {
     $(this).parents('form:first').submit();
   });
 
+ 
+  $(".edit_comment_link").click(function () {
+    var id = $(this).attr("id");
+    var show_hide_edit_div = "edit_comment_" + id
+    var show_hide_view_div = "view_comment_" + id
+    if($("#" + show_hide_edit_div).css("display") === "none") {
+      $("#" + show_hide_edit_div).show("slow");
+      $("#" + show_hide_view_div).hide("slow");
+      }
+    else
+      { $("#" + show_hide_edit_div).hide("slow");
+        $("#" + show_hide_view_div).show("slow");
+      }    
+  });
+  
+
 });
 

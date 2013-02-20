@@ -1,0 +1,77 @@
+%h3
+  User Profile Details
+%table{:width => "100%"}
+  %tr
+    %td
+      %b
+        Given Name :
+  %tr
+    %td
+      - unless @profile.given_name.nil?
+        = @profile.given_name
+      - else
+        Not Provided 
+  %tr  
+    %td
+      %b
+        Family Name :
+  %tr
+    %td 
+      - unless @profile.family_name.nil?
+        = @profile.family_name
+      - else
+        Not Provided
+  %tr
+    %td
+      %b
+        Username :
+  %tr  
+    %td
+      = @profile.username
+  %tr
+    %td
+      %b
+        Email :
+  %tr  
+    %td
+      = @profile.email
+  %tr
+    %td
+      %b
+        Sign In Count :
+  %tr  
+    %td
+      = @profile.sign_in_count
+  %tr
+    %td
+      %b
+        Location :
+  %tr  
+    %td
+      - unless @profile.location.nil?
+        = @profile.location.google_address
+      - else
+        Not Provided.
+  %tr
+    %td
+      %b
+        Communities Joined:
+  %tr  
+    %td
+      - unless @profile.communities.blank?
+        - @profile.communities.each do |community|
+          - unless @profile.communities.last.id == community.id
+            = community.name 
+            ,
+          - else
+            = community.name
+      - else
+        Not Provided
+  %tr
+    %td
+      = link_to "Edit Details", edit_admin_profile_path(:id => @profile.id, :type => "profiles")
+      |
+      = link_to "Delete", admin_profile_path(:id => @profile.id), :confirm => "Are you sure?", :method => :delete      
+
+
+ 

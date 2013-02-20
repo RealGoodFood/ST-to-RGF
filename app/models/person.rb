@@ -27,7 +27,7 @@ class Person < ActiveRecord::Base
   
   # Setup accessible attributes for your model (the rest are protected)
   attr_accessible :username, :email, :password, :password2, :password_confirmation, 
-                  :remember_me, :consent, :login
+                  :remember_me, :consent, :login, :active
       
   attr_accessor :guid, :password2, :form_login,
                 :form_given_name, :form_family_name, :form_password, 
@@ -167,6 +167,9 @@ class Person < ActiveRecord::Base
     @restricted_tag_names || diets.map(&:name).join(", ")
   end
 
+  def self.admin_search(search)
+    self.joins(:location).where("email LIKE ? or username LIKE ? or address LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%" )
+  end
 
   # Override Devise's authentication finder method to allow log in with username OR email
   def self.find_for_database_authentication(warden_conditions)

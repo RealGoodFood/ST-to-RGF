@@ -1,0 +1,71 @@
+- @listings.each do |listing|
+  .recent_listing
+    .listing_image
+      - unless listing.listing_images.empty?
+        = link_to (image_tag listing.listing_images.first.image.url(:thumb), :class => "listing_main_image", :alt => listing.title), admin_listing_path(:id => listing, :type => "listings"), :title => listed_listing_title(listing)
+      - else
+        %div{:class => "listing_image_#{listing.category}"}
+          %a{:href => admin_listing_path(:id => listing, :type => "listings"), :title => listed_listing_title(listing)}
+            %span{:class => "not_visible"}
+              a
+      %p
+        = listing.author.given_name_or_username
+    .recent_listing_text
+      %h5= link_to listing.title, admin_listing_path(:id => listing, :type => "listings")
+
+      - unless listing.description.blank?
+        %h7.strong= t("listings.show.description")
+        %p
+          = truncate(listing.description, :length => 120, :omission => "...")
+      - else
+        = t("listings.show.no_description")
+
+      - unless listing.number_of_portions.blank?
+        %h7.strong= t("listings.show.no_of_portions")
+        %p
+          = truncate(listing.number_of_portions, :length => 120, :omission => "...")
+      - else
+        = t("listings.show.no_portions_added")
+
+      - unless listing.diet_listings.empty?
+        %br/
+        %h7.strong= t("listings.show.diet_listing")
+        %p
+          - listing.diet_listings.each do |diet_listing|
+            - unless listing.diet_listings.last.id == diet_listing.id
+              = diet_listing.diet.name
+              ,
+            - else
+              = diet_listing.diet.name
+      - else
+        = t("listings.show.no_restrictions_added")
+
+      %p
+        .float_left
+          - unless listing.date_info_empty?
+            %h7.strong
+              = t("listings.show.from")
+              = l(listing.valid_from, :format => :long)
+              = t("listings.show.to")   
+              = l(listing.valid_until, :format => :long)
+          - else
+            %h7.strong
+              = t("listings.show.anytime_available")
+      %br
+      %p
+        - if listing.comments.size > 0
+          .float_right
+            = link_to pluralize(listing.comments.size, "comment", "comments"), (admin_listing_path(:id => listing, :type => "listings" ) + "#comment_form")
+      %p
+        %b Status?
+        - if listing.open == true
+          Open
+        - else
+          Closed
+ 
+      
+  .recent_listing
+    %p
+      = link_to "Edit Details", edit_admin_listing_path(:id => listing.id, :type => "listings")
+      |
+      = link_to "Delete", admin_listing_path(:id => listing.id), :confirm => "Are you sure?", :method => :delete

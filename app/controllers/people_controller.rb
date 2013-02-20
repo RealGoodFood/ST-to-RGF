@@ -5,6 +5,7 @@ class PeopleController < Devise::RegistrationsController
   layout :choose_layout
   
   skip_before_filter :verify_authenticity_token, :only => [:creates]
+
   
   before_filter :only => [ :update, :update_avatar ] do |controller|
     controller.ensure_authorized "you_are_not_authorized_to_view_this_content"

@@ -28,6 +28,10 @@ class Community < ActiveRecord::Base
   attr_accessor :terms
 
 
+  def self.search(search)
+      self.joins(:location).where("name LIKE ? or domain LIKE ? or address LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%") 
+  end
+
   def address
     location ? location.address : nil
   end

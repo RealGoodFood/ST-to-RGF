@@ -1,0 +1,18 @@
+#news_items_admin_view_title.grid_12.alpha
+  %h3= "Food recipe List"
+.grid_6.omega
+  #create_news_item_link
+    //  = form_tag admin_listings_path, :method => :get, :id => "communities_search", :type => "listings" do
+    //  = text_field_tag :search, params[:search], :class => "other_search"
+    //  = hidden_field_tag :type, "listings"
+    //  = submit_tag "Search", :class => "other_search_button"
+
+.clear  
+#news_items_admin_view_list
+  - if @listings.size > 0
+    = render :partial => "listings"
+    = will_paginate(@listings)
+    //= pageless(@news_items.total_pages, '#news_items_admin_view_list', admin_news_items_path, t('admin.news_items.index.loading_more_news'))
+  - else
+    #no_news_found
+      = "No listing listed yet."

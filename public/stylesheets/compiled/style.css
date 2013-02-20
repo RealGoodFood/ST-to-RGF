@@ -678,7 +678,7 @@ p.description {
   float: left; }
 
 .listing_image_item a {
-  height: 85px;
+  height: 75px;
   display: block;
   color: transparent;
   background: #b9b9b9 url("/images/icons/new_listing_type_select_icons.png") 7px -485px no-repeat; }
@@ -3962,3 +3962,5 @@ input.resend_email_confirmation_button {
 .justify_text { text-align:justify; }
 .strong { font-weight:bold; }
 .white{ color: white; margin:0px; }
+.other_search { width:130px; }
+.other_search_button{ width:60px; margin-top:15px; } 

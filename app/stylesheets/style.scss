@@ -646,7 +646,7 @@ p.description {
 
 @mixin listing_image($image_pos) {
 	a {
-		height: 85px;
+		height: 75px;
 		display: block;
 		color: transparent;
 		background: lighten($light_grey, 25%) url("/images/icons/new_listing_type_select_icons.png") 7px $image_pos no-repeat;
@@ -3248,6 +3248,7 @@ input.resend_email_confirmation_button {
 	width: 330px;
 }
 
+.zero_margin {margin:0px; !important}
 /* Tag cloud - Massi code */
 #tag_cloud {text-align: justify; }
 #tag_cloud a {border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;}

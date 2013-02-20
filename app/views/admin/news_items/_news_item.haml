@@ -3,7 +3,8 @@
 
 .news_item_admin_view
   .news_item_admin_view_header
-    %h4= link_to news_item.title, "#", :id => "news_item_#{news_item.id.to_s}_content_link"
+    %h4
+      = link_to news_item.title, "#", :id => "news_item_#{news_item.id.to_s}_content_link"
     %span.news_item_author
       = link_to news_item.author.given_name_or_username, news_item.author
       = l(news_item.created_at, :format => :short)

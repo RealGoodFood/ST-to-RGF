@@ -110,6 +110,10 @@ class Listing < ActiveRecord::Base
       :comments    => 1
     }
   end
+
+  def self.admin_search(search)
+    self.joins(:location).where("title LIKE ? or description LIKE ? or address LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%" )
+  end
   
   def set_community_visibilities
     if current_community_id

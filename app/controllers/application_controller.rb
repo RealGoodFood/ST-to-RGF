@@ -297,6 +297,20 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def is_active
+    unless @current_user and @current_user.active == 1
+      flash[:error] = "Your account is deactivated"  
+      redirect_to community_home_path and return 
+    end
+  end
+
+  def super_admin
+    unless @current_user and @current_user.is_admin == 1
+      flash[:error] = "You don't have authority to watch this page."
+      redirect_to community_home_path and return
+    end
+  end
+
   def fetch_translations
     WebTranslateIt.fetch_translations
   end

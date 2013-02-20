@@ -165,6 +165,11 @@ Kassi::Application.routes.draw do
     namespace :admin do
       resources :feedbacks
       resources :news_items
+      resources :communities
+      resources :profiles
+      resources :listings
+      resources :comments
+
       resources :polls do
         collection do
           get :add_option

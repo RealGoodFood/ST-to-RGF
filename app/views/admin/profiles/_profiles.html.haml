@@ -1,0 +1,28 @@
+.news_item_admin_view
+  .news_item_admin_view_header
+    %table{ :width => "100%" }
+      %tr
+        %th{ :width => "20%" }
+        %th{ :width => "10%" }
+          Username
+        %th{ :width => "10%" }
+          Email  
+        %th{ :width => "20%" }
+          Phone Number 
+        %th{ :width => "20%" }
+        
+      - @profiles.each do |profile|              
+        %tr
+          %td{ :align => "center" }
+            - unless profile.image.nil?
+              = link_to (image_tag profile.image.url(:thumb), :class => "listing_main_image", :alt => profile.username), admin_profile_path(:id => profile, :type => "profiles"), :title => profile.username
+          %td{ :align => "center" }
+            = profile.username
+          %td{ :align => "center" }
+            = profile.email
+          %td{ :align => "center" }
+            = profile.phone_number
+          %td{ :align => "center" }
+            = link_to "Edit", edit_admin_profile_path(:id => profile.id, :type => "profiles")
+            |
+            = link_to "Delete", admin_profile_path(:id => profile.id), :confirm => "Are you sure?", :method => :delete

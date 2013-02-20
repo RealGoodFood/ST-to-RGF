@@ -1,0 +1,31 @@
+.news_item_admin_view
+  .news_item_admin_view_header
+    %table{ :width => "100%" }
+      %tr
+        %th{ :width => "20%" }
+          Name
+        %th{ :width => "10%" }
+          Domain
+        %th{ :width => "10%" }
+          Total Members  
+        %th{ :width => "20%" }
+          Registration Date  
+        %th{ :width => "20%" }
+          Location 
+        
+      - @communities.each do |community|              
+        %tr
+          %td{ :align => "center" }
+            = community.name
+          %td{ :align => "center" }
+            = community.domain
+          %td{ :align => "center" }
+            = community.members_count
+          %td{ :align => "center" }
+            = l(community.created_at, :format => :short)
+          %td{ :align => "center" }
+            = community.location.google_address
+          %td{ :align => "center" }
+            = link_to "Edit", edit_admin_community_path(:id => community.id, :type => "communities")
+            |
+            = link_to "Delete", admin_community_path(:id => community.id), :confirm => "Are you sure?", :method => :delete

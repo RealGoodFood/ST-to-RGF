@@ -1,0 +1,33 @@
+= render :partial => "listings/form/javascripts", :locals => { :listing_id => @listing.id.to_s }
+
+.grid_16
+
+  #new_listing_form
+    .float_container
+      %h1
+        = t(".edit_#{@listing.listing_type}")
+        = @listing.title
+    
+    #listing_required_fields_description
+      = t("common.fields_that_are_mandatory")
+      
+    #new_listing_form_main  
+      = form_for @listing, :url => @path, :html => {:multipart => true} do |form|
+        = form.error_messages
+        = render :partial => "listings/form/share_type", :locals => { :form => form }
+        = render :partial => "listings/form/title", :locals => { :form => form }
+        = render :partial => "listings/form/description", :locals => { :form => form }
+        = render :partial => "listings/form/receipe", :locals => { :form => form }
+        = render :partial => "listings/form/portions", :locals => { :form => form }
+        = render :partial => "listings/form/tag_list", :locals => { :form => form }
+        = render :partial => "listings/form/restriction_list", :locals => { :form => form }  
+        = render :partial => "listings/form/valid_until", :locals => { :form => form }
+        = render :partial => "listings/form/origin", :locals => { :form => form, :origin_loc => @listing.origin_loc, :rideshare => false }
+        = render :partial => "listings/form/googlemap", :locals => { :form => form, :rideshare => false}
+        = render :partial => "listings/form/images", :locals => { :form => form }
+        //= render :partial => "listings/form/visibility", :locals => { :form => form }
+        = render :partial => "listings/form/additional_details", :locals => { :form => form }
+        = render :partial => "listings/form/send_button", :locals => { :form => form }
+
+- ["help_share_type", "help_tags", "help_valid_until"].each do |field|
+  = render :partial => "listings/help_texts", :locals => { :field => field }

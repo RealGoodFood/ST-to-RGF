@@ -1,0 +1,158 @@
+
+%h3
+  = @listing.title
+  Details
+%table{:width => "100%"}
+  %tr
+    %td
+      %b
+        Title :
+  %tr
+    %td
+      = @listing.title  
+  %tr  
+    %td
+      %b
+        Description :
+  %tr
+    %td 
+      = @listing.description
+  %tr
+    %td
+      %b
+        Number of portions :
+  %tr  
+    %td
+      = @listing.number_of_portions
+  %tr
+    %td
+      %b
+        Tags :
+  %tr  
+    %td
+      - unless @listing.tags.blank?
+        - @listing.tags.each do |tag|
+          - unless @listing.tags.last.id == tag.id
+            = tag.name
+            ,
+          - else
+            = tag.name
+      - else
+        Not Provided  
+  %tr
+    %td
+      %b
+        Diet Restrictions :
+  %tr  
+    %td
+      - unless @listing.diet_listings.blank?
+        - @listing.diet_listings.each do |diet_listing|
+          - unless @listing.diet_listings.last.id == diet_listing.id
+            = diet_listing.diet.name 
+            ,
+          - else
+            = diet_listing.diet.name
+      - else
+        Not Provided
+  %tr
+    %td
+      %b
+        Availability of Food :
+  %tr
+    %td
+      - if @listing.valid_from.nil? && @listing.valid_until.nil?
+        Anytime
+      - else
+        From 
+        = l(@listing.valid_from, :format => :long)
+        To 
+        = l(@listing.valid_until, :format => :long)
+  %tr
+    %td
+      %b
+        Location :
+  %tr  
+    %td
+      - unless @listing.location.nil?
+        = @listing.location.google_address
+      - else
+        Not Provided.
+  %tr
+    %td
+      %b
+        Story behind Food:
+  %tr  
+    %td
+      - unless @listing.story_behind.blank?
+        = @listing.story_behind
+      - else
+        Not Provided
+  %tr
+    %td
+      %b
+        Ingredient List:
+  %tr  
+    %td
+      - unless @listing.ingredient_list.blank?
+        = @listing.ingredient_list
+      - else
+        Not Provided
+  %tr
+    %td
+      %b
+        Trade Conditions:
+  %tr  
+    %td
+      - unless @listing.trade_conditions.blank?
+        = @listing.trade_conditions
+      - else
+        Not Provided
+  %tr
+    %td
+      %b
+        Author:
+  %tr  
+    %td
+      = link_to @listing.author.name, admin_profile_path(:id => @listing.author_id, :type => "profiles" )
+
+  %tr
+    %td
+      = link_to "Edit Details", edit_admin_listing_path(:id => @listing.id, :type => "listings")
+      |
+      = link_to "Delete", admin_listing_path(:id => @listing.id), :confirm => "Are you sure?", :method => :delete      
+
+%h3
+  Comments
+
+%table{:width => "100%"}
+  %tr
+    %th
+    %th{:align => "left"}
+      Comment
+    %th{:align => "left"}
+      Owner
+    %th
+    
+  - if @comments and @comments.count > 0
+    - @comments.each do |comment| 
+      %tr
+        %td{:width => "20%" }
+          - unless comment.author.image.nil?
+            = link_to (image_tag comment.author.image.url(:thumb), :class => "listing_main_image", :alt => comment.author.username), admin_profile_path(:id => comment.author, :type => "profiles"), :title => comment.author.username
+        %td{:width => "50%"}
+          .edit_comment{:id => "edit_comment_#{comment.id}", :style => "display:none;"}
+            - @path = admin_comment_path(:id => comment.id.to_s)
+            = form_for comment, :url => @path do |f|
+              = f.text_area :content, :rows => 4
+              = f.submit
+          .comment_view{:id => "view_comment_#{comment.id}"}
+            = comment.content
+
+        %td{:width => "10%" }
+          = comment.author.username
+        %td{:width => "20%"}
+          = link_to "Edit", "javascript:void(0)", :class => "edit_comment_link", :id => "#{comment.id}" 
+          |
+          = link_to "Delete", admin_comment_path(:id => comment.id), :confirm => "Are you sure?", :method => :delete
+            
+ 
