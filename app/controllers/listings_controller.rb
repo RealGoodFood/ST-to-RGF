@@ -143,6 +143,7 @@ class ListingsController < ApplicationController
   end
   
   def new
+    @text_info = FormDetail.first
     if !params[:pid].nil? 
       session[:swap_usr] = params[:pid]
     end

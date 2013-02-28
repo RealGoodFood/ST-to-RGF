@@ -327,7 +327,7 @@ ActiveRecord::Schema.define(:version => 20121023050946) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "is_admin",                      :default => 0
-    t.string   "locale",                        :default => "fi"
+    t.string   "locale",                        :default => "en"
     t.text     "preferences"
     t.integer  "active_days_count",             :default => 0
     t.datetime "last_page_load_date"
@@ -512,6 +512,22 @@ ActiveRecord::Schema.define(:version => 20121023050946) do
     t.boolean "acceptance"
     t.integer "community_id"
     t.string "receiver_communication_mode"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "restrictions", :force => true do |t|
+    t.string "person_id"
+    t.integer "diet_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+ create_table "form_details", :force => true do |t|
+    t.text  "signup_form"
+    t.text  "community_signup_form"
+    t.text  "listing_form"
+    t.text  "community_form"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

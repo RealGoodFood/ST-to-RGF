@@ -36,10 +36,10 @@ class CommunitiesController < ApplicationController
       @community.location.search_and_fill_latlng
     end
     @person = Person.new
+    @text_info = FormDetail.first
     session[:community_category] = params[:category] if params[:category]
-    session[:pricing_plan] = params[:pricing_plan] if params[:pricing_plan]
-    session[:community_locale] = params[:community_locale] if params[:community_locale]
-    
+#    session[:pricing_plan] = params[:pricing_plan] if params[:pricing_plan]
+#    session[:community_locale] = params[:community_locale] if params[:community_locale]
     session[:confirmed_email] = session[:unconfirmed_email] if session[:unconfirmed_email] && @current_user && @current_user.has_confirmed_email?(session[:unconfirmed_email])
     
     respond_to do |format|
@@ -58,9 +58,11 @@ class CommunitiesController < ApplicationController
     params[:community].delete(:location)
     params[:community].delete(:address)
     @community = Community.new(params[:community])
-    @community.settings = {"locales"=>["#{params[:community_locale]}"]}
+    en = "en"
+    ary = Array(en);
+    @community.settings = {"locales"=> ary } #["#{params[:community_locale]}"]
     @community.email_confirmation = true
-    @community.plan = session[:pricing_plan]
+    @community.plan = "free"#session[:pricing_plan]
     @community.users_can_invite_new_users = true
     @community.use_captcha = false
     @community.save

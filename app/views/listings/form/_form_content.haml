@@ -10,6 +10,9 @@
   #new_listing_form
     #listing_form_title
       = t(".i_will")
+    %p
+      - unless @text_info.nil?
+        = @text_info.listing_form
     #listing_type_select_icons
       - unless session[:swap_food].nil? && session[:swap_usr].nil?
         #listing_form_title

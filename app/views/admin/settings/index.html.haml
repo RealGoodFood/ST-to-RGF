@@ -1,0 +1,36 @@
+#news_items_admin_view_title.grid_12.alpha
+  %h3= "Edit forms"
+.grid_6.omega
+  #create_news_item_link
+    - if @text_info.nil?
+      = link_to "Add form information", new_admin_setting_path(:type => "texts")
+.clear  
+#news_items_admin_view_list
+  - if @text_info.nil?
+    #no_news_found
+      = "No information added yet."
+  - else
+    .news_item_admin_view
+      .news_item_admin_view_header
+        %table{ :width => "100%" }
+          %tr
+            %th{ :width => "24%" }
+              Member Signup Form
+            %th{ :width => "24%" }
+              Member Signup Form (Selecting community)  
+            %th{ :width => "24%" }
+              Community Form  
+            %th{ :width => "24%" }
+              Listing Form
+            %th{ :width => "4%" }
+          %tr
+            %td{ :align => "center" }
+              = @text_info.signup_form
+            %td{ :align => "center" }
+              = @text_info.community_signup_form
+            %td{ :align => "center" }
+              = @text_info.community_form
+            %td{ :align => "center" }
+              = @text_info.listing_form
+            %td{ :align => "center" }
+              = link_to "Edit", edit_admin_setting_path(:id => @text_info.id, :type => "texts")

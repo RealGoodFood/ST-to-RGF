@@ -45,6 +45,7 @@ class PeopleController < Devise::RegistrationsController
   def new
     redirect_to root if logged_in?
     @person = Person.new
+    @text_info = FormDetail.first
     @container_class = params[:private_community] ? "container_12" : "container_24"
     @grid_class = params[:private_community] ? "grid_6 prefix_3 suffix_3" : "grid_10 prefix_7 suffix_7"
   end

@@ -27,7 +27,7 @@ class Person < ActiveRecord::Base
   
   # Setup accessible attributes for your model (the rest are protected)
   attr_accessible :username, :email, :password, :password2, :password_confirmation, 
-                  :remember_me, :consent, :login, :active, :is_admin
+                  :remember_me, :consent, :login, :active, :is_admin, :given_name, :family_name, :phone_number, :restricted_tag_names, :description
       
   attr_accessor :guid, :password2, :form_login,
                 :form_given_name, :form_family_name, :form_password, 
@@ -160,6 +160,14 @@ class Person < ActiveRecord::Base
 
   before_validation(:on => :create) do
     self.id = UUID.timestamp_create.to_s22
+  end
+
+ define_index do
+    indexes username
+    indexes given_name
+    indexes family_name
+    indexes email
+    indexes location.google_address, :as => :address
   end
 
   #tag_list

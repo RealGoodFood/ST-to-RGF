@@ -1,0 +1,19 @@
+#new_news_item_form
+  %h2
+    Add Community Details
+  = form_for @text_info, :url => @path, :method => :post do |form|
+    .form_field_container
+      = form.label :signup_form, "Member Signup Form (Creating new community)", :class => "input"
+      = form.text_area :signup_form, :class => "text_field", :maxlength => "200"
+    .form_field_container
+      = form.label :community_signup_form, "Member Signup Form (after selecting community)", :class => "input"
+      = form.text_area :community_signup_form, :maxlength => "200", :class => "text_field"
+    .form_field_container
+      = form.label :community_form, "Community Register Form", :class => "input"
+      = form.text_area :community_form, :maxlength => "200", :class => "text_field"
+    .form_field_container
+      = form.label :listing_form, "Listing Form ", :class => "input"
+      = form.text_area :listing_form, :maxlength => "200", :class => "text_field"
+
+    .new_listing_form_field_container
+      = form.submit "Save", :class => "send_button"

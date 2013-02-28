@@ -27,6 +27,12 @@ class Community < ActiveRecord::Base
   
   attr_accessor :terms
 
+ define_index do
+    # fields
+    indexes name
+    indexes domain
+    indexes location.google_address, :as => :address
+  end
 
   def self.search(search)
       self.joins(:location).where("name LIKE ? or domain LIKE ? or address LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%") 

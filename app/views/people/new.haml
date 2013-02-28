@@ -6,6 +6,9 @@
     #signup_form
       %h2
         = t('.sign_up')
+      %p
+        - unless @text_info.nil?
+          = @text_info.community_signup_form
       - if community_file?("signup_information", true)
         = render :file => community_file("signup_information", true)
       - elsif @current_community.allowed_emails

@@ -87,7 +87,7 @@ class Listing < ActiveRecord::Base
     indexes description
     indexes taggings.tag.name, :as => :tags
     indexes comments.content, :as => :comments
-    
+    indexes location.google_address, :as => :address
     # attributes
     has created_at, updated_at
     has "listing_type = 'offer'", :as => :is_offer, :type => :boolean

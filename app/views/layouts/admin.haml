@@ -8,6 +8,7 @@
           = link_to "Listed Communities", admin_communities_path(:type => "communities" ), :class => ((params[:type] && params[:type].eql?("communities")) ? "selected" : "unselected")
           = link_to "Listed Users", admin_profiles_path(:type => "profiles" ), :class => ((params[:type] && params[:type].eql?("profiles")) ? "selected" : "unselected")
           = link_to "Food Listings", admin_listings_path(:type => "listings" ), :class => ((params[:type] && params[:type].eql?("listings")) ? "selected" : "unselected")
+          = link_to "Edit text", admin_settings_path(:type => "texts" ), :class => ((params[:type] && params[:type].eql?("texts")) ? "selected" : "unselected")
 
         - if @current_community.polls_enabled?
           = link_to t(".polls"), admin_polls_path(:type => "polls"), :class => ((params[:type] && params[:type].eql?("polls")) ? "selected" : "unselected")

@@ -169,6 +169,7 @@ Kassi::Application.routes.draw do
       resources :profiles
       resources :listings
       resources :comments
+      resources :settings
 
       resources :polls do
         collection do

@@ -59,10 +59,10 @@
   :description => "RealGoodFood is a place to swap recipes.", :category => "town", :polls_enabled => false, :plan => "premium"}])
   
   
-  Person.create!(:id => "bCGGjElvur4Oaa3a6HdQnY", :is_admin => 0, :locale => "en", :active_days_count => 0, :test_group_number => 1,
+  Person.create!(:id => "bCGGjElvur4Oaa3a6HdQnY", :is_admin => 1, :locale => "en", :active_days_count => 0, :test_group_number => 1,
   :active => true, :show_real_name_to_other_users => true, :given_name => "Devin", :family_name => "Mcintire", :username => "devin",
   :email => "devin@realgoodfood.org", :password => "devin321", :password_confirmation => "devin321",
-  :confirmed_at => "2012-11-13 05:46:17", :confirmation_sent_at => "2012-11-13 05:45:48", :hobby_status => "Existing", :is_admin => 1)
+  :confirmed_at => "2012-11-13 05:46:17", :confirmation_sent_at => "2012-11-13 05:45:48", :hobby_status => "Existing")
   
   CommunityMembership.create([{:id => 1, :person_id => "bCGGjElvur4Oaa3a6HdQnY", :community_id => 1, :admin => true,
   :consent => "SHARETRIBE1.0"},

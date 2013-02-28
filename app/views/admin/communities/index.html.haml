@@ -2,10 +2,10 @@
   %h3= "Communities List"
 .grid_6.omega
   #create_news_item_link
-    //= form_tag admin_communities_path, :method => :get, :id => "communities_search", :type => "communities" do
-    //  = text_field_tag :search, params[:search], :class => "other_search"
-    //  = hidden_field_tag :type, "communities"
-    //  = submit_tag "Search", :class => "other_search_button"
+    = form_tag admin_communities_path, :method => :get, :id => "communities_search", :type => "communities" do
+      = text_field_tag :search, params[:search], :class => "other_search"
+      = hidden_field_tag :type, "communities"
+      = submit_tag "Search", :class => "other_search_button"
 .clear 
 #news_items_admin_view_list
   - if @communities.size > 0
