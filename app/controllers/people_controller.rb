@@ -368,7 +368,7 @@ class PeopleController < Devise::RegistrationsController
   def change_active_status(status)
     @person = Person.find(params[:id])
     #@person.update_attribute(:active, 0)
-    @person.update_attribute(:active, (status.eql?("activated") ? true : false))
+    @person.update_attribute(:active, (status.eql?("activated") ? 1 : 0))
     @person.listings.update_all(:open => false) if status.eql?("deactivated") 
     notice = "person_#{status}"
     respond_to do |format|

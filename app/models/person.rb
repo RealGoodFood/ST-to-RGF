@@ -276,7 +276,7 @@ class Person < ActiveRecord::Base
         params.delete(:location)
       end
 
-      self.show_real_name_to_other_users = (!params[:show_real_name_to_other_users] && params[:show_real_name_setting_affected]) ? false : true 
+      self.show_real_name_to_other_users = (!params[:show_real_name_to_other_users] && params[:show_real_name_setting_affected]) ? 0 : 1 
       save
 
       super(params.except("password2", "show_real_name_to_other_users", "show_real_name_setting_affected", "street_address"))    

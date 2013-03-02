@@ -15,3 +15,20 @@
 [03/02/13 19:00:44 +0530 chaitanya-laptop (4050)] INFO : Finished instrumentation
 [03/02/13 19:00:44 +0530 chaitanya-laptop (4050)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
 [03/02/13 19:00:56 +0530 chaitanya-laptop (4050)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
+[03/02/13 19:29:12 +0530 chaitanya-laptop (4050)] INFO : Starting Agent shutdown
+[03/02/13 19:53:53 +0530 chaitanya-laptop (4845)] INFO : Starting the New Relic Agent.
+[03/02/13 19:53:53 +0530 chaitanya-laptop (4845)] INFO : Environment: development
+[03/02/13 19:53:53 +0530 chaitanya-laptop (4845)] INFO : Dispatcher: webrick
+[03/02/13 19:53:53 +0530 chaitanya-laptop (4845)] INFO : Application: Sharetribe
+[03/02/13 19:53:53 +0530 chaitanya-laptop (4845)] WARN : Agent configured not to send data in this environment.
+[03/02/13 19:53:53 +0530 chaitanya-laptop (4845)] INFO : Installing DelayedJob instrumentation hooks
+[03/02/13 19:53:53 +0530 chaitanya-laptop (4845)] INFO : Installing DelayedJob instrumentation
+[03/02/13 19:53:53 +0530 chaitanya-laptop (4845)] INFO : Installing Net instrumentation
+[03/02/13 19:53:53 +0530 chaitanya-laptop (4845)] INFO : Installing ActiveRecord instrumentation
+[03/02/13 19:53:53 +0530 chaitanya-laptop (4845)] INFO : Installing Unicorn instrumentation
+[03/02/13 19:53:53 +0530 chaitanya-laptop (4845)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[03/02/13 19:53:53 +0530 chaitanya-laptop (4845)] INFO : Installing Rails3 Error instrumentation
+[03/02/13 19:53:53 +0530 chaitanya-laptop (4845)] INFO : Installing Rails 3 Controller instrumentation
+[03/02/13 19:53:53 +0530 chaitanya-laptop (4845)] INFO : Installing Rails 3.0 view instrumentation
+[03/02/13 19:53:53 +0530 chaitanya-laptop (4845)] INFO : Finished instrumentation
+[03/02/13 19:53:53 +0530 chaitanya-laptop (4845)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
