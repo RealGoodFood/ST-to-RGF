@@ -52,7 +52,10 @@ gem 'web_translate_it'
 gem 'postmark-rails'
 gem 'rails-i18n'
 gem 'devise', '2.0.0.rc'
+gem "omniauth"
 gem "omniauth-facebook"
+gem "omniauth-twitter"
+gem 'omniauth-google-oauth2'
 gem 'spreadsheet'
 gem 'rabl'
 #gem 'rocket_pants'

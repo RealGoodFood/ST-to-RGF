@@ -532,4 +532,13 @@ ActiveRecord::Schema.define(:version => 20121023050946) do
     t.datetime "updated_at"
   end
 
+ create_table "authentications", :force => true do |t|
+    t.integer  "community_id"
+    t.string  "user_id"
+    t.string  "provider"
+    t.string  "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 end

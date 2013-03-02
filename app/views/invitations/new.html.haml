@@ -3,7 +3,11 @@
     $(document).ready(function() { initialize_invitation_form("#{I18n.locale}", "#{Rails.env}"); })
 
 #new_news_item_form
-  %h2= t(".invite_your_friends")
+  - unless params[:complement].nil?
+    %h2
+      Complement the cook
+  - else  
+    %h2= t(".invite_your_friends")
   = form_for Invitation.new, :url => person_invitations_path(:person_id => @current_user.id) do |f|
     .form_field_container
       = f.label :email, t(".email"), :class => "input"

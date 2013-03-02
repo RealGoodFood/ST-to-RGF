@@ -1,0 +1,160 @@
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/chaitanya/workarea/ST-to-RGF/config/environment.rb:10)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.2ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.2ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.2ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.4ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TIME ZONE
+  [1m[36mPK and serial sequence (4.4ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (2.0ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <class:Person> at /home/chaitanya/workarea/ST-to-RGF/app/models/person.rb:134)
+  [1m[36mSQL (4.0ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'listings'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (3.3ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"listings"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (6.2ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"communities_listings"'::regclass
+[0m
+  [1m[35mPK and custom sequence (2.7ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"communities_listings"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mPK and serial sequence (2.2ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (1.4ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+Creating scope :open. Overwriting existing method Listing.open.
+Creating scope :public. Overwriting existing method Listing.public.
+Creating scope :private. Overwriting existing method Listing.private.
+  [1m[36mSQL (2.8ms)[0m  [1m SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (2.0ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"notifications"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (6.1ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"communities_listings"'::regclass
+[0m
+  [1m[35mPK and custom sequence (3.9ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"communities_listings"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (1.9ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (1.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (2.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m

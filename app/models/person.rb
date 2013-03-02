@@ -17,7 +17,7 @@ class Person < ActiveRecord::Base
   # :lockable, :timeoutable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, 
-         :validatable, :omniauthable, :token_authenticatable, :confirmable
+         :validatable, :token_authenticatable, :confirmable#, :omniauthable
          
   if APP_CONFIG.use_asi_encryptor
     require Rails.root.join('lib', 'devise', 'encryptors', 'asi')
@@ -39,7 +39,7 @@ class Person < ActiveRecord::Base
   attr_accessor :login
   
 #  attr_protected :is_admin
-
+  has_many :authentications, :dependent => :destroy, :foreign_key => "user_id"
   has_many :listings, :dependent => :destroy, :foreign_key => "author_id"
   has_many :offers, 
            :foreign_key => "author_id", 

@@ -30,9 +30,9 @@ class SessionsController < ApplicationController
       domain = "#{request.protocol}#{request.host_with_port}"
     end
 
-    session[:form_login] = params[:person][:login]
-    
-
+    unless params[:person].nil?
+      session[:form_login] = params[:person][:login]
+    end  
     # Start a session with Devise
     
     # In case of failure, set the message already here and 
@@ -43,10 +43,13 @@ class SessionsController < ApplicationController
     # we need to tell Devise to call the action "sessions#new"
     # in case something goes bad.
     if current_community
-      if current_community.private?
-        person = authenticate_person!(:recall => "homepage#sign_in")
-      else
+      if params[:provider].nil?
         person = authenticate_person!(:recall => "sessions#new")
+      else
+        authentication = Authentication.from_omniauth(env["omniauth.auth"])
+        unless authentication.nil?
+          person = authentication.user_id
+        end
       end
     else
       person = authenticate_person!(:recall => "dashboard#login")
@@ -54,14 +57,14 @@ class SessionsController < ApplicationController
     flash[:error] = nil
     @current_user = person
     
-    # Store Facebook ID and picture if connecting with FB
-    if session["devise.facebook_data"]
-      @current_user.update_attribute(:facebook_id, session["devise.facebook_data"]["id"]) 
-      # FIXME: Currently this doesn't work for very unknown reason. Paper clip seems to be processing, but no pic
-      if @current_user.image_file_size.nil?
-        @current_user.store_picture_from_facebook
-      end
-    end
+#    # Store Facebook ID and picture if connecting with FB
+#    if session["devise.facebook_data"]
+#      @current_user.update_attribute(:facebook_id, session["devise.facebook_data"]["id"]) 
+#      # FIXME: Currently this doesn't work for very unknown reason. Paper clip seems to be processing, but no pic
+#      if @current_user.image_file_size.nil?
+#        @current_user.store_picture_from_facebook
+#      end
+#    end
     
     sign_in @current_user
 
@@ -110,6 +113,7 @@ class SessionsController < ApplicationController
     sign_out
     session[:cookie] = nil
     session[:person_id] = nil
+    session[:selected_community] = nil
     flash[:notice] = :logout_successful
     redirect_to root
   end
@@ -158,7 +162,7 @@ class SessionsController < ApplicationController
       redirect_to :action => :new
     end
   end
-  
+
   # Callback from Omniauth failures
   def failure    
     I18n.locale = exctract_locale_from_url(request.env['omniauth.origin']) if request.env['omniauth.origin']

@@ -9,6 +9,7 @@ class DashboardController < ApplicationController
   def index
     logger.info "~~~~~~~~~~~~~~~dashboard#index~~~~~~~~~#{session[:selected_community]}"
     I18n.locale = "es" if request.domain =~ /\.cl$/ && params[:locale].blank?
+    session[:selected_community] = nil
     clear_session_variables
     @communities = Community.order("name asc")
   end
