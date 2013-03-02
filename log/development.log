@@ -158,3 +158,428 @@ Creating scope :private. Overwriting existing method Listing.private.
  AND a.attnum > 0 AND NOT a.attisdropped
  ORDER BY a.attnum
   [1m[36mSQL (2.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/chaitanya/workarea/ST-to-RGF/config/environment.rb:10)
+  [1m[36mSQL (42.9ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.7ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.6ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.6ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (1.1ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TIME ZONE
+  [1m[36mPK and serial sequence (461.3ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (157.8ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+DEPRECATION WARNING: RAILS_ROOT is deprecated. Please use ::Rails.root.to_s. (called from <class:Person> at /home/chaitanya/workarea/ST-to-RGF/app/models/person.rb:134)
+  [1m[36mSQL (169.8ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'listings'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (11.9ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"listings"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (6.7ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"communities_listings"'::regclass
+[0m
+  [1m[35mPK and custom sequence (1.8ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"communities_listings"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mPK and serial sequence (2.3ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (2.1ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+Creating scope :open. Overwriting existing method Listing.open.
+Creating scope :public. Overwriting existing method Listing.public.
+Creating scope :private. Overwriting existing method Listing.private.
+  [1m[36mSQL (2.7ms)[0m  [1m SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (27.5ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"notifications"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (6.4ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"communities_listings"'::regclass
+[0m
+  [1m[35mPK and custom sequence (3.9ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"communities_listings"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (2.1ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (2.0ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (14.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (2.2ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'communities'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (19.9ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" = 'annarbor') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (18.3ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"communities"'::regclass
+[0m
+  [1m[35mSQL (49.5ms)[0m  INSERT INTO "communities" ("name", "domain", "created_at", "updated_at", "settings", "consent", "email_admins_about_new_members", "use_fb_like", "real_name_required", "feedback_to_admin", "automatic_newsletters", "join_with_invite_only", "use_captcha", "email_confirmation", "allowed_emails", "users_can_invite_new_users", "select_whether_name_is_shown_to_everybody", "private", "label", "show_date_in_listings_list", "news_enabled", "all_users_can_add_news", "custom_frontpage_sidebar", "event_feed_enabled", "members_count", "slogan", "description", "category", "polls_enabled", "plan", "user_limit", "monthly_price_in_euros") VALUES ('Ann Arbor', 'annarbor', '2013-03-02 13:05:46.309360', '2013-03-02 13:05:46.309360', NULL, 'SHARETRIBE1.0', 'f', 'f', 't', 'f', 't', 'f', 'f', 't', NULL, 'f', 'f', 'f', NULL, 'f', 't', 't', 'f', 't', 1, 'Swap, Share', 'RealGoodFood is a place to swap recipes.', 'town', 'f', 'premium', NULL, NULL) RETURNING "id"
+  [1m[36mSQL (6.6ms)[0m  [1mCOMMIT[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.6ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "communities" WHERE ("communities"."domain" = 'durham') LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "communities" ("name", "domain", "created_at", "updated_at", "settings", "consent", "email_admins_about_new_members", "use_fb_like", "real_name_required", "feedback_to_admin", "automatic_newsletters", "join_with_invite_only", "use_captcha", "email_confirmation", "allowed_emails", "users_can_invite_new_users", "select_whether_name_is_shown_to_everybody", "private", "label", "show_date_in_listings_list", "news_enabled", "all_users_can_add_news", "custom_frontpage_sidebar", "event_feed_enabled", "members_count", "slogan", "description", "category", "polls_enabled", "plan", "user_limit", "monthly_price_in_euros") VALUES ('Durham city', 'durham', '2013-03-02 13:05:46.453718', '2013-03-02 13:05:46.453718', NULL, 'SHARETRIBE1.0', 'f', 'f', 't', 'f', 't', 'f', 'f', 't', NULL, 'f', 'f', 'f', NULL, 'f', 't', 't', 'f', 't', 1, 'Swap, Share', 'RealGoodFood is a place to swap recipes.', 'town', 'f', 'premium', NULL, NULL) RETURNING "id"
+  [1m[36mSQL (9.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (11.4ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"people"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+WARNING: Can't mass-assign protected attributes: id, locale, active_days_count, test_group_number, show_real_name_to_other_users, confirmed_at, confirmation_sent_at, hobby_status
+  [1m[36mSQL (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'people'
+ AND schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (2.5ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" = 'devin@realgoodfood.org') LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  SELECT 1 FROM "people" WHERE ("people"."username" = 'devin') LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT 1 FROM "people" WHERE ("people"."email" = 'devin@realgoodfood.org') LIMIT 1[0m
+  [1m[35mSQL (2.9ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"people"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPerson Load (2.1ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."confirmation_token" = 'Awozap2i88zDRsio2qYq' LIMIT 1[0m
+  [1m[35mPK and serial sequence (6.1ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"people"'::regclass
+  [1m[36mPK and custom sequence (3.6ms)[0m  [1m SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"people"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+[0m
+  [1m[35mPK and serial sequence (5.9ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"people"'::regclass
+  [1m[36mPK and custom sequence (3.6ms)[0m  [1m SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"people"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+[0m
+  [1m[35mAREL (3.3ms)[0m  INSERT INTO "people" ("created_at", "updated_at", "is_admin", "locale", "preferences", "active_days_count", "last_page_load_date", "test_group_number", "active", "show_real_name_to_other_users", "given_name", "family_name", "phone_number", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "username", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "password_salt", "confirmation_token", "confirmed_at", "confirmation_sent_at", "facebook_id", "authentication_token", "hobby_status", "id") VALUES ('2013-03-02 13:05:58.151365', '2013-03-02 13:05:58.151365', 1, 'en', NULL, 0, NULL, 1, 't', 't', 'Devin', 'Mcintire', NULL, NULL, NULL, NULL, NULL, NULL, 'devin', 'devin@realgoodfood.org', '$2a$10$TsA5XuJJGK2027zw0x3pX.YNVrQ60bton5rp1RazyqfDBBQfQXy3C', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 'Awozap2i88zDRsio2qYq', NULL, '2013-03-02 13:05:58.151037', NULL, NULL, 'Existing', 'dLZa02GZKr4Oaa3a6HdQnY')
+  [1m[36mPK and serial sequence (5.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"people"'::regclass
+[0m
+  [1m[35mPK and custom sequence (3.6ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"people"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+Rendered devise/mailer/confirmation_instructions.haml (3.9ms)
+
+Sent mail to devin@realgoodfood.org (5486ms)
+Date: Sat, 02 Mar 2013 18:36:13 +0530
+From: no-reply@realgoodfood.org
+Reply-To: no-reply@realgoodfood.org
+To: devin@realgoodfood.org
+Message-ID: <5131f945c74a6_c9940a080855813@chaitanya-laptop.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!-- /bHjC6UljSr4Oaa3a6HdQnY/people/confirmation?confirmation_token=rG1svxqCsB1wiJy5XQCC -->
+<!-- /-if @confirmation_token -->
+<!-- /  yes confirmation token -->
+<!-- /  //- link = confirmation_url(:confirmation_token => @confirmation_token, :host => @host) -->
+<!-- /- else -->
+<!-- /  - if $host -->
+<!-- /    have $host -->
+<!-- /    //- link = confirmation_url(@resource, :confirmation_token => @resource.confirmation_token, :host => $host) -->
+<!-- /  - else -->
+<!-- /- link = confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) -->
+<p>
+  Hi Devin,
+</p>
+<p>
+  You need to confirm your email address by clicking the following link:
+  <a href="http://foodswap.herokuapp.com/dLZa02GZKr4Oaa3a6HdQnY/people/confirmation?confirmation_token=Awozap2i88zDRsio2qYq">Confirm my account</a>
+</p>
+<p>
+  Thanks,
+  <br>
+  The RealGoodFood Team
+</p>
+[paperclip] Saving attachments.
+  [1m[36mSQL (591.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (2.5ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"community_memberships"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+WARNING: Can't mass-assign protected attributes: id, admin
+  [1m[36mSQL (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"community_memberships"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mCommunityMembership Load (1.8ms)[0m  [1mSELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" = 'bCGGjElvur4Oaa3a6HdQnY' AND "community_memberships"."community_id" = 1 LIMIT 1[0m
+  [1m[35mPK and serial sequence (6.3ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"community_memberships"'::regclass
+  [1m[36mSQL (14.8ms)[0m  [1mINSERT INTO "community_memberships" ("person_id", "community_id", "admin", "created_at", "updated_at", "consent", "invitation_id", "last_page_load_date") VALUES ('bCGGjElvur4Oaa3a6HdQnY', 1, 'f', '2013-03-02 13:06:19.866204', '2013-03-02 13:06:19.866204', 'SHARETRIBE1.0', NULL, '2013-03-02 13:06:19.000000') RETURNING "id"[0m
+  [1m[35mCommunity Load (1.8ms)[0m  SELECT "communities".* FROM "communities" WHERE "communities"."id" = 1 LIMIT 1
+  [1m[36mAREL (1.2ms)[0m  [1mUPDATE "communities" SET "members_count" = COALESCE("members_count", 0) + 1 WHERE "communities"."id" = 1[0m
+  [1m[35mSQL (11.3ms)[0m  COMMIT
+WARNING: Can't mass-assign protected attributes: id, admin
+  [1m[36mSQL (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mCommunityMembership Load (1.1ms)[0m  SELECT "community_memberships".* FROM "community_memberships" WHERE "community_memberships"."person_id" = 'bCGGjElvur4Oaa3a6HdQnY' AND "community_memberships"."community_id" = 2 LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "community_memberships" ("person_id", "community_id", "admin", "created_at", "updated_at", "consent", "invitation_id", "last_page_load_date") VALUES ('bCGGjElvur4Oaa3a6HdQnY', 2, 'f', '2013-03-02 13:06:19.914409', '2013-03-02 13:06:19.914409', 'SHARETRIBE1.0', NULL, '2013-03-02 13:06:19.000000') RETURNING "id"[0m
+  [1m[35mCommunity Load (1.4ms)[0m  SELECT "communities".* FROM "communities" WHERE "communities"."id" = 2 LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "communities" SET "members_count" = COALESCE("members_count", 0) + 1 WHERE "communities"."id" = 2[0m
+  [1m[35mSQL (9.2ms)[0m  COMMIT
+  [1m[36mSQL (22.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"locations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.5ms)[0m  BEGIN
+  [1m[36mSQL (1.9ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"locations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (5.9ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"locations"'::regclass
+  [1m[36mSQL (19.4ms)[0m  [1mINSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (42.2804, -83.744, 'Ann Arbor, MI 48104, USA', '199 S Division St, Ann Arbor, MI 48104, USA', 'Ann Arbor', '2013-03-02 13:06:19.973846', '2013-03-02 13:06:19.973846', NULL, NULL, 'community', 1) RETURNING "id"[0m
+  [1m[35mSQL (6.2ms)[0m  COMMIT
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "locations" ("latitude", "longitude", "address", "google_address", "city", "created_at", "updated_at", "listing_id", "person_id", "location_type", "community_id") VALUES (35.9981, -78.892, 'Durham, NC 27701, USA', 'Durham, NC 27701, USA', 'Durham', '2013-03-02 13:06:20.010171', '2013-03-02 13:06:20.010171', NULL, NULL, 'community', 2) RETURNING "id"
+  [1m[36mSQL (8.8ms)[0m  [1mCOMMIT[0m
