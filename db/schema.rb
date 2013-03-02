@@ -326,7 +326,7 @@ ActiveRecord::Schema.define(:version => 20121023050946) do
     t.string   "id",                            :limit => 22,                   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "is_admin",                      :default => 0
+    t.boolean  "is_admin",                      :default => false
     t.string   "locale",                        :default => "en"
     t.text     "preferences"
     t.integer  "active_days_count",             :default => 0
