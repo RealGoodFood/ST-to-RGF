@@ -20,7 +20,7 @@
           %td{ :align => "center" }
             = community.domain
           %td{ :align => "center" }
-            = community.members_count
+            = community.community_memberships.count
           %td{ :align => "center" }
             = l(community.created_at, :format => :short)
           %td{ :align => "center" }

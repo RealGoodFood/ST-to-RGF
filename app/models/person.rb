@@ -27,7 +27,7 @@ class Person < ActiveRecord::Base
   
   # Setup accessible attributes for your model (the rest are protected)
   attr_accessible :username, :email, :password, :password2, :password_confirmation, 
-                  :remember_me, :consent, :login, :active, :is_admin, :given_name, :family_name, :phone_number, :restricted_tag_names, :description
+                  :remember_me, :consent, :login, :active, :given_name, :family_name, :phone_number, :restricted_tag_names, :description
       
   attr_accessor :guid, :password2, :form_login,
                 :form_given_name, :form_family_name, :form_password, 
@@ -38,7 +38,7 @@ class Person < ActiveRecord::Base
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
   
-#  attr_protected :is_admin
+  attr_protected :is_admin
   has_many :authentications, :dependent => :destroy, :foreign_key => "user_id"
   has_many :listings, :dependent => :destroy, :foreign_key => "author_id"
   has_many :offers, 
