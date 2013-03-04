@@ -305,7 +305,7 @@ class ApplicationController < ActionController::Base
   end
 
   def super_admin
-    unless @current_user and @current_user.is_admin == 1
+    unless @current_user and @current_user.is_admin == true
       flash[:error] = "You don't have authority to watch this page."
       redirect_to community_home_path and return
     end

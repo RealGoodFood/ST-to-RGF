@@ -333,7 +333,7 @@ class Person < ActiveRecord::Base
 
   # Returns true if the person has global admin rights in Sharetribe.
   def is_admin?
-    is_admin == 1
+    is_admin == true
   end
     
   # Starts following a listing
