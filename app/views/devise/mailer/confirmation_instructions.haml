@@ -7,7 +7,7 @@
 //    have $host
 //    //- link = confirmation_url(@resource, :confirmation_token => @resource.confirmation_token, :host => $host)
 //  - else
-- link = "http://foodswap.herokuapp.com/#{@resource.id}/people/confirmation?confirmation_token=#{@resource.confirmation_token}"
+- link = "http://foodswap1.herokuapp.com/#{@resource.id}/people/confirmation?confirmation_token=#{@resource.confirmation_token}"
 //- link = confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
 %p
   = t("emails.common.hey", :name => @resource.given_name_or_username)
