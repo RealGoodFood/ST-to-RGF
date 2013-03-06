@@ -132,20 +132,15 @@ class SessionsController < ApplicationController
       redirect_to login_path
     end
   end
-  
-  def provider
-    @authentication = Authentication.from_omniauth(env["omniauth.auth"] )
-    unless @authentication.nil?
-      @person = Person.where(:id => @authentication.user_id).first
-    end
-#    @person = Person.find_for_facebook_oauth(request.env["omniauth.auth"], @current_user)
-    logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{@person}"
-#    I18n.locale = exctract_locale_from_url(request.env['omniauth.origin']) if request.env['omniauth.origin']
-    
-    if @person
-      flash[:notice] = t("devise.omniauth_callbacks.success", :kind => "Facebook")
-      sign_in_and_redirect @person, :event => :authentication
-    else
+
+  def facebook
+    # @person = Person.find_for_facebook_oauth(request.env["omniauth.auth"], @current_user)
+    # I18n.locale = exctract_locale_from_url(request.env['omniauth.origin']) if request.env['omniauth.origin']
+#    if @person
+#      flash[:notice] = t("devise.omniauth_callbacks.success", :kind => "#{env["omniauth.auth"]["provider"]}")
+#      sign_in  @person, :event => :authentication
+#      redirect_to community_home_path
+#    else
 #      data = request.env["omniauth.auth"].extra.raw_info
 #      facebook_data = {"email" => data.email,
 #                       "given_name" => data.first_name,
@@ -154,7 +149,23 @@ class SessionsController < ApplicationController
 #                       "id"  => data.id}
 
 #      session["devise.facebook_data"] = facebook_data
-      redirect_to :action => :new
+#      flash[:error] = "You are not registered with us or not activated account."
+#      redirect_to :action => :new  
+  end
+
+  def provider
+    @authentication = Authentication.from_omniauth(env["omniauth.auth"] )
+    unless @authentication.nil?
+      @person = Person.where(:id => @authentication.user_id).first
+    end
+    
+    if @person
+      flash[:notice] = t("devise.omniauth_callbacks.success", :kind => "#{env["omniauth.auth"]["provider"]}")
+      sign_in  @person, :event => :authentication
+      redirect_to community_home_path
+    else
+      flash[:error] = "You are not registered with this email id or not activated account."
+      redirect_to :action => :new  
     end
   end
 

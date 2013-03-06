@@ -812,3 +812,217 @@ Resolv::ResolvError: no address for collector.newrelic.com
 [03/06/13 16:00:14 +0530 chaitanya-laptop (16156)] INFO : Finished instrumentation
 [03/06/13 16:00:14 +0530 chaitanya-laptop (16156)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
 [03/06/13 16:00:16 +0530 chaitanya-laptop (16156)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
+[03/06/13 16:13:40 +0530 chaitanya-laptop (2426)] INFO : Starting the New Relic Agent.
+[03/06/13 16:13:40 +0530 chaitanya-laptop (2426)] INFO : Environment: development
+[03/06/13 16:13:40 +0530 chaitanya-laptop (2426)] INFO : Dispatcher: webrick
+[03/06/13 16:13:40 +0530 chaitanya-laptop (2426)] INFO : Application: Sharetribe
+[03/06/13 16:13:40 +0530 chaitanya-laptop (2426)] WARN : Agent configured not to send data in this environment.
+[03/06/13 16:13:40 +0530 chaitanya-laptop (2426)] INFO : Installing DelayedJob instrumentation hooks
+[03/06/13 16:13:40 +0530 chaitanya-laptop (2426)] INFO : Installing DelayedJob instrumentation
+[03/06/13 16:13:40 +0530 chaitanya-laptop (2426)] INFO : Installing Net instrumentation
+[03/06/13 16:13:40 +0530 chaitanya-laptop (2426)] INFO : Installing ActiveRecord instrumentation
+[03/06/13 16:13:40 +0530 chaitanya-laptop (2426)] INFO : Installing Unicorn instrumentation
+[03/06/13 16:13:40 +0530 chaitanya-laptop (2426)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[03/06/13 16:13:40 +0530 chaitanya-laptop (2426)] INFO : Installing Rails3 Error instrumentation
+[03/06/13 16:13:40 +0530 chaitanya-laptop (2426)] INFO : Installing Rails 3 Controller instrumentation
+[03/06/13 16:13:40 +0530 chaitanya-laptop (2426)] INFO : Installing Rails 3.0 view instrumentation
+[03/06/13 16:13:40 +0530 chaitanya-laptop (2426)] INFO : Finished instrumentation
+[03/06/13 16:13:40 +0530 chaitanya-laptop (2426)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[03/06/13 16:29:25 +0530 chaitanya-laptop (2961)] INFO : Starting the New Relic Agent.
+[03/06/13 16:29:26 +0530 chaitanya-laptop (2961)] INFO : Environment: development
+[03/06/13 16:29:26 +0530 chaitanya-laptop (2961)] INFO : Dispatcher: webrick
+[03/06/13 16:29:26 +0530 chaitanya-laptop (2961)] INFO : Application: Sharetribe
+[03/06/13 16:29:26 +0530 chaitanya-laptop (2961)] WARN : Agent configured not to send data in this environment.
+[03/06/13 16:29:26 +0530 chaitanya-laptop (2961)] INFO : Installing DelayedJob instrumentation hooks
+[03/06/13 16:29:26 +0530 chaitanya-laptop (2961)] INFO : Installing DelayedJob instrumentation
+[03/06/13 16:29:26 +0530 chaitanya-laptop (2961)] INFO : Installing Net instrumentation
+[03/06/13 16:29:26 +0530 chaitanya-laptop (2961)] INFO : Installing ActiveRecord instrumentation
+[03/06/13 16:29:26 +0530 chaitanya-laptop (2961)] INFO : Installing Unicorn instrumentation
+[03/06/13 16:29:26 +0530 chaitanya-laptop (2961)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[03/06/13 16:29:26 +0530 chaitanya-laptop (2961)] INFO : Installing Rails3 Error instrumentation
+[03/06/13 16:29:26 +0530 chaitanya-laptop (2961)] INFO : Installing Rails 3 Controller instrumentation
+[03/06/13 16:29:26 +0530 chaitanya-laptop (2961)] INFO : Installing Rails 3.0 view instrumentation
+[03/06/13 16:29:26 +0530 chaitanya-laptop (2961)] INFO : Finished instrumentation
+[03/06/13 16:29:26 +0530 chaitanya-laptop (2961)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] INFO : Starting the New Relic Agent.
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] WARN : Agent is configured not to use SSL when communicating with New Relic's servers
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] INFO : Environment: production
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] INFO : Dispatcher: thin
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] INFO : Application: Sharetribe
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] INFO : Installing DelayedJob instrumentation hooks
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] INFO : Installing DelayedJob instrumentation
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] INFO : Installing MemCache instrumentation
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] INFO : Installing Net instrumentation
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] INFO : Installing ActiveRecord instrumentation
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] INFO : Installing Unicorn instrumentation
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] INFO : Installing Rails3 Error instrumentation
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] INFO : Installing Rails 3 Controller instrumentation
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] INFO : Installing Rails 3.0 view instrumentation
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] INFO : Finished instrumentation
+[03/06/13 17:00:15 +0530 chaitanya-laptop (3534)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[03/06/13 17:00:18 +0530 chaitanya-laptop (3534)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] INFO : Starting the New Relic Agent.
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] WARN : Agent is configured not to use SSL when communicating with New Relic's servers
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] INFO : Environment: production
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] INFO : Dispatcher: thin
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] INFO : Application: Sharetribe
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] INFO : Installing DelayedJob instrumentation hooks
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] INFO : Installing DelayedJob instrumentation
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] INFO : Installing MemCache instrumentation
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] INFO : Installing Net instrumentation
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] INFO : Installing ActiveRecord instrumentation
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] INFO : Installing Unicorn instrumentation
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] INFO : Installing Rails3 Error instrumentation
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] INFO : Installing Rails 3 Controller instrumentation
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] INFO : Installing Rails 3.0 view instrumentation
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] INFO : Finished instrumentation
+[03/06/13 18:00:13 +0530 chaitanya-laptop (4802)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[03/06/13 18:00:16 +0530 chaitanya-laptop (4802)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
+[03/06/13 18:36:08 +0530 chaitanya-laptop (5142)] INFO : Starting the New Relic Agent.
+[03/06/13 18:36:08 +0530 chaitanya-laptop (5142)] INFO : Environment: development
+[03/06/13 18:36:08 +0530 chaitanya-laptop (5142)] INFO : Dispatcher: webrick
+[03/06/13 18:36:08 +0530 chaitanya-laptop (5142)] INFO : Application: Sharetribe
+[03/06/13 18:36:08 +0530 chaitanya-laptop (5142)] WARN : Agent configured not to send data in this environment.
+[03/06/13 18:36:08 +0530 chaitanya-laptop (5142)] INFO : Installing DelayedJob instrumentation hooks
+[03/06/13 18:36:08 +0530 chaitanya-laptop (5142)] INFO : Installing DelayedJob instrumentation
+[03/06/13 18:36:08 +0530 chaitanya-laptop (5142)] INFO : Installing Net instrumentation
+[03/06/13 18:36:08 +0530 chaitanya-laptop (5142)] INFO : Installing ActiveRecord instrumentation
+[03/06/13 18:36:08 +0530 chaitanya-laptop (5142)] INFO : Installing Unicorn instrumentation
+[03/06/13 18:36:08 +0530 chaitanya-laptop (5142)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[03/06/13 18:36:08 +0530 chaitanya-laptop (5142)] INFO : Installing Rails3 Error instrumentation
+[03/06/13 18:36:08 +0530 chaitanya-laptop (5142)] INFO : Installing Rails 3 Controller instrumentation
+[03/06/13 18:36:08 +0530 chaitanya-laptop (5142)] INFO : Installing Rails 3.0 view instrumentation
+[03/06/13 18:36:08 +0530 chaitanya-laptop (5142)] INFO : Finished instrumentation
+[03/06/13 18:36:08 +0530 chaitanya-laptop (5142)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[03/06/13 18:37:57 +0530 chaitanya-laptop (5167)] INFO : Starting the New Relic Agent.
+[03/06/13 18:37:57 +0530 chaitanya-laptop (5167)] INFO : Environment: development
+[03/06/13 18:37:57 +0530 chaitanya-laptop (5167)] INFO : Dispatcher: webrick
+[03/06/13 18:37:57 +0530 chaitanya-laptop (5167)] INFO : Application: Sharetribe
+[03/06/13 18:37:57 +0530 chaitanya-laptop (5167)] WARN : Agent configured not to send data in this environment.
+[03/06/13 18:37:57 +0530 chaitanya-laptop (5167)] INFO : Installing DelayedJob instrumentation hooks
+[03/06/13 18:37:57 +0530 chaitanya-laptop (5167)] INFO : Installing DelayedJob instrumentation
+[03/06/13 18:37:57 +0530 chaitanya-laptop (5167)] INFO : Installing Net instrumentation
+[03/06/13 18:37:57 +0530 chaitanya-laptop (5167)] INFO : Installing ActiveRecord instrumentation
+[03/06/13 18:37:57 +0530 chaitanya-laptop (5167)] INFO : Installing Unicorn instrumentation
+[03/06/13 18:37:57 +0530 chaitanya-laptop (5167)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[03/06/13 18:37:57 +0530 chaitanya-laptop (5167)] INFO : Installing Rails3 Error instrumentation
+[03/06/13 18:37:57 +0530 chaitanya-laptop (5167)] INFO : Installing Rails 3 Controller instrumentation
+[03/06/13 18:37:57 +0530 chaitanya-laptop (5167)] INFO : Installing Rails 3.0 view instrumentation
+[03/06/13 18:37:57 +0530 chaitanya-laptop (5167)] INFO : Finished instrumentation
+[03/06/13 18:37:57 +0530 chaitanya-laptop (5167)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[03/06/13 18:41:10 +0530 chaitanya-laptop (7833)] INFO : Starting the New Relic Agent.
+[03/06/13 18:41:10 +0530 chaitanya-laptop (7833)] INFO : Environment: development
+[03/06/13 18:41:10 +0530 chaitanya-laptop (7833)] INFO : Dispatcher: webrick
+[03/06/13 18:41:10 +0530 chaitanya-laptop (7833)] INFO : Application: Sharetribe
+[03/06/13 18:41:10 +0530 chaitanya-laptop (7833)] WARN : Agent configured not to send data in this environment.
+[03/06/13 18:41:10 +0530 chaitanya-laptop (7833)] INFO : Installing DelayedJob instrumentation hooks
+[03/06/13 18:41:10 +0530 chaitanya-laptop (7833)] INFO : Installing DelayedJob instrumentation
+[03/06/13 18:41:10 +0530 chaitanya-laptop (7833)] INFO : Installing Net instrumentation
+[03/06/13 18:41:10 +0530 chaitanya-laptop (7833)] INFO : Installing ActiveRecord instrumentation
+[03/06/13 18:41:10 +0530 chaitanya-laptop (7833)] INFO : Installing Unicorn instrumentation
+[03/06/13 18:41:10 +0530 chaitanya-laptop (7833)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[03/06/13 18:41:10 +0530 chaitanya-laptop (7833)] INFO : Installing Rails3 Error instrumentation
+[03/06/13 18:41:10 +0530 chaitanya-laptop (7833)] INFO : Installing Rails 3 Controller instrumentation
+[03/06/13 18:41:10 +0530 chaitanya-laptop (7833)] INFO : Installing Rails 3.0 view instrumentation
+[03/06/13 18:41:10 +0530 chaitanya-laptop (7833)] INFO : Finished instrumentation
+[03/06/13 18:41:10 +0530 chaitanya-laptop (7833)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[03/06/13 18:44:01 +0530 chaitanya-laptop (7871)] INFO : Starting the New Relic Agent.
+[03/06/13 18:44:01 +0530 chaitanya-laptop (7871)] INFO : Environment: development
+[03/06/13 18:44:01 +0530 chaitanya-laptop (7871)] INFO : Dispatcher: webrick
+[03/06/13 18:44:01 +0530 chaitanya-laptop (7871)] INFO : Application: Sharetribe
+[03/06/13 18:44:01 +0530 chaitanya-laptop (7871)] WARN : Agent configured not to send data in this environment.
+[03/06/13 18:44:01 +0530 chaitanya-laptop (7871)] INFO : Installing DelayedJob instrumentation hooks
+[03/06/13 18:44:01 +0530 chaitanya-laptop (7871)] INFO : Installing DelayedJob instrumentation
+[03/06/13 18:44:01 +0530 chaitanya-laptop (7871)] INFO : Installing Net instrumentation
+[03/06/13 18:44:01 +0530 chaitanya-laptop (7871)] INFO : Installing ActiveRecord instrumentation
+[03/06/13 18:44:01 +0530 chaitanya-laptop (7871)] INFO : Installing Unicorn instrumentation
+[03/06/13 18:44:01 +0530 chaitanya-laptop (7871)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[03/06/13 18:44:01 +0530 chaitanya-laptop (7871)] INFO : Installing Rails3 Error instrumentation
+[03/06/13 18:44:01 +0530 chaitanya-laptop (7871)] INFO : Installing Rails 3 Controller instrumentation
+[03/06/13 18:44:01 +0530 chaitanya-laptop (7871)] INFO : Installing Rails 3.0 view instrumentation
+[03/06/13 18:44:01 +0530 chaitanya-laptop (7871)] INFO : Finished instrumentation
+[03/06/13 18:44:01 +0530 chaitanya-laptop (7871)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] INFO : Starting the New Relic Agent.
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] WARN : Agent is configured not to use SSL when communicating with New Relic's servers
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] INFO : Environment: production
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] INFO : Dispatcher: thin
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] INFO : Application: Sharetribe
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] INFO : Installing DelayedJob instrumentation hooks
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] INFO : Installing DelayedJob instrumentation
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] INFO : Installing MemCache instrumentation
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] INFO : Installing Net instrumentation
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] INFO : Installing ActiveRecord instrumentation
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] INFO : Installing Unicorn instrumentation
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] INFO : Installing Rails3 Error instrumentation
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] INFO : Installing Rails 3 Controller instrumentation
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] INFO : Installing Rails 3.0 view instrumentation
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] INFO : Finished instrumentation
+[03/06/13 19:00:14 +0530 chaitanya-laptop (8194)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[03/06/13 19:00:17 +0530 chaitanya-laptop (8194)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
+[03/06/13 19:07:38 +0530 chaitanya-laptop (8342)] INFO : Starting the New Relic Agent.
+[03/06/13 19:07:38 +0530 chaitanya-laptop (8342)] INFO : Environment: development
+[03/06/13 19:07:38 +0530 chaitanya-laptop (8342)] INFO : Dispatcher: webrick
+[03/06/13 19:07:38 +0530 chaitanya-laptop (8342)] INFO : Application: Sharetribe
+[03/06/13 19:07:38 +0530 chaitanya-laptop (8342)] WARN : Agent configured not to send data in this environment.
+[03/06/13 19:07:38 +0530 chaitanya-laptop (8342)] INFO : Installing DelayedJob instrumentation hooks
+[03/06/13 19:07:38 +0530 chaitanya-laptop (8342)] INFO : Installing DelayedJob instrumentation
+[03/06/13 19:07:38 +0530 chaitanya-laptop (8342)] INFO : Installing Net instrumentation
+[03/06/13 19:07:38 +0530 chaitanya-laptop (8342)] INFO : Installing ActiveRecord instrumentation
+[03/06/13 19:07:38 +0530 chaitanya-laptop (8342)] INFO : Installing Unicorn instrumentation
+[03/06/13 19:07:38 +0530 chaitanya-laptop (8342)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[03/06/13 19:07:38 +0530 chaitanya-laptop (8342)] INFO : Installing Rails3 Error instrumentation
+[03/06/13 19:07:38 +0530 chaitanya-laptop (8342)] INFO : Installing Rails 3 Controller instrumentation
+[03/06/13 19:07:38 +0530 chaitanya-laptop (8342)] INFO : Installing Rails 3.0 view instrumentation
+[03/06/13 19:07:38 +0530 chaitanya-laptop (8342)] INFO : Finished instrumentation
+[03/06/13 19:07:38 +0530 chaitanya-laptop (8342)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[03/06/13 19:18:41 +0530 chaitanya-laptop (8451)] INFO : Starting the New Relic Agent.
+[03/06/13 19:18:41 +0530 chaitanya-laptop (8451)] INFO : Environment: development
+[03/06/13 19:18:41 +0530 chaitanya-laptop (8451)] INFO : Dispatcher: webrick
+[03/06/13 19:18:41 +0530 chaitanya-laptop (8451)] INFO : Application: Sharetribe
+[03/06/13 19:18:41 +0530 chaitanya-laptop (8451)] WARN : Agent configured not to send data in this environment.
+[03/06/13 19:18:41 +0530 chaitanya-laptop (8451)] INFO : Installing DelayedJob instrumentation hooks
+[03/06/13 19:18:41 +0530 chaitanya-laptop (8451)] INFO : Installing DelayedJob instrumentation
+[03/06/13 19:18:41 +0530 chaitanya-laptop (8451)] INFO : Installing Net instrumentation
+[03/06/13 19:18:41 +0530 chaitanya-laptop (8451)] INFO : Installing ActiveRecord instrumentation
+[03/06/13 19:18:41 +0530 chaitanya-laptop (8451)] INFO : Installing Unicorn instrumentation
+[03/06/13 19:18:41 +0530 chaitanya-laptop (8451)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[03/06/13 19:18:41 +0530 chaitanya-laptop (8451)] INFO : Installing Rails3 Error instrumentation
+[03/06/13 19:18:41 +0530 chaitanya-laptop (8451)] INFO : Installing Rails 3 Controller instrumentation
+[03/06/13 19:18:41 +0530 chaitanya-laptop (8451)] INFO : Installing Rails 3.0 view instrumentation
+[03/06/13 19:18:41 +0530 chaitanya-laptop (8451)] INFO : Finished instrumentation
+[03/06/13 19:18:41 +0530 chaitanya-laptop (8451)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[03/06/13 19:23:22 +0530 chaitanya-laptop (8502)] INFO : Starting the New Relic Agent.
+[03/06/13 19:23:22 +0530 chaitanya-laptop (8502)] INFO : Environment: development
+[03/06/13 19:23:22 +0530 chaitanya-laptop (8502)] INFO : Dispatcher: webrick
+[03/06/13 19:23:22 +0530 chaitanya-laptop (8502)] INFO : Application: Sharetribe
+[03/06/13 19:23:22 +0530 chaitanya-laptop (8502)] WARN : Agent configured not to send data in this environment.
+[03/06/13 19:23:22 +0530 chaitanya-laptop (8502)] INFO : Installing DelayedJob instrumentation hooks
+[03/06/13 19:23:22 +0530 chaitanya-laptop (8502)] INFO : Installing DelayedJob instrumentation
+[03/06/13 19:23:22 +0530 chaitanya-laptop (8502)] INFO : Installing Net instrumentation
+[03/06/13 19:23:22 +0530 chaitanya-laptop (8502)] INFO : Installing ActiveRecord instrumentation
+[03/06/13 19:23:22 +0530 chaitanya-laptop (8502)] INFO : Installing Unicorn instrumentation
+[03/06/13 19:23:22 +0530 chaitanya-laptop (8502)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[03/06/13 19:23:22 +0530 chaitanya-laptop (8502)] INFO : Installing Rails3 Error instrumentation
+[03/06/13 19:23:22 +0530 chaitanya-laptop (8502)] INFO : Installing Rails 3 Controller instrumentation
+[03/06/13 19:23:22 +0530 chaitanya-laptop (8502)] INFO : Installing Rails 3.0 view instrumentation
+[03/06/13 19:23:22 +0530 chaitanya-laptop (8502)] INFO : Finished instrumentation
+[03/06/13 19:23:22 +0530 chaitanya-laptop (8502)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[03/06/13 19:32:48 +0530 chaitanya-laptop (8624)] INFO : Starting the New Relic Agent.
+[03/06/13 19:32:48 +0530 chaitanya-laptop (8624)] INFO : Environment: development
+[03/06/13 19:32:48 +0530 chaitanya-laptop (8624)] INFO : Dispatcher: webrick
+[03/06/13 19:32:48 +0530 chaitanya-laptop (8624)] INFO : Application: Sharetribe
+[03/06/13 19:32:48 +0530 chaitanya-laptop (8624)] WARN : Agent configured not to send data in this environment.
+[03/06/13 19:32:48 +0530 chaitanya-laptop (8624)] INFO : Installing DelayedJob instrumentation hooks
+[03/06/13 19:32:48 +0530 chaitanya-laptop (8624)] INFO : Installing DelayedJob instrumentation
+[03/06/13 19:32:48 +0530 chaitanya-laptop (8624)] INFO : Installing Net instrumentation
+[03/06/13 19:32:48 +0530 chaitanya-laptop (8624)] INFO : Installing ActiveRecord instrumentation
+[03/06/13 19:32:48 +0530 chaitanya-laptop (8624)] INFO : Installing Unicorn instrumentation
+[03/06/13 19:32:48 +0530 chaitanya-laptop (8624)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[03/06/13 19:32:48 +0530 chaitanya-laptop (8624)] INFO : Installing Rails3 Error instrumentation
+[03/06/13 19:32:48 +0530 chaitanya-laptop (8624)] INFO : Installing Rails 3 Controller instrumentation
+[03/06/13 19:32:48 +0530 chaitanya-laptop (8624)] INFO : Installing Rails 3.0 view instrumentation
+[03/06/13 19:32:48 +0530 chaitanya-laptop (8624)] INFO : Finished instrumentation
+[03/06/13 19:32:48 +0530 chaitanya-laptop (8624)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present

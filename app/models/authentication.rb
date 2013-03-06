@@ -10,11 +10,13 @@ class Authentication < ActiveRecord::Base
   end
 
   def self.create_from_omniauth(auth)
-    logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{auth["info"]["email"]}"
+    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{auth["info"]}"
     if auth["provider"] == "facebook"
-      @user = Person.find_by_email(:email => auth["info"]["email"]).first
+      @user = Person.where(:email => auth["info"]["email"]).first
+    elsif auth["provider"] == 'google'
+      @user = Person.where(:email => auth["info"]["email"]).first
     end
-    logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{@user.id}"
+
     unless @user.nil?
       self.create! do |authentication|
         authentication.provider = auth["provider"]
