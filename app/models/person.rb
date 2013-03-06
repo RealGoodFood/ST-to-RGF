@@ -162,13 +162,13 @@ class Person < ActiveRecord::Base
     self.id = UUID.timestamp_create.to_s22
   end
 
-# define_index do
-#    indexes username
-#    indexes given_name
-#    indexes family_name
-#    indexes email
-##    indexes location.google_address, :as => :address
-#  end
+## define_index do
+##    indexes username
+##    indexes given_name
+##    indexes family_name
+##    indexes email
+###    indexes location.google_address, :as => :address
+##  end
 
   #tag_list
   def restricted_tag_names

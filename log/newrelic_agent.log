@@ -760,3 +760,21 @@ Resolv::ResolvError: no address for collector.newrelic.com
 [03/06/13 14:11:59 +0530 chaitanya-laptop (11926)] INFO : Finished instrumentation
 [03/06/13 14:11:59 +0530 chaitanya-laptop (11926)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
 [03/06/13 14:12:02 +0530 chaitanya-laptop (11926)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
+[03/06/13 15:00:14 +0530 chaitanya-laptop (15326)] INFO : Starting the New Relic Agent.
+[03/06/13 15:00:15 +0530 chaitanya-laptop (15326)] WARN : Agent is configured not to use SSL when communicating with New Relic's servers
+[03/06/13 15:00:15 +0530 chaitanya-laptop (15326)] INFO : Environment: production
+[03/06/13 15:00:15 +0530 chaitanya-laptop (15326)] INFO : Dispatcher: thin
+[03/06/13 15:00:15 +0530 chaitanya-laptop (15326)] INFO : Application: Sharetribe
+[03/06/13 15:00:15 +0530 chaitanya-laptop (15326)] INFO : Installing DelayedJob instrumentation hooks
+[03/06/13 15:00:15 +0530 chaitanya-laptop (15326)] INFO : Installing DelayedJob instrumentation
+[03/06/13 15:00:15 +0530 chaitanya-laptop (15326)] INFO : Installing MemCache instrumentation
+[03/06/13 15:00:15 +0530 chaitanya-laptop (15326)] INFO : Installing Net instrumentation
+[03/06/13 15:00:15 +0530 chaitanya-laptop (15326)] INFO : Installing ActiveRecord instrumentation
+[03/06/13 15:00:15 +0530 chaitanya-laptop (15326)] INFO : Installing Unicorn instrumentation
+[03/06/13 15:00:15 +0530 chaitanya-laptop (15326)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[03/06/13 15:00:15 +0530 chaitanya-laptop (15326)] INFO : Installing Rails3 Error instrumentation
+[03/06/13 15:00:15 +0530 chaitanya-laptop (15326)] INFO : Installing Rails 3 Controller instrumentation
+[03/06/13 15:00:15 +0530 chaitanya-laptop (15326)] INFO : Installing Rails 3.0 view instrumentation
+[03/06/13 15:00:15 +0530 chaitanya-laptop (15326)] INFO : Finished instrumentation
+[03/06/13 15:00:15 +0530 chaitanya-laptop (15326)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[03/06/13 15:00:18 +0530 chaitanya-laptop (15326)] INFO : Reporting to: https://rpm.newrelic.com/accounts/21154/applications/854556
