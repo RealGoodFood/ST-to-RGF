@@ -81,8 +81,8 @@ default: &default_settings
 
   smtp_email_address: "smtp.sendgrid.net"
   smtp_email_port: 587
-  smtp_email_user_name: "app9194900@heroku.com"
-  smtp_email_password: "vvbycneu"
+  smtp_email_user_name: "app12690271@heroku.com"
+  smtp_email_password: "pywmcwym"
   smtp_email_domain: "heroku.com"
 
   # smtp_email_address: "smtp.gmail.com"
