@@ -30,9 +30,7 @@ class SessionsController < ApplicationController
       domain = "#{request.protocol}#{request.host_with_port}"
     end
 
-    unless params[:person].nil?
       session[:form_login] = params[:person][:login]
-    end  
     # Start a session with Devise
     
     # In case of failure, set the message already here and 
@@ -43,14 +41,7 @@ class SessionsController < ApplicationController
     # we need to tell Devise to call the action "sessions#new"
     # in case something goes bad.
     if current_community
-      if params[:provider].nil?
-        person = authenticate_person!(:recall => "sessions#new")
-      else
-        authentication = Authentication.from_omniauth(env["omniauth.auth"])
-        unless authentication.nil?
-          person = authentication.user_id
-        end
-      end
+      person = authenticate_person!(:recall => "sessions#new")
     else
       person = authenticate_person!(:recall => "dashboard#login")
     end
@@ -142,23 +133,27 @@ class SessionsController < ApplicationController
     end
   end
   
-  def facebook
-    @person = Person.find_for_facebook_oauth(request.env["omniauth.auth"], @current_user)
-
-    I18n.locale = exctract_locale_from_url(request.env['omniauth.origin']) if request.env['omniauth.origin']
+  def provider
+    @authentication = Authentication.from_omniauth(env["omniauth.auth"] )
+    unless @authentication.nil?
+      @person = Person.where(:id => @authentication.user_id).first
+    end
+#    @person = Person.find_for_facebook_oauth(request.env["omniauth.auth"], @current_user)
+    logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{@person}"
+#    I18n.locale = exctract_locale_from_url(request.env['omniauth.origin']) if request.env['omniauth.origin']
     
     if @person
       flash[:notice] = t("devise.omniauth_callbacks.success", :kind => "Facebook")
       sign_in_and_redirect @person, :event => :authentication
     else
-      data = request.env["omniauth.auth"].extra.raw_info
-      facebook_data = {"email" => data.email,
-                       "given_name" => data.first_name,
-                       "family_name" => data.last_name,
-                       "username" => data.username,
-                       "id"  => data.id}
+#      data = request.env["omniauth.auth"].extra.raw_info
+#      facebook_data = {"email" => data.email,
+#                       "given_name" => data.first_name,
+#                       "family_name" => data.last_name,
+#                       "username" => data.username,
+#                       "id"  => data.id}
 
-      session["devise.facebook_data"] = facebook_data
+#      session["devise.facebook_data"] = facebook_data
       redirect_to :action => :new
     end
   end

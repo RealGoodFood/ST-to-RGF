@@ -284,7 +284,7 @@ Kassi::Application.routes.draw do
   match "/:locale/listing_bubble_multiple/:ids" => "listings#listing_bubble_multiple", :as => :listing_bubble_multiple
   match '/:locale/:page_type' => 'dashboard#campaign'
   match ":locale/toggle_follow_status/:id" => "listings#toggle_follow_status", :as => :toggle_follow_status
-  match "/auth/:provider/callback" => "sessions#create"
+  match "/auth/:provider/callback" => "sessions#provider"
 #  get 'auth/:provider' => 'sessions#passthru'
 
   
