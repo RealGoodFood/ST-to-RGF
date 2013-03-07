@@ -45,10 +45,19 @@
         - unless @facebook_merge
           = link_to t('.create_new_account'), (@current_community ? sign_up_path : new_tribe_path), :class => "green_part_link"
           %br/
-        - if @current_community # TODO: remove this temporary disabling of pwd forgotten, when recovery works in Dashboard too
+        - if @current_community 
           = link_to t('.i_forgot_my_password'), "#", :id => "password_forgotten_link", :class => "green_part_link"
   #password_forgotten
     = render :partial => "sessions/password_forgotten"
+  - if @current_community
+    %h6
+      Can Sign in with following options:
+    %a{:href=>"/auth/facebook"}
+      = image_tag "facebook_32.png", :size => "32x32", :alt => "Facebook Login"
+    %a{:href=>"/auth/google_oauth2"}
+      = image_tag "google_32.png", :size => "32x32", :alt => "Gmail Login"
+    %a{:href=>"/auth/linkedin"}
+      = image_tag "linkedin_32.png", :size => "32x32", :alt => "Gmail Login"
 
 
   

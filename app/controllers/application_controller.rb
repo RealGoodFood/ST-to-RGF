@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   rescue_from RestClient::Unauthorized, :with => :session_unauthorized
 
   helper_method :root, :logged_in?, :current_user?, :get_person, :get_listing, :get_community , :not_already_requested, 
-                :shared_with_other_user, :in_between_swap
+                :shared_with_other_user, :in_between_swap, :get_provider
 
   def set_locale    
     locale = (logged_in? && @current_community && @current_community.locales.include?(@current_user.locale)) ? @current_user.locale : params[:locale]
@@ -72,6 +72,18 @@ class ApplicationController < ActionController::Base
       redirect_to community_home_path()
     end
   end
+  
+  def get_provider
+    unless @current_user.nil?
+      @authentication = Authentication.where(:user_id => @current_user.id).first
+      unless @authentication.nil?
+            return @authentication.provider
+      else
+            return nil
+      end    
+    end
+  end
+
 
   def in_between_swap(listing)
     @swap_item = SwapItem.where(["(receiver_listing_id = ? or receiver_listing_id = ?) and acceptance is NULL", listing, listing]).first

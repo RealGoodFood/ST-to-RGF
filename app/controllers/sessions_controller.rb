@@ -101,6 +101,12 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    @authentications = Authentication.where(:user_id => @current_user.id )
+    unless @authentications.nil?
+      @authentications.each do |authentication|
+        authentication.destroy
+      end
+    end
     sign_out
     session[:cookie] = nil
     session[:person_id] = nil

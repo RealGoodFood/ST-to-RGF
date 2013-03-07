@@ -14,6 +14,11 @@
 
   .grid_9.omega
     #logged_in_links
+      - if @current_user and get_provider != nil
+        - unless get_provider == "google_oauth2"
+          = link_to(image_tag("#{get_provider}_32.png"), "http://#{get_provider}.com", :target => "_blank" )
+        - else
+          = link_to(image_tag("google_32.png"), "http://gmail.com", :target => "_blank" )
       %span
         = t('.hi')
       = link_to @current_user.given_name_or_username, @current_user, :class => "left", :id => "profile", :title => t(".go_to_your_profile_page")
