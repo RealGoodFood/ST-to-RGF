@@ -154,6 +154,7 @@ class SessionsController < ApplicationController
   end
 
   def provider
+    
     @authentication = Authentication.from_omniauth(env["omniauth.auth"] )
     unless @authentication.nil?
       @person = Person.where(:id => @authentication.user_id).first
@@ -183,4 +184,8 @@ class SessionsController < ApplicationController
     
   end
   
+  def cancel
+    flash[:error] = "Cancelled."
+    redirect_to :action => :new  
+  end
 end

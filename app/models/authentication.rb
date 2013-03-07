@@ -13,7 +13,7 @@ class Authentication < ActiveRecord::Base
     puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{auth["info"]}"
     if auth["provider"] == "facebook"
       @user = Person.where(:email => auth["info"]["email"]).first
-    elsif auth["provider"] == 'google'
+    elsif auth["provider"] == 'linkedin'
       @user = Person.where(:email => auth["info"]["email"]).first
     end
 

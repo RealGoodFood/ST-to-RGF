@@ -285,6 +285,7 @@ Kassi::Application.routes.draw do
   match '/:locale/:page_type' => 'dashboard#campaign'
   match ":locale/toggle_follow_status/:id" => "listings#toggle_follow_status", :as => :toggle_follow_status
   match "/auth/:provider/callback" => "sessions#provider"
+  match "/auth/:provider/cancel" => "sessions#cancel"
 #  get 'auth/:provider' => 'sessions#passthru'
 
   
