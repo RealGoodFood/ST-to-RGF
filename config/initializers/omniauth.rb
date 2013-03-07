@@ -1,4 +1,4 @@
-OmniAuth.config.full_host = "http://localhost:3000" #if this remove can see an error "undefined method ssl?"
+#OmniAuth.config.full_host = "http://localhost:3000" #if this remove can see an error "undefined method ssl?"
 OmniAuth.config.logger = Rails.logger
 
 Rails.application.config.middleware.use OmniAuth::Builder do

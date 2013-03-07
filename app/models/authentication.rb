@@ -11,9 +11,7 @@ class Authentication < ActiveRecord::Base
 
   def self.create_from_omniauth(auth)
     puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{auth["info"]}"
-    if auth["provider"] == "facebook"
-      @user = Person.where(:email => auth["info"]["email"]).first
-    elsif auth["provider"] == 'linkedin'
+    if auth["provider"] == "facebook" || auth["provider"] == "linkedin"
       @user = Person.where(:email => auth["info"]["email"]).first
     end
 
