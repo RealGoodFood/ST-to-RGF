@@ -12,7 +12,7 @@ class PersonMailer < ActionMailer::Base
   layout 'email'
 
 
-  def swap_offer(swap_item, host=nil, community_id)
+  def swap_offer(swap_item, host=nil)
     @recipient = set_up_recipient(get_person(swap_item.receiver_id), host)
     @community_id = swap_item.community_id
     @url = host ? "http://#{host}" : "test_url"

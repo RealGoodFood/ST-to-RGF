@@ -3,7 +3,7 @@ namespace :reminder do
   task :send => :environment do
     SwapItem.all.each do |swap_item|
       if swap_item.acceptance.nil?
-        PersonMailer.swap_offer(swap_item, nil, swap_item.current_community_id ).deliver
+        PersonMailer.swap_offer(swap_item, nil).deliver
       end      
     end
   end
