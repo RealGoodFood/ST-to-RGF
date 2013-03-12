@@ -1,1 +1,4 @@
 [Tue Mar 12 11:46:48.665 2013] [ 6572] accepting connections
+[Tue Mar 12 12:46:32.430 2013] [ 6572] rotating indices (seamless=1)
+[Tue Mar 12 12:46:32.450 2013] [ 6572] rotating index 'listing_delta': success
+[Tue Mar 12 12:46:32.450 2013] [ 6572] rotating finished
