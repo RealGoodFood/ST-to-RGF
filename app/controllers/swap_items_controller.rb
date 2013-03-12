@@ -61,7 +61,7 @@ class SwapItemsController < ApplicationController
         format.html { redirect_to(community_home_path, :notice => 'Swap offer has been sent.') }
         format.xml  { render :xml => @swap_item, :status => :created, :location => @swap_item }
 #        PersonMailer.swap_offer(@swap_item, request.host).deliver
-        Delayed::Job.enqueue(SwapOfferJob.new(@swap_item.id, request.host, @current_community.id))
+        Delayed::Job.enqueue(SwapOfferJob.new(@swap_item.id, request.host))
       else
         format.html { redirect_to(community_home_path, :notice => 'Swap offer has been not sent, Please try again') }
         format.xml  { render :xml => @swap_item.errors, :status => :unprocessable_entity }

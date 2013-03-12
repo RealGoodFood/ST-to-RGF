@@ -2,3 +2,5 @@
 [Tue Mar 12 12:46:32.430 2013] [ 6572] rotating indices (seamless=1)
 [Tue Mar 12 12:46:32.450 2013] [ 6572] rotating index 'listing_delta': success
 [Tue Mar 12 12:46:32.450 2013] [ 6572] rotating finished
+[Tue Mar 12 14:21:51.130 2013] [ 6572] caught SIGTERM, shutting down
+[Tue Mar 12 14:21:51.130 2013] [ 6572] shutdown complete
