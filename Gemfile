@@ -45,7 +45,7 @@ gem 'recaptcha'
 gem "airbrake"
 gem 'passenger'
 gem 'delayed_job'
-gem 'delayed_job_active_record'
+gem 'delayed_job_active_record', '0.4.1'
 gem 'json'
 gem 'russian'
 gem 'web_translate_it'
