@@ -29,7 +29,8 @@ every 1.day, :at => '11:57pm' do
   rake "kassi:calculate_statistics"
 end
 
-every 1.day, :at => '11:57pm' do
+#every 1.day, :at => '11:59pm' do
+every 1.hours do
   rake "reminder:swap_approval"
 end
 

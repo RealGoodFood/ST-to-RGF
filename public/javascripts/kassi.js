@@ -639,6 +639,19 @@ function initialize_admin_new_news_item_form() {
 	});
 }
 
+
+function initialize_article_form() {
+  auto_resize_text_areas("article_text_area");
+  $('#new_article input.text_field:first').focus();
+  $('#new_article').validate({
+		rules: {
+		  "article[title]": {required: true, minlength: 1, maxlenght: 200},
+		  "article[description]": {required: true, minlength: 1, maxlenght: 10000},
+			"article[image]": { accept: "(jpe?g|gif|png)" }
+		}
+	});
+}
+
 function initialize_admin_new_poll_form() {
   
 }

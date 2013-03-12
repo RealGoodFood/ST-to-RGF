@@ -1,0 +1,18 @@
+- content_for :javascript do
+  initialize_article_form();
+
+#new_news_item_form
+  %h2 Add New Article
+  = form_for @article do |form|
+    .form_field_container
+      = form.label :title, "Title :", :class => "input"
+      = form.text_field :title, :class => "text_field", :maxlength => "200"
+    .form_field_container
+      = form.label :description, "Content :", :class => "input"
+      = form.text_area :description, :maxlength => "5000", :class => "new_news_item_text_area"
+    .new_article_field_container
+      = form.label :image, "Image :", :class => "input"
+      = form.file_field(:image, :class => "file_field")
+    .new_article_field_container
+      = form.hidden_field(:author_id, :value => @current_user.id)
+      = form.submit "Save", :class => "send_button"

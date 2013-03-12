@@ -3116,6 +3116,31 @@ a.handle {
   }
 }
 
+
+#articles_view_list {
+  width: 930px;
+  border-top: 2px solid $text_color;
+  padding-top: 10px;
+  overflow: hidden;
+  h4 {
+    float: left;
+    font-size: 16px;
+    margin: 0 20px 0 0;
+    @include grey_link;
+  }
+  span.article_author { 
+    float: left;
+    padding-top: 6px;
+    font-size: 11px;
+  }
+  span.article_links {
+    float: right;
+    font-size: 11px;
+    padding-top: 6px;
+    margin-right: 10px;
+  }
+}
+
 #polls_admin_view_list {
   width: 699px;
   border-top: 2px solid $text_color;

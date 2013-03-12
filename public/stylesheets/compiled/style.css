@@ -1119,6 +1119,10 @@ span.smaller {
   overflow: hidden;
   margin-bottom: 20px; }
 
+.new_article_field_container {
+  overflow: hidden;
+  margin-bottom: 20px; }
+
 .new_listing_form_left {
   float: left;
   width: 150px; }
@@ -3719,6 +3723,34 @@ a.handle:hover {
     padding-top: 6px;
     font-size: 11px; }
   #news_items_admin_view_list span.news_item_admin_links {
+    float: right;
+    font-size: 11px;
+    padding-top: 6px;
+    margin-right: 10px; }
+
+
+#articles_view_list {
+  width: 930px;
+  border-top: 2px solid #464646;
+  padding-top: 10px;
+  overflow: hidden; }
+  #articles_view_list h4 {
+    float: left;
+    font-size: 16px;
+    margin: 0 20px 0 0; }
+    #articles_view_list h4 a {
+      color: #464646; }
+      #articles_view_list h4 a:hover {
+        color: #797979;
+        text-decoration: underline; }
+      #articles_view_list h4 a:active {
+        color: black;
+        text-decoration: underline; }
+  #articles_view_list span.news_item_author {
+    float: left;
+    padding-top: 6px;
+    font-size: 11px; }
+  #articles_view_list span.news_item_admin_links {
     float: right;
     font-size: 11px;
     padding-top: 6px;

@@ -1,0 +1,13 @@
+#news_items_admin_view_title.grid_25.alpha
+  %h3 Blog
+  //.grid_4.omega
+  //  #create_news_item_link
+  = link_to "Create New Article", new_article_path
+  //.clear  
+  #articles_view_list
+    - if @articles.size > 0
+      //= render :partial => @news_items, :spacer_template => "listings/listing_spacer"
+      //= will_paginate(@news_items)
+    - else
+      #no_news_found
+        No article found

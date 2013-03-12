@@ -92,7 +92,7 @@ Kassi::Application.routes.draw do
       put "/people/password" => "devise/passwords#update"
       match "/people/sign_up" => redirect("/%{locale}/login")
 
-           
+      resources :articles 
       resources :people do
 
         collection do

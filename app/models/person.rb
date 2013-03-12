@@ -74,6 +74,7 @@ class Person < ActiveRecord::Base
   has_many :poll_answers, :class_name => "PollAnswer", :foreign_key => "answerer_id", :dependent => :destroy
   has_many :answered_polls, :through => :poll_answers, :source => :poll
   has_many :devices, :dependent => :destroy
+  has_many :articles, :foreign_key => "author_id", :dependent => :destroy 
   #event where this person did something
   has_many :done_event_feed_events, :class_name => "EventFeedEvent", :foreign_key => "person1_id", :dependent => :destroy 
   # events where this person was the target of the action
@@ -101,8 +102,6 @@ class Person < ActiveRecord::Base
     
   serialize :preferences
   
-
-
   validates_uniqueness_of :username
   validates_uniqueness_of :email
   validates_length_of :phone_number, :maximum => 25, :allow_nil => true, :allow_blank => true
@@ -110,7 +109,6 @@ class Person < ActiveRecord::Base
   validates_length_of :given_name, :within => 1..30, :allow_nil => true, :allow_blank => true
   validates_length_of :family_name, :within => 1..30, :allow_nil => true, :allow_blank => true
   validates_length_of :email, :maximum => 255
-
 
   validates_format_of :username,
                        :with => /^[A-Z0-9_]*$/i
