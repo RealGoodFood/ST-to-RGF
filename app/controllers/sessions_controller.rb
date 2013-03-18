@@ -171,11 +171,25 @@ class SessionsController < ApplicationController
       sign_in  @person, :event => :authentication
       redirect_to community_home_path
     else
-      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{env["omniauth.auth"]["info"]}"
-#      @create_person = Person.create!(:username =>  )
-      flash[:error] = "Please signin with the email used for RGF Registration."
-      redirect_to :action => :new  
+      unless @current_community.nil?
+        @new_person = Person.new(:username => env["omniauth.auth"]["info"]["first_name"], :email => env["omniauth.auth"]["info"]["email"], :password => Devise.friendly_token[0,20] )
+        if @new_person.errors.empty?
+           @new_person.skip_confirmation!
+           @new_person.set_default_preferences
+           @new_person.save
+          @community_membership = CommunityMembership.create!(:person_id => @new_person.id, :community_id => @current_community.id, :admin => false, :consent => @current_community.consent )
+          @new_person.set_default_preferences
+          Delayed::Job.enqueue(CommunityJoinedJob.new(@new_person.id, @current_community.id, request.host))
+          sign_in  @new_person, :event => :authentication
+          flash[:error] = "Successfully Signed up."
+          redirect_to community_home_path
+        else
+          flash[:error] = "#{@new_person.errors.first} Please signup with RGF."
+          redirect_to sign_up_path
+        end
+      end
     end
+
   end
 
   # Callback from Omniauth failures

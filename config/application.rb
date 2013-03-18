@@ -23,30 +23,12 @@ module Kassi
     
     # This is the list of all possible locales. Part of the translations may be unfinished.
     config.AVAILABLE_LOCALES = [
-          ["English", "en"], 
-          ["Suomi", "fi"], 
-          ["Pусский", "ru"], 
-          ["Nederlands", "nl"], 
-          ["Ελληνικά", "el"], 
-          ["kiswahili", "sw"], 
-          ["română", "ro"], 
-          ["Français", "fr"], 
-          ["中文", "zh"], 
-          ["Español", "es"], 
-          ["Español", "es-ES"], 
-          ["Catalan", "ca"],
-          ["Tiếng Việt", "vi"],
-          ["Deutsch", "de"]
+          ["English", "en"]
     ]
 
     # This is the list o locales avaible for the dashboard and newly created tribes in UI
     config.AVAILABLE_DASHBOARD_LOCALES = [
-          ["English", "en"], 
-          ["Suomi", "fi"],
-          ["Español", "es"],
-          ["Français", "fr"], 
-          ["Pусский", "ru"], 
-          ["Ελληνικά", "el"]
+          ["English", "en"] 
     ]
     
     # Settings in config/environments/* take precedence over those specified here.
