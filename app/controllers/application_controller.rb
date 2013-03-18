@@ -69,7 +69,11 @@ class ApplicationController < ActionController::Base
   def change_community
     unless params[:cid].nil?
       session[:selected_community] = params[:cid]
-      redirect_to community_home_path()
+      if params[:signup].nil?
+        redirect_to community_home_path()
+      else
+        redirect_to sign_up_path
+      end
     end
   end
   

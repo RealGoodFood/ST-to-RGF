@@ -218,7 +218,7 @@ class PersonMailer < ActionMailer::Base
     @no_settings = true
     @invitation = invitation
     set_locale @invitation.inviter.locale
-    @url = host ? "http://#{host}/en?cid=#{@invitation.community_id}" : "test_url"
+    @url = host ? "http://#{host}/en?cid=#{@invitation.community_id};signup=true" : "test_url"
     @url += "&private_community=true" if @invitation.community.private?
     subject =  "#{@invitation.inviter.name} thinks you're fantastic with food."
     #, :inviter => @invitation.inviter.name, :community => @invitation.community.name

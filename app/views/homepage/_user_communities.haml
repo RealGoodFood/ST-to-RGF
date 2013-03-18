@@ -13,5 +13,5 @@
         = link_to "#{community.name}", root_path(:cid => "#{community.id}") if !user_belongs_to(community)
   %h3
     %p
-      = link_to t("layouts.display_popup.engage_with_more"), new_person_invitation_path(@current_user)
+      //= link_to t("layouts.display_popup.engage_with_more"), new_person_invitation_path(@current_user)
       = link_to "Complement the cook", new_person_invitation_path(@current_user, :complement => true )
