@@ -50,7 +50,7 @@
   #password_forgotten
     = render :partial => "sessions/password_forgotten"
   - if @current_community
-    %h6
+    %h6.less_margin
       Sign in with following options:
     %a{:href=>"/auth/facebook"}
       = image_tag "facebook_32.png", :size => "32x32", :alt => "Facebook Login"

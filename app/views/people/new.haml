@@ -3,6 +3,16 @@
 
 %div{:class => @container_class}
   %div{:class => @grid_class}
+    - if @current_community
+      %h6.less_margin
+        Sign Up with following options:
+      %a{:href=>"/auth/facebook"}
+        = image_tag "facebook_32.png", :size => "32x32", :alt => "Facebook Login"
+      %a{:href=>"/auth/google_oauth2"}
+        = image_tag "google_32.png", :size => "32x32", :alt => "Gmail Login"
+      %a{:href=>"/auth/linkedin"}
+        = image_tag "linkedin_32.png", :size => "32x32", :alt => "Gmail Login"
+
     #signup_form
       %h2
         = t('.sign_up')
@@ -40,12 +50,6 @@
             %span.tiny_description
               = "(#{t('.visible_to_everybody')})" 
           = form.text_field :username, :class => :text_field, :maxlength => "20"
-        //.form_field_container
-        //  = form.label :given_name, t('.given_name'), :class => "before_description"
-        //  = form.text_field :given_name, :class => :text_field, :maxlength => "30"
-        //.form_field_container
-        //  = form.label :family_name, t('.family_name'), :class => "before_description"
-        //  = form.text_field :family_name, :class => :text_field, :maxlength => "30"
         - if @current_community.select_whether_name_is_shown_to_everybody
           .form_field_container
             .signup_checkbox_container
@@ -88,6 +92,7 @@
         = form.hidden_field :consent, :value => @current_community.consent
         = hidden_field_tag :community, @current_community.domain
         = submit_tag(t('.create_new_account'), :class => "send_button")
+        
 
 
 = render :partial => "help_texts", :collection => ["help_captcha", "terms", "help_invitation_code"], :as => :field

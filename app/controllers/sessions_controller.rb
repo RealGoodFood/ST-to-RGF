@@ -172,14 +172,12 @@ class SessionsController < ApplicationController
       redirect_to community_home_path
     else
       unless @current_community.nil?
-        logger.info "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ #{env["omniauth.auth"]["info"]["first_name"]}"
         @new_person = Person.new(:username => env["omniauth.auth"]["info"]["first_name"], :email => env["omniauth.auth"]["info"]["email"], :password => Devise.friendly_token[0,20] )
-        if @new_person.errors.empty?
            @new_person.skip_confirmation!
            @new_person.set_default_preferences
-           @new_person.save
+        if @new_person.save
           @community_membership = CommunityMembership.create!(:person_id => @new_person.id, :community_id => @current_community.id, :admin => false, :consent => @current_community.consent )
-          @new_person.set_default_preferences
+          Authentication.create!(:provider => env["omniauth.auth"]["provider"],  :uid => env["omniauth.auth"]["uid"], :user_id => @new_person.id)
           Delayed::Job.enqueue(CommunityJoinedJob.new(@new_person.id, @current_community.id, request.host))
           sign_in  @new_person, :event => :authentication
           flash[:notice] = "Successfully Signed up."
