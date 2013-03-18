@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
     controller.ensure_logged_in "you_must_log_in_to_view_this_content"
   end
 
+
   # GET /swap_items
   # GET /swap_items.xml
 
@@ -45,7 +46,7 @@ class ArticlesController < ApplicationController
   # GET /swap_items/1/edit
   def edit
 #    @article = Article.find(params[:id])
-    @article = current_user.articles.find(params[:id])
+    @article = @current_user.articles.find(params[:id])
   end
 
   # POST /swap_items
@@ -67,7 +68,7 @@ class ArticlesController < ApplicationController
   # PUT /swap_items/1
   # PUT /swap_items/1.xml
   def update
-    @article = current_user.articles.find(params[:id])
+    @article = @current_user.articles.find(params[:id])
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
@@ -89,6 +90,20 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(articles_path, :notice => 'Article has been deleted.') }
       format.xml  { head :ok }
+    end
+  end
+
+  def create_comment
+    logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{params}"
+    @article_comment = ArticleComment.new(params[:article_comment])
+    respond_to do |format|
+      if @article_comment.save
+        format.html { redirect_to(article_path(@article_comment.article), :notice => 'Comment has been added.') }
+        format.xml  { render :xml => @article_comment, :status => :created, :location => @article_comment }
+      else
+        format.html { redirect_to(article_path(@article_comment.article), :notice => 'Comment not added, Please try again') }
+        format.xml  { render :xml => @article_comment.errors, :status => :unprocessable_entity }
+      end
     end
   end
 

@@ -283,6 +283,7 @@ Kassi::Application.routes.draw do
   match "/:locale/listing_bubble/:id" => "listings#listing_bubble", :as => :listing_bubble
   match "/:locale/listing_bubble_multiple/:ids" => "listings#listing_bubble_multiple", :as => :listing_bubble_multiple
   match '/:locale/:page_type' => 'dashboard#campaign'
+  match '/:locale/articles/create_article_comment' => 'articles#create_comment', :as => :create_article_comment
   match ":locale/toggle_follow_status/:id" => "listings#toggle_follow_status", :as => :toggle_follow_status
   match "/auth/:provider/callback" => "sessions#provider"
   match "/auth/:provider/cancel" => "sessions#cancel"

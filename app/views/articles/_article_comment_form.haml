@@ -1,0 +1,17 @@
+- if logged_in?
+  #comment_form
+    = form_for ArticleComment.new, :url => create_article_comment_path do |f|
+      .message_form_field_container
+        = f.label :description, "Write Comment"
+      .message_form_field_container  
+        = f.text_area :description, :class => "listing_comment_content_text_area"
+      .message_form_field_container
+        = f.hidden_field :article_id, :value => @article.id.to_s
+        = f.hidden_field :author_id, :value => @current_user.id
+        = f.submit "Comment", :class => "send_button"
+  #follow_checkbox
+    //= render :partial => "follow_checkbox"
+- else
+  You must
+  = link_to "login", login_path
+  to add comment

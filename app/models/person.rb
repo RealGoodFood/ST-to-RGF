@@ -74,7 +74,8 @@ class Person < ActiveRecord::Base
   has_many :poll_answers, :class_name => "PollAnswer", :foreign_key => "answerer_id", :dependent => :destroy
   has_many :answered_polls, :through => :poll_answers, :source => :poll
   has_many :devices, :dependent => :destroy
-  has_many :articles, :foreign_key => "author_id"#, :dependent => :destroy 
+  has_many :articles, :foreign_key => "author_id", :dependent => :destroy 
+  has_many :article_comments, :foreign_key => "author_id", :dependent => :destroy 
   #event where this person did something
   has_many :done_event_feed_events, :class_name => "EventFeedEvent", :foreign_key => "person1_id", :dependent => :destroy 
   # events where this person was the target of the action
@@ -127,7 +128,7 @@ class Person < ActiveRecord::Base
   after_save :assign_diet_tags
 
   paperclip_options = {
-        :styles => { :medium => "200x350>", :thumb => "50x50#", :original => "600x800>" },
+        :styles => { :medium => "200x350>", :thumb => "50x50#", :original => "200x350>" },
         :storage => :cloud_files,
         :cloudfiles_credentials =>  "#{RAILS_ROOT}/config/rackspace.yml"
 #        :path => ":rails_root/public/system/:attachment/:id/:style/:filename",

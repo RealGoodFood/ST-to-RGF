@@ -3,7 +3,7 @@ class ListingImage < ActiveRecord::Base
   belongs_to :listing
   
   paperclip_options = {
-      :styles => { :medium => "300x640>", :thumb => "85x85#", :original => "640x640>" },
+      :styles => { :medium => "300x640>", :thumb => "85x85#", :original => "300x640>" },
       :storage => :cloud_files,
       :cloudfiles_credentials =>  "#{RAILS_ROOT}/config/rackspace.yml"
 #        :path => ":rails_root/public/system/:attachment/:id/:style/:filename",

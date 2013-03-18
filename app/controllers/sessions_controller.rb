@@ -171,7 +171,9 @@ class SessionsController < ApplicationController
       sign_in  @person, :event => :authentication
       redirect_to community_home_path
     else
-      flash[:error] = "You are not registered with this email id or not activated account."
+      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{env["omniauth.auth"]["info"]}"
+#      @create_person = Person.create!(:username =>  )
+      flash[:error] = "Please signin with the email used for RGF Registration."
       redirect_to :action => :new  
     end
   end

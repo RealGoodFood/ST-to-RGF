@@ -3,7 +3,7 @@
 
 #new_news_item_form
   %h2 Add New Article
-  = form_for @article do |form|
+  = form_for @article, :html => { :multipart => true } do |form|
     .form_field_container
       = form.label :title, "Title :", :class => "input"
       = form.text_field :title, :class => "text_field", :maxlength => "200"
@@ -13,6 +13,9 @@
     .new_article_field_container
       = form.label :image, "Image :", :class => "input"
       = form.file_field(:image, :class => "file_field")
+      - unless form.object.new_record?
+        - unless @article.image_file_name.nil?
+          = image_tag @article.image.url(:thumb)
     .new_article_field_container
-      = form.hidden_field(:author_id, :value => @current_user.id)
+      = form.hidden_field :author_id, :value => @current_user.id
       = form.submit "Save", :class => "send_button"

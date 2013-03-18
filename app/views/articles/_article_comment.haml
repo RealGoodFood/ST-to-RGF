@@ -1,0 +1,19 @@
+%div{:id => "comment#{article_comment.id.to_s}", :class => "comment"}
+  .person_image_message
+    = small_avatar_thumb(article_comment.author)
+  .message_arrow_left
+    &nbsp;
+  .comment_main
+    .comment_sender
+      .float_left
+        = link_to article_comment.author.name, article_comment.author
+        %span
+          Wrote
+          = time_ago(article_comment.created_at) + ":"
+      - unless current_user?(article_comment.author)
+        .float_right
+          %span
+            //= link_to t(".send_private_message", :person => comment.author.given_name_or_username), new_person_message_path(:person_id => comment.author.id, :message_type => "free", :comment_message => true, :listing_id => comment.listing.id)
+    .comment_content_div
+      - text_with_line_breaks do  
+        = article_comment.description

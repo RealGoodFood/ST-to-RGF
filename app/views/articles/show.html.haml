@@ -1,0 +1,43 @@
+#settings_form_description.container_24
+  #listing_image_side.grid_8
+    .image
+      - if @article.image_file_name.nil?
+        %div{:id => "listing_category_big_icon_item"}
+      - else
+        = image_tag @article.image.url(:medium), :class => "listing_main_image", :alt => @article.title
+    .clear
+  #listing_content_side.grid_16
+    .grid_16.alpha.omega
+      %h2= @article.title
+    .clear
+    #listing_center.grid_10.alpha
+      #listing_main_content
+        %p
+          = @article.description
+        %p
+          %b
+            Created
+            = time_ago(@article.created_at)
+      #listing_author
+        #listing_author_image
+          - if current_user?(@article.author) && !@article.author.has_profile_picture?
+            .listing_author_add_profile_picture_link
+              = link_to t(".add_profile_picture"), avatar_person_settings_path(@article.author)
+          - else
+            = medium_avatar_thumb(@article.author)
+        //%div{:id => (@article.author.received_testimonials.size > 0 ? "listing_author_description" :
+        %strong
+          Written by
+          = link_to @article.author.name, @article.author, :id => "article_author_link"
+    .clear
+    #comments
+      %h2
+        = image_tag "/images/icons/comment_icon.png"
+        Comments
+        %span{:id => "comment_count"}= "(#{@article.article_comments.count})"
+        = render :partial => "article_comment", :collection => @article.article_comments
+    #comment_notice  
+  
+    #listing_comment_form
+      = render :partial => "article_comment_form"
+    

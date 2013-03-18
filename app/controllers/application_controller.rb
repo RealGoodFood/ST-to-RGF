@@ -144,6 +144,7 @@ class ApplicationController < ActionController::Base
     @current_user ? @current_user.id.eql?(person.id) : false
   end
 
+
   # Saves current path so that the user can be
   # redirected back to that path when needed.
   def save_current_path
