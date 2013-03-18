@@ -172,6 +172,7 @@ class SessionsController < ApplicationController
       redirect_to community_home_path
     else
       unless @current_community.nil?
+        logger.info "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ #{env["omniauth.auth"]["info"]["first_name"]}"
         @new_person = Person.new(:username => env["omniauth.auth"]["info"]["first_name"], :email => env["omniauth.auth"]["info"]["email"], :password => Devise.friendly_token[0,20] )
         if @new_person.errors.empty?
            @new_person.skip_confirmation!
@@ -181,7 +182,7 @@ class SessionsController < ApplicationController
           @new_person.set_default_preferences
           Delayed::Job.enqueue(CommunityJoinedJob.new(@new_person.id, @current_community.id, request.host))
           sign_in  @new_person, :event => :authentication
-          flash[:error] = "Successfully Signed up."
+          flash[:notice] = "Successfully Signed up."
           redirect_to community_home_path
         else
           flash[:error] = "#{@new_person.errors.first} Please signup with RGF."
