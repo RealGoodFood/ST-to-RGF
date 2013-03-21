@@ -1,6 +1,6 @@
 #news_items_admin_view_title.grid_12.alpha
   %h3= "Users List"
-  = link_to "Invite Users", new_person_invitation_path(@current_user)
+  = link_to "Add User", new_admin_profile_path(:type => "profiles")
 .grid_6.omega
   #create_news_item_link
     //= form_tag admin_profiles_path, :method => :get, :id => "profiles_search" do

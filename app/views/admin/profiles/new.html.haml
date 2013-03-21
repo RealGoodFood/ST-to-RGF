@@ -1,0 +1,41 @@
+- content_for :javascript do
+  initialize_signup_form("#{I18n.locale}","#{t("people.new.username_is_in_use")}","#{t("people.new.username_is_invalid")}","#{email_not_accepted_message}");
+- if @communities and @communities.count > 0 
+  %div{:class => @container_class}
+    %div{:class => @grid_class}
+      #signup_form
+        %h2
+          Create user
+        = form_for @person, :url => @path do |form| 
+          = form.error_messages
+          .form_field_container 
+            = form.label :username, (username_label + ":"), :class => "before_description"
+            %br
+            = form.text_field :username, :class => "text_field", :maxlength => "20"
+          .form_field_container
+            = form.label :email, t('.email') + ":", :class => "before_description"
+            %br
+            = form.text_field :email, :class => "text_field", :maxlenght => "255"
+          .form_field_container  
+            = form.label :password, t('common.password') + ":", :class => "before_description"
+            %br
+            = form.password_field :password, :class => "text_field", :maxlength => "255"
+          .form_field_container  
+            = form.label :password2, t('.password_again') + ":", :class => "before_description"
+            %br
+            = form.password_field :password2, :class => "text_field", :maxlength => "255"
+          .form_field_container
+            = form.label :is_admin, "Site Administrator:", :class => "before_description"
+            = form.check_box :is_admin
+            //.form_field_container
+            //= form.label :community_admin, "Community Administrator:", :class => "before_description"
+            //= check_box_tag 'community_admin'
+
+          .form_field_container
+            = form.label :community, "Select Community:", :class => "before_description"
+            = select_tag 'community', options_from_collection_for_select(@communities, 'id', 'name', :selected => @communities), :include_blank => false
+            
+          .form_field_container
+            = form.submit "Add user", :class => "send_button"
+          
+

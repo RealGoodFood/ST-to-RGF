@@ -1,0 +1,11 @@
+.new_listing_form_field_container
+  = form.label :story_behind, t('.story') + ":", :class => "input"
+  = form.text_area(:story_behind, :class => "listing_story_textarea")
+.new_listing_form_field_container
+  = form.label :ingredient_list, t('.ingredient') + ":", :class => "input"
+  = form.text_area(:ingredient_list, :class => "listing_story_textarea")
+.new_listing_form_field_container
+  = form.label :trade_conditions, t('.trade_request') + ":", :class => "input"
+  = form.text_area(:trade_conditions, :class => "listing_story_textarea")
+
+

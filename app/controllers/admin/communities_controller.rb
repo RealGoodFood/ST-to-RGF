@@ -1,5 +1,5 @@
 class Admin::CommunitiesController < ApplicationController
-
+  include CommunitiesHelper
   layout "layouts/admin"
   before_filter :super_admin
 
@@ -11,6 +11,32 @@ class Admin::CommunitiesController < ApplicationController
     end
   end
 
+  def new
+    @community = Community.new
+    @community.community_memberships.build
+    unless @community.location
+      @community.build_location(:address => @community.address, :location_type => 'community')
+      @community.location.search_and_fill_latlng
+    end
+    @path = admin_communities_path
+  end
+
+  def create
+    @community = Community.new(params[:community])
+     respond_to do |format|
+      if @community.save
+        unless @community.location
+          @community.build_location(:address => @community.address, :location_type => 'community')
+          @community.location.search_and_fill_latlng
+        end
+        format.html { redirect_to(admin_communities_path, :notice => 'New Community Added.') }
+        format.xml  { render :xml => @community, :status => :created, :location => @community }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @community.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
 
   def edit
     @community = Community.find_by_id(params[:id])

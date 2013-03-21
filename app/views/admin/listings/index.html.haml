@@ -1,5 +1,6 @@
 #news_items_admin_view_title.grid_12.alpha
   %h3= "Food recipe List"
+  = link_to "Add New Recipe", new_request_path(:type => "offer")
 .grid_6.omega
   #create_news_item_link
     = form_tag admin_listings_path, :method => :get, :id => "communities_search", :type => "listings" do

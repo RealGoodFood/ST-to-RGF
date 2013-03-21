@@ -1,0 +1,29 @@
+- content_for :javascript do
+  initialize_new_community_form("#{I18n.locale}","#{t("communities.new_tribe_form.domain_invalid")}","#{t("communities.new_tribe_form.domain_taken")}");
+
+- content_for :extra_javascript do
+  = javascript_include_tag "https://maps.google.com/maps/api/js?sensor=true"
+
+#new_community_form
+  = form_for @community, :url => @path do |form|
+    .form_field_container
+      = form.label :name, "Community Name"
+      %br
+      = form.text_field :name, :maxlength => "50", :class => "input_field"
+    .form_field_container
+      = form.label :domain, "Unique Name"
+      %br
+      = form.text_field :domain, :maxlength => "50", :class => "domain_field"
+    .form_field_container
+      = form.label :address, "Address", :class => "input"
+      %br
+      = form.text_field :address, :class => "text_field", :onkeyup => "timed_input(this)"
+      #new_community_map_canvas.map
+        :javascript
+          source = document.getElementById("community_address");
+          $(document).ready(function(){
+            googlemapMarkerInit("new_community_map_canvas","community_location","community_address", true, undefined, undefined);
+          });
+    .form_field_container_taller
+      = form.hidden_field :terms, :value => "true"
+      = form.submit "Add Community", :class => "send_button"

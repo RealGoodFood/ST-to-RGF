@@ -27,7 +27,8 @@ class Person < ActiveRecord::Base
   
   # Setup accessible attributes for your model (the rest are protected)
   attr_accessible :username, :email, :password, :password2, :password_confirmation, 
-                  :remember_me, :consent, :login, :active, :given_name, :family_name, :phone_number, :restricted_tag_names, :description
+                  :remember_me, :consent, :login, :active, :given_name, :family_name, :phone_number, 
+                  :restricted_tag_names, :description, :is_admin, :image
       
   attr_accessor :guid, :password2, :form_login,
                 :form_given_name, :form_family_name, :form_password, 
@@ -38,7 +39,7 @@ class Person < ActiveRecord::Base
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
   
-  attr_protected :is_admin
+#  attr_protected :is_admin
   has_many :authentications, :dependent => :destroy, :foreign_key => "user_id"
   has_many :listings, :dependent => :destroy, :foreign_key => "author_id"
   has_many :offers, 
@@ -152,10 +153,19 @@ class Person < ActiveRecord::Base
   has_attached_file :image, paperclip_options
         
   #validates_attachment_presence :image
-  validates_attachment_size :image, :less_than => 5.megabytes
+  validates_attachment_size :image, :in => 0.megabytes..3.megabytes
   validates_attachment_content_type :image,
                                     :content_type => ["image/jpeg", "image/png", "image/gif", 
                                       "image/pjpeg", "image/x-png"] #the two last types are sent by IE. 
+#  validate :validate_image_size
+
+#  def validate_image_size
+#    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>I am INn"
+#    if self.image 
+#    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>size>>>>>>>>>>>>>>>>>>>>>>>>>#{image.size}"
+##      errors.add_to_base("Image is too large.")
+#    end
+#  end
 
   before_validation(:on => :create) do
     self.id = UUID.timestamp_create.to_s22
@@ -362,9 +372,9 @@ class Person < ActiveRecord::Base
     end
   end
   
-  def create_listing(params)
-    listings.create params
-  end
+#  def create_listing(params)
+#    listings.create params
+#  end
   
   def read(conversation)
     conversation.participations.where(["person_id LIKE ?", self.id]).first.update_attribute(:is_read, true)

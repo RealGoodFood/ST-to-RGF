@@ -1,4 +1,6 @@
 class ListingsController < ApplicationController
+
+  rescue_from Timeout::Error, :with => :rescue_from_timeout
   
   # Skip auth token check as current jQuery doesn't provide it automatically
   skip_before_filter :verify_authenticity_token, :only => [:close, :reopen, :update, :follow, :unfollow]
@@ -143,6 +145,7 @@ class ListingsController < ApplicationController
   end
   
   def new
+     logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>NEW >>>>>>>>>>>>>>>>>>>>>>>#{params}>>>>>>>>>>>>>>>"
     @text_info = FormDetail.first
     if !params[:pid].nil? 
       session[:swap_usr] = params[:pid]
@@ -150,21 +153,17 @@ class ListingsController < ApplicationController
     if !params[:lid].nil? 
       session[:swap_food] = params[:lid] 
     end
-    @listing = Listing.new
+
+    @listing = Listing.new(session[:listing_params])
+    @listing.current_step = session[:listing_step]
     @listing.listing_type = params[:type]
     @listing.category = params[:category]
-    #@latitude = 13
-    if @listing.category == "rideshare"
-	    @listing.build_origin_loc(:location_type => "origin_loc")
-	    @listing.build_destination_loc(:location_type => "destination_loc")
+    if (@current_user.location != nil)
+      temp = @current_user.location
+      temp.location_type = "origin_loc"
+      @listing.build_origin_loc(temp.attributes)
     else
-	    if (@current_user.location != nil)
-	      temp = @current_user.location
-	      temp.location_type = "origin_loc"
-	      @listing.build_origin_loc(temp.attributes)
-      else
-	      @listing.build_origin_loc(:location_type => "origin_loc")
-      end
+      @listing.build_origin_loc(:location_type => "origin_loc")
     end
     1.times { @listing.listing_images.build }
     respond_to do |format|
@@ -174,17 +173,52 @@ class ListingsController < ApplicationController
   end
   
   def create
-    if params[:listing][:origin_loc_attributes][:address].empty? || params[:listing][:origin_loc_attributes][:address].blank?
-      params[:listing].delete("origin_loc_attributes")
+	     logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>CREATE >>>>>>>>>>>>>>>>>>>>>>>#{params}>>>>>>>>>>>>>>>"
+#    if params[:listing][:origin_loc_attributes][:address].empty? || params[:listing][:origin_loc_attributes][:address].blank?
+#      params[:listing].delete("origin_loc_attributes")
+#    end
+
+    unless params[:listing][:listing_images_attributes].nil?
+#      @listing.listing_images.image.clear
+#      @listing.listing_images.image.queued_for_write.clear
+#      logger.info "@@@@@@@@@@@@@@#{params[:listing][:listing_images_attributes]["0"][:image]}"
+      @uploaded = params[:listing][:listing_images_attributes]
+      params[:listing].delete(:listing_images_attributes)
+##      params[:listing][:listing_images_attributes]["0"][:image].tempfile = nil
+    end     
+
+      puts "@@@@@@@@@@uploaded<<<<<<<<<<<<<<<<<<<<<<<<<<#{@uploaded}"
+    session[:listing_params].deep_merge!(params[:listing]) if params[:listing]
+    @listing = Listing.new(session[:listing_params])
+    @listing.current_step = session[:listing_step]
+    if @listing.valid?
+      if params[:back_button]
+        @listing.previous_step
+      elsif @listing.last_step?
+        @listing << 
+        @listing.save
+      else
+        @listing.next_step
+      end
+      session[:listing_step] = @listing.current_step
     end
-    @listing = @current_user.create_listing params[:listing]
-    if @listing.new_record?
-      1.times { @listing.listing_images.build } if @listing.listing_images.empty?
-      render :action => :new
+    @listing.listing_type = params[:type]
+    @listing.category = params[:category]
+    if (@current_user.location != nil)
+      temp = @current_user.location
+      temp.location_type = "origin_loc"
+      @listing.build_origin_loc(temp.attributes)
     else
-      path = new_request_category_path(:type => @listing.listing_type, :category => @listing.category)
-      flash[:notice] = ["#{@listing.listing_type}_created_successfully", "create_new_#{@listing.listing_type}".to_sym, path]
-      Delayed::Job.enqueue(ListingCreatedJob.new(@listing.id, request.host))
+      @listing.build_origin_loc(:location_type => "origin_loc")
+    end
+
+    if @listing.new_record?
+      1.times { @listing.listing_images.build }
+      render "new"
+    else
+      session[:listing_step] = session[:listing_params] = nil
+      flash[:notice] = "Recipe Saved"
+      #if selected swap offer
       unless session[:swap_usr].nil? and session[:swap_food].nil?
         @swap_item_create = SwapItem.create!(:offerer_id => @current_user.id, :receiver_id => session[:swap_usr], :receiver_listing_id => session[:swap_food], :offerer_listing_id => @listing.id, :community_id => @current_community.id )
         PersonMailer.swap_offer(@swap_item_create, request.host).deliver
@@ -193,6 +227,25 @@ class ListingsController < ApplicationController
       end
       redirect_to @listing
     end
+
+#    @listing = @current_user.create_listing params[:listing]
+#    if @listing.new_record?
+#      1.times { @listing.listing_images.build } if @listing.listing_images.empty?
+#      render :action => :new
+#    else
+#      path = new_request_category_path(:type => @listing.listing_type, :category => @listing.category)
+#      Delayed::Job.enqueue(ListingCreatedJob.new(@listing.id, request.host))
+#    end
+
+
+      #if selected swap offer (this will come after final step)
+#        unless session[:swap_usr].nil? and session[:swap_food].nil?
+#          @swap_item_create = SwapItem.create!(:offerer_id => @current_user.id, :receiver_id => session[:swap_usr], :receiver_listing_id => session[:swap_food], :offerer_listing_id => @listing.id, :community_id => @current_community.id )
+#          PersonMailer.swap_offer(@swap_item_create, request.host).deliver
+#          session[:swap_usr] = nil
+#          session[:swap_food] = nil
+#        end
+#     redirect_to @listing
   end
   
   def edit
@@ -304,6 +357,11 @@ class ListingsController < ApplicationController
 
   
   private
+
+  def rescue_from_timeout
+    flash[:error] = "Can't upload image this time, Please try later"
+    redirect_to community_home_path
+  end  
   
   # Ensure that only users with appropriate visibility settings can view the listing
   def ensure_authorized_to_view

@@ -1,4 +1,6 @@
 class PeopleController < Devise::RegistrationsController
+
+  rescue_from Timeout::Error, :with => :rescue_from_timeout
   
   include UrlHelper, PeopleHelper
   
@@ -343,6 +345,11 @@ class PeopleController < Devise::RegistrationsController
   end
 
   private
+
+  def rescue_from_timeout
+    flash[:error] = "Can't upload image this time, Please try later"
+    redirect_to avatar_person_settings_path(:person_id => @current_user.id.to_s)  
+  end  
   
   def choose_layout
     if @current_community && @current_community.private && action_name.eql?("new")

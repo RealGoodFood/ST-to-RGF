@@ -163,11 +163,11 @@ class PersonMailer < ActionMailer::Base
   end
   
   def new_member_notification(person, community, email)
-    @community = Community.find_by_domain(community)
+    @community = Community.find_by_id(community)
     @no_settings = true
     @person = person
     @email = email
-    mail(:to => @community.admin_emails, :subject => "New member in #{@community.name} Sharetribe")
+    mail(:to => @community.admin_emails, :subject => "New member in #{@community.name} RGF")
   end
   
   # Remind users of conversations that have not been accepted or rejected

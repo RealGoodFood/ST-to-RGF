@@ -1,0 +1,5 @@
+= render :partial => "listings/form/valid_until", :locals => { :form => form }
+= render :partial => "listings/form/origin", :locals => { :form => form, :origin_loc => @listing.origin_loc, :rideshare => false }
+= render :partial => "listings/form/googlemap", :locals => { :form => form, :rideshare => false}
+= render :partial => "listings/form/visibility", :locals => { :form => form }
+

@@ -8,10 +8,8 @@
 .grid_16.prefix_4.suffix_4
 
   #new_listing_form
-    #listing_form_title
-      = t(".i_will")
-    %p
-      - unless @text_info.nil?
+    - unless @text_info.nil?
+      %p
         = @text_info.listing_form
     #listing_type_select_icons
       - unless session[:swap_food].nil? && session[:swap_usr].nil?
@@ -20,30 +18,15 @@
           This recipe automatically offered to
           = get_person(session[:swap_usr]).username
           for swap
-      //- Listing::VALID_CATEGORIES.each do |category|
-      //  %div{:class => get_type_select_icon_class(category)} 
-      //    = link_to t(".#{category}"), new_listing_path(:type => @listing.listing_type, :category => category), :remote => :true
-    
-      //- if @listing.category 
-      //#listing_required_fields_description
-      //  = t("common.fields_that_are_mandatory")
     
       #new_listing_form_main  
         = form_for @listing, :html => {:multipart => true} do |form|
           = form.error_messages
-          = render :partial => "listings/form/share_type", :locals => { :form => form }
-          = render :partial => "listings/form/title", :locals => { :form => form }
-          = render :partial => "listings/form/description", :locals => { :form => form }
-          = render :partial => "listings/form/receipe", :locals => { :form => form }
-          = render :partial => "listings/form/portions", :locals => { :form => form }
-          = render :partial => "listings/form/tag_list", :locals => { :form => form }
-          = render :partial => "listings/form/restriction_list", :locals => { :form => form }  
-          = render :partial => "listings/form/valid_until", :locals => { :form => form }
-          = render :partial => "listings/form/origin", :locals => { :form => form, :origin_loc => @listing.origin_loc, :rideshare => false }
-          = render :partial => "listings/form/googlemap", :locals => { :form => form, :rideshare => false}
-          = render :partial => "listings/form/images", :locals => { :form => form }
-          = render :partial => "listings/form/visibility", :locals => { :form => form }
-          = render :partial => "listings/form/additional_details", :locals => { :form => form }
-          = render :partial => "listings/form/send_button", :locals => { :form => form }
-
+          = render :partial => "listings/form/#{@listing.current_step}_step", :locals => { :form => form }
+          .new_listing_form_field_container
+            = form.submit "Back", :class => "send_button", :name => "back_button" unless @listing.first_step?
+            - unless @listing.first_step?
+              = form.submit "Continue", :class => "send_button less_button_margin"
+            - else
+              = form.submit "Continue", :class => "send_button"
 = render :partial => "listings/help_texts", :collection => ["help_share_type", "help_tags", "help_valid_until"], :as => :field

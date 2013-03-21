@@ -38,6 +38,7 @@ class Listing < ActiveRecord::Base
 
   
   attr_accessor :current_community_id, :diet_tag_names
+  attr_writer :current_step
 #  attr_accessible :diet_list
   
   scope :requests, :conditions => { :listing_type => 'request' }, :include => [ :listing_images ], :order => "listings.created_at DESC"
@@ -70,8 +71,9 @@ class Listing < ActiveRecord::Base
   before_save :downcase_tags, :set_community_visibilities
   after_create :check_possible_matches
   after_save :assign_diet_tags
-  validates_presence_of :author_id
-  validates_length_of :title, :in => 2..90, :allow_nil => false
+
+  validates_presence_of :author_id, :if => lambda {|l| l.current_step == "dates_location_step" }
+  validates_length_of :title, :in => 2..90, :allow_nil => false, :if => lambda {|l| l.current_step == "title_step" }
   validates_length_of :origin, :destination, :in => 2..48, :allow_nil => false, :if => :rideshare?
   validates_length_of :description, :maximum => 5000, :allow_nil => true
   validates_inclusion_of :listing_type, :in => VALID_TYPES
@@ -111,8 +113,28 @@ class Listing < ActiveRecord::Base
     }
   end
 
-  def self.admin_search(search)
-    self.joins(:location).where("title LIKE ? or description LIKE ? or address LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%" )
+  def current_step
+    @current_step || steps.first
+  end
+
+  def next_step
+    self.current_step = steps[ steps.index(current_step) + 1 ]
+  end
+
+  def previous_step
+    self.current_step = steps[ steps.index(current_step) - 1 ]
+  end
+
+  def first_step?
+    current_step == steps.first
+  end
+
+  def last_step?
+    current_step == steps.last
+  end
+
+  def steps
+    %w[title information dates_location additional_details]
   end
   
   def set_community_visibilities

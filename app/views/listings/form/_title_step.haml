@@ -1,0 +1,8 @@
+%h6
+  I can make, I have made or I will make
+= form.hidden_field :share_type, :value => "trade"
+= form.hidden_field :listing_type, :value => "offer"
+= form.hidden_field :category, :value => "item"
+.new_listing_form_field_container
+  = form.label :title, "Title of food item" + "*:", :class => "input"
+  = form.text_field(:title, :class => "title_text_field", :maxlength => "90")

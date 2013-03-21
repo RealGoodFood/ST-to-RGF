@@ -1,4 +1,6 @@
 class SettingsController < ApplicationController
+
+
   
   before_filter do |controller|
     controller.ensure_logged_in "you_must_log_in_to_view_your_settings"
@@ -22,7 +24,7 @@ class SettingsController < ApplicationController
   end
   
   def avatar
-    
+#      rescue_from Timeout::Error, :with => :rescue_from_timeout
   end
   
   def account
@@ -34,6 +36,7 @@ class SettingsController < ApplicationController
   
   private
   
+
   def add_location_to_person  
     unless @person.location
       @person.build_location(:address => @person.street_address,:type => 'person')

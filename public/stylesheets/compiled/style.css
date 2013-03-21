@@ -3990,6 +3990,7 @@ input.resend_email_confirmation_button {
     font-weight:500;      
 }
 
+.less_button_margin { margin-left:5px !important; }
 .less_margin { margin-bottom:5px; }
 .show_food { margin:0 !important; }
 .justify_text { text-align:justify; }

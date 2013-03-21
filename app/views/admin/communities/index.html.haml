@@ -1,5 +1,6 @@
 #news_items_admin_view_title.grid_12.alpha
   %h3= "Communities List"
+  //= link_to "Add Community", new_admin_community_path(:type => "communities")
 .grid_6.omega
   #create_news_item_link
     = form_tag admin_communities_path, :method => :get, :id => "communities_search", :type => "communities" do

@@ -11,6 +11,32 @@ class Admin::ProfilesController < ApplicationController
     end
   end
 
+  def new
+    @communities = Community.all
+    @person = Person.new
+    @path = admin_profiles_path
+  end
+
+  def create
+    @communities = Community.all
+    @person = Person.new(params[:person])
+    @community = Community.where(:id => params[:community]).first
+    @person.set_default_preferences
+     respond_to do |format|
+      if @person.save
+        unless @community.nil?
+          @community_membership = CommunityMembership.create!(:person_id => @person.id, :community_id => @community.id, :admin => false, :consent => @community.consent )
+          Delayed::Job.enqueue(CommunityJoinedJob.new(@person.id, @community.id, request.host))
+        end
+        format.html { redirect_to(admin_profiles_path(:type => "profiles" ), :notice => 'New Person Added.') }
+        format.xml  { render :xml => @person, :status => :created, :location => @person }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @person.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
   def edit
     @person = Person.find_by_id(params[:id])
     @path = admin_profile_path(:id => @person.id.to_s)
@@ -29,7 +55,6 @@ class Admin::ProfilesController < ApplicationController
         @person.location.delete
       end
 	  end
-
 
     respond_to do |format|
       if @person.update_attributes( params[:person] )

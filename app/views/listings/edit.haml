@@ -15,7 +15,7 @@
       = form_for @listing, :html => {:multipart => true} do |form|
         = form.error_messages
         = render :partial => "listings/form/share_type", :locals => { :form => form }
-        = render :partial => "listings/form/title", :locals => { :form => form }
+        = render :partial => "listings/form/title_step", :locals => { :form => form }
         = render :partial => "listings/form/description", :locals => { :form => form }
         = render :partial => "listings/form/receipe", :locals => { :form => form }
         = render :partial => "listings/form/portions", :locals => { :form => form }
@@ -26,7 +26,7 @@
         = render :partial => "listings/form/googlemap", :locals => { :form => form, :rideshare => false}
         = render :partial => "listings/form/images", :locals => { :form => form }
         = render :partial => "listings/form/visibility", :locals => { :form => form }
-        = render :partial => "listings/form/additional_details", :locals => { :form => form }
+        = render :partial => "listings/form/additional_details_step", :locals => { :form => form }
         = render :partial => "listings/form/send_button", :locals => { :form => form }
 
 - ["help_share_type", "help_tags", "help_valid_until"].each do |field|
