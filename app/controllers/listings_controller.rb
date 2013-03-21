@@ -1,6 +1,4 @@
 class ListingsController < ApplicationController
-
-  rescue_from Timeout::Error, :with => :rescue_from_timeout
   
   # Skip auth token check as current jQuery doesn't provide it automatically
   skip_before_filter :verify_authenticity_token, :only => [:close, :reopen, :update, :follow, :unfollow]
@@ -153,7 +151,7 @@ class ListingsController < ApplicationController
     if !params[:lid].nil? 
       session[:swap_food] = params[:lid] 
     end
-
+    session[:listing_params] ||= {}
     @listing = Listing.new(session[:listing_params])
     @listing.current_step = session[:listing_step]
     @listing.listing_type = params[:type]
@@ -173,21 +171,19 @@ class ListingsController < ApplicationController
   end
   
   def create
-	     logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>CREATE >>>>>>>>>>>>>>>>>>>>>>>#{params}>>>>>>>>>>>>>>>"
+     logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>CREATE >>>>>>>>>>>>>>>>>>>>>>>#{params}>>>>>>>>>>>>>>>"
 #    if params[:listing][:origin_loc_attributes][:address].empty? || params[:listing][:origin_loc_attributes][:address].blank?
 #      params[:listing].delete("origin_loc_attributes")
 #    end
 
-    unless params[:listing][:listing_images_attributes].nil?
-#      @listing.listing_images.image.clear
-#      @listing.listing_images.image.queued_for_write.clear
-#      logger.info "@@@@@@@@@@@@@@#{params[:listing][:listing_images_attributes]["0"][:image]}"
-      @uploaded = params[:listing][:listing_images_attributes]
-      params[:listing].delete(:listing_images_attributes)
-##      params[:listing][:listing_images_attributes]["0"][:image].tempfile = nil
-    end     
-
-      puts "@@@@@@@@@@uploaded<<<<<<<<<<<<<<<<<<<<<<<<<<#{@uploaded}"
+#    unless params[:listing][:listing_images_attributes].nil?
+##      @listing.listing_images.image.clear
+##      @listing.listing_images.image.queued_for_write.clear
+##      logger.info "@@@@@@@@@@@@@@#{params[:listing][:listing_images_attributes]["0"][:image]}"
+#      @uploaded = params[:listing][:listing_images_attributes]
+#      params[:listing].delete(:listing_images_attributes)
+###      params[:listing][:listing_images_attributes]["0"][:image].tempfile = nil
+#    end     
     session[:listing_params].deep_merge!(params[:listing]) if params[:listing]
     @listing = Listing.new(session[:listing_params])
     @listing.current_step = session[:listing_step]
@@ -195,8 +191,7 @@ class ListingsController < ApplicationController
       if params[:back_button]
         @listing.previous_step
       elsif @listing.last_step?
-        @listing << 
-        @listing.save
+        @listing.save 
       else
         @listing.next_step
       end
@@ -213,7 +208,7 @@ class ListingsController < ApplicationController
     end
 
     if @listing.new_record?
-      1.times { @listing.listing_images.build }
+#      1.times { @listing.listing_images.build }
       render "new"
     else
       session[:listing_step] = session[:listing_params] = nil
@@ -357,11 +352,6 @@ class ListingsController < ApplicationController
 
   
   private
-
-  def rescue_from_timeout
-    flash[:error] = "Can't upload image this time, Please try later"
-    redirect_to community_home_path
-  end  
   
   # Ensure that only users with appropriate visibility settings can view the listing
   def ensure_authorized_to_view

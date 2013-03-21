@@ -1,7 +1,0 @@
-[Wed Mar 20 21:05:44.864 2013] [22268] accepting connections
-[Wed Mar 20 21:38:16.778 2013] [22268] caught SIGTERM, shutting down
-[Wed Mar 20 21:38:16.778 2013] [22268] shutdown complete
-[Thu Mar 21 11:59:45.091 2013] [ 3430] accepting connections
-[Thu Mar 21 13:28:14.382 2013] [ 3430] rotating indices (seamless=1)
-[Thu Mar 21 13:28:14.405 2013] [ 3430] rotating index 'listing_delta': success
-[Thu Mar 21 13:28:14.405 2013] [ 3430] rotating finished
