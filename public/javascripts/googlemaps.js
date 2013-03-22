@@ -178,6 +178,9 @@ function manually_validate(formhint) {
   } else if (rray[0].match("community")) {
     form_id += "new_tribe_form";
     _element += "community_address";
+  } else if (rray[0].match("community")) {
+    form_id += "new_community_form";
+    _element += "community_address";
   } else if (rray[0].match("listing")) {
     form_id += "new_listing_form";
     if (rray[1].match("origin")) {

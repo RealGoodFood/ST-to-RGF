@@ -3600,7 +3600,7 @@ a.handle:hover {
     padding: 5px 10px 4px 10px; }
   #left_link_panel_admin a.selected {
     color: white; }
-
+/*#--------------------------------------------------*/
 #new_news_item_form, #new_poll_form {
   background: #d1c9b4;
   border-radius: 7px;
@@ -3671,8 +3671,90 @@ a.handle:hover {
     padding: 10px 5px 5px 9px; }
     #new_news_item_form textarea:focus, #new_poll_form textarea:focus {
       background: white; }
+/*#--------------------------------------------------*/
 
-#new_poll_form label.input {
+#new_community_form {
+  background: #d1c9b4;
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  overflow: hidden;
+  padding: 20px 25px; }
+  #new_community_form h1 {
+    margin-left: 15px;
+    float: left;
+    width: 400px; }
+  #new_community_form label.input {
+    font-weight: bold;
+    padding: 8px 3px 0 3px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    float: left;
+    width: 104px;
+    line-height: 110%; }
+  #new_community_form label.error {
+    font-size: 13px;
+    font-weight: bold;
+    clear: both;
+    float: left;
+    margin: 5px 0 0 170px;
+    padding: 14px 10px 5px 10px;
+    background: red url("/images/error_arrow.png") no-repeat top left;
+    color: white;
+    margin-left: 2px;
+    width: 378px; }
+  #new_community_form input.text_field {
+    color: #464646;
+    background: #f7f5e6;
+    width: 380px;
+    border: 0;
+    font-size: 14px;
+    height: 18px;
+    padding: 9px 9px;
+    width: 425px; }
+    #new_community_form input.text_field:focus {
+      background: white; }
+  #new_community_form input.send_button {
+    font-size: 14px;
+    font-weight: bold;
+    background: #765d3a;
+    width: 200px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    color: white;
+     }
+    #new_community_form input.send_button:active {
+      background-color: #4d3d26;
+      padding-top: 1px; }
+    #new_community_form input.send_button:hover {
+      background-color: #9f7d4e; }
+    #new_community_form input.send_button:focus {
+      background-color: #9f7d4e; }
+  #new_community_form textarea {
+    color: #464646;
+    background: #f7f5e6;
+    width: 380px;
+    border: 0;
+    width: 429px;
+    font-size: 12px;
+    height: 80px;
+    padding: 10px 5px 5px 9px; }
+    #new_community_form textarea:focus {
+      background: white; }
+
+
+/*#--------------------------------------------------*/
+
+#admin_new_community_map_canvas {
+  margin-top: 10px;
+  width: 540px;
+  height: 200px;
+  float: left; }
+
+
+/*#new_poll_form label.input {*/
   width: 140px; }
 #new_poll_form input.text_field {
   width: 485px; }

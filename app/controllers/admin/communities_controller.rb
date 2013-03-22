@@ -1,4 +1,5 @@
 class Admin::CommunitiesController < ApplicationController
+
   include CommunitiesHelper
   layout "layouts/admin"
   before_filter :super_admin
@@ -13,22 +14,36 @@ class Admin::CommunitiesController < ApplicationController
 
   def new
     @community = Community.new
-    @community.community_memberships.build
     unless @community.location
-      @community.build_location(:address => @community.address, :location_type => 'community')
-      @community.location.search_and_fill_latlng
+      if (@current_community.location != nil)
+        temp = @current_community.location
+        temp.location_type = "community"
+        @community.build_location(temp.attributes)
+      logger.info ">>>>>#{temp.attributes}>>>>>>>>>>>>>Community Location>>>>>>>>>>>>>>>>>>>>>>>>>>#{@community.location}"
+      end
     end
     @path = admin_communities_path
   end
 
   def create
+    @path = admin_communities_path
+    params[:community][:location][:address] = params[:community][:address] if params[:community][:address]
+    logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{params[:community]}"
+    location = Location.new(params[:community][:location])
+    params[:community].delete(:location)
+    params[:community].delete(:address)
     @community = Community.new(params[:community])
+    en = "en"
+    ary = Array(en);
+    @community.settings = {"locales"=> ary } #["#{params[:community_locale]}"]
+    @community.email_confirmation = true
+    @community.plan = "free"#session[:pricing_plan]
+    @community.users_can_invite_new_users = true
+    @community.use_captcha = false
      respond_to do |format|
       if @community.save
-        unless @community.location
-          @community.build_location(:address => @community.address, :location_type => 'community')
-          @community.location.search_and_fill_latlng
-        end
+        location.community = @community
+        location.save
         format.html { redirect_to(admin_communities_path, :notice => 'New Community Added.') }
         format.xml  { render :xml => @community, :status => :created, :location => @community }
       else

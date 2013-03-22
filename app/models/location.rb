@@ -12,6 +12,7 @@ class Location < ActiveRecord::Base
     if address == nil
       address = self.address
     end
+      logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.address >>>> #{address}"
 
     if address != nil && address != ""
       url = URI.escape(geocoder+address+output)

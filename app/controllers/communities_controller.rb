@@ -6,7 +6,6 @@ class CommunitiesController < ApplicationController
   
   skip_filter :single_community_only
   skip_filter :fetch_community
-  #stridepath
 #  skip_filter :fetch_community_membership, :only => [:new, :create]
 
   before_filter :only => [ :set_organization_email ] do |controller|
