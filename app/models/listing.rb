@@ -259,15 +259,10 @@ class Listing < ActiveRecord::Base
   
   def self.find_with(params, current_user=nil, current_community=nil)
 
-    logger.info "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{params}"
-
     params = params || {}  # Set params to empty hash if it's nil
     conditions = []
 
-#    if params[:listing_type] && !params[:listing_type].eql?("all") 
-#      conditions[0] = "listing_type = ?"
-#      conditions[1] = params[:listing_type]
-#    end
+    # create array for diet restrictions
     outofdiet = ""
     if current_user
     unless current_user.restrictions.empty?
@@ -283,27 +278,14 @@ class Listing < ActiveRecord::Base
     end
 
     listings = where(conditions)
-    if params[:category] && !params[:category][0].eql?("all") 
-#      conditions[0] += " AND category IN (?)"
-#      conditions << params[:category]
-      if params[:category] == ["today"]
-        listings = listings.where(['(valid_from IS NOT NULL and valid_until IS NOT NULL) and  (valid_from <= ? and valid_until >= ?)', DateTime.now, DateTime.now ])
-      elsif params[:category] == ["dietout"]
-        listings = listings.joins(:diet_listings).where(["diet_id NOT IN (?)", "#{outofdiet}" ])
+      if params[:category] && params[:category] == ["today"]
+        listings = listings.where(['(valid_from IS NOT NULL and valid_until IS NOT NULL) and  (valid_from <= ? and valid_until >= ?) and origin LIKE ?', DateTime.now, DateTime.now, "%#{current_community.location.city}%"])
+      elsif params[:category] && params[:category] == ["dietout"]
+        listings = listings.joins(:diet_listings).where(["diet_listings.diet_id NOT IN (?) and origin LIKE ?", "#{outofdiet}", "%#{current_community.location.city}%" ])
+      else
+        listings = listings.where(["origin LIKE ?", "%#{current_community.location.city}%"])
       end
-    end
 
-    #to always find recipes in the town    
-    listings << listings.joins(:location).where(["city LIKE ?", "%#{current_community.location.city}%"])
-#    listings = listings.joins(:location).where(["location.google_address LIKE ?", "%#{current_community.location}%"])
-#    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{current_community}"
-#    if params[:share_type] && !params[:share_type][0].eql?("all")
-#      listings = listings.where(['share_type IN (?)', params[:share_type]])
-#    end
-
-#    if params[:tag]
-#      listings = listings.joins(:taggings).where(['tag_id IN (?)', Tag.ids(params[:tag])]).group(:id)
-#    end 
     listings.visible_to(current_user, current_community).order("listings.id DESC")
   end
 
