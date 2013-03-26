@@ -56,7 +56,7 @@ module Kassi
     # add locales from subdirectories
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     
-    config.action_controller.allow_forgery_protection = false
+#    config.action_controller.allow_forgery_protection = false
 
     # Configure generators values. Many other options are available, be sure to check the documentation.
     # config.generators do |g|

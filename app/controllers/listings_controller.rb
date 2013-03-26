@@ -74,7 +74,7 @@ class ListingsController < ApplicationController
     @title = params[:listing_type]
     @tag = params[:tag]
     @to_render ||= {:partial => "listings/listed_listings"}
-    @listings = Listing.open.order("created_at DESC").find_with(params, @current_user, @current_community).paginate(:per_page => 15, :page => params[:page])
+    @listings = Listing.open.order("created_at DESC").find_with(params, @current_user, @current_community).paginate(:per_page => 3, :page => params[:page])
     @request_path = request.fullpath
     if request.xhr? && params[:page] && params[:page].to_i > 1
       render :partial => "listings/additional_listings"
@@ -113,7 +113,7 @@ class ListingsController < ApplicationController
   # A (stub) method for serving Listing data (with locations) as JSON through AJAX-requests.
   def serve_listing_data
     @listings = Listing.open.joins(:origin_loc).group("listings.id").
-                order("listings.created_at DESC").find_with(params, @current_user, @current_community).select("listings.id, listing_type, category, latitude, longitude")
+                order("listings.created_at DESC").find_with(params, @current_user, @current_community).select("listings.id, listing_type, category")
     render :json => { :data => @listings }
   end
   
@@ -121,7 +121,7 @@ class ListingsController < ApplicationController
     if params[:id]
       @listing = Listing.find(params[:id])
       if @listing.visible_to?(@current_user, @current_community)
-        render :partial => "homepage/recent_listing", :locals => { :listing => @listing }
+        render :partial => "recipe_details", :locals => { :listing => @listing }
       else
         render :partial => "bubble_listing_not_visible"
       end
@@ -143,27 +143,30 @@ class ListingsController < ApplicationController
   end
   
   def new
-     logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>NEW >>>>>>>>>>>>>>>>>>>>>>>#{params}>>>>>>>>>>>>>>>"
     @text_info = FormDetail.first
-    if !params[:pid].nil? 
+    if !params[:pid].nil?
       session[:swap_usr] = params[:pid]
     end
-    if !params[:lid].nil? 
-      session[:swap_food] = params[:lid] 
+    if !params[:lid].nil?
+      session[:swap_food] = params[:lid]
     end
-    session[:listing_params] ||= {}
-    @listing = Listing.new(session[:listing_params])
-    @listing.current_step = session[:listing_step]
+    @listing = Listing.new
     @listing.listing_type = params[:type]
     @listing.category = params[:category]
-    if (@current_user.location != nil)
-      temp = @current_user.location
-      temp.location_type = "origin_loc"
-      @listing.build_origin_loc(temp.attributes)
-    else
+    #@latitude = 13
+    if @listing.category == "rideshare"
       @listing.build_origin_loc(:location_type => "origin_loc")
+      @listing.build_destination_loc(:location_type => "destination_loc")
+    else
+      if (@current_user.location != nil)
+       temp = @current_user.location
+        temp.location_type = "origin_loc"
+        @listing.build_origin_loc(temp.attributes)
+      else
+        @listing.build_origin_loc(:location_type => "origin_loc")
+      end
     end
-    1.times { @listing.listing_images.build }
+
     respond_to do |format|
       format.html
       format.js {render :layout => false}
@@ -171,67 +174,21 @@ class ListingsController < ApplicationController
   end
   
   def create
-     logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>CREATE >>>>>>>>>>>>>>>>>>>>>>>#{params}>>>>>>>>>>>>>>>"
 #    if params[:listing][:origin_loc_attributes][:address].empty? || params[:listing][:origin_loc_attributes][:address].blank?
 #      params[:listing].delete("origin_loc_attributes")
 #    end
-
-#    unless params[:listing][:listing_images_attributes].nil?
-##      @listing.listing_images.image.clear
-##      @listing.listing_images.image.queued_for_write.clear
-##      logger.info "@@@@@@@@@@@@@@#{params[:listing][:listing_images_attributes]["0"][:image]}"
-#      @uploaded = params[:listing][:listing_images_attributes]
-#      params[:listing].delete(:listing_images_attributes)
-###      params[:listing][:listing_images_attributes]["0"][:image].tempfile = nil
-#    end     
-    session[:listing_params].deep_merge!(params[:listing]) if params[:listing]
-    @listing = Listing.new(session[:listing_params])
-    @listing.current_step = session[:listing_step]
-    if @listing.valid?
-      if params[:back_button]
-        @listing.previous_step
-      elsif @listing.last_step?
-        @listing.save 
-      else
-        @listing.next_step
-      end
-      session[:listing_step] = @listing.current_step
-    end
-    @listing.listing_type = params[:type]
-    @listing.category = params[:category]
-    if (@current_user.location != nil)
-      temp = @current_user.location
-      temp.location_type = "origin_loc"
-      @listing.build_origin_loc(temp.attributes)
-    else
-      @listing.build_origin_loc(:location_type => "origin_loc")
-    end
-
-    if @listing.new_record?
-#      1.times { @listing.listing_images.build }
-      render "new"
-    else
-      session[:listing_step] = session[:listing_params] = nil
-      flash[:notice] = "Recipe Saved"
-      #if selected swap offer
+    @listing = @current_user.create_listing params[:listing]
+    unless @listing.nil?
       unless session[:swap_usr].nil? and session[:swap_food].nil?
         @swap_item_create = SwapItem.create!(:offerer_id => @current_user.id, :receiver_id => session[:swap_usr], :receiver_listing_id => session[:swap_food], :offerer_listing_id => @listing.id, :community_id => @current_community.id )
         PersonMailer.swap_offer(@swap_item_create, request.host).deliver
         session[:swap_usr] = nil
         session[:swap_food] = nil
       end
-      redirect_to @listing
+      redirect_to information_listing_step_path(@listing.id)
+    else
+      render :action => :new
     end
-
-#    @listing = @current_user.create_listing params[:listing]
-#    if @listing.new_record?
-#      1.times { @listing.listing_images.build } if @listing.listing_images.empty?
-#      render :action => :new
-#    else
-#      path = new_request_category_path(:type => @listing.listing_type, :category => @listing.category)
-#      Delayed::Job.enqueue(ListingCreatedJob.new(@listing.id, request.host))
-#    end
-
   end
   
   def edit

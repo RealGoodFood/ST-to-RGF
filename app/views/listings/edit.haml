@@ -14,18 +14,9 @@
     #new_listing_form_main  
       = form_for @listing, :html => {:multipart => true} do |form|
         = form.error_messages
-        = render :partial => "listings/form/share_type", :locals => { :form => form }
         = render :partial => "listings/form/title_step", :locals => { :form => form }
-        = render :partial => "listings/form/description", :locals => { :form => form }
-        = render :partial => "listings/form/receipe", :locals => { :form => form }
-        = render :partial => "listings/form/portions", :locals => { :form => form }
-        = render :partial => "listings/form/tag_list", :locals => { :form => form }
-        = render :partial => "listings/form/restriction_list", :locals => { :form => form }  
-        = render :partial => "listings/form/valid_until", :locals => { :form => form }
-        = render :partial => "listings/form/origin", :locals => { :form => form, :origin_loc => @listing.origin_loc, :rideshare => false }
-        = render :partial => "listings/form/googlemap", :locals => { :form => form, :rideshare => false}
-        = render :partial => "listings/form/images", :locals => { :form => form }
-        = render :partial => "listings/form/visibility", :locals => { :form => form }
+        = render :partial => "listings/form/information_step", :locals => { :form => form }
+        = render :partial => "listings/form/dates_location_step", :locals => { :form => form }
         = render :partial => "listings/form/additional_details_step", :locals => { :form => form }
         = render :partial => "listings/form/send_button", :locals => { :form => form }
 

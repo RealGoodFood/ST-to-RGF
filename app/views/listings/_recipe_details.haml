@@ -1,0 +1,9 @@
+.recent_listing
+  .recent_listing_text
+    Recipe Name:
+    %h5= link_to listing.title, listing
+    %p
+      Made by:
+      %br
+      = link_to listing.author.given_name_or_username, listing.author
+

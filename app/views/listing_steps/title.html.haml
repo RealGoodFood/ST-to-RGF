@@ -1,4 +1,4 @@
-= render :partial => "listings/form/javascripts", :locals => { :listing_id => "false" }
+= render :partial => "listings/form/javascripts", :locals => { :listing_id => @listing.id }
 
 .grid_16.prefix_4.suffix_4
   #new_listing_form_tabs
@@ -20,16 +20,10 @@
           for swap
     
       #new_listing_form_main  
-        = form_for @listing, :html => {:multipart => true} do |form|
+        = form_for @listing, :url => listing_step_path(@listing), :method => :put, :html => {:multipart => true} do |form|
           = form.error_messages
-          #title
-            = render :partial => "listings/form/title_step", :locals => { :form => form }
-          //#information
-          //= render :partial => "listings/form/information_step", :locals => { :form => form }
-          //#date_location
-          //= render :partial => "listings/form/dates_location_step", :locals => { :form => form }
-          //#additional
-          //= render :partial => "listings/form/additional_details_step", :locals => { :form => form }
+          = form.hidden_field :current_step, :value => "title"
+          = render :partial => "listings/form/title_step", :locals => { :form => form }
           .new_listing_form_field_container
             = form.submit "Continue", :class => "send_button"
-= render :partial => "listings/help_texts", :collection => ["help_share_type", "help_tags", "help_valid_until"], :as => :field
+

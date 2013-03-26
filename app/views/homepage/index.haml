@@ -39,7 +39,7 @@
     - else
       = render :partial => "blank_slate", :locals => { :slate_type => "offer" }
       //  - if @offers
-  = pageless(@offers.total_pages, '#recent_listings', root_path, t('.loading_more_content'), true) 
+  = pageless(@offers.total_pages, '#recent_listings', community_home_path, t('.loading_more_content'), true) 
   
 .grid_6
 

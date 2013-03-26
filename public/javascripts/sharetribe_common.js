@@ -81,6 +81,10 @@ function translate_validation_messages(locale) {
 
 $(document).ready(function() {
 
+  $("#information").hide();
+  $("#date_location").hide();
+  $("#additional").hide();
+
   $('#community_address').blur(function() {
      value = $('#community_address').val(); 
      city1 = /Ann Arbor/gi

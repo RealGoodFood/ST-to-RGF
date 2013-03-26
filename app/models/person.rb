@@ -372,9 +372,9 @@ class Person < ActiveRecord::Base
     end
   end
   
-#  def create_listing(params)
-#    listings.create params
-#  end
+  def create_listing(params)
+    listings.create params
+  end
   
   def read(conversation)
     conversation.participations.where(["person_id LIKE ?", self.id]).first.update_attribute(:is_read, true)

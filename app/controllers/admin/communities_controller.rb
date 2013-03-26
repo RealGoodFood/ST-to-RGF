@@ -16,19 +16,20 @@ class Admin::CommunitiesController < ApplicationController
     @community = Community.new
     unless @community.location
       if (@current_community.location != nil)
-        temp = @current_community.location
-        temp.location_type = "community"
-        @community.build_location(temp.attributes)
-      logger.info ">>>>>#{temp.attributes}>>>>>>>>>>>>>Community Location>>>>>>>>>>>>>>>>>>>>>>>>>>#{@community.location}"
+        @community.build_location(:address => @current_community.address, :location_type => 'community')
+        @community.location.search_and_fill_latlng
       end
     end
     @path = admin_communities_path
+      respond_to do |format|
+        format.html
+        format.js {render :layout => false}
+      end
   end
 
   def create
     @path = admin_communities_path
     params[:community][:location][:address] = params[:community][:address] if params[:community][:address]
-    logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{params[:community]}"
     location = Location.new(params[:community][:location])
     params[:community].delete(:location)
     params[:community].delete(:address)

@@ -75,6 +75,7 @@ Kassi::Application.routes.draw do
       resources :listings
       resources :feedbacks, :controller => :testimonials
       resources :badges
+  
     end
 
     match '/' => 'dashboard#api'    
@@ -120,6 +121,7 @@ Kassi::Application.routes.draw do
             put :reopen
           end  
         end  
+
 
         resources :messages, :controller => :conversations do 
           collection do
@@ -236,10 +238,22 @@ Kassi::Application.routes.draw do
     resource :sms do
       get :message_arrived
     end
+
+
     resources :news_items
     resources :statistics
     resources :swap_items 
-  
+
+
+    resources :listing_steps do
+        member do            
+          get :title
+          get :information
+          get :date_and_location
+          get :additional_details
+        end
+      end
+
   end
   
   # Some non-RESTful mappings

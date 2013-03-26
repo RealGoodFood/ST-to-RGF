@@ -72,15 +72,14 @@ class Listing < ActiveRecord::Base
   after_create :check_possible_matches
   after_save :assign_diet_tags
 
-  validates_presence_of :author_id, :if => lambda {|l| l.current_step == "dates_location_step" }
-  validates_length_of :title, :in => 2..90, :allow_nil => false, :if => lambda {|l| l.current_step == "title_step" }
-  validates_length_of :origin, :destination, :in => 2..48, :allow_nil => false, :if => :rideshare?
+  validates_presence_of :author_id#, :on => :create
+  validates_length_of :title, :in => 2..90, :allow_nil => false#, :on => :create
   validates_length_of :description, :maximum => 5000, :allow_nil => true
-  validates_inclusion_of :listing_type, :in => VALID_TYPES
-  validates_inclusion_of :category, :in => VALID_CATEGORIES
+  validates_inclusion_of :listing_type, :in => VALID_TYPES, :on => :create
+  validates_inclusion_of :category, :in => VALID_CATEGORIES, :on => :create
   validates_inclusion_of :valid_until, :allow_nil => :true, :in => DateTime.now..DateTime.now + 1.year 
-  validate :given_share_type_is_one_of_valid_share_types
-  validate :valid_until_is_not_nil
+#  validate :given_share_type_is_one_of_valid_share_types
+#  validate :valid_until_is_not_nil
   
   # Index for sphinx search
   define_index do
@@ -113,29 +112,6 @@ class Listing < ActiveRecord::Base
     }
   end
 
-  def current_step
-    @current_step || steps.first
-  end
-
-  def next_step
-    self.current_step = steps[ steps.index(current_step) + 1 ]
-  end
-
-  def previous_step
-    self.current_step = steps[ steps.index(current_step) - 1 ]
-  end
-
-  def first_step?
-    current_step == steps.first
-  end
-
-  def last_step?
-    current_step == steps.last
-  end
-
-  def steps
-    %w[title information dates_location additional_details]
-  end
   
   def set_community_visibilities
     if current_community_id
@@ -283,6 +259,8 @@ class Listing < ActiveRecord::Base
   
   def self.find_with(params, current_user=nil, current_community=nil)
 
+    logger.info "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{params}"
+
     params = params || {}  # Set params to empty hash if it's nil
     conditions = []
 
@@ -316,7 +294,7 @@ class Listing < ActiveRecord::Base
     end
 
     #to always find recipes in the town    
-    listings = listings.joins(:location).where(["google_address LIKE ?", "%#{current_community.location.city}%"])
+    listings << listings.joins(:location).where(["google_address LIKE ?", "%#{current_community.location.city}%"])
 #    listings = listings.joins(:location).where(["location.google_address LIKE ?", "%#{current_community.location}%"])
 #    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{current_community}"
 #    if params[:share_type] && !params[:share_type][0].eql?("all")

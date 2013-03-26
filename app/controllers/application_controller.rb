@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   before_filter :show_maintenance_page
   before_filter :change_community, :domain_redirect, :force_ssl, :fetch_logged_in_user, :dashboard_only, :single_community_only, :fetch_community, 
     :not_public_in_private_community, :fetch_community_membership,  :cannot_access_without_joining, :set_locale, 
-    :generate_event_id, :set_default_url_for_mailer, :separate_city_from_address
+    :generate_event_id, :set_default_url_for_mailer, :separate_city_from_address, :remove_locations
   before_filter :check_email_confirmation, :except => [ :confirmation_pending, :check_email_availability_and_validity]
 
 
@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   rescue_from RestClient::Unauthorized, :with => :session_unauthorized
 
   helper_method :root, :logged_in?, :current_user?, :get_person, :get_listing, :get_community , :not_already_requested, 
-                :shared_with_other_user, :in_between_swap, :get_provider
+                :shared_with_other_user, :in_between_swap, :get_provider, :swap_in_process, :get_swap_offer_id
 
   def set_locale    
     locale = (logged_in? && @current_community && @current_community.locales.include?(@current_user.locale)) ? @current_user.locale : params[:locale]
@@ -116,6 +116,24 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def swap_in_process(list_id, user)
+    @swapitem = SwapItem.where("(receiver_listing_id = ? or offerer_listing_id = ?) and (offerer_id = ? or receiver_id = ?)", list_id, list_id, user, user).first
+    if @swapitem.nil?
+      return false
+    else
+      return true
+    end
+  end
+
+  def get_swap_offer_id(user, list_id)
+    @swapitem = SwapItem.where("offerer_listing_id = ? and receiver_id = ?", list_id, user).first
+    if @swapitem.nil?
+      return false
+    else
+      return @swapitem.id
+    end
+  end
+
   def fetch_logged_in_user
     if person_signed_in?
       @current_user = current_person
@@ -183,6 +201,15 @@ class ApplicationController < ActionController::Base
 #        logger.info "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
         # No community found with this domain, so redirecting to dashboard.
 #        redirect_to root_url#(:subdomain => "www")
+      end
+    end
+  end
+
+  def remove_locations
+    @locations = Location.where( :community_id => nil, :listing_id => nil, :person_id => nil )
+    if @locations
+      @locations.each do |location|
+        location.destroy
       end
     end
   end

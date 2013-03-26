@@ -4072,6 +4072,15 @@ input.resend_email_confirmation_button {
     font-weight:500;      
 }
 
+a.send_button {
+    font-size: 14px;
+      font-weight: bold;
+      background: #765d3a;
+      border: 0;
+      color: white;
+      padding: 10px 20px;
+      float:right;
+   }
 .less_button_margin { margin-left:5px !important; }
 .less_margin { margin-bottom:5px; }
 .show_food { margin:0 !important; }
