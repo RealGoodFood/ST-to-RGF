@@ -294,7 +294,7 @@ class Listing < ActiveRecord::Base
     end
 
     #to always find recipes in the town    
-    listings << listings.joins(:location).where(["google_address LIKE ?", "%#{current_community.location.city}%"])
+    listings << listings.joins(:location).where(["city LIKE ?", "%#{current_community.location.city}%"])
 #    listings = listings.joins(:location).where(["location.google_address LIKE ?", "%#{current_community.location}%"])
 #    puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{current_community}"
 #    if params[:share_type] && !params[:share_type][0].eql?("all")

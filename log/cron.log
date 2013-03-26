@@ -1,0 +1,332 @@
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.2ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.2ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.2ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.4ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TIME ZONE
+  [1m[36mPK and serial sequence (4.5ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (2.0ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+
+  [1m[36mSQL (4.8ms)[0m  [1m SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (3.3ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"notifications"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+
+  [1m[36mPK and serial sequence (6.5ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"communities_listings"'::regclass
+[0m
+  [1m[35mPK and custom sequence (4.0ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"communities_listings"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+
+  [1m[36mSQL (2.2ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'listings'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (1.5ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"listings"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+
+  [1m[36mPK and serial sequence (6.3ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"communities_listings"'::regclass
+[0m
+  [1m[35mPK and custom sequence (3.9ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"communities_listings"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+
+  [1m[36mPK and serial sequence (6.5ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"listing_followers"'::regclass
+[0m
+  [1m[35mPK and custom sequence (4.0ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"listing_followers"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+
+Creating scope :open. Overwriting existing method Listing.open.
+Creating scope :public. Overwriting existing method Listing.public.
+Creating scope :private. Overwriting existing method Listing.private.
+Generating Configuration to /home/chaitanya/workArea/ST-to-RGF/config/production.sphinx.conf
+  [1m[36mSQL (1.9ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'communities'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (2.6ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+
+  [1m[36mSQL (0.5ms)[0m  [1mbegin[0m
+  [1m[35mSQL (0.4ms)[0m  savepoint ts
+  [1m[36mSQL (1.3ms)[0m  [1mCREATE LANGUAGE 'plpgsql';[0m
+PG::Error: ERROR:  language "plpgsql" already exists
+: CREATE LANGUAGE 'plpgsql';
+  [1m[35mSQL (0.5ms)[0m  rollback to savepoint ts
+  [1m[36mSQL (0.4ms)[0m  [1mrelease savepoint ts[0m
+  [1m[35mSQL (0.5ms)[0m  commit
+  [1m[36mSQL (0.4ms)[0m  [1mbegin[0m
+  [1m[35mSQL (0.4ms)[0m  savepoint ts
+  [1m[36mSQL (3.9ms)[0m  [1m CREATE OR REPLACE FUNCTION crc32(word text)
+ RETURNS bigint AS $$
+ DECLARE tmp bigint;
+ DECLARE i int;
+ DECLARE j int;
+ DECLARE byte_length int;
+ DECLARE word_array bytea;
+ BEGIN
+ IF COALESCE(word, '') = '' THEN
+ return 0;
+ END IF;
+
+ i = 0;
+ tmp = 4294967295;
+ byte_length = bit_length(word) / 8;
+ word_array = decode(replace(word, E'\\', E'\\\\'), 'escape');
+ LOOP
+ tmp = (tmp # get_byte(word_array, i))::bigint;
+ i = i + 1;
+ j = 0;
+ LOOP
+ tmp = ((tmp >> 1) # (3988292384 * (tmp & 1)))::bigint;
+ j = j + 1;
+ IF j >= 8 THEN
+ EXIT;
+ END IF;
+ END LOOP;
+ IF i >= byte_length THEN
+ EXIT;
+ END IF;
+ END LOOP;
+ return (tmp # 4294967295);
+ END
+ $$ IMMUTABLE LANGUAGE plpgsql;
+[0m
+  [1m[35mSQL (0.5ms)[0m  release savepoint ts
+  [1m[36mSQL (30.8ms)[0m  [1mcommit[0m
+  [1m[35mSQL (2.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"locations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+
+  [1m[36mSQL (2.2ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'listings'
+ AND schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (0.5ms)[0m  begin
+  [1m[36mSQL (0.4ms)[0m  [1msavepoint ts[0m
+  [1m[35mSQL (0.9ms)[0m  CREATE LANGUAGE 'plpgsql';
+PG::Error: ERROR:  language "plpgsql" already exists
+: CREATE LANGUAGE 'plpgsql';
+  [1m[36mSQL (0.4ms)[0m  [1mrollback to savepoint ts[0m
+  [1m[35mSQL (0.4ms)[0m  release savepoint ts
+  [1m[36mSQL (0.4ms)[0m  [1mcommit[0m
+  [1m[35mSQL (0.4ms)[0m  begin
+  [1m[36mSQL (0.4ms)[0m  [1msavepoint ts[0m
+  [1m[35mSQL (1.5ms)[0m   CREATE OR REPLACE FUNCTION crc32(word text)
+ RETURNS bigint AS $$
+ DECLARE tmp bigint;
+ DECLARE i int;
+ DECLARE j int;
+ DECLARE byte_length int;
+ DECLARE word_array bytea;
+ BEGIN
+ IF COALESCE(word, '') = '' THEN
+ return 0;
+ END IF;
+
+ i = 0;
+ tmp = 4294967295;
+ byte_length = bit_length(word) / 8;
+ word_array = decode(replace(word, E'\\', E'\\\\'), 'escape');
+ LOOP
+ tmp = (tmp # get_byte(word_array, i))::bigint;
+ i = i + 1;
+ j = 0;
+ LOOP
+ tmp = ((tmp >> 1) # (3988292384 * (tmp & 1)))::bigint;
+ j = j + 1;
+ IF j >= 8 THEN
+ EXIT;
+ END IF;
+ END LOOP;
+ IF i >= byte_length THEN
+ EXIT;
+ END IF;
+ END LOOP;
+ return (tmp # 4294967295);
+ END
+ $$ IMMUTABLE LANGUAGE plpgsql;
+
+  [1m[36mSQL (0.4ms)[0m  [1mrelease savepoint ts[0m
+  [1m[35mSQL (8.3ms)[0m  commit
+  [1m[36mSQL (2.1ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"tags"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (1.9ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"comments"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+
+  [1m[36mSQL (1.9ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"taggings"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (1.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities_listings"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+
+  [1m[36mSQL (1.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"communities_listings"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Sphinx 0.9.9-release (r2117)
+Copyright (c) 2001-2009, Andrew Aksyonoff
+
+using config file '/home/chaitanya/workArea/ST-to-RGF/config/production.sphinx.conf'...
+indexing index 'community_core'...
+collected 2 docs, 0.0 MB
+sorted 0.0 Mhits, 100.0% done
+total 2 docs, 135 bytes
+total 0.131 sec, 1024 bytes/sec, 15.17 docs/sec
+distributed index 'community' can not be directly indexed; skipping.
+indexing index 'listing_core'...
+collected 9 docs, 0.0 MB
+collected 15 attr values
+sorted 0.0 Mvalues, 100.0% done
+sorted 0.0 Mhits, 100.0% done
+total 9 docs, 884 bytes
+total 0.151 sec, 5831 bytes/sec, 59.37 docs/sec
+indexing index 'listing_delta'...
+collected 0 docs, 0.0 MB
+collected 0 attr values
+sorted 0.0 Mvalues, -nan% done
+total 0 docs, 0 bytes
+total 0.125 sec, 0 bytes/sec, 0.00 docs/sec
+distributed index 'listing' can not be directly indexed; skipping.
+total 5 reads, 0.000 sec, 5.0 kb/call avg, 0.0 msec/call avg
+total 20 writes, 0.000 sec, 4.5 kb/call avg, 0.0 msec/call avg

@@ -215,7 +215,7 @@ class ApplicationController < ActionController::Base
   end
 
   def separate_city_from_address
-    @locations = Location.where("community_id IS NOT NULL and google_address IS NOT NULL and city IS NULL")
+    @locations = Location.where("google_address IS NOT NULL and city IS NULL")
     unless @locations.nil?
       @locations.each do |location|
         location.google_address.split(",").reverse.each_with_index do |n, i|
@@ -225,6 +225,8 @@ class ApplicationController < ActionController::Base
         end
       end
     end
+
+    
   end
   
   # Before filter to make sure non logged in users cannot access private communities
