@@ -3,7 +3,6 @@ class SearchController < ApplicationController
   skip_filter :dashboard_only
   
   def show
-    logger.info ">>>>>>>>>>>>>>>>>>>>>>>>>#{params}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>@ search controller index"
     @query = params[:q]
     if @query
       #query = (params[:q].length > 0) ? "*#{params[:q]}*" : ""
