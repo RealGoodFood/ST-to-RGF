@@ -6,10 +6,10 @@ You have swap offer from
 
 //= t("emails.swap_offer.offer", :offerer_recipe => @offerer_recipe.title, :receiver_recipe =>  @receiver_recipe.title)
 
-He is offering recipe 
+He is offering food 
 %a{:href => "#{@url}listings/#{@offerer_recipe.id}-#{@offerer_recipe.title}?cid=#{@community_id}"}
   = @offerer_recipe.title
-for exchange of your recipe 
+for exchange of your food 
 %a{:href => "#{@url}listings/#{@receiver_recipe.id}-#{@receiver_recipe.title}?cid=#{@community_id}"}
   = @receiver_recipe.title
 %br

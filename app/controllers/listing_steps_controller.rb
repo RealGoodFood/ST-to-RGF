@@ -43,7 +43,7 @@ class ListingStepsController < ApplicationController
         elsif params[:listing][:current_step] == "date_and_location"
           redirect_to  additional_details_listing_step_path(@listing.id)
         else
-          flash[:notice] = "Recipe Saved"
+          flash[:notice] = "Food Saved"
           redirect_to listing_path(@listing)
         end 
       else

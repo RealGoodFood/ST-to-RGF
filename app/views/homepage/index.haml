@@ -14,13 +14,13 @@
       = t(".welcome_note")
       = @current_community.name
     %p
-      = t(".welcome_text")
+    //= t(".welcome_text")
     //%p
     //= render :file => community_file("teaser_welcome_text", true), :locals => {:community_name => @current_community.name_with_separator(I18n.locale)}
   #teaser_right
     #teaser_button_container
       #offer_something_button
-        = link_to "Add New Recipe", new_request_path(:type => "offer")
+        = link_to "Add New Food", new_request_path(:type => "offer")
       //#teaser_button_description
       //= t(".offer_something_description")
       

@@ -81,9 +81,9 @@ class ApplicationController < ActionController::Base
     unless @current_user.nil?
       @authentication = Authentication.where(:user_id => @current_user.id).first
       unless @authentication.nil?
-            return @authentication.provider
+        return @authentication.provider
       else
-            return nil
+        return nil
       end    
     end
   end
@@ -215,15 +215,16 @@ class ApplicationController < ActionController::Base
   end
 
   def separate_city_from_address
-#    @locations = Location.where("google_address IS NOT NULL")
-#    unless @locations.nil?
-#      @locations.each do |location|
-#        location.google_address.split(",").reverse.each_with_index do |n, i|
-#            if i == 2
-#              location.update_attribute(:city, n)
-#            end
-#        end
-#      end
+    @locations = Location.where("community_id IS NOT NULL and google_address IS NOT NULL and city IS NULL")
+    unless @locations.nil?
+      @locations.each do |location|
+        location.google_address.split(",").reverse.each_with_index do |n, i|
+            if i == 2
+              location.update_attribute(:city, n)
+            end
+        end
+      end  
+     end
   end
   
   # Before filter to make sure non logged in users cannot access private communities

@@ -15,10 +15,10 @@
         .conversation_center
           %h7
             //To do need to add to translation after finalization
-            Have Swap offer for recipe
+            Have Swap offer for food
             = link_to get_listing(swap_offer.offerer_listing_id).title, listing_path(swap_offer.offerer_listing_id)
             %br/
-            for exchange your recipe
+            for exchange your food
             = link_to get_listing(swap_offer.receiver_listing_id).title, listing_path(swap_offer.receiver_listing_id)
         .conversation_right
           - if swap_offer.acceptance.nil?
@@ -60,10 +60,10 @@
         .conversation_center
           %h7
             //To do need to add to translation after finalization
-            Sent Swap offer for recipe
+            Sent Swap offer for food
             = link_to get_listing(swap_offer.receiver_listing_id).title, listing_path(swap_offer.receiver_listing_id)
             %br/
-            for exchange your recipe
+            for exchange your food
             = link_to get_listing(swap_offer.offerer_listing_id).title, listing_path(swap_offer.offerer_listing_id)
         .conversation_right
           - if swap_offer.acceptance == true

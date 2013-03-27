@@ -88,12 +88,11 @@ class Listing < ActiveRecord::Base
     indexes description
     indexes taggings.tag.name, :as => :tags
     indexes comments.content, :as => :comments
-    indexes location.google_address, :as => :address
+#    indexes location.google_address, :as => :address
     # attributes
     has created_at, updated_at
-    has "listing_type = 'offer'", :as => :is_offer, :type => :boolean
-    has "listing_type = 'request'", :as => :is_request, :type => :boolean
-    has "visibility = 'everybody'", :as => :visible_to_everybody, :type => :boolean
+#    has "listing_type = 'offer'", :as => :is_offer, :type => :boolean
+#    has "visibility = 'everybody'", :as => :visible_to_everybody, :type => :boolean
     has "open = '1' AND (valid_until IS NULL OR valid_until > now())", :as => :open, :type => :boolean
     has communities(:id), :as => :community_ids
     

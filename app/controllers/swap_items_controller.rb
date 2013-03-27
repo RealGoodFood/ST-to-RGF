@@ -1,6 +1,5 @@
 class SwapItemsController < ApplicationController
 
-
   layout :choose_layout
 
   skip_filter :dashboard_only
