@@ -64,8 +64,10 @@ gem 'rake', '0.8.7' # downgraded because issues with 0.9
 gem 'daemons'
 gem 'geocoder'
 #gem 'cloudfiles', '1.4.15'
-gem "cloudfiles", :git => "git://github.com/rackspace/ruby-cloudfiles.git"
-gem 'paperclip-cloudfiles', '2.3.8.3', :require => 'paperclip'
+#gem "cloudfiles", :git => "git://github.com/rackspace/ruby-cloudfiles.git"
+#gem 'paperclip-cloudfiles', '2.3.8.3', :require => 'paperclip'
+gem "aws-s3", :require => "aws/s3"
+gem "aws-sdk"
 gem 'geocoder'  
 gem "whenever", :require => false
 

@@ -1,10 +1,3 @@
-GIT
-  remote: git://github.com/rackspace/ruby-cloudfiles.git
-  revision: eaaad2cbb000148aa4c153e043e68621f4a1cff9
-  specs:
-    cloudfiles (1.5.0.1)
-      json
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -43,6 +36,10 @@ GEM
       builder
       json
     arel (2.0.10)
+    aws-s3 (0.6.3)
+      builder
+      mime-types
+      xml-simple
     aws-sdk (1.8.3.1)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
@@ -179,9 +176,6 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.0)
       mime-types
-    paperclip-cloudfiles (2.3.8.3)
-      activerecord
-      activesupport
     passenger (3.0.19)
       daemon_controller (>= 1.0.0)
       fastthread (>= 1.0.1)
@@ -294,6 +288,7 @@ GEM
       activesupport (>= 2.3.4)
       chronic (>= 0.6.3)
     will_paginate (3.0.4)
+    xml-simple (1.1.2)
     xpath (1.0.0)
       nokogiri (~> 1.3)
 
@@ -303,10 +298,10 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   airbrake
+  aws-s3
   aws-sdk
   capistrano
   capybara
-  cloudfiles!
   cucumber
   cucumber-rails
   daemons
@@ -329,7 +324,6 @@ DEPENDENCIES
   omniauth-linkedin
   omniauth-twitter
   paperclip
-  paperclip-cloudfiles (= 2.3.8.3)
   passenger
   pg
   pickle
