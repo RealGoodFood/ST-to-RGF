@@ -273,8 +273,24 @@ li {
   overflow: hidden; }
 
 #logo {
-  margin-top: 13px;
-  float: left; }
+  margin-top: 6px;
+  float: left;
+  font-size:26px;
+   }
+
+#logo a{
+    color: #D45207;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#logo a:hover{
+    color: #712C04;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
 
 #select_language_form {
   margin-top: 21px;

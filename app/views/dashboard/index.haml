@@ -8,22 +8,21 @@
     .grid_7.alpha
       #home_main_title
         %h1
-          = t(".create_your_own")
+          Welcome to 
           %br/
-          %span.indentation
-            = t(".sharing_website")
+          Real Good Food
       #home_main_screenshot
         //= image_tag("/images/dashboard/sharetribe_homepage_screenshot.png", :alt => "This is what a Sharetribe community looks like")
     .grid_5.omega
       %p.intro
-        = t(".main_description")
+        Discover and enjoy great food made by excellent home cooks from your community.
       .get_started
         = link_to t(".get_started"), new_tribe_path, :class => "get_started"
       %p.browse
-        = "..." + t("common.or")
-        = link_to(t(".browse_communities_around_you"), tribes_path, :class => "green_part_link")
+        //= "..." + t("common.or")
+        //= link_to(t(".browse_communities_around_you"), tribes_path, :class => "green_part_link")
       %p.tour
-        = t(".want_to_know_more", :read_our_faq_link => link_to(t(".read_our_faq"), faq_path, :class => "green_part_link"), :contact_us_link => link_to(t(".contact_us"), "mailto:info@sharetribe.com", :class => "green_part_link")).html_safe
+        = t(".want_to_know_more", :read_our_faq_link => link_to(t(".read_our_faq"), faq_path, :class => "green_part_link"), :contact_us_link => link_to(t(".contact_us"), "mailto:Devin@realgoodfood.org", :class => "green_part_link")).html_safe
 //= render :partial => "lower_middle"
 = render :partial => "community_list"
 = render :partial => "footer"
