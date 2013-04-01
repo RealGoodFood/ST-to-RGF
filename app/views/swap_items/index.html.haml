@@ -54,7 +54,7 @@
         .person_image
           = small_avatar_thumb(get_person(swap_offer.receiver_id))
         .conversation_left
-          = link_to "#{get_person(swap_offer.offerer_id).username}", person_path(swap_offer.offerer_id)
+          = link_to "#{get_person(swap_offer.receiver_id).username}", person_path(swap_offer.receiver_id)
           %br/
           %span= time_ago(swap_offer.created_at)
         .conversation_center
