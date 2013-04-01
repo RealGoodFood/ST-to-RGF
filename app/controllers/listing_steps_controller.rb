@@ -1,6 +1,14 @@
 class ListingStepsController < ApplicationController
-#  include Wicked::Wizard
-#  steps :information, :date_and_location, :additional_details
+
+   before_filter :only => [ :title, :information, :date_and_location, :additional_details, :update ] do |controller|
+    controller.ensure_logged_in "you_must_log_in_to_view_this_content"
+  end
+
+  before_filter :only => [ :title, :information, :date_and_location, :additional_details, :update ] do |controller|
+    controller.ensure_current_user_is_listing_author "only_listing_author_can_edit_a_listing"
+  end
+  
+  skip_filter :dashboard_only
 
   def title
     @listing = Listing.find_by_id(params[:id])
@@ -13,13 +21,9 @@ class ListingStepsController < ApplicationController
 
   def date_and_location
     @listing = Listing.find_by_id(params[:id])
-    if (@current_user.location != nil)
-     temp = @current_user.location
-     temp.location_type = "origin_loc"
-     @listing.build_origin_loc(temp.attributes)
-    else
-      @listing.build_origin_loc(:location_type => "origin_loc") if !@listing.origin_loc
-    end
+    if !@listing.origin_loc
+	      @listing.build_origin_loc(:location_type => "origin_loc")
+	  end
   end
 
   def additional_details
@@ -27,13 +31,15 @@ class ListingStepsController < ApplicationController
   end
 
   def update
+    @listing = Listing.find_by_id(params[:id])
+
     if (params[:listing][:origin] && params[:listing][:origin_loc_attributes] && (params[:listing][:origin_loc_attributes][:address].empty? || params[:listing][:origin].blank?))
       params[:listing].delete("origin_loc_attributes")
       if @listing.origin_loc
         @listing.origin_loc.delete
       end
     end
-    @listing = Listing.find_by_id(params[:id])
+
     if @listing.update_attributes(params[:listing])
       if params[:back_button].nil?
         if params[:listing][:current_step] == "title"
@@ -58,6 +64,13 @@ class ListingStepsController < ApplicationController
     else
       render :action => params[:listing][:current_step]
     end   
+  end
+
+  def ensure_current_user_is_listing_author(error_message)
+    @listing = Listing.find(params[:id])
+    return if current_user?(@listing.author) || @current_user.has_admin_rights_in?(@current_community)
+    flash[:error] = error_message
+    redirect_to @listing and return
   end
 
 end

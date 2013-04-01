@@ -3,22 +3,16 @@
 .grid_16.prefix_4.suffix_4
   #new_listing_form_tabs
     %div{:class => get_new_listing_tab_class("offer")} 
-      = link_to t('.offer_something'), new_listing_path(:type => "offer", :category => @listing.category), :remote => :true
-
+      = link_to "Offer something", "#"
 .grid_16.prefix_4.suffix_4
-
   #new_listing_form
-    - unless @text_info.nil?
-      %p
-        = @text_info.listing_form
-    
-      #new_listing_form_main  
-        = form_for @listing, :url => listing_step_path(@listing), :method => :put, :html => {:multipart => true} do |form|
-          = form.error_messages
-          = form.hidden_field :current_step, :value => "information"
-          = render :partial => "listings/form/information_step", :locals => { :form => form }
-          .new_listing_form_field_container
-            = form.submit "Back", :class => "send_button", :name => "back_button"
-            = form.submit "Continue", :class => "send_button less_button_margin"
-          = render :partial => "listings/help_texts", :collection => ["help_share_type", "help_tags", "help_valid_until"], :as => :field
+    #new_listing_form_main  
+      = form_for @listing, :url => listing_step_path(@listing), :method => :put, :html => {:multipart => true} do |form|
+        = form.error_messages
+        = form.hidden_field :current_step, :value => "information"
+        = render :partial => "listings/form/information_step", :locals => { :form => form }
+        .new_listing_form_field_container
+          = form.submit "Back", :class => "send_button", :name => "back_button"
+          = form.submit "Continue", :class => "send_button less_button_margin"
+        = render :partial => "listings/help_texts", :collection => ["help_share_type", "help_tags", "help_valid_until"], :as => :field
 

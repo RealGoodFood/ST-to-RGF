@@ -3,27 +3,15 @@
 .grid_16.prefix_4.suffix_4
   #new_listing_form_tabs
     %div{:class => get_new_listing_tab_class("offer")} 
-      = link_to t('.offer_something'), new_listing_path(:type => "offer", :category => @listing.category), :remote => :true
+      = link_to "Offer something", "#"
 
 .grid_16.prefix_4.suffix_4
-
   #new_listing_form
-    - unless @text_info.nil?
-      %p
-        = @text_info.listing_form
-    #listing_type_select_icons
-      - unless session[:swap_food].nil? && session[:swap_usr].nil?
-        #listing_form_title
-          //To do add to translation file after finalization
-          This recipe automatically offered to
-          = get_person(session[:swap_usr]).username
-          for swap
-    
-      #new_listing_form_main  
-        = form_for @listing, :url => listing_step_path(@listing), :method => :put, :html => {:multipart => true} do |form|
-          = form.error_messages
-          = form.hidden_field :current_step, :value => "title"
-          = render :partial => "listings/form/title_step", :locals => { :form => form }
-          .new_listing_form_field_container
-            = form.submit "Continue", :class => "send_button"
+    #new_listing_form_main  
+      = form_for @listing, :url => listing_step_path(@listing), :method => :put, :html => {:multipart => true} do |form|
+        = form.error_messages
+        = form.hidden_field :current_step, :value => "title"
+        = render :partial => "listings/form/title_step", :locals => { :form => form }
+        .new_listing_form_field_container
+          = form.submit "Continue", :class => "send_button"
 
