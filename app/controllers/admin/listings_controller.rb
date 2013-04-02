@@ -49,7 +49,7 @@ class Admin::ListingsController < ApplicationController
     @listing.update_attributes(:open => false )
 
     respond_to do |format|
-      format.html { redirect_to admin_listings_path(:type => "listings"), :notice => "Listing successfully removed." }
+      format.html { redirect_to admin_listings_path(:type => "listings"), :notice => "Listing successfully closed." }
       format.json { head :no_content }
     end
   end
