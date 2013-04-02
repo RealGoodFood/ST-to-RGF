@@ -100,10 +100,10 @@ default: &default_settings
   # (it's good idea to set this if you use no-reply addres as the form
   # address above so that people can contact the admins if needed)
   # Can also be left blank.
-  sharetribe_reply_to_address: "real-team-address@example.com"
+  sharetribe_reply_to_address: "Devin@realgoodfood.org"
   
   # The address where the notifications of feedbacks from Sharetribe UI are sent
-  feedback_mailer_recipients:  'admins@example.com'
+  feedback_mailer_recipients:  'Devin@realgoodfood.org'
   
   # Google Analytics can be used to track traffic on the site
   # If set to true you need to obtain your own API key for analytics
