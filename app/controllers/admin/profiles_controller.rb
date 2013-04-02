@@ -7,7 +7,7 @@ class Admin::ProfilesController < ApplicationController
     if params[:search].nil?
       @profiles = Person.all.paginate(:per_page => 15, :page => params[:page])
     else
-      @profiles = Person.admin_search(params[:search]).paginate(:per_page => 15, :page => params[:page])
+      @profiles = Person.search(params[:search]).paginate(:per_page => 15, :page => params[:page])
     end
   end
 

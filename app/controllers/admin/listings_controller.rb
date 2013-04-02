@@ -5,9 +5,9 @@ class Admin::ListingsController < ApplicationController
 
   def index
     if params[:search].nil?
-      @listings = Listing.all.paginate(:per_page => 10, :page => params[:page])
+      @listings = Listing.open.paginate(:per_page => 10, :page => params[:page])
     else
-      @listings = Listing.admin_search(params[:search]).paginate(:per_page => 10, :page => params[:page])
+      @listings = Listing.open.search(params[:search]).paginate(:per_page => 10, :page => params[:page])
     end
   end
 
