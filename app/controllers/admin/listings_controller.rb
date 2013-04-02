@@ -46,7 +46,7 @@ class Admin::ListingsController < ApplicationController
 
   def destroy
     @listing = Listing.find_by_id(params[:id])
-    @listing.destroy
+    @listing.update_attributes(:open => false )
 
     respond_to do |format|
       format.html { redirect_to admin_listings_path(:type => "listings"), :notice => "Listing successfully removed." }
