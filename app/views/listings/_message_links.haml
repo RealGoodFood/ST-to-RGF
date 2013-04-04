@@ -10,16 +10,12 @@
       #transaction_proposal_link
         = link_to "Already Swaped", "#"  
     - elsif swap_in_process(@listing.id, @current_user.id)
-      - if current_user?(@listing.author)
-        #transaction_proposal_link
-          = link_to "Exchange in process", "#"  
-      - else
+      - if !current_user?(@listing.author)
         #transaction_proposal_link
           = link_to "Accept", swap_offers_update_path(@current_user, get_swap_offer_id(@current_user.id, @listing.id ), :accept => true), :method => :put
     - else
       #transaction_proposal_link
         = link_to t("listings.link_labels.link_label_for_#{listing_type_string}"), swap_listing_path(:id => @listing.id.to_s, :recd => @listing.author.id )
-
    
     //#transaction_proposal_link
     //  = link_to t("listings.link_labels.link_label_for_#{listing_type_string}"), reply_to_listing_path(:id => @listing.id.to_s)
