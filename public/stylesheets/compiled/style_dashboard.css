@@ -1771,3 +1771,6 @@ div.wrapper {
     font-size: 12px; }
     #no_javascript_container a:hover {
       color: #f8792f; }
+.justify_text { text-align:justify; }
+.terms_conditions {    height:400px;
+    overflow:scroll; padding-right:20px; }

@@ -179,7 +179,8 @@ form, input {
 #logo_link {
   line-height: 14px;
   margin-top: 15px;
-  color: #f7f5e6; }
+  color: #f7f5e6;
+ }
   #logo_link a {
     color: #f7f5e6; }
     #logo_link a:hover {
@@ -4089,3 +4090,5 @@ a.send_button {
 .white{ color: white; margin:0px; }
 .other_search { width:130px; }
 .other_search_button{ width:60px; margin-top:15px; } 
+.terms_conditions {    height:400px;
+    overflow:scroll; padding-right:20px; }
