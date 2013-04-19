@@ -38,7 +38,7 @@
           - if current_user?(@listing.author) or shared_with_other_user(@listing.id, @current_user.id)
             = @listing.description.blank? ? t(".no_description") : @listing.description
           - else
-            = @listing.description.blank? ? t(".no_description") : truncate(@listing.description, :length => 110, :omission => "...")
+            = @listing.description.blank? ? t(".no_description") : truncate(@listing.description, :length => 240, :omission => "...")
       %h4.show_food
         = t(".no_of_portions")
       %p.justify_text
@@ -46,7 +46,7 @@
           - if current_user?(@listing.author) or shared_with_other_user(@listing.id, @current_user.id)
             = @listing.number_of_portions.blank? ? t(".no_of_portions") : @listing.number_of_portions
           - else
-            = @listing.number_of_portions.blank? ? t(".no_of_portions") : truncate(@listing.number_of_portions, :length => 110, :omission => "...")
+            = @listing.number_of_portions.blank? ? t(".no_of_portions") : truncate(@listing.number_of_portions, :length => 240, :omission => "...")
 
       - unless @listing.story_behind.blank?
         %h4.show_food
@@ -56,7 +56,7 @@
             - text_with_line_breaks do
               = @listing.story_behind
           - else
-            = truncate(@listing.story_behind, :length => 110, :omission => "...")
+            = truncate(@listing.story_behind, :length => 240, :omission => "...")
 
       - unless @listing.ingredient_list.blank? 
         %h4.show_food

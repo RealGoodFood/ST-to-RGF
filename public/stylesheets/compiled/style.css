@@ -4092,3 +4092,4 @@ a.send_button {
 .other_search_button{ width:60px; margin-top:15px; } 
 .terms_conditions {    height:400px;
     overflow:scroll; padding-right:20px; }
+.field_text { width:405px; float:right; }

@@ -12,7 +12,7 @@ class DashboardController < ApplicationController
     session[:selected_community] = nil
     clear_session_variables
     @communities = Community.order("name asc")
-    @community = Community.where(:domain => "annarbor" ).first
+    @community = Community.where(:name => "ann arbor" ).first
   end
   
   # A custom action for World Design Capital 
