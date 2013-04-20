@@ -46,7 +46,7 @@ class Admin::ListingsController < ApplicationController
 
   def destroy
     @listing = Listing.find_by_id(params[:id])
-    @listing.update_attributes(:open, 0 )
+    @listing.update_attribute(:open, 0 )
 
     respond_to do |format|
       format.html { redirect_to admin_listings_path(:type => "listings"), :notice => "Listing successfully closed." }
