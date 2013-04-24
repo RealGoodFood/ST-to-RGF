@@ -43,5 +43,22 @@ class Admin::SettingsController < ApplicationController
     end
   end
 
+  def broadcast_enable
+    logger.info("***** admin - enable broadcast")
+    Kassi::Application.config.new_listing_broadcast_enabled = true
+    render json: "broadcast status: #{Kassi::Application.config.new_listing_broadcast_enabled}"
+  end
+
+  def broadcast_disable
+    logger.info("***** admin - disable broadcast")
+    Kassi::Application.config.new_listing_broadcast_enabled = false
+    render json: "broadcast status: #{Kassi::Application.config.new_listing_broadcast_enabled}"
+  end
+
+  def broadcast
+    logger.info("***** admin - broadcast: #{Kassi::Application.config.new_listing_broadcast_enabled}")
+    render json: "broadcast status: #{Kassi::Application.config.new_listing_broadcast_enabled}"
+  end
+
 
 end

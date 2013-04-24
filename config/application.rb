@@ -85,5 +85,8 @@ module Kassi
       config.logger = Logger.new(STDOUT)
     end
 
+    # if true, then send emails to all members for any new post
+    config.new_listing_broadcast_enabled = false
+
   end
 end

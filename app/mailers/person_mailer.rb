@@ -47,7 +47,7 @@ class PersonMailer < ActionMailer::Base
 
   def new_message_notification(message, host=nil)
     @recipient = set_up_recipient(message.conversation.other_party(message.sender), host)
-    @url = host ? "http://#{host}/" : "test_url" 
+    @url = host ? "http://#{host}/" : "test_url"
 #"http://#{host}/#{@recipient.locale}#{person_message_path(:person_id => @recipient.id, :id => message.conversation.id.to_s)}" 
     @message = message
     alert_if_erroneus_host(host, @url)
@@ -77,7 +77,7 @@ class PersonMailer < ActionMailer::Base
     mail(:to => @recipient.email,
          :subject => t("emails.new_comment.listing_you_follow_has_a_new_comment", :author => comment.author.name))
   end
-  
+
   def new_update_to_followed_listing_notification(listing, recipient, host=nil)
     @recipient = set_up_recipient(recipient, host)
     @url = host ? "http://#{host}/" : "test_url"
@@ -87,7 +87,30 @@ class PersonMailer < ActionMailer::Base
     mail(:to => @recipient.email,
          :subject => t("emails.new_update_to_listing.listing_you_follow_has_been_updated"))
   end
-  
+
+  def new_listing_notification(listing, recipient, host=nil)
+    logger.info("***** new listing notif - #{listing.title}, host: #{host.domain}")
+    @recipient = set_up_recipient(recipient, host)
+    logger.info("after setup recp: #{@recipient.email}")
+
+##    @url = host ? "http://#{host}/" : "test_url"
+#"http://#{host}/#{@recipient.locale}#{listing_path(:id => listing.id.to_s)}"
+    @listing = listing
+    if (listing.tags)
+      @tags_text = listing.tags.join(", ")
+    else
+      @tags_text = nil
+    end
+    @no_settings = true
+
+    logger.info("***** new listing email - #{listing.title} -> #{@recipient.email}") ##" - url: #{listing.listing_url}")
+##    alert_if_erroneus_host(host, @url)
+    ##JFE todo, factor strings into local files
+    subject = "New delicious food: #{listing.title} by #{listing.author.name}"
+    mail(:to => @recipient.email,
+         :subject => subject)
+  end
+
   def conversation_status_changed(conversation, host=nil)
     @recipient = set_up_recipient(conversation.other_party(conversation.listing.author), host)
     @url = host ? "http://#{host}/" : "test_url"
