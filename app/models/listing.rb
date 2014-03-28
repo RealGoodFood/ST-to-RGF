@@ -487,6 +487,7 @@ class Listing < ActiveRecord::Base
   # when the listing is updated (update=true) or a
   # new comment to the listing is created.
   def notify_followers(host, current_user, update)
+    logger.info("***** notify_followers - listing: #{title}")
     followers.each do |follower|
       unless follower.id == current_user.id
         if update
@@ -499,6 +500,26 @@ class Listing < ActiveRecord::Base
       end
     end
   end
+
+  # Send notifications to users who have are subscribed to any new listing
+  def notify_everybody #(host, current_user)
+    broadcast_enabled = Kassi::Application.config.new_listing_broadcast_enabled
+    logger.error("***** notify_everybody - listing: #{title} - broadcast_enabled: #{broadcast_enabled}")
+
+    community = communities.first ## for now assume just one community is relevant. in the future should make a collection of all unique members from all communities
+    community.members.each do |member|
+      if member.should_receive?("email_when_new_listing_from_anyone") || broadcast_enabled
+        begin
+          PersonMailer.new_listing_notification(self, member, community).deliver
+        rescue Exception => e
+          # Catch the exception and continue sending the news letter
+          ApplicationHelper.send_error_notification("Error sending mail for new listing: #{e.message}", e.class)
+        end
+      end
+    end
+
+  end
+
 
   private
 

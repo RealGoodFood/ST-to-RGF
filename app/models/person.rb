@@ -28,7 +28,8 @@ class Person < ActiveRecord::Base
   # Setup accessible attributes for your model (the rest are protected)
   attr_accessible :username, :email, :password, :password2, :password_confirmation, 
                   :remember_me, :consent, :login, :active, :given_name, :family_name, :phone_number, 
-                  :restricted_tag_names, :description, :is_admin, :image
+                  :restricted_tag_names, :description, :is_admin, :image,
+                  :preferences  ##JFE this seems to fix the persistence of the notification settings.  not sure why it's not even set in the sharetribe code though
       
   attr_accessor :guid, :password2, :form_login,
                 :form_given_name, :form_family_name, :form_password, 
@@ -92,7 +93,8 @@ class Person < ActiveRecord::Base
     "email_about_new_badges",
     "email_about_new_received_testimonials",
     "email_about_accept_reminders",
-    "email_about_testimonial_reminders"
+    "email_about_testimonial_reminders",
+    "email_when_new_listing_from_anyone"
     
     # These should not yet be shown in UI, although they might be stored in DB
     # "email_when_new_friend_request",

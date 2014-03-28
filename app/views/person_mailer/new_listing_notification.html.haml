@@ -1,0 +1,54 @@
+%p
+  There has been a new food item:
+  %b= "#{@listing.title}"
+  posted on RealGoodFood by
+  %b= "#{@listing.author.name}"
+
+-# %p
+  You can view this listing at:
+  -# = link_to(@listing.listing_url, @listing.listing_url + "?ref=email")
+  -# = "listing url: #{@listing.listing_url}"
+
+%p
+  Description:
+  = "#{@listing.description}"
+
+%p= "Number of portions: #{@listing.number_of_portions}"
+
+- unless @tags_text.blank?
+  %p
+    Tags:
+    = "#{@tags_text}"
+
+- unless @listing.location.blank?
+  %p
+    Location:
+    = "#{@listing.location.address}"
+
+- unless @listing.story_behind.blank?
+  %p
+    Story:
+    = "#{@listing.story_behind}"
+
+- unless @listing.ingredient_list.blank?
+  Ingredients:
+  = "#{@listing.ingredient_list}"
+  %br/
+  %br/
+
+%p Not interested but know someone who might be? Sharing is caring so please forward this email when appropriate!
+
+%p
+  Cheers,
+  %br/
+  Team Real Good Food
+
+%br/
+%br/
+
+%font{:size=> 1}
+  You’re receiving this email because you’re a member of our beta food swapping community. During our early stages
+  we believe it is important to foster an active swapping community so notifications will be sent for all new food
+  listings created. As soon as we hit 10 listings per week we will build some notification settings to allow you to
+  opt for a digest, filter by geography, tags and others.
+

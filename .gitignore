@@ -1,8 +1,5 @@
 .bundle
-log/development.log
-log/production.log
-log/newrelic_agent.log
-log/searchd.log
+log/
 tmp/
 .rvmrc
 config/database.yml

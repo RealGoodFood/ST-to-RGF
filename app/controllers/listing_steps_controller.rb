@@ -50,6 +50,11 @@ class ListingStepsController < ApplicationController
           redirect_to  additional_details_listing_step_path(@listing.id)
         else
           flash[:notice] = "Food Saved"
+          ### JFE should probably hook into the old listing created flow and job handling here
+##          Delayed::Job.enqueue(ListingCreatedJob.new(@listing.id, @current_community.full_domain))
+          @listing.notify_everybody #(@current_community.full_domain, @listing.author)
+
+
           redirect_to listing_path(@listing)
         end 
       else

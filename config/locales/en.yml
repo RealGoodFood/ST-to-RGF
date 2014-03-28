@@ -1254,6 +1254,7 @@ en:
       email_about_weekly_events: "Send me an email every week on what is happening in RealGoodFood"
       email_when_conversation_accepted: "...somebody accepts my offer or request"
       email_when_conversation_rejected: "...somebody rejects my offer or request"
+      email_when_new_listing_from_anyone: "...anybody creates a new food offer"
     profile:
       about_you: "Tell us a little bit about you and food, what's notable and interesting? Feel free just to write your favorite food."
       city: "City:"

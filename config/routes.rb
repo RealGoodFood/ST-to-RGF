@@ -303,7 +303,12 @@ Kassi::Application.routes.draw do
   match "/auth/:provider/cancel" => "sessions#cancel"
 #  get 'auth/:provider' => 'sessions#passthru'
 
-  
+  ##JFE todo: make this more REST-ful
+  match '/:locale/admin/broadcast_enable' => 'admin/settings#broadcast_enable'
+  match '/:locale/admin/broadcast_disable' => 'admin/settings#broadcast_disable'
+  match '/:locale/admin/broadcast' => 'admin/settings#broadcast'
+
+
   # Inside this constraits are the routes that are used when request has subdomain other than www
 #  constraints(Subdomain) do
     match '/:locale/homepage' => 'homepage#index', :as => :community_home
